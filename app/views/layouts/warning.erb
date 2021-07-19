@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="theme" content="<%= partner_theme_name %>">
+    <meta name="partner_id" content="<%= current_partner&.id %>">
+
+    <%= csrf_meta_tags %>
+
+    <title><%= @title.present? ? @title : 'Ario Platform' %></title>
+
+    <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'shortcut icon' %>
+
+    <!-- RENDERED THEME STYLES -->
+    <%= content_tag('style', render_theme_styles) %>
+
+    <base href="<%= base_url %>">
+  </head>
+
+  <body>
+    <% if use_ga? %>
+      <%= render 'shared/google_analytics' %>
+    <% end %>
+    <%= render 'shared/unsupported_browser' %>
+  </body>
+</html>

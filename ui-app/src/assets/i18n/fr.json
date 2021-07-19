@@ -1,0 +1,1708 @@
+{
+  "ABOUT_YOU": {
+    "ADDITIONAL_VERIFICATION": "Renseignements additionnels requis",
+    "ADDRESS_INVALID_ERROR": "L'addresse <strong>{{address}}</strong> n'est pas valide.",
+    "ADDRESS_TITLE": "Adresse du domicile",
+    "BODY_FOOTER": "Thinking Capital effectuera une vérification de crédit souple pour valider les informations fournies. En cliquant sur Suivant, vous consentez à ce que votre crédit soit vérifié périodiquement pour garantir votre éligibilité continue aux offres et au financement conformément à notre {{pp}} et nos {{tou}}.",
+    "DATE_BIRTH": "Date de naissance",
+    "ENTER_DATE_BIRTH": "Veuillez entrer une date de naissance dans le format JJ-MM-AAAA.",
+    "ENTER_LAST_NAME": "Veuillez entrer votre nom de famille.",
+    "ENTER_NAME": "Veuillez entrer votre prénom.",
+    "ENTER_NUMBER": "Veuillez entrer votre numéro de téléphone.",
+    "ENTER_SIN": "Veuillez entrer votre numéro d’assurance sociale.",
+    "ENTER_VALID_DATE": "Veuillez entrer la date dans le format JJ-MM-AAAA.",
+    "ERROR": "Veuillez vérifier que vos détails sont corrects.",
+    "FIRST_NAME": "Prénom",
+    "LAST_NAME": "Nom de famille",
+    "NUMBER": "Numéro de cellulaire",
+    "OWNER": "À PROPOS DE VOUS (PROPRIÉTAIRE DE L’ENTREPRISE)",
+    "OWNER_SINCE": "Propriétaire depuis le",
+    "PHONE_NUMBER_INVALID_ERROR": "Le numéro de téléphone <strong>{{phone_number}}</strong> n'est pas valide.",
+    "SOC_NUMBER": "Numéro d’assurance sociale",
+    "SORRY_TROUBLE": "Oups! Nous ne trouvons pas votre entreprise."
+  },
+  "ABOUT_YOUR_BUSINESS": {
+    "ADDRESS_INVALID_ERROR": "L'addresse <strong>{{address}}</strong> n'est pas valide.",
+    "ERROR": "Veuillez vérifier que les détails de votre entreprise sont corrects.",
+    "PHONE_NUMBER_INVALID_ERROR": "Le numéro de téléphone <strong>{{phone_number}}</strong> n'est pas valid.",
+    "SERVICE_ERROR": "Nous éprouvons actuellement un problème de connexion avec l’un de nos fournisseurs de service. Nous savons que cette situation peut être irritante. Nous vous suggérons de réessayer plus tard, nous sommes désolés des inconvénients. Vous pouvez aussi nous poser vos questions par clavardage."
+  },
+  "ADDRESS_FORM": {
+    "ADDRESS_LINE_1": "Adresse",
+    "ADDRESS_LINE_1_ERROR": "Veuillez entrer une adresse canadienne valide.",
+    "ADDRESS_LINE_1_PLACEHOLDER": "Commencez à saisir votre adresse...",
+    "ALBERTA": "AB",
+    "BRITISH_COLUMBIA": "BC",
+    "CANADA": "CD",
+    "CITY": "Ville",
+    "CITY_ERROR": "Veuillez entrer une ville canadienne valide.",
+    "MANITOBA": "MB",
+    "NEWFOUNDLAND_AND_LABRADOR": "NL",
+    "NEW_BRUNSWICK": "NB",
+    "NORTHWEST_TERRITORIES": "NT",
+    "NOVA_SCOTIA": "NS",
+    "NUNAVUT": "NU",
+    "ONTARIO": "ON",
+    "POSTAL_CODE": "Code postal",
+    "POSTAL_CODE_ERROR": "Veuillez entrer un code postal valide.",
+    "PRINCE_EDWARD_ISLAND": "PE",
+    "PROVINCE": "Province",
+    "PROVINCE_ERROR": "Veuillez sélectionner la province.",
+    "PROVINCE_SELECT_DEFAULT": "Sélectionner",
+    "QUEBEC": "QC",
+    "SASKATCHEWAN": "SK",
+    "YUKON": "YT"
+  },
+  "ADD_ACCOUNT": {
+    "ACCOUNT_NUMBER": "Compte",
+    "ACCOUNT_NUMBER_VALIDATION": "Le numéro de compte doit comporter entre sept et douze caractères.",
+    "BACK": "PRÉCÉDENT",
+    "BANK_DETAILS": "RENSEIGNEMENTS BANCAIRES",
+    "BANK_NAME": "Nom de l’institution bancaire",
+    "INST_NUMBER": "Numéro de l’institution bancaire",
+    "INST_NUMBER_VALIDATION": "Veuillez entrer le numéro de l’institution bancaire.",
+    "REQUIRED": "Ce champ est requis.",
+    "TRANSIT_NUMBER": "Transit",
+    "TRANSIT_NUMBER_VALIDATION": "Le numéro de transit doit comporter cinq caractères.",
+    "USE_THIS": "Utiliser ce compte"
+  },
+  "ADD_BANK_ACCOUNT_MANUAL": {
+    "ACCOUNT_NUMBER": {
+      "INVALID": "Le numéro de compte est incorrect. Doit contenir 5 à 12 chiffres.",
+      "LABEL": "Compte",
+      "PLACEHOLDER": "5 à 12 chiffres"
+    },
+    "HELP": "Où puis-je trouver cette information?",
+    "INSTITUTION_NUMBER": {
+      "INVALID": "Le numéro d'institution est incorrect. Doit contenir 3 chiffres.",
+      "LABEL": "Institution",
+      "PLACEHOLDER": "3 chiffres"
+    },
+    "SAMPLE_VOID_CHEQUE_ASSET_PATH": "/assets/sample_void_cheques/sample_void_cheque_FR.svg",
+    "TITLE_html": "Quel <strong>compte bancaire commercial</strong> voulez-vous utiliser?",
+    "TRANSIT_NUMBER": {
+      "INVALID": "Le numéro de transit est incorrect. Doit contenir 5 chiffres.",
+      "LABEL": "Transit",
+      "PLACEHOLDER": "5 chiffres"
+    }
+  },
+  "AGREEMENT": {
+    "CONTAINER_TEXT_BOTTOM": "Si vous acceptez les conditions de cet accord, cliquez sur SIGNER ci-dessous pour vous demander votre mot de passe au lieu d'une signature manuscrite.",
+    "CONTAINER_TEXT_TOP": {
+      "BUSINESS_PARTNER": "Avant de devenir partenaire commercial Ario, prenez le temps de lire et de signer le contrat de partenariat ci-dessous si vous souhaitez continuer.",
+      "PAD": "Veuillez lire et signer le contract de débit préautorisé ci-dessous si vous désirez continuer.",
+      "PAF": "Veuillez lire et signer le contract de financement préautorisé ci-dessous si vous désirez continuer",
+      "UNSECURED_BUSINESS_LOAN": "En ouvrant une session ci-dessous, je représente et garantis que j’ai lu et j’accepte, au nom de l’Emprunteur et en chacune de mes capacités de Propriétaire et de Caution, les modalités du Contrat de prêt, et que je détiens le pouvoir de signature pour lier l’Emprunteur à toutes les modalités énoncées dans le Contrat de prêt."
+    },
+    "CONTAINER_TITLE": "Lire et signer l’entente",
+    "CONTRACT_SUBHEAD": "Formulaire d’entente",
+    "FILE_HEADER": "{{agreementName}} entre <br /> {{merchantName}} et Ario Platform.",
+    "NAME": {
+      "BUSINESS_PARTNER": "Entente de Partenaire Commercial",
+      "PAD": "Débit préautorisé",
+      "PAF": "Financement préautorisé",
+      "UNSECURED_BUSINESS_LOAN": "Contrat de prêt"
+    },
+    "NO_CONTRACT_AVAILABLE": "Nous sommes désolés, le contrat de votre demande n’est pas accessible en ce moment.",
+    "SIGN_BUTTON_LABEL": "Signer"
+  },
+  "APPLICATION": {
+    "ADDRESS": "Adresse",
+    "AFTER_CLICKING": "Une fois que vous avez cliqué sur <span class=\"bold\">Envoyer la demande</span>, nous effectuerons quelques vérifications supplémentaires au sujet de votre entreprise, nous calculerons les frais exacts et nous vous présenterons les modalités de l’avance de fonds. Vous aurez la possibilité de tout vérifier avant de confirmer le financement.",
+    "BUSINESS_DETAILS": "Renseignements sur l’entreprise",
+    "BUSINESS_NUMBER": "Numéro de l’entreprise",
+    "INCORPORATED_IN": "Juridiction",
+    "I_AGREE_THAT": "J’atteste que j’ai vérifié les renseignements fournis. De plus, je confirme que je possède l’autorisation de soumettre cette demande au nom de l’entreprise.",
+    "NAME": "Nom",
+    "PROCESSING": "Traitement en cours...",
+    "SUB_TITLE": "Avec une avance de fonds XYZ",
+    "TITLE": "Obtenez les fonds dont vous avez besoin pour le bon fonctionnement de votre entreprise."
+  },
+  "APPLICATION_DECLINED": {
+    "BODY": "Malheureusement, nous ne sommes pas en mesure de donner suite à votre demande.",
+    "TITLE": "Votre demande a été refusée."
+  },
+  "APPLICATION_PROGRESS": {
+    "ABOUT_YOU": "À propos de vous",
+    "ABOUT_YOU_TITLE": "Parlez-nous de vous",
+    "GET_CERTIFIED": "Obtenez une certification!",
+    "GET_CERTIFIED_TITLE": "Félicitations!",
+    "NEW_BUSINESS_LABEL": "À propos de votre entreprise",
+    "NEW_BUSINESS_TITLE": "Parlez-nous de votre entreprise",
+    "NOT_CERTIFIED_TITLE": "Certification non confirmée",
+    "ON_BOARDING_SUBTEXT": "Pour que cette demande se déroule le mieux possible, nous avons besoin de quelques détails sur votre entreprise et sur vous-même. Cela ne prendra que quelques minutes.",
+    "REVIEW_AND_CONFIRM": "Vérifier et confirmer",
+    "SELECT_ADVANCE": "Sélectionner l’avance de fonds",
+    "SET_UP_BANKING": "Entrer les renseignements bancaires",
+    "SIGN_THE_AGREEMENT": "Signer le contrat",
+    "UNABLE_TO_CERTIFY_TITLE": "Certification en cours",
+    "VERIFY_YOURSELF": "Confirmer l’identité"
+  },
+  "APPLICATION_SUMMARY": {
+    "APPLICATION_SUMMARY": "Résumé de la demande"
+  },
+  "APPLY_FOR_CAPITAL": {
+    "ADVANCE?": "Qu’est-ce qu’une avance de fonds de roulement?",
+    "AMOUNT?": "Comment fonctionne le pourcentage des ventes quotidiennes?",
+    "AN_EXAMPLE": "Voici un exemple :",
+    "BACK?": "Dans combien de temps aurai-je remboursé mon avance de fonds?",
+    "FEE?": "À combien s’élèvent les frais?",
+    "FOR_EXAMPLE": "<p class=\"ztt_panel-text\">Supposons que vous avez accepté une avance de fonds avec les modalités suivantes : </p><p class=\"ztt_panel-text\">Montant : 10 000 $ <br>Pourcentage des ventes quotidiennes : 15 % <br>Frais : 3000 $ <br>Montant total dû : 13 000 $</p><p class=\"ztt_panel-text\">Si, pour une journée donnée, vos ventes brutes s’élèvent à 1000 $, vous devrez rembourser 150 $ de votre montant total dû, et votre nouveau solde sera de 12 850 $. Le lendemain, si vous faites 2000 $ de ventes, votre remboursement s’élèvera à 300 $. Vous continuerez à payer 15 % de vos recettes quotidiennes jusqu’au remboursement complet de l’avance et des frais.</p>",
+    "THE_FEE_IS": "<p class=\"ztt_panel-text\">Des frais s’appliquent au financement. Vous devez donc rembourser le montant de l’avance de fonds, ainsi que ces frais. Lorsque vous soumettez la demande initiale, vous obtenez une estimation de ce coût. Par la suite, vous pourrez voir les frais réels et les confirmer avant de signer l’entente et les modalités. </p><p class=\"ztt_panel-text\"> Le montant total dû est relié à ces frais. Il comprend le montant de l’avance ainsi que ces frais. Chaque versement quotidien que vous effectuez permet de rembourser une partie de l’avance et une partie de ces frais, jusqu’au remboursement complet.</p>",
+    "THE_PERCENTAGE_OF": "<p class=\"ztt_panel-text\">Le pourcentage correspond à la proportion de vos ventes brutes que vous avez accepté de verser chaque jour pour votre remboursement. Comme nous utilisons un pourcentage, les montants remboursés varient d’une journée à l’autre, en fonction de vos ventes. De cette façon, il vous reste toujours assez d’argent pour régler vos autres dépenses!</p>",
+    "TIME_TO_PAY": "<p class=\"ztt_panel-text\">La durée dépend du montant total dû et du pourcentage de vos ventes quotidiennes que vous avez décidé de verser. Habituellement, le remboursement peut prendre jusqu’à trois ou quatre mois. Il pourrait être plus long si vos ventes sont moins bonnes, et plus rapide si vos ventes sont excellentes.</p>",
+    "WORKING_CAPITAL_ADVANCE": "<p class=\"ztt_panel-text\">L’avance de fonds est une entente en vertu de laquelle vous acceptez de verser une partie de vos ventes futures. Vous obtenez l’argent dont vous avez besoin dès maintenant, puis vous remboursez le montant dû chaque jour en fonction de vos ventes. Ce financement permet d’accéder rapidement et facilement à des fonds supplémentaires pour vos différences activités commerciales. </p><p class=\"ztt_panel-text\"> Demandez une petite ou une grosse somme, selon les besoins de votre entreprise. La plupart du temps, nous déposons les fonds dans votre compte dans un délai de 48 heures.</p>"
+  },
+  "APPROVAL_PENDING": {
+    "BODY": "Notre équipe va revoir les information que vous nous avez fournis à propos de votre entreprise et vous contactera sous peu!",
+    "TITLE": "Merci pour votre demande!"
+  },
+  "APPROVED_ADVANCE": {
+    "BANK_TRANSACTIONS": "Les transactions bancaires peuvent prendre jusqu’à trois jours ouvrables pour figurer sur votre relevé de compte. Nous avons effectué le dépôt le {{date}}. Si plus de trois jours ouvrables se sont écoulés, utilisez le soutien en ligne par clavardage.",
+    "CONGRATULATIONS": "Félicitations!",
+    "DON’T_SEE_THE": "Pourquoi l’avance de fonds n’apparaît-elle pas dans mon compte?",
+    "GO_DASHBOARD": "Aller au tableau de bord",
+    "TITLE": "Félicitations! Vous recevrez vos fonds sous peu.",
+    "YOUR_BANK_ACCOUNT": "Vos renseignements bancaires sont complets. Nous transférerons les fonds sous peu!"
+  },
+  "AUTO_SEND": {
+    "BUTTON_CANCEL": "Annuler",
+    "BUTTON_EDIT": "Modifier",
+    "BUTTON_SELECT_ALL": "Tout sélectionner",
+    "BUTTON_SUBSCRIBE": "S'abonner à l'envoi automatique de factures",
+    "BUTTON_UNSELECT_ALL": "Tout déselectionner",
+    "BUTTON_UNSUBSCRIBE": "se désabonner de l'envoi automatique de factures"
+  },
+  "BANK_INFO": {
+    "ACCOUNT_SELECT_DEFAULT": "Sélectionner un compte",
+    "ADD_NEW": "Ajouter un compte",
+    "ADD_NEW_NO_SELECT": "Veuillez ajouter un compte bancaire.",
+    "CHOOSE_BANK": "Choisissez votre compte bancaire ou",
+    "CHOOSE_ENTERED": "sélectionnez un compte existant.",
+    "CONTINUE": "Continuez",
+    "FLINKS_FAILED": "Nous sommes dans l’impossibilté d'établir une connection avec votre institution bancaire. Nous reconnaissons que ce problème est frustrant pour nos utilisateurs.<br><br> Nous vous recommandons d’attendre et d’essayer de relier votre compte bancaire à nouveau après un délai approprié.<br> <br> N’hésitez pas à <a class=\"intercom-trigger\" role=\"button\">communiquer avec nous</a> si vous avez des questions.",
+    "FLINKS_FAILED_TITLE": "Nous n’arrivons pas à relier votre compte bancaire",
+    "FLINKS_INVALID_ACCOUNT_TYPE": "Nous n’avons trouvé aucun compte bancaire d’entreprise correspondant, ou celui-ci semble associé à une autre personne ou entreprise. Veuillez utiliser l’identifiant de votre compte chèques d’entreprise. Si cela ne fonctionne toujours pas, il est possible que votre compte ne soit pas pris en charge. Pour obtenir de l’aide, utiliser le soutien en ligne par clavardage.",
+    "FLINKS_ACCOUNT_RECONNECT_MISMATCH": "Nous n'avons pas trouvé le compte bancaire que vous avez précédemment connecté avec les identifiants bancaires que vouz avez fournis! Veuillez réessayer, ou utiliser le soutien en ligne par clavardage.",
+    "HEREBY_WAIVE": "Par la présente, je renonce à recevoir un avis écrit 10 jours avant chaque prélèvement automatique.",
+    "MANUALLY": "Je vais entrer manuellement mon compte.",
+    "NEARLY": "Autorisation de prélèvement automatique entre <br> {{merchantName}} (souscripteur) et Ario Platform (bénéficiaire)",
+    "NEARLY_THERE": "Vous avez presque terminé!",
+    "NO_THANKS": "Non merci,",
+    "OR": "ou",
+    "OTHER_CONFIRMATION": "Je renonce à recevoir toute autre confirmation avant le premier paiement.",
+    "REVIEWED_AND_CONFIRMED": "J’ai vérifié et confirmé le compte bancaire sélectionné. J’autorise le dépôt de l’avance de fonds dans ce compte, ainsi que les prélèvements automatiques à partir de ce compte, conformément aux modalités de paiement ci-dessus.",
+    "TITLE": "Confirmation des renseignements bancaires",
+    "BANK_CONNECT_ERROR_HEADER": "Nous n'arrivons pas à établir le lien avec votre compte.",
+    "BANK_CONNECT_ERROR_MESSAGE": "Cela arrive parfois - ne vous inquiétez pas.<br><br>Pour nous aider à déterminer votre limite de crédit, veuillez téléverser 12 mois de relevés bancaires et un chèque annulé, et vous recevrez notre réponse dans un délai de 48 heures.",
+    "BANK_CONNECT_ERROR_CHAT_TEXT": "Si vous avez des questions, ",
+    "BANK_CONNECT_ERROR_CHAT_LINK": "clavarder avec nous",
+    "YOUR_WORKING_CAPITAL": "<p class=\"ztt_panel-text\">Nous déposerons votre avance de fonds directement dans votre compte bancaire.</p><p class=\"ztt_panel-text\"> Chaque jour (jour/mois/période), nous prélèverons votre remboursement sur ce même compte. </p><p class=\"ztt_panel-text\"> Nous avons donc besoin de vos renseignements bancaires et d’une autorisation de prélèvements automatiques.</p>"
+  },
+  "BORROWER_DASHBOARD": {
+    "INVOICES": {
+      "AMOUNT": "Montant",
+      "AMOUNT_PAID": "Le montant payé",
+      "DUE_DATE": "Date d'échéance",
+      "INVOICE_NUMBER": "Facture #{{number}}",
+      "PAY_BTN": "Payer la facture",
+      "REVIEW_BTN": "Vérifier"
+    }
+  },
+  "BORROWER_INVOICES_COMPONENT": {
+    "DT_COLUMNS": {
+      "ACTIONS": "Actions",
+      "AMOUNT": "Montant",
+      "AMOUNT_PAID": "Le montant payé",
+      "DUE_DATE": "Date d'échéance",
+      "INVOICE_NUMBER": "Numéro de facture",
+      "PAYEE": "Bénéficiaire",
+      "PAY_BTN": "Payer la facture",
+      "STATUS": "Statut"
+    },
+    "STATUS_OVERPAID": "Surpayé",
+    "STATUS_PAID": "Payé",
+    "STATUS_PARTIAL": "Partiel",
+    "STATUS_PROCESSING": "En traitement",
+    "STATUS_SCHEDULED": "Planifié",
+    "STATUS_UNPAID": "Non payé",
+    "TITLE": "Factures"
+  },
+  "BUSINESS_PARTNER": {
+    "BRANDING_DEFAULTS": {
+      "NOT_READY": "Pas encore prêt à personnaliser votre site? Vous pouvez utiliser le thème d'Ario par défaut pour l'instant.",
+      "SKIP": "Plus tard"
+    },
+    "BRANDING_HEADER": "Personnaliser l'apparence de votre site Web",
+    "COLOUR_HEADER": "2. Choisissez vos couleurs",
+    "COLOUR_TOO_LIGHT": "La couleur est trop claire et sera difficile à distinguer.",
+    "COLOUR_PATTERN": "Doit être un code de couleur hexadécimal (#ffffff)",
+    "COLOUR_PRIMARY": "Arrière-plan du menu",
+    "COLOUR_PRIMARY_USED": "Où l'arrière-plan du menu est utilisé:",
+    "COLOUR_REQUIRED": "Requis",
+    "COLOUR_ACCENT": "Couleur accent",
+    "COLOUR_ACCENT_USED": "Utilisation de la couleur accent:",
+    "COLOUR_PRIMARY_WHERE": "Principalement pour l’arrière-plan du menu de navigation.",
+    "COLOUR_PRIMARY_WHERE_NOTE": "<b>Remarque:</b> si vous choisissez une couleur claire, les liens de navigation seront plus foncés une fois le thème publié.",
+    "COLOUR_ACCENT_WHERE": "Pour faire ressortir certains éléments et pour indiquer des liens à cliquer.",
+    "COLOUR_ACCENT_WHERE_NOTE": "<b>Remarque:</b> sélectionnez une couleur qui contraste bien avec un fond clair; vos clients doivent savoir sur quoi cliquer.",
+    "COLOUR_ACCENT_EXAMPLES": {
+      "LABEL": "Aperçu de la couleur accent:",
+      "HEADER": "Entête",
+      "LEAD": "Paragraphe principal",
+      "PARAGRAPH": "Paragraphe",
+      "BOLD": "Texte en gras",
+      "BUTTON": "bouton",
+      "BUTTON_GROUP": "boutons groupés",
+      "BUTTON_OUTLINE": "contour",
+      "BUTTON_DISABLED": "bouton désactivé"
+    },
+    "CONTRACT_SIGN_ABOVE": "Avant de devenir partenaire commercial Ario, prenez le temps de lire et de signer le contrat de partenariat ci-dessous si vous souhaitez continuer.",
+    "CONTRACT_SIGN_BELOW": "Si vous acceptez les conditions de cet accord de partenaire commercial, cliquez sur SIGNER ci-dessous pour vous demander votre mot de passe au lieu d'une signature manuscrite.",
+    "CREATE_BUSINESS_PARTNER_ERROR": "Une erreur s'est produite lors de l'envoi de votre demande pour devenir un partenaire. Pour obtenir de l'aide, utilisez le soutien en ligne par clavardage.",
+    "CUSTOM_VANITY_INVALID": "Les caractères valides sont A-Z a-z 0-9",
+    "CUSTOM_VANITY_LABEL": "1. Choisissez votre domaine personnalisé",
+    "CUSTOM_VANITY_SUFFIX": ".arioplatform.com",
+    "GET_APPLICATION_ERROR": "Une erreur s'est produite lors du chargement de l'accord de partenaire. Pour obtenir de l'aide, utilisez le soutien en ligne par clavardage.",
+    "LANDING": {
+      "CONTACT_LEAD": "Vous avez des questions à propos du service de partenariat commercial avec Ario?",
+      "CONTACT_US": "communiquez avec nous en tout temps:",
+      "FAQ_HEADER": "Contact",
+      "LEAD": "En tant que partenaire d'Ario, votre entreprise peut offrir des solutions de crédit via une plate-forme simple et efficace pour vos clients. La configuration ne prend que quelques minutes!",
+      "SETUP": "COMMENCER",
+      "SLOGAN": "Le temps c'est de l'argent.\nArio vous donne les deux.",
+      "STEP_1": "Enrôlement",
+      "STEP_1_TEXT": "Une fois que vous avez décidé de vous associer à Ario, nous vous enverrons un paquet d’enrôlement à remplir. Par la suite, nous examinerons ensemble votre image de marque pour personnaliser votre plate-forme!",
+      "STEP_2": "Communiquez avec vos clients",
+      "STEP_2_TEXT": "Qu'est-ce qu'une plate-forme sans clients pour l'utiliser? Nous vous proposerons des guides pratiques et des modèles de courrier électronique afin que vous puissiez commencer à promouvoir le service immédiatement. N'oubliez pas d'informer vos clients de leurs nouvelles options de financement par le bouche à oreille également.",
+      "STEP_3": "Vos clients obtiennent un prêt et vous êtes payé",
+      "STEP_3_TEXT": "Une fois inscrits, vos clients peuvent immédiatement faire une demande de crédit. Une fois approuvés, ils pourront vous payer instantanément!",
+      "THREE_STEPS_HEADER": "Comment ça fonctionne"
+    },
+    "LOGO_HEADER": "3. Téléchargez votre logo",
+    "NOT_CONNECTED_TO_QUICKBOOKS": "Connectez-vous à QuickBooks pour utiliser cette fonctionnalité.",
+    "PREVIEW": "Aperçu",
+    "VANITY_INVALID": "Le domaine demandé n'est pas valide. Revenez en arrière et entrez une nouvelle valeur ou utilisez le soutien en ligne par clavardage pour obtenir de l'aide."
+  },
+  "CALCULATE_FEE": {
+    "ADVANCE_VAL_INVALID": "Vous ne pouvez pas obtenir une avance de ce montant.",
+    "APPLY_NOW": "Envoyer la demande",
+    "APPROXIMATELY_FEE": "Les frais pour obtenir ces fonds s’élèveraient à environ",
+    "CALCULATING": "Calcul en cours...",
+    "CHOOSE_RATE_SELECT_DEFAULT": "Choisir un taux",
+    "CHOOSE_REPAYMENT": "Choisissez un taux de remboursement",
+    "ENTER_AMOUNT": "Entrez le montant de l’avance de fonds",
+    "FORM_HEADING": "Votre entreprise peut recevoir jusqu’à <span class=\"amount\"> {{amount}} </span> de financement!",
+    "OF_DAILY_SALES": "de vos ventes quotidiennes",
+    "YOU_GET": "Vous pourriez recevoir jusqu’à {{amount}} en aussi peu que 24 heures!",
+    "increased_%": "Remarque : le pourcentage de remboursement quotidien est maintenant plus élevé.",
+    "largest_advance": "Le montant maximum que vous pouvez recevoir est {{advance}}.",
+    "smallest_advance": "Le montant minimum que vous pouvez recevoir est {{advance}}."
+  },
+  "CAPITAL_SUMMARY": {
+    "AGREEMENT_COMPLETE": "Entente conclue le {{date}}.",
+    "BALANCE": "Solde",
+    "CASH": "Montant",
+    "CLICK_CANCEL": "Cliquez sur Annuler pour modifier les modalités sélectionnées.",
+    "ESTIMATED_FEE": "Frais estimés",
+    "ESTIMATED_TOTAL": "Montant total dû estimé",
+    "FEE": "Frais",
+    "GROSS_SALES": "Pourcentage des ventes brutes",
+    "OFFER_EXPIRES": "Cette offre vient à échéance le {{date}}.",
+    "PAYMENTS": "Paiements",
+    "RATE": "Taux de versement",
+    "SUMMARY": "Résumé de l’avance de fonds",
+    "TOTAL_OWED": "Montant total dû",
+    "YOU_APPLIED": "Vous avez effectué votre demande le {{date}}."
+  },
+  "CASH_FLOW": {
+    "INCREASE_LIMIT": {
+      "CARD_BODY": "Les affaires vont bien? Augmentez votre financement disponible en reliant votre compte bancaire d’entreprise à votre profil.",
+      "CARD_BODY_NOTE": "<span class=\"bold\">Remarque :</span> le compte lié sera aussi utilisé pour les remboursements.",
+      "CARD_ERROR": "Nous avons rencontré un problème et nous l'examinons actuellement.",
+      "CARD_FINISHED_BODY": "Nous traitons actuellement vos informations. Toutes modifications de vos limites seront mises à jour dans votre tableau de bord dans les prochaines minutes.<br>Si vous avez des questions, cliquez sur le bouton \"Clavardage\" pour démarrer une discussion en temps réel avec notre équipe d'assistance.",
+      "CARD_FINISHED_HEADER": "Merci d’avoir relié votre compte bancaire.",
+      "CARD_HEADER": "Augmentez votre limite",
+      "REQUIREMENT": "Pour pouvoir bénéficier d'une limite accrue, votre entreprise nécessite un minimum de ventes mensuelles moyennes déclarées de 9 100 $ CAN au cours des 12 derniers mois."
+    }
+  },
+  "CHOOSE_BANKACCT_BTN": "Utiliser ce compte",
+  "CHOOSE_BANKACCT_ERROR_HEADING": "Il semble que vous ayez déjà sélectionné un compte bancaire!",
+  "CHOOSE_BANKACCT_ERROR_TEXT": "Clickez sur OK pour être redirigé vers le tableau de bord où vous pourrez reprendre votre application.",
+  "CHOOSE_BANKACCT_INSTRUCTIONS": "Sélectionnez le compte-chèques principal de votre entreprise qui reflète le mieux les résultats de votre entreprise",
+  "CHOOSE_BANKACCT_INSTRUCTIONS_BUSINESS_PARTNER": "Veuillez sélectionner votre compte chèques principal, qui doit être inscrit au nom de votre entreprise.<br></br><b>Ce compte sera utilisé pour vos dépôts de paiement de factures.</b>",
+  "CHOOSE_BANKACCT_INSTRUCTIONS_CASH_FLOW": "Sélectionnez le compte-chèques principal de votre entreprise qui reflète le mieux la trésorerie de votre entreprise",
+  "CHOOSE_BANKACCT_INSTRUCTIONS_SALES_VOLUME": "Veuillez sélectionner votre compte chèques principal, qui doit être inscrit au nom de votre entreprise.<br></br><b>Ce compte sera utilisé pour déterminer votre marge de crédit en fonction de vos ventes mensuelles moyennes.</b>",
+  "CHOOSE_BANKACCT_INSTRUCTIONS_INSIGHTS": "Sélectionner les comptes pour les perspectives.",
+  "CHOOSE_BANKACCT_LABEL": "Sélectionner le compte chèques principal",
+  "CHOOSE_BANKACCT_SELECT_DEFAULT": "Sélectionner le compte",
+  "CHOOSE_BANKACCT": {
+    "INSIGHTS_OPT_IN": "Envoyez-moi des conseils hebdomadaires sur la trésorerie de mon entreprise. <a target=\"_blank\" href=\"https://thinkingcapital.ca/products/cash-flow-advisor/\">En savoir plus.</a>"
+  },
+  "COMMON": {
+    "BTN": {
+      "ADD": "Ajouter",
+      "ADD_NEW_BANK": "Retourner",
+      "APPLY": "Envoyer la demande",
+      "BACK": "Précédent",
+      "CANCEL": "Annuler",
+      "DASHBOARD": "Revenir au tableau de bord",
+      "MODIFY": "Modifier",
+      "NEXT": "Suivant",
+      "SIGN_UP": "Devenir un partenaire",
+      "SKIP": "Sauter",
+      "SUBMIT": "Soumettre",
+      "TRY_AGAIN": "Retour",
+      "INTERCOM_CTA": "Clavardez avec nous"
+    },
+    "NOT_AVAILABLE": "N / A",
+    "OR": "Ou",
+    "STOP_SHOWING": "Ne plus afficher ce message"
+  },
+  "COMPLETING_APPLICATION": {
+    "BODY": "Nous traitons votre demande. Vous recevrez un courriel dans les 24 à 48 heures avec une mise à jour de votre demande.",
+    "TITLE": "Demande soumise"
+  },
+  "CONFIRM_EMAIL": {
+    "CAPITAL_ADVANCE?": "Qu’est-ce qu’une avance de fonds de roulement?",
+    "CAPITAL_ADVANCE_IS": "<p class=\"ztt_panel-text\">L’avance de fonds est une entente en vertu de laquelle vous acceptez de verser une partie de vos ventes futures. Vous obtenez l’argent dont vous avez besoin dès maintenant, puis vous remboursez le montant dû chaque jour en fonction de vos ventes. Ce financement permet d’accéder rapidement et facilement à des fonds supplémentaires pour vos différences activités commerciales. </p><p class=\"ztt_panel-text\"> Demandez une petite ou une grosse somme, selon les besoins de votre entreprise. La plupart du temps, nous déposons les fonds dans votre compte dans un délai de 48 heures.</p>",
+    "CONFIRM_EMAIL": "Veuillez confirmer votre adresse courriel.",
+    "DETAILS": "Pour utiliser votre compte, vous devez confirmer votre adresse courriel. Votre boîte de réception devrait contenir un message provenant de l’adresse no-reply@arioplatform.com. Si vous ne l’avez pas reçu, cliquez ci-dessous.",
+    "RESEND_EMAIL": "Envoyer de nouveau",
+    "SOLVE_NO_CONFIRMATION": "<p class=\"ztt_panel-text\">Nous vous enverrons un courriel de confirmation à partir de l’adresse no-reply@arioplatform.com (objet : Confirmez votre adresse). Vous devriez le recevoir d’ici quelques minutes. \nAssurez-vous de vérifier votre filtre antipourriel et d’autoriser l’adresse no-reply@arioplatform.com. Si vous n’avez pas reçu le courriel, cliquez sur le lien prévu à cet effet.</p>",
+    "WHY_NO_CONFIRMATION?": "Je n’ai pas reçu le courriel de confirmation. Que puis-je faire?"
+  },
+  "DASHBOARD": {
+    "ACTIVE_CAPITAL": "AVANCE DE FONDS EN VIGUEUR",
+    "AMOUNT": "Montant",
+    "APPLICATION_STARTED": "Demande d’avance de fonds en cours",
+    "BANK_ACCOUNT_DETAILS": "<p class=\"ztt_panel-text\">Vos renseignements bancaires sont complets. Nous transférerons les fonds sous peu</p><p class=\"ztt_panel-text bold\">Pourquoi l’avance de fonds n’apparaît-elle pas dans mon compte?</p><p class=\"ztt_panel-text\">Les transactions bancaires peuvent prendre jusqu’à trois jours ouvrables pour figurer sur votre relevé de compte. Nous avons effectué le dépôt le {{date}}.</p>",
+    "BECOME_PARTNER": "Offrir des solutions de financement à vos clients tout en gagnant un revenu supplémentaire!",
+    "BUSINESS_PARTNER_REQUEST_RECEIVED": "Merci. Vous recevrez un courriel lorsque votre site Web personnalisé sera prêt.",
+    "COVID": {
+      "TITLE": "Mise à jour COVID-19:",
+      "CONTENT": "Compte tenu de la situation économique engendrée par COVID-19, nous éprouvons une augmentation de la demande ainsi que des délais de traitement. Comme il s’agit de circonstances inhabituelles, nous aimerions vous contacter personnellement pour soutenir votre demande."
+    },
+    "KYC_FAILED": {
+      "SELF_FIXABLE": {
+        "LEAD": "Nous devons vérifier votre identité.",
+        "BODY_1": "Nous vérifions votre identité pour nous assurer qu’il s’agit bien de vous - et non quelqu'un qui tente d'usurper votre identité.",
+        "BODY_2": {
+          "START": "Merci de ",
+          "CTA": "confirmer vos informations",
+          "END": " pour que nous puissions traiter votre demande."
+        }
+      },
+      "SELF_FIX_IN_PROGRESS": {
+        "LEAD": "Merci d'avoir confirmé vos informations.",
+        "BODY_1": "Nous traitons votre demande."
+      },
+      "NON_FIXABLE": {
+        "LEAD": "Il nous est impossible de confirmer votre identité. Nous ne sommes pas parvenu à vérifier vos informations.",
+        "BODY_1": "Veuillez clavarder avec un membre de notre équique de soutien pour toutes questions."
+      }
+    },
+    "COMPLETED": "Transactions terminées",
+    "DATE": "Date",
+    "DATE_CONNECTOR": "en date du: ",
+    "DELINQUENT": {
+      "MESSAGE": "Vous avez des paiements en retard.",
+      "RESTRICTIONS_DESC": "Clavardez avec un conseiller ou une conseillère pour effectuer un paiement. Lorsque votre compte sera en règle, nous pourrons réactiver votre marge de crédit."
+    },
+    "DEPOSITED": "Avance de fonds déposée",
+    "DESCRIPTION": "Description",
+    "FEES_CHARGED": "Frais facturés pour l’avance de fonds",
+    "HAVE_REPAID": "Vous avez remboursé votre avance de fonds.",
+    "HAVE_TO_PAY": "Vous avez un solde de {{balance}} à payer.",
+    "INVOICES_TAB": {
+      "TITLE": "Mes factures"
+    },
+    "INVOICE_FOR": "Facture émise le {{ issued_on }}",
+    "INVOICE_FOR_ID": "Voici la facture numéro {{selectedInvoice.invoice_number}} pour votre avance de fonds.",
+    "MAIN_TITLE": "Renseignements sur le financement",
+    "NEXT_PAYMENT": "Prochain paiement",
+    "ON_ITS_WAY": "Vous recevrez vos fonds sous peu.",
+    "PAD_AGREEMENT_LINK": "autorisation de prélèvement automatique",
+    "PAD_AGREEMENT_POST": "a été confirmée le {{activated_at}} et signée pour {{merchantName}}.",
+    "PAD_AGREEMENT_PRE": "L’",
+    "PAD_COMPLETED": "<span class=\"link\">autorisation de prélèvements automatiques</span> a été confirmée pour l’avance de fonds.",
+    "PAYED_FULL": "Avance de fonds remboursée en totalité",
+    "PAYMENT_PLAN": {
+      "PLAN_ACTIVE": "Un plan de paiement a été instauré pour votre compte.",
+      "RESTRICTIONS_DESC": "Votre accès à du finacement additionel est temporairement suspendu. Si vous avez des questions, veuillez contacter un représentant du support pour à propos de ce que cela implique pour votre compte."
+    },
+    "PENDING": "Transactions en attente",
+    "SEE_INVOICE": "Voir la facture",
+    "STATUS": "Status",
+    "TRANSACTIONS_TAB": {
+      "DESCRIPTION": {
+        "DIRECT_DEBIT_INVOICE_PAYMENT_TO": "Paiement par prélèvement automatique à {{ supplierName }} pour la facture {{ invoiceNumber }}",
+        "DIRECT_DEBIT_PAYMENT_TO": "Paiement par prélèvement automatique à {{ supplierName }}",
+        "FINANCING_DEPOSIT": "Dépôt de fonds (Numéro de référence: {{ referenceNumber }})",
+        "FINANCING_INVOICE_PAYMENT_TO": "Paiement de financement à {{ supplierName }} pour la facture {{ invoiceNumber }} (Numéro de référence: {{ referenceNumber }})",
+        "FINANCING_INVOICE_REPAYMENT": "Remboursement de financement pour la facture {{ invoiceNumber }} (Numéro de référence: {{ referenceNumber }})",
+        "FINANCING_PAYMENT_TO": "Paiement de financement à {{ supplierName }} (Numéro de référence: {{ referenceNumber }})",
+        "FINANCING_REPAYMENT": "Remboursement de financement (Numéro de référence: {{ referenceNumber }})",
+        "INVOICE_PAYMENT_FROM": "Paiement de {{ merchantName }} pour la facture {{ invoiceNumber }}",
+        "OFFLINE_PAYMENT": "Paiement hors ligne à {{ offlineEntityName }} (Numéro de référence: {{ referenceNumber }})",
+        "PAYMENT_FROM": "Paiement de {{ merchantName }}"
+      },
+      "TITLE": "Mes transactions"
+    },
+    "TRANSACTION_STATE": {
+      "COMPLETING": "Complétion en cours",
+      "ERROR": "Échec",
+      "FAIL_RETRY": "Échec, relancement en cours",
+      "IN_PROGRESS": "En cours",
+      "PENDING": "En attente",
+      "PROGRESSING": "En cours",
+      "REQUESTED": "Demandée",
+      "REQUESTING": "En requête",
+      "SUCCESS": "Complétée",
+      "VERIFIED": "Vérifiée",
+      "VERIFY_FAILED": "Vérification échouée"
+    },
+    "WC_AGREEMENT_LINK": "entente d’avance de fonds",
+    "WC_AGREEMENT_POST": " a été confirmée le {{activated_at}} et signée pour {{merchantName}}.",
+    "WC_AGREEMENT_PRE": "L’",
+    "WITHDRAWAL_AMOUNT": "Montant du retrait",
+    "WORKING_CAPITAL": "<span class=\"link\">entente</span> a été confirmée pour l’avance de fonds.",
+    "WORKING_CAPITAL_ADVANCE": "Vous avez une avance de fonds en vigueur.",
+    "WORKING_CAPITAL_ADVANCE_INVOICE": "Facture pour l’avance de fonds"
+  },
+  "DASHBOARD_TABLE": {
+    "INVOICES": {
+      "TITLE": "Factures"
+    },
+    "RECENT_ACTIVITY": {
+      "TITLE": "Activités récentes",
+      "EMPTY": "Vos retraits récents et vos paiements vont apparaître ici."
+    }
+  },
+  "DATA_SOURCE": {
+    "QUICKBOOKS": "Quickbooks"
+  },
+  "DATE_PICKER": {
+    "PLACEHOLDER_DD_MM_YYYY": "jj-mm-aaaa",
+    "PLACEHOLDER_MM_YYYY": "mm-aaaa"
+  },
+  "DELEGATED_BANNER": {
+    "VIEWING": "<p class=\"ztt-delegated-mode-text\">Vous avez accès au portail pour <span class=\"bold\">{{merchantName}}</span> en mode lecture seulement. Vous ne détenez pas l’autorisation pour apporter des modifications à ce compte.</p>"
+  },
+  "DIRECT_DEBIT": {
+    "AMOUNT_LABEL": "Montant",
+    "BANK_ACCOUNT_LABEL": "Compte bancaire",
+    "CONFIRM_LABEL": "Confirmer",
+    "EXPECTED_BY_LABEL": "Attendu par",
+    "EXPECTED_BY_TEXT": "Votre paiement devrait être effectué dans les 5 jours ouvrables.",
+    "FREQUENCY_LABEL": "Fréquence",
+    "INVOICE_NUM_LABEL": "Numéro de facture",
+    "PAYEE_LABEL": "Bénéficiaire",
+    "REVIEW_TITLE": "Details du paiement"
+  },
+  "DOCUMENT_TYPE": {
+    "BANK_STATEMENTS": "Relevés bancaires",
+    "GST_NOTICE": "Avis de TPS",
+    "NOTARIZED_DOCUMENTS": "documents notariés",
+    "OTHER": "Autre",
+    "PHOTO_IDENTIFICATION": "Pièce d'identité avec photo",
+    "VOID_CHEQUE": "Spécimen de chèque"
+  },
+  "EDIT_MERCHANT": {
+    "FORMS": {
+      "ADDRESS": {
+        "TITLE": "ADRESSE DE L’ENTREPRISE"
+      },
+      "BUSINESS": {
+        "BUSINESS_NUMBER": {
+          "LABEL": "Numéro d’enregistrement de l’entreprise (Optionel)",
+          "TOOLTIP": "Astuce : entrez le numéro que vous avez reçu lors de l'enregistrement de votre entreprise au niveau provincial ou au fédéral, non pas votre numéro d’entreprise de l’ARC.",
+          "VALIDATION_ERRORS": {
+            "INVALID_ALPHANUMERIC_CHARACTER": "Inclure uniquement des chiffres et des lettres pour la juridiction sélectionnée",
+            "INVALID_ALPHA_START_CHARACTER": "Doit commencer par une lettre pour la juridiction sélectionnée",
+            "INVALID_CHARACTER": "Vous avez entré un caractère invalide",
+            "INVALID_FEDERAL_CHARACTER": "Inclure uniquement des chiffres et des tirets pour la juridiction sélectionnée",
+            "INVALID_LENGTH": "Trop long pour une juridiction sélectionnée",
+            "INVALID_NUMERIC_CHARACTER": "Inclure uniquement les numéros pour la juridiction sélectionnée"
+          }
+        },
+        "DOING_BUSINESS_AS": {
+          "LABEL": "Nom commercial (faisant affaire sous le nom de)",
+          "SAME_CHECKBOX": "Identique au nom légal",
+          "SHORTHAND": "sous le nom de",
+          "VALIDATION_ERRORS": {
+            "REQUIRED": "Entrez un nom valide pour nom commercial"
+          }
+        },
+        "JURISDICTION": {
+          "LABEL": "Territoire juridique (Optionel)",
+          "VALIDATION_ERRORS": {
+            "BUSINESS_NUMBER": "Veuillez choisir le territoire juridique qui vous a attribué le numéro d'enregistrement d'entreprise."
+          }
+        },
+        "NAME": {
+          "LABEL": "Raison sociale de l’entreprise",
+          "VALIDATION_ERRORS": {
+            "REQUIRED": "Veuillez entrer le nom de votre entreprise."
+          }
+        },
+        "TITLE": "VOTRE ENTREPRISE"
+      }
+    },
+    "INFO_CARD": {
+      "TITLE": "CHANGER LES INFORMATIONS DE VOTRE ENTREPRISE",
+      "BODY": {
+        "ISSUE": "Nous ne sommes pas parvenu à confirmer l'existence de votre entreprise à partir des détails que vous avez fourni.",
+        "SOLUTION": "Veuillez vous assurer que toutes les informations correspondent à celles du dernière article constitutif de votre entreprise au niveau provincial ou fédéral."
+      },
+      "FOOTER": {
+        "LEAD": "Si vous avez toujours des difficultés, n'hésitez pas à ",
+        "ACTION_LABEL": "démarrer une conversation avec nous."
+      }
+    }
+  },
+  "EQUIFAX_SERVICE_DOWN": "Nous n’arrivons pas à établir le lien avec Equifax. Notre équipe tente de résoudre le problème. Veuillez réessayer plus tard.",
+  "ERROR_MODAL": {
+    "DELEGATED_MODE": {
+      "ER401": "Non autorisé",
+      "ER401DELEGATED": "401 - Non autorisé",
+      "REMINDER": "<p class=\"body-text\">Vous ne détenez pas l’autorisation pour apporter des modifications.</p>",
+      "REMINDER_DELEGATED": "<p class=\"body-title\">Rappel</p><p class=\"body-text\">Vous avez accès au portail pour {{merchantName}} en mode lecture seulement. </p><p class=\"body-text\"> Vous ne détenez pas l’autorisation pour apporter des modifications à ce compte.</p>",
+      "SIGN_IN": "<p class=\"body-text\">Si vous croyez qu’il s’agit d’une erreur, essayez d’<a href=\"{{url}}\">ouvrir une nouvelle session</a>. <br><span class=\"small\">(Remarque : ceci fermera votre session sur tous vos onglets.)</span></p>",
+      "SUPPORT": "Si le message d’erreur persiste, utilisez le soutien en ligne par clavardage."
+    },
+    "DUPLICATE_EMAIL_ERROR": "Désolé, cette entreprise a déjà été utilisé avec une autre adresse courriel.",
+    "GENERIC": {
+      "BODY_MESSAGE1": "Une erreur est survenue de notre côté.<br/>Veuillez réessayer.",
+      "BODY_MESSAGE2": "Si le problème persiste, utilisez le soutien en ligne par clavardage.",
+      "HEADING": "Veuillez réessayer"
+    },
+    "NO_SUPPLIERS_ERROR": "Désolé, Il n’y a pas de fournisseurs disponible.",
+    "PAD_ACCEPT_ERROR": "Vous devez cocher toutes les cases pour continuer",
+    "SERVICE_ERROR": "Interruption de service temporaire.",
+    "SET_BANK_FAILED": "Oups.. Nous ne sommes pas parvenu a charger vos comptes bancaires."
+  },
+  "FAB_MENU": {
+    "CONNECT_QUICKBOOKS": "Se connecter à QuickBooks",
+    "INVITE_CUSTOMERS": "Invitez vos clients",
+    "SHARE": "Partager"
+  },
+  "FOOTER": {
+    "COPY": "© {{currentYear}} ZetaTango Technology Inc. et la Corporation Financière Thinking Capital. Tous droits réservés. Ario et Ario Platform sont des noms commerciaux de ZetaTango Technology Inc. Ario, Ario & Design, et Ario Platform sont des marques de commerce déposées de ZetaTango Technology Inc. Thinking Capital est une marque de commerce déposée de la Corporation Financière Thinking Capital.",
+    "SUPPORT": {
+      "HELP_HOURS": "9h30 - 17h00 HAE",
+      "HELP_TEXT": "Le soutien en ligne par clavardage est disponible du lundi au vendredi",
+      "HELP_TITLE": "Vous cherchez de l'aide? Discutez avec nous."
+    }
+  },
+  "GENERIC_ERROR": {
+    "LINE_1": "Cliquez sur le bouton ‘Clavardage’ (dans le coin droit de l'écran) pour démarrer une discussion en temps réel avec notre équipe d’assistance.",
+    "LINE_2": "Disponible de 9h00 à 17h00 (HNE) - du lundi au vendredi.",
+    "TITLE": "Discutons!"
+  },
+  "HEAD": {
+    "TITLE": {
+      "AGREEMENT": "",
+      "APPLICATION": "Application",
+      "CASH_FLOW": "Flux de trésorerie",
+      "DASHBOARD": "Mon entreprise",
+      "ERROR": "Erreur",
+      "HELP": "Aide",
+      "INSIGHTS": "Conseiller en trésorerie",
+      "MARKETING": "Marketing",
+      "ONBOARDING": "Enrôlement",
+      "PARTNER_DASHBOARD": "Mon entreprise",
+      "PARTNER_ONBOARDING": "Devenir un partenaire",
+      "QUICKBOOKS": "Se connecter à QuickBooks",
+      "DOCUMENTS": {
+        "ROOT": "Documentation à l'appui",
+        "UPLOAD_BANKING": "Télécharger des relevés bancaires"
+      }
+    }
+  },
+  "GUARANTOR": {
+    "GUARANTOR": "Guarant",
+    "FIRST_NAME": "Prénom",
+    "ENTER_NAME": "Requis",
+    "LAST_NAME": "Nom de famille",
+    "ENTER_LAST_NAME": "Requis",
+    "DATE_BIRTH": "Date de naissance",
+    "ENTER_DATE_BIRTH": "Veuillez entrer une date de naissance dans le format JJ-MM-AAAA.",
+    "NUMBER": "Numéro de téléphone",
+    "ENTER_NUMBER": "Numéro de téléphone non valide",
+    "EMAIL": "Addresse courriel",
+    "ENTER_EMAIL": "Addresse courriel non valide",
+    "RELATIONSHIP": "Relationship",
+    "ENTER_RELATIONSHIP": "Requis"
+  },
+  "HOME": {
+    "TITLE": "Nous sommes désolés, aucune offre d’avance de fonds ne convient à votre dossier. Revenez nous voir bientôt...",
+    "TITLE_SUB": "pour de nouvelles occasions de financement pour votre entreprise."
+  },
+  "HTTP": "http://",
+  "HTTPS": "https://",
+  "INDUSTRIES": {
+    "APPAREL_AND_ACCESSORIES": "Habillement et accessoires",
+    "ANTIQUE_SHOPS": "Antiquités",
+    "ART_GALLERY": "Art/galeries",
+    "AUTOMOBILE_DEALERSHIPS": "Concessionnaires automobile",
+    "AUTOMOBILE_PARTS_AND_ACCESSORIES": "Pièces et accessoires automobiles",
+    "AUTOMOBILE_RELATED": "Automobile",
+    "AUTOMOBILE_RENTALS_AND_LEASING": "Location de véhicules",
+    "AUTOMOBILE_REPAIR_SHOP": "Atelier de réparation automobile",
+    "AUTOMOBILE_TIRE_SHOP": "Atelier de pneus",
+    "BAKERIES": "Boulangerie",
+    "BAR": "Bar",
+    "BEAUTY_HAIR_SALON_RETAIL": "Salon de beauté/coiffure - Détaillant",
+    "BEAUTY_HAIR_SALON_RETAIL_AND_WHOLESALE": "Salon de beauté/coiffure détaillant et gros",
+    "BEAUTY_HAIR_SALON_WHOLESALE": "Salon de beauté/coiffure - Grossiste",
+    "BICYCLE_SHOPS_SALES_AND_SERVICE": "Magasin de bicyclettes - Ventes et services",
+    "BILLIARDS_AND_POOL_HALLS": "Salle de billard",
+    "BOOK_STORES": "Librairie",
+    "BUTCHER": "Boucher",
+    "CANDY_CHOCOLATE": "Bonbons et chocolats",
+    "CARPET_FLOORING": "Tapis et revêtement de sol",
+    "CAR_WASHES": "Lave-auto",
+    "CATERER": "Traiteur",
+    "CEMETERY_BURIAL_HOME": "Cimetière/établissement funéraire",
+    "CHILDRENS_CLOTHING": "Vêtements pour enfants",
+    "CLEANING_PRODUCTS": "Produits de nettoyage",
+    "CLOTHING": "Vêtements",
+    "COFFEE_SHOP": "Café-restaurant",
+    "COMPUTER_ELECTRONICS_REPAIR": "Informatique/électronique - Réparateur",
+    "COMPUTER_ELECTRONICS_RETAIL": "Informatique/électronique - Détaillant",
+    "CONSTRUCTION_RELATED": "Construction",
+    "CONVENIENCE_STORE": "Dépanneur",
+    "COSMETICS_RETAIL": "Cosmétiques - Détaillant",
+    "CRAFT_SHOP": "Magasin d’artisanat",
+    "DANCE_STUDIO": "Studio de danse",
+    "DENTIST": "Dentiste",
+    "DOCTOR": "Médecin",
+    "DOLLAR_STORE": "Magasin à un dollar",
+    "DRUG_STORE": "Pharmacie",
+    "DRY_CLEANERS": "Nettoyeur",
+    "ELECTRICAL_AND_SMALL_APPLIANCE_REPAIR": "Petits appareils électriques - Réparation",
+    "EQUIPMENT_RENTAL_AND_LEASING_SERVICES": "Location et réparation d'équipement",
+    "FAST_FOOD_RESTAURANT": "Restauration rapide",
+    "FLORIST": "Fleuriste",
+    "FOOD_STORE": "Épicerie",
+    "FURNITURE": "Mobilier",
+    "GARDENING": "Jardinage",
+    "GAS_STATIONS": "Station d'essence",
+    "GENERAL_RETAIL": "Détaillant",
+    "GIFT_CARD": "Carte cadeau",
+    "GIFT_CARD_NOVELTY_AND_STATIONERY": "Cartes pour cadeau, nouveautés et papeterie",
+    "GOLF_COURSE": "Terrain de golf",
+    "GYM": "Gymnase",
+    "HARDWARE": "Quincaillerie",
+    "HEALTH_SERVICES": "Service de santé",
+    "HOME_AND_GARDEN": "Jardinage",
+    "HOBBY_TOY_GAME": "Loisirs, jouets, jeux",
+    "HOME_FURNISHINGS": "Fournitures et accessoires d'ameublement de maison",
+    "HOUSEHOLD_APPLIANCE_REPAIR": "Électroménagers - Réparateur",
+    "HOUSEHOLD_APPLIANCE_RETAIL": "Électroménagers - Détaillant",
+    "JEWELLERY": "Bijouterie",
+    "LIGHTING": "Éclairage",
+    "LIQUOR_STORE": "Magasin d'alcools",
+    "LODGING": "Hébergement",
+    "MACHINERY": "Machinerie",
+    "MANUFACTURING": "Fabrication",
+    "MEMBERSHIP_CLUBS": "Club",
+    "MISC_BLUE_COLLAR_SERVICES": "Services de cols bleus",
+    "MISC_WHITE_COLLAR_SERVICES": "Services de cols blancs",
+    "MUSIC_STORES": "Magasin de musique",
+    "NOVELTY_AND_STATIONERY": "Nouveauté et papeterie",
+    "OPTICIANS": "Opticien",
+    "OTHER": "Autres",
+    "OTHER_CONTRACTING_SERVICES": "Autres services de passation de marchés",
+    "OTHER_OFFICE_BASED_SERVICES": "Autres services basés sur le bureau",
+    "OTHER_TRANSPORTATION": "Autre transport",
+    "PARTY_STORE": "Magasin d'accessoires de fêtes",
+    "PAWN_SHOP": "Prêteur sur gage",
+    "PET_RELATED": "Animaux",
+    "PHOTO_STUDIO": "Atelier de photographie",
+    "PLUMBER": "Plombier",
+    "POOLS_HOT_TUBS": "Piscines et jacuzzi",
+    "PRINT_SHOP": "Imprimerie",
+    "REAL_ESTATE": "Immobilier",
+    "RECREATION_SERVICES": "Service de loisirs",
+    "RESTAURANT": "Restaurant",
+    "SHOE_REPAIR": "Cordonnier",
+    "SHOE_STORE_RETAIL": "Magasin de chaussures - Détaillant",
+    "SNOW_REMOVAL": "Déneigement",
+    "SPA": "Spa",
+    "SPORTING_GOODS": "Équipements sportifs",
+    "TAILOR_SEAMSTRESS": "Tailleur/couturier",
+    "TANNING_SALON": "Salon de bronzage",
+    "TATTOO_PARLOUR": "Salon de tatouage",
+    "TAXI_LIMOUSINE": "Taxi/limousine",
+    "TAX_PREPARATION_SERVICES": "Service de déclaration de revenus",
+    "TOURIST": "Tourisme",
+    "TOWING_SERVICES": "Service de remorquage",
+    "TRANSPORTATION": "Transport",
+    "TRAVEL": "Voyages",
+    "TRUCKING": "Camionnage"
+  },
+  "ABOUT_CFA_LANDING": {
+    "TOP_PARAGRAPH_TITLE": "Vous y êtes presque !",
+    "TOP_PARAGRAPH_TEXT": "Vous n'êtes qu'à deux doigts d'avoir votre partenaire personnel de trésorerie gratuit. Il vous suffit de connecter votre/vos compte(s) bancaire(s) à la version Beta du Conseiller en Trésorerie et vous aurez accès à vos informations sur la trésorerie de votre entreprise quand et où vous en avez besoin.",
+    "CONTINUE": "Connectez votre/vos compte(s)"
+  },
+  "INSIGHTS": {
+    "CHART_LABEL_ACCOUNT_BALANCE": "Solde du compte",
+    "CHART_LABEL_PROJECTIONS": "Les projections",
+    "CHART_LABEL_DEBITS": "Les débits",
+    "CHART_LABEL_CREDITS": "Crédits",
+    "CHART_LABEL_DATE": "date",
+    "CHART_LABEL_SALES": "Ventes mensuelles moyennes",
+    "CHART_TITLE": "Votre solde d’encaisse",
+    "CASH_FLOW_BUTTON_TEXT": "Flux de liquidités",
+    "CASH_BALANCE_BUTTON_TEXT": "Solde de l’encaisse",
+    "CHART_CASH_BALANCE_TITLE": "Votre sommaire de compte",
+    "CHART_CASH_FLOW_TITLE": "Vos liquidités",
+    "CHART_DATA_AS_OF": "a partir du",
+    "ACCOUNT_BALANCE_CHART": {
+      "MIN_RESERVES": "Réserves financières",
+      "ACTUAL": "Solde",
+      "FORECAST": "Prédiction"
+    },
+    "ABOUT_CASH_FLOW_ADVISOR": {
+      "CASH_FLOW_ADVISOR": "La version bêta des conseils de trésorerie",
+      "CONNECT_YOUR_BANK_BUTTON_TEXT": "Ajouter le compte bancaire",
+      "CFA_CONNECTION_REQUIRED_TEXT": "La version bêta des conseils de trésorerie requiert une connexion active avec votre compte bancaire d’entreprise.",
+      "ABOUT_TEXT": "Un accompagnement personnalisé",
+      "CFA_DESCRIPTION": "Conçue pour les petites entreprises, la version bêta des conseils de trésorerie vous aide – gratuitement – à atteindre vos objectifs financiers et prendre des décisions éclairées.",
+      "LEARN_MORE_BUTTON_TEXT": "En savoir plus"
+    },
+    "CFA_FEATURES": {
+      "VIEW_YOUR_FINANCES": "Un aperçu global de vos finances",
+      "VIEW_YOUR_FINANCES_DESCRIPTION": " Gardez le dessus sur vos liquidités en recevant des rapports hebdomadaires faciles à comprendre et des prévisions.",
+      "GOAL_SETTING": "Des objectifs et des alertes",
+      "GOAL_SETTING_DESCRIPTION": "Fixez des buts financiers, puis nous vous aviserons de leur progrès et des bons moments pour agir.",
+      "CREDIT_POWERED_FLEXIBILITY": "La souplesse grâce au crédit",
+      "CREDIT_POWERED_FLEXIBILITY_DESCRIPTION": "Accédez sur demande à des fonds pour maintenir votre tranquillité d’esprit et favoriser la croissance de votre entreprise.",
+      "CFA_LINK": "https://www.thinkingcapital.ca/fr/products/cash-flow-advisor/",
+      "ASSETS": {
+        "LAPTOP": "/assets/insights/macbook-with-cfa-preview-fr.svg",
+        "LAPTOP_ALT": "macbook avec aperçu du conseiller en flux de trésorerie"
+      }
+    },
+    "CREDIT_AVAILABLE": {
+      "CREDIT_AVAILABLE_TEXT": "Crédit disponible",
+      "WITHDRAW_FUNDS_BUTTON_TEXT": "Retirer des fonds",
+      "APPLY_NOW_BUTTON_TEXT": "Crédit disponible"
+    },
+    "CONNECT_BANK": {
+      "BUTTON_TEXT": "Connecter un compte bancaire",
+      "MAIN_TEXT": "Conseiller en trésorerie",
+      "SUB_TEXT": "Connectez votre banque en ligne via notre portail sécurisé pour vos perspectives.",
+      "SMALL_TEXT": "Nous utilisons le chiffrement 256 bits SSL"
+    },
+    "CASH_BUFFER": {
+      "TITLE": "Configuration",
+      "SUBTITLE": "Réserves de fonds minimales",
+      "DESCRIPTION": "Définissez les réserves de fonds que vous souhaitez conserver sur votre compte. Nous vous avertirons lorsque vous risquez de passer en dessous de ce seuil.",
+      "SAVE": "Enregistrer",
+      "OPT_OUT_TEXT": "Si vous ne souhaitez plus recevoir de perspectives, visitez",
+      "MY_PROFILE": "mon profil",
+      "SUCCESS": "Mise à jour réussie.",
+      "ERROR": "La mise à jour a échoué. Veuillez réessayer."
+    },
+    "CASH_FLOW_STATUS": {
+      "CASH_FLOW_UP": "Votre ratio d'exploitation s'est amélioré de {{ percent }}",
+      "CASH_FLOW_DOWN": "Votre ratio d'exploitation est {{ percent }} plus élevé",
+      "CASH_FLOW_SAME": "Votre ratio d'exploitation n'a pas changé",
+      "COMPARED_TO": "(par rapport au mois dernier)"
+    },
+    "CASH_FLOW_CHART" : {
+      "CASH_IN": "Rentrée de fonds",
+      "CASH_OUT": "Sortie de fonds",
+      "FORECASTED": "Prédiction"
+    },
+    "CASH_ON_HAND": {
+      "CASH_ON_HAND_TEXT": "Fonds en caisse",
+      "DAYS_CASH_RESERVES": "Jours de réserves liquides",
+      "ESTIMATE_CASH_RESERVES": "Estimez vos réserves financières"
+    },
+    "EMAIL_TOGGLE": {
+      "TITLE": "Votre conseiller en trésorerie personnel vous attend !",
+      "DESCRIPTION": "Maîtrisez vos dépenses et prenez plus facilement des décisions éclairées pour la réussite de votre entreprise grâce à vos perspectives financières.",
+      "COMPLETE_WITH": "Services fournis:",
+      "BULLET_POINT_1": "Des astuces de gestion de trésorerie",
+      "BULLET_POINT_2": "Un aperçu de votre performance",
+      "BULLET_POINT_3": "Des conseils pratiques",
+      "OPT_IN": "Envoyez-moi mes perspectives d'affaires",
+      "NEXT": "Suivant",
+      "SUCCESS": "Mise à jour réussie.",
+      "ERROR": "La mise à jour a échoué. Veuillez réessayer."
+    },
+    "ERROR": {
+      "MESSAGE": "Nous éprouvons de la difficulté à récupérer vos données.",
+      "PLEASE": "Veuillez",
+      "REFRESH_PAGE": "rafraîchir la page.",
+      "NOT_RESOLVE_ISSUE_TEXT": "Si le problème persiste,  <a class=\"intercom-trigger\" role=\"button\">clavardez avec nous</a>."
+    },
+    "OPERATING_RATIO": {
+      "OPERATING_RATIO_TEXT": "Ratio d'exploitation",
+      "CASH_IN": "Rentrée de fonds",
+      "CASH_OUT": "Sortie de fonds",
+      "DESCRIPTION": "<p> Le ratio d’exploitation se calcule en divisant vos pertes (les sorties d’argent) par vos gains (les entrées). Il est préférable de le maintenir à 79 % ou moins, mais chaque entreprise est unique.</p> <p> <strong>Pourquoi est-ce important: </strong> Ce ratio mesure l’efficacité de vos activités commerciales. </p>"
+    }
+  },
+  "INVITE": {
+    "ACCOUNT_NUMBER": "Compte #",
+    "ACTION": "Inviter",
+    "EMAIL": "Adresse courriel",
+    "EMAIL_INVALID": "Adresse courriel non valide",
+    "EMAIL_REQUIRED": "Adresse courriel est requis",
+    "ERROR": "Une erreur s'est produite lors de l'envoi de l'invitation. Assurez-vous que le courrier électronique entré est valide.",
+    "NAME": "Client",
+    "NAME_PATTERN": "Nom contient des caractères non valides",
+    "NAME_REQUIRED": "Nom est requis",
+    "SUCCESS": "Invitation envoyée avec succès"
+  },
+  "INVOICE": {
+    "ACCOUNT_BANNER_HEADING": "No. de compte: <span class='account-number-heading'><b>{{account_number}}</b></span>",
+    "ACCOUNT_NUMBER_LABEL": "Numéro de compte (optionnel)",
+    "ACCOUNT_NUMBER_PATTERN": "Le numéro de compte contient des caractères non valides",
+    "ACCOUNT_NUMBER_REQUIRED": "Le numéro de compte est requis",
+    "ACTION_SEND": "Envoyer",
+    "AMOUNT_DUE_LABEL": "Montant de la facture dû",
+    "AMOUNT_DUE_NO_DATE": "Montant dû",
+    "AMOUNT_DUE_WITH_DATE": "Montant dû le {{invoice_due_date}}",
+    "AMOUNT_DUE_WITH_PAF": "Prévu d'être payée le {{activation_date}}",
+    "AMOUNT_LABEL": "Montant de la facture",
+    "AMOUNT_PATTERN": "Le montant doit être une valeur positive",
+    "AMOUNT_REQUIRED": "Le montant est requis",
+    "AMOUNT_USED": "{{amount_used}} de {{amount_limit}}",
+    "APP_ALREADY_IN_PROGRESS": "Une application de paiement de facture semble déjà en cours. Veuillez la compléter avant de continuer.",
+    "COST": "Coût",
+    "DUE_DATE_LABEL": "Date d'échéance",
+    "DUE_DATE_PLACEHOLDER": "JJ/MM/AAAA",
+    "DUE_DATE_REQUIRED": "La date d'échéance est requise",
+    "DUPLICATE_INVOICE_NUMBER_ERROR": "Une facture avec le même numéro de facture existe déjà.",
+    "ERROR": "Une erreur s'est produite lors de l'envoi de la facture. Veuillez réessayer ou utilisez le soutien en ligne par clavardage",
+    "FREQUENCY_BIWEEKLY": "bimensuel",
+    "FREQUENCY_DAILY": "quotidien",
+    "FREQUENCY_MONTHLY": "mensuel",
+    "FREQUENCY_ONE_TIME": "une fois",
+    "FREQUENCY_WEEKLY": "hebdomadaire",
+    "INVOICE_NUMBER_PATTERN": "Le numéro de facture contient des caractères non valides",
+    "INVOICE_NUMBER_REQUIRED": "Le numéro de facture est requis",
+    "LOAD_ERROR": "Une erreur s’est produite lors du chargement de la facture. Veuillez réessayer ou démarrer une discussion avec le support.",
+    "NOT_ELIGIBLE": "Il semble que vous n’avez pas de financement disponible pour payer vos fournisseurs. S’il vous plaît commencer une conversation avec nous pour plus d’informations.",
+    "NUMBER_LABEL": "Numéro de facture",
+    "OF_ORIGINAL_AMOUNT": "de <span class='text-accent'>{{invoice_amount}}</span> pour la facture <span class='text-accent'><b>{{invoice_number}}</b></span>",
+    "PAF_ACCEPTED_AT": "Paiements pré-autorisés activé: {{accepted_at}}",
+    "PAF_INFO1": "Passez du temps à gérer votre entreprise et non à payer vos fournisseurs.",
+    "PAF_INFO2": "Évitez les tracas de ne pas oublier de payer des factures récurrentes. Établissez un plan de financement préautorisé aujourd'hui.",
+    "PAF_INFO_HEADER": "Gagnez du temps avec les paiements pré-autorisés",
+    "PAF_OPT_OUT": "Désactiver les paiements automatiques",
+    "PAF_OPT_OUT_BUTTON": "Confirmer",
+    "PAF_OPT_OUT_HEADER": "Êtes-vous sûr de vouloir désactiver les paiements préautorisés?",
+    "PAF_OPT_OUT_INFO": "En désactivant les paiements préautorisés, vos factures de {{supplier}} ne seront plus payées automatiquement. Cliquez sur Confirmer pour continuer à vous désabonner. Il vous sera demandé de vous authentifier à nouveau comme confirmation. Si vous souhaitez continuer à utiliser les paiements préautorisés, fermez simplement cette fenêtre.",
+    "PAF_SIGNUP": "Configurer les paiements automatiques",
+    "PAF_SIGNUP_BUTTON": "S'inscrire",
+    "PAYEE_LABEL": "Bénéficiaire: ",
+    "PAYMENT_FREQUENCY": "La fréquence",
+    "PAYMENT_FREQUENCY_BIWEEKLY": "Bimensuel",
+    "PAYMENT_FREQUENCY_DAILY": "Quotidien",
+    "PAYMENT_FREQUENCY_WEEKLY": "Hebdomadaire",
+    "PAYMENT_METHOD": "Méthode",
+    "PAYMENT_METHOD_FINANCE": "Financer",
+    "PAYMENT_METHOD_PAY_NOW": "Prélèvement automatique",
+    "PAYMENT_TERM": "Durée",
+    "PAYMENT_WITH_FREQUENCY": "{{payment_amount}} (<b>{{payment_frequency}}</b>)",
+    "PAYOR": "Payeur",
+    "PROCESSING_AMOUNT": "Montant traitement",
+    "PROCESSING_AMOUNT_DESCRIPTION": "Le montant sera reflété dans votre facture une fois traitée",
+    "PROMO": "Promo",
+    "SEND_ERROR": "Une erreur s'est produite lors de l'envoi de la facture",
+    "SUCCESS": "Facture envoyée avec succès",
+    "TITLE": "Envoyer une facture à {{payor}} ({{email}})",
+    "TOTAL_REPAYMENT": "Remboursement total",
+    "UPLOAD": {
+      "DESCRIPTION": "Téléchargez une copie de votre facture*",
+      "SESSION_EXPIRED_ERROR": "Les documents que vous avez téléversé on expiré. Veuillez les téléversé de nouveau."
+    }
+  },
+  "INVOICE_STATUS": {
+    "OVERPAID": "Surpayé",
+    "PAID": "Payé",
+    "PARTIALLY": "Partiel",
+    "PROCESSING": "En traitement",
+    "SENT": "Envoyé",
+    "UNSENT": "Non envoyé",
+    "UNPAID": "Non payé"
+  },
+  "I_ACCEPT": "J’accepte",
+  "JURISDICTION_SELECT": {
+    "VALUES": {
+      "AB": "Alberta",
+      "BC": "Colombie-Britanique",
+      "CD": "Canada",
+      "DEFAULT": "Sélectionner",
+      "MB": "Manitoba",
+      "NL": "Terre-Neuve-et-Labrador",
+      "NB": "Nouveau-Brunswick",
+      "NT": "Territoires du Nord-Ouest",
+      "NS": "Nouvelle-Écosse ",
+      "NU": "Nunavut",
+      "ON": "Ontario",
+      "PE": "Île-du-Prince-Édouard ",
+      "QC": "Québec",
+      "SK": "Saskatchewan",
+      "YT": "Yukon"
+    },
+    "ERRORS": {
+      "REQUIRED": "Veuillez choisir un territoire juridique"
+    }
+  },
+  "KYC_FAILED": {
+    "DESCRIPTION": "On dirait que nous avons du mal à vérifier certaines de vos informations avant de pouvoir payer un fournisseur. Ne vous inquiétez pas, nous pouvons normalement résoudre ce problème par une conversation rapide."
+  },
+  "KYC_IN_PROGRESS": {
+    "BODY": "Veuillez patienter, nous sommes en train de vérifier vos informations. Cela ne devrait prendre que quelques minutes, alors assurez-vous de revenir bientôt!",
+    "TITLE": "Veuillez réessayer plus tard"
+  },
+  "LAYOUT_CONFIG": {
+    "SHOW_OFFERS": {
+      "DISPLAY_CALL_TO_ACTION": "false"
+    }
+  },
+  "LENDING_AGREEMENT": {
+    "FILE_NAME": "L'accord",
+    "NO_CONTRACT_AVAILABLE": "Nous sommes désolés, le contrat de votre demande n’est pas accessible en ce moment.",
+    "PAY_CONTRACT_DISCLAIMER": "En ouvrant une session ci-dessous, je représente et garantis que j’ai lu et j’accepte, au nom de l’Emprunteur et en chacune de mes capacités de Propriétaire et de Caution, les modalités du Contrat de prêt, et que je détiens le pouvoir de signature pour lier l’Emprunteur à toutes les modalités énoncées dans le Contrat de prêt.",
+    "PAY_CONTRACT_SIGN_ABOVE": "Veuillez lire et signer l’accord ci-dessous afin de soumettre votre demande de financement.",
+    "PAY_CONTRACT_SIGN_BELOW": "Si vous acceptez les modalités du Contrat de prêt, au nom de l’Emprunteur et en chacune de vos capacités de Propriétaire et de Caution, cliquez sur SIGNER ci-dessous pour substituer votre mot de passe à votre signature écrite.",
+    "PAY_CONTRACT_SUBHEAD": "Contrat de prêt",
+    "PAY_CONTRACT_TITLE": "Vous y êtes presque",
+    "SIGN_BUTTON_LABEL": "SIGNER"
+  },
+  "LENDING_APPLICATION_FLOW": {
+    "INFORMATION": {
+      "CARD_HEADER": "Veuillez lire attentivement ce qui suit avant de commencer votre application",
+      "DURATION": "Remplir cette demande en ligne devrait prendre entre 5 à 10 minutes.",
+      "LEAD": "Assurez-vous de disposer des informations suivantes:",
+      "PROCEED_FASTER": "Connecter votre compte bancaire est le moyen le plus rapide de traiter votre demande.",
+      "REQUIRED_DOCUMENTS": {
+        "INVOICE": "Les informations de votre facture.",
+        "TAX_ASSESSMENT": "Copie de votre dernier avis de cotisation de la TPS / TVH de l'ARC ou de la TVQ de Revenu Québec."
+      },
+      "STEPS": {
+        "CONNECT_YOUR_BANK": "Connectez votre compte bancaire (si ce n'a pas été fait).",
+        "PROVIDE_YOUR_INVOICE": "Fournissez les détails de votre facture.",
+        "SELECT_YOUR_FINANCING": "Choisissez la durée du financement.",
+        "SELECT_YOUR_PAYMENT": "Selectionnez vos conditions de paiement et signez.",
+        "UPLOAD_THE_MOST": "Télécharger le plus récent avis de cotisation TVQ or TPS / TVH"
+      }
+    }
+  },
+  "LINKS": {
+    "TERMS_OF_USE": "<a href='https://www.thinkingcapital.ca/fr/terms-conditions/' target='_blank' noopener>conditions d'utilisation</a>",
+    "PRIVACY_POLICY": "<a href='https://www.thinkingcapital.ca/fr/privacy-policy/' target='_blank' noopener>politique de confidentialité</a>"
+  },
+  "LOADING": "Chargement en cours...",
+  "OFFER_GAUGE": {
+    "AVAILABLE_CONNECTOR": "sur ",
+    "AVAILABLE_TITLE": "Financement disponible",
+    "UNAVAILABLE": "Désolé, vous ne semblez pas avoir de ligne de crédit",
+    "BELOW_MINIMUM_FUNDS": "Moins que le retrait minimum",
+    "NO_FUNDS_AVAILABLE": "Aucuns fonds disponibles"
+  },
+  "MARKETING": {
+    "BLOG_LINK": "Voir un exemple",
+    "GET_STARTED": "Pour commencer du bon pied, obtenez l’aide personnalisé de nos experts.",
+    "SCHEDULE_MEETING": "Planifier un appel de 15 min",
+    "SCHEDULE_MEETING_COMPLETED": "Demande de rendez-vous envoyé le {{completed_at}}",
+    "SCHEDULE_MEETING_SUCCESS": "Votre rendez-vous est pris!",
+    "SHOWCASING": "Mettre en valeur de nouvelles solutions de financement est une excellente façon de se démarquer de la concurrence.",
+    "STRATEGY": "Utilisez nos services de relance pour faire du marketing efficace et attirer la clientèle :",
+    "STRATEGY_BULLET_1": "Édition de contenu (blogue, réseaux sociaux, etc.);",
+    "STRATEGY_BULLET_2": "Création et gestion de campagnes;",
+    "STRATEGY_BULLET_3": "Courriels publicitaires;",
+    "STRATEGY_BULLET_4": "Et plus!",
+    "SUBTITLE": "Atteignez vos objectifs plus rapidement",
+    "TITLE": "Promouvez votre plateforme"
+  },
+  "MARKETING_CAMPAIGN": {
+    "STRATEGY": "Avec Ario, vous pouvez planifier une campagne marketing sur les réseaux sociaux pour promouvoir vos solutions de financement et votre entreprise. Authentifier vous avec le réseau social que vous souhaitez utiliser et quand vous lancerez votre campagne, nous nous occuperons de tout.",
+    "TITLE": "Campaigne Numérique"
+  },
+  "NAV": {
+    "ACCOUNT_INFO": "Renseignements sur le compte",
+    "ACCOUNT_ADD": "Ajouter une nouvelle entreprise",
+    "AGREEMENT": "Les Accords",
+    "DASHBOARD": {
+      "LENDING": "Mon Entreprise",
+      "PARTNER": "Mon Partenaire"
+    },
+    "DASHBOARDS": "Tableaux de bord",
+    "INSIGHTS": "Conseiller en trésorerie",
+    "MARKETING": "Marketing",
+    "MENU": "Menu",
+    "OFFERS": "Certification",
+    "ONBOARDING": "Enrôlement",
+    "PARTNER_ADMIN": "Portail Admin",
+    "SIGN_OUT": "Fermer la session",
+    "DOCUMENTS": "Mes documents",
+    "YOUR_ACCOUNT": "Votre compte"
+  },
+  "NEW_BUSINESS": {
+    "BODY_FOOTER": "Au cours de cette étape, nous rechercherons les informations relatives à votre entreprise dans les registres gouvernementaux conformément à nos {{tou}} et à notre {{pp}}.",
+    "CONFIRM_PICKER": {
+      "NEXT_BTN": "CONFIRMER L’ENTREPRISE",
+      "NOT_IN_LIST": "Mon entreprise ne fait pas partie de la liste.",
+      "SUBTITLE": "Veuillez sélectionner votre entreprise ci-dessous.",
+      "TITLE": "Confirmation de l’entreprise"
+    },
+    "FORMS": {
+      "ADDRESS": {
+        "TITLE": "ADRESSE DE L’ENTREPRISE"
+      },
+      "BUSINESS": {
+        "AVERAGE_MONTHLY_SALES": {
+          "LABEL": "Moyenne des ventes mensuelles",
+          "VALIDATION_ERRORS": {
+            "REQUIRED": "Obligatoire."
+          }
+        },
+        "BUSINESS_NUMBER": {
+          "LABEL": "Numéro d’enregistrement de l’entreprise (Optionel)",
+          "TOOLTIP": "Astuce : entrez le numéro qui vous a été remis lors de l'enregistrement de votre entreprise au niveau provincial ou fédéral, et non pas votre numéro d’entreprise de l’ARC.",
+          "VALIDATION_ERRORS": {
+            "INVALID_ALPHANUMERIC_CHARACTER": "Inclure uniquement des chiffres et des lettres pour la juridiction sélectionnée",
+            "INVALID_ALPHA_START_CHARACTER": "Doit commencer par une lettre pour la juridiction sélectionnée",
+            "INVALID_CHARACTER": "Vous avez entré un caractère invalide",
+            "INVALID_FEDERAL_CHARACTER": "Inclure uniquement des chiffres et des tirets pour la juridiction sélectionnée",
+            "INVALID_LENGTH": "Trop long pour une juridiction sélectionnée",
+            "INVALID_NUMERIC_CHARACTER": "Inclure uniquement les numéros pour la juridiction sélectionnée"
+          }
+        },
+        "DATE_ESTABLISHED": {
+          "LABEL": "Date d'établissement",
+          "VALIDATION_ERRORS": {
+            "REQUIRED": "Obligatoire."
+          }
+        },
+        "DOING_BUSINESS_AS": {
+          "LABEL": "Nom commercial (faisant affaire sous le nom de)",
+          "SAME_CHECKBOX": "Identique au nom légal",
+          "SHORTHAND": "sous le nom de",
+          "VALIDATION_ERRORS": {
+            "REQUIRED": "Entrez un nom valide pour nom commercial"
+          }
+        },
+        "INDUSTRY": {
+          "LABEL": "Secteur",
+          "SELECT_DEFAULT": "Sélectionner",
+          "VALIDATION_ERRORS": {
+            "REQUIRED": "Veuillez choisir le secteur."
+          }
+        },
+        "JURISDICTION": {
+          "LABEL": "Territoire juridique (Optionel)",
+          "VALIDATION_ERRORS": {
+            "BUSINESS_NUMBER": "Veuillez choisir le territoire juridique qui vous a attribué le numéro d'enregistrement d'entreprise."
+          }
+        },
+        "NAME": {
+          "LABEL": "Raison sociale de l’entreprise",
+          "VALIDATION_ERRORS": {
+            "REQUIRED": "Veuillez entrer le nom de votre entreprise."
+          }
+        },
+        "PHONE_NUMBER": {
+          "LABEL": "Numéro de téléphone de l’entreprise",
+          "VALIDATION_ERRORS": {
+            "INVALID": "Veuillez entrer un numéro valide."
+          }
+        },
+        "TITLE": "À PROPOS DE VOTRE ENTREPRISE"
+      }
+    },
+    "NOT_FOUND": {
+      "BODY_1_1_NO_MATCH": "Hmmm. Nous n’avons pas trouvé cette entreprise dans le registre d'Equifax. Vous pouvez ",
+      "BODY_1_1_NO_SELECTION": "Hmmm. Les correspondances trouvées dans le registre d'Equifax ne semblent pas liées à votre entreprise. Vous pouvez ",
+      "BODY_1_2": " et verifier que l’information entrée est correcte.",
+      "BODY_1_GO_BACK": "retourner",
+      "BODY_2": "Tout vous semble correct? Veuillez continuer et il nous fera plaisir de vous aider a résoudre le problème du registre d'Equifax.",
+      "TITLE": "Êtes-vous sûrs d'avoir entré les bonne données?"
+    }
+  },
+  "NO_OFFERS": {
+    "CARD_BODY": "Il nous est impossible de fournir la certification à votre entreprise pour le moment. Ne vous en faites pas, nous pouvons vous informer dès que cette situation change.",
+    "CARD_TITLE": "Nous sommes désolés, nous ne pouvons pas vous fournir de certification pour le moment."
+  },
+  "NO_OFFER_AVAILABLE": "Nous sommes désolés, il n’y a aucune offre pour vous en ce moment.",
+  "NO_OFFER": {
+    "ADVANCE_TODAY?": "Pourquoi ne puis-je pas recevoir une avance de fonds?",
+    "CAPITAL_ADVANCE?": "Qu’est-ce qu’une avance de fonds de roulement?",
+    "CAPITAL_ADVANCE_IS": "<p class=\"ztt_panel-text\">L’avance de fonds est une entente en vertu de laquelle vous acceptez de verser une partie de vos ventes futures. Vous obtenez l’argent dont vous avez besoin dès maintenant, puis vous remboursez le montant dû chaque jour en fonction de vos ventes. Ce financement permet d’accéder rapidement et facilement à des fonds supplémentaires pour vos différences activités commerciales. </p><p class=\"ztt_panel-text\"> Demandez une petite ou une grosse somme, selon les besoins de votre entreprise. La plupart du temps, nous déposons les fonds dans votre compte dans un délai de 48 heures.</p>",
+    "NUMBER_OF_FACTORS": "<p class=\"ztt_panel-text\">Certains facteurs déterminent la possibilité pour votre entreprise d’obtenir une avance de fonds. Par exemple, de façon générale, si vous faites affaire avec la même société de traitement de paiements depuis au moins deux ans, et que votre historique démontre votre capacité à régler vos factures à l’avance et dans un délai raisonnable. \nL’accès à du financement dépend aussi de facteurs hors de votre contrôle, comme notre réserve de fonds, qui peut à certains moments être insuffisante pour recevoir de nouvelles demandes.</p>"
+  },
+  "NO_DATA_AVAILABLE": "Aucune données disponibles.",
+  "NO_PAYEE_AVAILABLE": "Nous sommes désolés, il n’y a aucun fournisseur pour vous en ce moment.",
+  "OK": "OK",
+  "PAF_TERMS_MODAL": {
+    "ACCOUNT": "Numéro de compte",
+    "AMOUNT": {
+      "APPROVED": "Approuvé",
+      "REQUESTED": "Demandé",
+      "TOTAL": "Total"
+    },
+    "ESTIMATES": {
+      "COST": "Coût d'emprunt estimé",
+      "TITLE_SUB_3": "Détails du remboursement estimé",
+      "TOTAL_REPAY": "Remboursement total estimé"
+    },
+    "INVOICE": "Invoice #",
+    "RECIPIENT": "Destinataire",
+    "SUBTITLE": "Veuillez examiner attentivement les détails ci-dessous",
+    "SUMMARY": "Le coût de votre emprunt ({{cost_of_borrowing}}) correspond à un taux quotiden de {{apr}}",
+    "TERM": "Période",
+    "TITLE": {
+      "MAIN": "Examiner les détails du financement",
+      "SUB_1": "Résumé du financement",
+      "SUB_2": "Résumé du prêt",
+      "SUB_3": "Renseignements sur le remboursement"
+    }
+  },
+  "PARTNER_DASHBOARD": {
+    "CUSTOMER_SUMMARY": {
+      "AUTO_SEND": "Envoi automatique",
+      "CREATE_INVOICE": "Créer une facture",
+      "CREDIT": "Crédit",
+      "EMAIL": "Adresse courriel",
+      "INVITED": "Client inscrit avec une adresse courriel différente {{ email }}",
+      "LAST_ACTIVITY": "Dernière activité",
+      "LAST_ACTIVITY_WITH_DATE": "{{ activity }} le {{ date }}",
+      "MANUAL_PAY": "Payer manuellement",
+      "MANUAL_SEND": "Envoyer manuellement",
+      "OTHER_EMAIL": "Adresse courriel invité",
+      "PAYMENT_PLAN": "Plan de paiement",
+      "SIGN_UP_EMAIL": "Adresse courriel utilisée pour l'inscription",
+      "SOURCE": "Source",
+      "VIEW_HISTORY": "Voir l'historique"
+    },
+    "CUSTOMER_SUMMARY_TITLE": "Résumé de la clientèle",
+    "EDIT_THEME": {
+      "NOT_READY": "<i class=\"fas fa-pencil-alt mr-1 text-accent\"></i> Vous souhaitez <strong>modifier</strong> le thème de votre partenaire commercial?",
+      "START_CHAT": "<i class=\"fas fa-comments mr-1 text-accent\"></i> <a class=\"intercom-trigger\" role=\"button\">soutien en ligne par clavardage.</a>"
+    },
+    "GRADE_MODAL_A_INFO": "Cette entreprise a actuellement la meilleure note possible - une indication d'Equifax d'un crédit exceptionnel! Ils paient probablement leurs factures dans les délais et gardent un faible solde sur leurs cartes de crédit et autres lignes de crédit.",
+    "GRADE_MODAL_A_TITLE": "Note: A",
+    "GRADE_MODAL_BLANK_INFO": "Nous n'avons pas trouvé de note de crédit pour cette entreprise.",
+    "GRADE_MODAL_BLANK_TITLE": "Note: Blank (-)",
+    "GRADE_MODAL_B_INFO": "Cette entreprise a actuellement une note élevée - une indication d'Equifax d'un bon crédit. Ils paient probablement la plupart des factures dans les délais et gardent des soldes relativement bas sur les cartes de crédit et autres lignes de crédit.",
+    "GRADE_MODAL_B_TITLE": "Note: B",
+    "GRADE_MODAL_C_INFO": "Cette entreprise a actuellement une note moyenne - une indication de crédit moyen d'Equifax. Ils paient généralement leurs factures dans les délais mais peuvent avoir des soldes élevés sur leurs cartes de crédit et autres lignes de crédit.",
+    "GRADE_MODAL_C_TITLE": "Note: C",
+    "GRADE_MODAL_D_INFO": "Cette entreprise a actuellement une note inférieure à la moyenne - une indication d'Equifax d'un crédit faible. Ils peuvent ne pas payer leurs factures dans les délais et avoir des soldes élevés sur leurs cartes de crédit et autres lignes de crédit.",
+    "GRADE_MODAL_D_TITLE": "Note: D",
+    "GRADE_MODAL_E_INFO": "Cette entreprise possède actuellement la note la plus basse disponible - une indication d'Equifax d'un très mauvais crédit. Ils ne paient probablement pas souvent leurs factures dans les délais et portent les soldes sur leurs cartes de crédit et autres lignes de crédit. Ils peuvent également avoir un défaut enregistré, un jugement du tribunal ou une insolvabilité de la société au dossier.",
+    "GRADE_MODAL_E_TITLE": "Note: E",
+    "GRADE_MODAL_TITLE_MULTI": "Que signifient ces notes?",
+    "GRADE_MODAL_TITLE_SINGLE": "Que signifie cette note?",
+    "HEADER_ACCOUNT_NUMBER": "No. de compte",
+    "HEADER_ACTION": "Action",
+    "HEADER_AMOUNT": "Montant",
+    "HEADER_AMOUNT_AVAILABLE": "Montant disponible",
+    "HEADER_AMOUNT_PAID": "Montant payé",
+    "HEADER_AUTO_SEND": "Envoi automatique",
+    "HEADER_DATE": "Date",
+    "HEADER_DUE_DATE": "Date d'échéance",
+    "HEADER_EMAIL": "Adresse courriel",
+    "HEADER_GRADE": "Qualité",
+    "HEADER_INVOICE_CREATED_DATE": "Date de création",
+    "HEADER_INVOICE_NUMBER": "No. de facture",
+    "HEADER_LAST_ACTION": "Dernière action",
+    "HEADER_NAME": "Client",
+    "HEADER_PAF_OPT_IN": "Plan de paiement",
+    "HEADER_STATUS": "Statut",
+    "INVITED_NAME": "Invitation envoyée à {{name}} ({{email}})",
+    "INVOICE_MODAL_TITLE": "Facture {{invoice_number}} envoyé à {{name}} (no. de compte {{account_number}})",
+    "INVOICE_MODAL_TITLE_WITHOUT_ACC_NUMBER": "Facture {{invoice_number}} envoyé à {{name}}",
+    "INVOICE_TOOLTIP": "Créer une facture",
+    "INVOICING": {
+      "ACCOUNT_NUMBER": "No. de compte",
+      "AMOUNT": "Montant",
+      "AMOUNT_PAID": "Montant payé",
+      "DUE_DATE": "Date d'échéance",
+      "INVITED": "Facture envoyé à une adresse courriel différente {{ email }}",
+      "INVOICE_NUMBER": "No. de facture",
+      "LAST_ACTION": "Dernière action",
+      "LAST_ACTIVITY": "Dernière activité",
+      "LAST_ACTIVITY_WITH_DATE": "{{ activity }} le {{ date }}",
+      "PAID": "Paiement enregistré",
+      "SENT": "Envoyé",
+      "SENT_TO": "Envoyé à",
+      "SOURCE": "Source",
+      "STATUS": "Statut",
+      "VIEW_HISTORY": "Voir l'historique"
+    },
+    "PROFILE_AGREEMENT_INFO": "Félicitations! Vos clients peuvent maintenant financer leur entreprise et grandir! Nous vous recommandons quelques étapes supplémentaires pour maximiser votre part des revenus de votre nouveau service de financement.",
+    "PROFILE_AGREEMENT_INFO_COMPLETED": "Accord signé: {{completed}}",
+    "PROFILE_AGREEMENT_INFO_LABEL": "S'inscrire",
+    "PROFILE_AGREEMENT_INFO_TITLE": "Félicitations! Vous êtes désormais un partenaire Ario",
+    "PROFILE_INVITE_INFO": "Invitez les clients par courriel afin d'utiliser votre service de financement en fournissant leur nom et courriel. Les clients seront dirigés directement vers votre page Web personnalisée pour s'inscrire gratuitement.",
+    "PROFILE_INVITE_INFO_COMPLETED": "Premier client invité: {{completed}}",
+    "PROFILE_INVITE_INFO_LABEL": "Invitez vos clients",
+    "PROFILE_INVITE_INFO_TITLE": "Invitez vos clients",
+    "PROFILE_INVOICE_INFO": "Facturez vos clients avec des nouvelles options de financement",
+    "PROFILE_INVOICE_INFO_COMPLETED": "Premier client facturé: {{completed}}",
+    "PROFILE_INVOICE_INFO_LABEL": "Facturez vos clients",
+    "PROFILE_INVOICE_INFO_TITLE": "Facturez vos clients",
+    "PROFILE_PARTNER_TRAINING_INFO": "La plate-forme Ario évolue constamment avec de nouvelles fonctionnalités intéressantes pour vous aider à offrir un financement optimal. Devenez un expert Ario avec une démonstration pratique ou perfectionnez votre processus de vente avec nos excellentes sessions de formation pour votre équipe. Réservez dès aujourd'hui une période de temps avec notre équipe de comptes.",
+    "PROFILE_PARTNER_TRAINING_INFO_COMPLETED": "Formation prévue le: {{completed}}",
+    "PROFILE_PARTNER_TRAINING_INFO_LABEL": "Entraînement",
+    "PROFILE_PARTNER_TRAINING_INFO_TITLE": "Formation pour vous et votre personnel",
+    "PROFILE_SOCIAL_SHARING_INFO": "Faites la promotion de vos services de financement sur les médias sociaux et contribuez à votre croissance et à celle de vos clients. Nous aimerions également travailler directement avec vous, veuillez nous contacter à l'adresse marketing@arioplatform.com",
+    "PROFILE_SOCIAL_SHARING_INFO_COMPLETED_FB": "Dernier partage sur Facebook: {{completed}}",
+    "PROFILE_SOCIAL_SHARING_INFO_COMPLETED_LINKEDIN": "Dernier partage sur LinkedIn: {{completed}}",
+    "PROFILE_SOCIAL_SHARING_INFO_COMPLETED_TWITTER": "Dernier partage sur Twitter: {{completed}}",
+    "PROFILE_SOCIAL_SHARING_INFO_LABEL": "Commercialisation",
+    "PROFILE_SOCIAL_SHARING_INFO_TITLE": "Promouvoir vos solutions de financement",
+    "RESEND_INVITE_TOOLTIP": "Re-envoyer une invitation",
+    "SCHEDULE_DEMO": "Planifier la formation",
+    "SENT_INVOICES_TITLE": "Facturation",
+    "SOCIAL_HINT": "La sensibilisation est la clé pour augmenter les ventes! Passez le mot sur vos nouvelles options de financement sur les médias sociaux. Voici un exemple que vous pouvez utiliser. Copiez le texte ci-dessous et collez-le dans la zone de texte.",
+    "SOCIAL_MESSAGE": "Bonne nouvelle! Nous offrons des solutions de crédit à tous nos clients commerciaux. Grâce à notre plate-forme numérique automatisée, il est plus facile que jamais de configurer le paiement qui conviennent à votre entreprise. Vérifiez-le!",
+    "SOCIAL_MODAL": "Partager sur les médias sociaux",
+    "TITLE": "Tableau de bord de gestion de la clientèle"
+  },
+  "PAY_ACCOUNT_NUMBER": "Numéro de compte (optionnel)",
+  "PAY_ACCOUNT_NUMBER_HINT": "Entrez votre numéro de compte.",
+  "PAY_CONFIGURE_TITLE": "Configurer le bénéficiaire",
+  "PAY_CONGRATULATIONS": {
+    "BUTTON_1": "Configurer un autre",
+    "BUTTON_2": "Payer ce fournisseur",
+    "TEXT": "Votre compte est prêt pour ",
+    "TITLE": "Félicitations!"
+  },
+  "PAY_DETAILS_AMT": "Montant",
+  "PAY_DETAILS_AMT_INVALID": "Le maximum autorisé est {{max_available}}.",
+  "PAY_DETAILS_AMT_LOW": "Le minimum autorisé est {{min_available}}.",
+  "PAY_DETAILS_TITLE": "Renseignements sur le paiement",
+  "PAY_INSTRUCTIONS": "Prenez votre temps! Une information incorrecte pourrait retarder le processus de paiement.",
+  "PAY_INVOICE_NUMBER": "Numéro de facture",
+  "PAY_INVOICE_NUMBER_ERROR": "Veuillez entrer un numéro de facture valide.",
+  "PAY_INVOICE_NUMBER_HINT": "Entrez votre numéro de compte.",
+  "PAY_REVIEW": {
+    "BI_WEEKLY": "Remboursement bimensuel",
+    "DAILY": "Remboursement quotidien",
+    "MONTHLY": "Remboursement mensuel",
+    "WEEKLY": "Remboursement hebdomadaire"
+  },
+  "PAY_REVIEW_ACCT": "Numéro de compte",
+  "PAY_REVIEW_AMT": {
+    "APPROVED": "Approuvé",
+    "REQUESTED": "Demandé",
+    "TOTAL": "Montants demandés"
+  },
+  "PAY_REVIEW_COST": "Coût de l’emprunt",
+  "PAY_REVIEW_LENDING_FORMULA": {
+    "BI_WEEKLY": "Pour calculer le taux de pourcentage annuel, multipliez le taux de pourcentage quotidien par 365 jours.",
+    "DAILY": "Pour calculer le taux de pourcentage annuel, multipliez le taux de pourcentage quotidien par 365 jours.",
+    "MONTHLY": "Pour calculer le taux de pourcentage annuel, multipliez le taux de pourcentage quotidien par 365 jours.",
+    "WEEKLY": "Pour calculer le taux de pourcentage annuel, multipliez le taux de pourcentage quotidien par 365 jours."
+  },
+  "PAY_REVIEW_INVOICE": "Numéro de facture",
+  "PAY_REVIEW_PAYOUT": {
+    "LABEL": "Décaissements",
+    "TOOLTIP": "Les décaissements sont des paiements effectués à partir d'un fonds donné. Le montant principal sera donc payé conformément aux instructions ci-dessous. Déplier pour plus de détails.",
+    "TYPE": {
+      "ACCOUNT": "Compte",
+      "COMPETITOR": "Concurrent",
+      "CRA": "ARC",
+      "KEY_SUPPLIER": "Fournisseur clé",
+      "LANDLORD": "Propriétaire",
+      "OTHER": "Autre"
+    }
+  },
+  "PAY_REVIEW_RECIPIENT": "Destinataire",
+  "PAY_REVIEW_SUBTITLE": "",
+  "PAY_REVIEW_SUMMARY": "Le coût de votre emprunt ({{cost_of_borrowing}}) correspond à un taux quotiden de {{apr}}",
+  "PAY_REVIEW_TERM": "Période",
+  "PAY_REVIEW_TERM_DURATION": "jours",
+  "PAY_REVIEW_TEXT_LESS": "Vous avez été approuvé pour un montant inférieur à votre demande",
+  "PAY_REVIEW_TIME_DELAY": "Ce sommaire et les montants indiqués ne sont pas définitifs et sont soumis à une approbation finale.",
+  "PAY_REVIEW_TITLE": {
+    "MAIN": "Examiner les détails du financement",
+    "SUB_1": "Résumé du financement",
+    "SUB_2": "Résumé du prêt",
+    "SUB_3": "Renseignements sur le remboursement"
+  },
+  "PAY_REVIEW_TOTAL_REPAY": "Remboursement total",
+  "PAY_SEARCH": {
+    "SEARCH_BAR_TEXT": "Rechercher pour payer un nouveau fournisseur",
+    "SUPPLIER_SEARCH_RESULTS": {
+      "SUB_TITLE": "Choisir un fournisseur parmi les résultats",
+      "TITLE": "Résultats de recherche de fournisseurs"
+    }
+  },
+  "PAY_STEPPER_STEP1": "Montant et détails",
+  "PAY_STEPPER_STEP2": "Informations supplémentaires",
+  "PAY_STEPPER_STEP3": "Examiner et signer",
+  "PAY_STEPPER_STEP4": "Terminé!",
+  "PAY_STEPPER_TITLE_STEP1_A": "Sélectionnez un bénéficiaire",
+  "PAY_STEPPER_TITLE_STEP1_B": "Choisissez le montant et les conditions",
+  "PAY_STEPPER_TITLE_STEP2_A": "Connectez votre banque",
+  "PAY_STEPPER_TITLE_STEP2_B": "Téléverser les documents requis",
+  "PAY_STEPPER_TITLE_STEP2_C": "Revenez bientôt pour les résultats",
+  "PAY_STEPPER_TITLE_STEP3_A": "Examiner les détails du financement",
+  "PAY_STEPPER_TITLE_STEP3_B": "Signez votre accord",
+  "PAY_STEPPER_TITLE_STEP4": "Transfert en cours - Félicitations!",
+  "PAY_STEPPER_TITLE_STEP4_DECLINED": "Désolé, application refusée",
+  "PAY_TERMS": {
+    "LABEL_DAY": " jour",
+    "LABEL_DAYS": " jours",
+    "LABEL_MONTH": " mois",
+    "LABEL_MONTHS": " mois",
+    "LABEL_WEEK": " semaine",
+    "LABEL_WEEKS": " semaines",
+    "MEDIUM_HEADER_DETAILS": "Détails",
+    "MEDIUM_HEADER_REPAYMENT_TERMS": "Période de remboursement",
+    "SMALL_HEADER_COST": "Coût de l’emprunt",
+    "SMALL_HEADER_FREQUENCY": "Fréquence",
+    "SMALL_HEADER_PAYMENT": "Paiement",
+    "SMALL_HEADER_TOTAL": "Remboursement total"
+  },
+  "PAY_WHO": {
+    "BUTTON_LABEL": {
+      "SELF": "Effectuer un retrait",
+      "SUPPLIER": "Payer une facture"
+    },
+    "CAPTION": "Choisir un fournisseur",
+    "ERROR": "Veuillez choisir un fournisseur",
+    "SELECT_DEFAULT": "Sélectionner le bénéficiaire",
+    "TITLE": "Comment souhaitez-vous utiliser vos fonds?"
+  },
+  "PENDING_BANK_ACCOUNT_VERIFICATION": {
+    "BODY_1": "Veuillez patienter, notre équipe de soutien est en train de vérifier vos informations bancaires.",
+    "BODY_2": "Cela prend généralement 1 jour ouvré. Revenez plus tard.",
+    "NOTE": "Si vous avez des questions, commencez un clavardage en direct avec nous!",
+    "TITLE": "Verification des informations bancaires"
+  },
+  "PROCESSING": {
+    "JUST_CHECKING": "<p>Nos vérifications sont en cours. Les résultats de votre demande seront disponibles sous peu!</p><p>Ce processus prend habituellement moins d’un jour ouvrable.</p>"
+  },
+  "BETTER_INSIGHTS": {
+    "INSIGHTS_TITLE": "Obtenez de meilleures aperçu",
+    "QUICKBOOKS_DESCRIPTION": "Obtenez plus de détails financiers en connectant votre compte Quickbooks.",
+    "MULTIPLE_ACCOUNTS_DESCRIPTION": "Ajoutez d'autres comptes pour obtenir un aperçu plus global de votre flux de liquidités d’entreprise.",
+    "MULTIPLE_ACCOUNTS_PLACEHOLDER": "Sélectionnez des comptes",
+    "BTN": {
+      "UPDATE": "Mise à jour"
+    }
+  },
+  "QUICKBOOKS": {
+    "CONNECT_FAIL": "Impossible de connecter votre compte QuickBooks à Thinking Capital",
+    "CONNECT_FAIL_REALMID": "Impossible de connecter votre compte QuickBooks à Thinking Capital. L'entreprise QuickBooks que vous avez sélectionné ne correspond pas à l'entreprise que vous avez utilisé auparavant (Numéro d'entreprise QuickBooks {{realm_id}})",
+    "CONNECT_MESSAGE": "Connectez votre compte pour importer vos clients et envoyer vos factures automatiquement",
+    "CONNECT_SUCCESS": "Votre compte QuickBooks a été connecté à Thinking Capital",
+    "INFO": "En connectant votre compte QuickBooks:",
+    "INSIGHTS_DESCRIPTION": "Nous pouvons vous fournir de meilleures perspectives si vous connectez votre compte QuickBooks.",
+    "LAST_IMPORTED": "Dernière importation de données QuickBooks",
+    "NOTE_1": "Obtenez une image plus complète de la santé de votre trésorerie",
+    "NOTE_2": "Prenez de meilleures décisions grâce à des prévisions qui tiennent compte des dettes et créances",
+    "TITLE": "Intégration QuickBooks"
+  },
+  "REJECT": "Refuser",
+  "RESULT_INPROGRESS_BODY": "Merci! Nous traitons maintenant votre information.\nVous serez automatiquement redirigé vers votre tableau de bord.",
+  "RESULT_INPROGRESS_TITLE": "Traitement de l'information en cours",
+  "SEARCH_BOX": {
+    "PLACEHOLDER": "Rechercher"
+  },
+  "SESSION_EXPIRED": {
+    "BTN": {
+      "NEXT": "Se reconnecter"
+    },
+    "TITLE": "Oups, on dirait qu'il faut que vous vous reconnectiez"
+  },
+  "SET_BANK_INSTRUCTIONS": {
+    "BANK_ACCOUNT": "Cette étape finale nous permet de vérifier votre entreprise, d'analyser sa performance et d'établir votre limite de crédit. Cela n’affectera pas votre cote de crédit.",
+    "BUSINESS_PARTNER": "Pour devenir un partenaire commercial Ario, nous devons autoriser et connecter un compte bancaire sur lequel les paiements de factures futurs seront déposés.<br /> Veuillez sélectionner votre établissement bancaire.",
+    "DELEGATED_MODE": "Vous ne pouvez pas entrer des informations de banque puisque vous êtes présentement en mode lecture seulement.",
+    "DISCLAIMER": "Soyez assuré que nous n'allons jamais voir ni stocker votre mot de passe. Vos données sont encryptées et protégées.",
+    "MANUAL_ENTRY": {
+      "CTA": "Ajouter manuellement",
+      "TITLE": "Avez-vous de la difficulté à connecter votre banque ou ne voyez pas votre banque?"
+    },
+    "SALES_VOLUME": "Afin de vous fournir un devis précis pour votre marge de crédit, nous devons nous connecter à votre compte bancaire pour analyser les performances de votre entreprise. Nous utiliserons ces informations pour prendre une décision de crédit.<br /> Veuillez sélectionner votre établissement bancaire.",
+    "INSIGHTS": "Nous devons autoriser et connecter un compte bancaire à utiliser pour vos perspectives. <br/> Veuillez sélectionner votre établissement bancaire.",
+    "REFRESH_BANK": "Nous devons reautoriser votre compte bancaire.</br>Veuillez reconnecter le même compte bancaire que vous avez précédemment connecté.",
+    "INSTITUTION_NAME": "Institution :",
+    "ACCOUNT_NUMBER": "Numéro de compte :",
+    "UNKNOWN": "Inconnu",
+    "SAFARI_FRENCH_ERROR": "<i class=\"fas fa-exclamation-triangle\"></i> Il semble que vous utilisez Safari avec la langue de votre système en français. Vous pouvez rencontrer une erreur lors de la connexion de votre banque, que nous travaillons à corriger. Si vous ne parvenez pas à vous connecter, veuillez essayer l'une des solutions suivantes: <ul><li>Réessayez avec Chrome ou Firefox.</li><li>Changez la langue de votre système en anglais, redémarrez Safari, puis réessayez.</li></ul>"
+  },
+  "SET_BANK_IN_PROGRESS": "Nous travaillons avec votre institution financière pour établir une liste de vos comptes afin que vous puissiez en sélectionner un. Veuillez patienter, cela peut prendre quelques minutes...",
+  "SET_BANK_TITLE": "Connection du compte bancaire d’entreprise",
+  "SHOW_OFFERS": {
+    "AS_OF": "À partir de",
+    "AVAILABLE_AMOUNT": "Financement disponible",
+    "FAQ": {
+      "Q1_BODY": "Vous avez finis votre inscription et avez maintenant accès a vos fonds pour payer votre factures!",
+      "Q1_TITLE": "Félicitation !",
+      "Q2_BODY": "",
+      "Q2_BODY_-": "Nous rencontrons des difficultés pour vérifier certaines de vos informations. Cliquez sur le bouton 'Clavardage' pour démarrer une discussion en temps réel avec notre équipe de support.<br>Disponible de 9h à 17h du lundi au vendredi.",
+      "Q2_BODY_A": "Votre entreprise se situe actuellement au niveau de qualité le plus élevé. Pour conserver cet indice de confiance, continuez à respecter les conditions de paiement de vos factures et maintenez un solde peu élevé de carte de crédit et autres crédits renouvelables.",
+      "Q2_BODY_B": "Votre entreprise se situe presque au niveau de qualité le plus élevé. Pour améliorer ce résultat, continuez à respecter les conditions de paiement de vos factures et maintenez un solde peu élevé de carte de crédit et autres crédits renouvelables. Si vous avez sauté un paiement, remettez-vous à jour et restez à jour.",
+      "Q2_BODY_C": "Votre entreprise se situe actuellement à un niveau de qualité moyen. Cependant, vous pouvez améliorer ce résultat en respectant les conditions de paiement de vos factures et en maintenant un solde peu élevé de carte de crédit et autres crédits renouvelables. Si vous avez sauté un paiement, remettez-vous à jour et restez à jour, sans transférer les dettes d’un compte à l’autre.",
+      "Q2_BODY_D": "Votre entreprise se situe actuellement au-dessous de la moyenne. Il vous faudra un peu de temps pour améliorer votre solvabilité et votre résultat. Pour y arriver, tâchez de respecter les conditions de paiement de vos factures et de diminuer le solde de vos cartes de crédit et autres crédits renouvelables. Si vous avez sauté un paiement, remettez-vous à jour et restez à jour, sans transférer les dettes d’un compte à l’autre. Évitez si possible d’ouvrir de nouveaux comptes de crédit.",
+      "Q2_BODY_E": "Votre entreprise se situe actuellement au niveau de qualité le plus bas. Vous avez probablement à votre dossier un manquement, une décision judiciaire ou un état d’insolvabilité. Il vous faudra du temps pour améliorer vos antécédents et votre résultat. Pour y arriver, tâchez de régler vos factures impayées et de diminuer le solde de vos cartes de crédit et autres crédits renouvelables, sans transférer les dettes d’un compte à l’autre. Évitez si possible d’ouvrir de nouveaux comptes de crédit.",
+      "Q2_TITLE": "",
+      "Q2_TITLE_-": "Pourquoi n'ai-je pas d'évaluation Qualité?",
+      "Q2_TITLE_A": "Que signifie la lettre A?",
+      "Q2_TITLE_B": "Que signifie la lettre B?",
+      "Q2_TITLE_C": "Que signifie la lettre C?",
+      "Q2_TITLE_D": "Que signifie la lettre D?",
+      "Q2_TITLE_E": "Que signifie la lettre E?",
+      "Q3_BODY": "La somme de “{{ maxAmount }}” est le montant de financement disponible dont vous disposez.",
+      "Q3_TITLE": "À quoi réfère le montant indiqué?",
+      "TITLE": "À savoir"
+    },
+    "INFO_CARD": {
+      "MANUAL_CTA": {
+        "API_REASON": "Obtenez jusqu’à 300 000 $ de financement supplémentaire.",
+        "BODY": "Obtenez jusqu’à 300 000 $ de financement supplémentaire.",
+        "BTN": "Appelez-moi",
+        "FAILURE": "Désolé, nous n'avons pu enregister votre demande de rappel téléphonique. Veuillez ré-essayer plus tard.",
+        "SUCCESS": "Merci, nous allons vous contacter le plus rapidement possible"
+      },
+      "OFFERS": {
+        "NO_OFFER": {
+          "TITLE": "Votre entreprise n'est pas admissible à cette offre",
+          "TEXT": "Malheureusement, votre entreprise ne répond pas à une ou plusieurs de nos exigences pour être admissible à cette offre de financement. Si vous avez des questions, <a class=\"intercom-trigger\" role=\"button\">lancez une discussion</a> avec notre équipe d'assistance."
+        },
+        "WCA": {
+          "BTN_LABEL": {
+            "APPROVED": "Verifier & Signer",
+            "IN_PROGRESS": "Votre demande est en cours de révision",
+            "NEW": "Accéder aux fonds"
+          },
+          "TITLE_LABEL": {
+            "NEW": "Recevez jusqu'à"
+          },
+          "TITLE": {
+            "APPROVED": "Félicitations, votre prêt a été approuvé!",
+            "IN_PROGRESS": "Montant du financement demandé",
+            "NEW": "Demande de fonds de roulement"
+          },
+          "TOOLTIP": {
+            "BODY": "Une avance de fonds est déposée directement dans votre compte bancaire, ce qui vous permet de le financement comme bon vous semble.",
+            "UNAVAILABLE": "Il semble que vous ne qualifiez pas pour cette offre. Veuillez utiliser le soutien en ligne par clavardage pour savoir comment rectifier cela!"
+          }
+        },
+        "LOC": {
+          "TITLE_LABEL": "Crédit disponible",
+          "IN_PROGRESS": "Votre demande est en cours de révision",
+          "EXPIRY_DATE": "Votre limite sera disponible jusqu'au <strong>{{date}}</strong>."
+        }
+      },
+      "SUBTITLE": "Maintenant que vous avez obtenu votre certification, voici les options qui s’offrent à vous :",
+      "TITLE": "Vos options de financement"
+    },
+    "MAIN_TITLE": "Mon rapport de certification",
+    "NOTIFICATION": "Félicitations! Votre entreprise a reçu la certification.",
+    "TOOLTIPS": {
+      "AVAILABLE_AMOUNT": "Montant disponsible",
+      "USED_AMOUNT": "Montant utilisé"
+    }
+  },
+  "SMALL_BUSINESS_GRADE": {
+    "TOOLTIP_BODY_-": "Nous rencontrons des difficultés pour vérifier certaines de vos informations. Cliquez sur le bouton 'Clavardage' pour démarrer une discussion en temps réel avec notre équipe de support. Disponible de 9h à 17h du lundi au vendredi",
+    "TOOLTIP_BODY_A": "Votre entreprise se situe actuellement au niveau de qualité le plus élevé. Pour conserver cet indice de confiance, continuez à respecter les conditions de paiement de vos factures et maintenez un solde peu élevé de carte de crédit et autres crédits renouvelables.",
+    "TOOLTIP_BODY_B": "Votre entreprise se situe presque au niveau de qualité le plus élevé. Pour améliorer ce résultat, continuez à respecter les conditions de paiement de vos factures et maintenez un solde peu élevé de carte de crédit et autres crédits renouvelables. Si vous avez sauté un paiement, remettez-vous à jour et restez à jour.",
+    "TOOLTIP_BODY_C": "Votre entreprise se situe actuellement à un niveau de qualité moyen. Cependant, vous pouvez améliorer ce résultat en respectant les conditions de paiement de vos factures et en maintenant un solde peu élevé de carte de crédit et autres crédits renouvelables. Si vous avez sauté un paiement, remettez-vous à jour et restez à jour, sans transférer les dettes d’un compte à l’autre.",
+    "TOOLTIP_BODY_D": "Votre entreprise se situe actuellement au-dessous de la moyenne. Il vous faudra un peu de temps pour améliorer votre solvabilité et votre résultat. Pour y arriver, tâchez de respecter les conditions de paiement de vos factures et de diminuer le solde de vos cartes de crédit et autres crédits renouvelables. Si vous avez sauté un paiement, remettez-vous à jour et restez à jour, sans transférer les dettes d’un compte à l’autre. Évitez si possible d’ouvrir de nouveaux comptes de crédit.",
+    "TOOLTIP_BODY_E": "Votre entreprise se situe actuellement au niveau de qualité le plus bas. Vous avez probablement à votre dossier un manquement, une décision judiciaire ou un état d’insolvabilité. Il vous faudra du temps pour améliorer vos antécédents et votre résultat. Pour y arriver, tâchez de régler vos factures impayées et de diminuer le solde de vos cartes de crédit et autres crédits renouvelables, sans transférer les dettes d’un compte à l’autre. Évitez si possible d’ouvrir de nouveaux comptes de crédit.",
+    "TOOLTIP_TITLE_-": "Pourquoi n'ai-je pas d'évaluation Qualité?",
+    "TOOLTIP_TITLE_A": "Que signifie la lettre A?",
+    "TOOLTIP_TITLE_B": "Que signifie la lettre B?",
+    "TOOLTIP_TITLE_C": "Que signifie la lettre C?",
+    "TOOLTIP_TITLE_D": "Que signifie la lettre D?",
+    "TOOLTIP_TITLE_E": "Que signifie la lettre E?"
+  },
+  "SOCIAL_CONNECTIONS": {
+    "FACEBOOK": {
+      "CONNECT": "Se connecter à Facebook",
+      "CONNECTED_STATUS": "Connecté",
+      "CONNECT_FAIL": "Nous n'avons pas réussi à connecter votre compte Facebook avec Ario",
+      "CONNECT_SUCCESS": "Votre compte Facebook est maintenant connecté avec Ario",
+      "INVALID_CONNECTION_STATUS": "Connection invalide",
+      "NOT_CONNECTED_STATUS": "Non connecté",
+      "STATUS": "Status Facebook"
+    }
+  },
+  "TERMS_CONDITIONS": {
+    "APPROVED": "Approuvée",
+    "BUSINESS_PARTNER": "Accord de partenariat entre <br /> {{merchantName}} et Ario Platform.",
+    "CONFIRM_REJECT": "Confirmer le refus",
+    "HIGHER_FEE": "Les frais de remboursement sont trop élevés.",
+    "LEGAL_CONTRACT": "<p><span class=\"bold\">Cette entente constitue un contrat légal.</span> Après avoir cliqué sur <span class=\"bold\">J’accepte</span>, vous devez entrer de nouveau votre mot de passe. Par le fait même, vous consentez à ce que votre mot de passe ait la même valeur juridique que votre signature papier.</p>",
+    "NO_NEED": "Je n’ai plus besoin de cet argent.",
+    "NUMBERS_MEAN?": "Que signifient ces chiffres?",
+    "OTHER": "Autre",
+    "TAKE_MOMENT": "Veuillez prendre un moment pour nous expliquer la raison de votre refus.",
+    "TITLE": "Signer le contrat",
+    "TOO_LONG": "Le processus de demande été trop long.",
+    "WC": "Contrat d’avance de fonds entre <br>{{merchantName}} et ZetaTango Technology inc.",
+    "WE_ARE_OFFERING": "<p>Nous vous proposons d’acheter {{advance_amount}} de vos ventes futures. De façon plus précise, nous vous remettrons maintenant une avance de fonds de {{advance_amount}}, et au cours des semaines et mois à venir, nous prélèverons une partie de vos ventes brutes chaque jour ({{remittance_rate}}), jusqu’au remboursement complet du montant total dû. Le montant total dû correspond à la somme de l’avance de fonds initiale de {{advance_amount}} et des frais applicables de {{calculated_fee}}. </p><p>Après avoir lu et signé le contrat ci-dessous, et avoir fourni vos renseignements bancaires, vous recevrez immédiatement l’argent. Nous commencerons à prélever {{remittance_rate}} de vos ventes quotidiennes brutes une fois que vous avez reçu l’argent. Veuillez consulter le contrat qui suit pour en savoir plus.</p>",
+    "WORKING_CAPITAL": "<p class=\"ztt_panel-text\">Votre demande d’avance de fonds a été approuvée. <br><span class=\"bold\">Vous avez presque terminé!</span></p><p class=\"ztt_panel-text\">Cette offre <span class=\"bold\">vient à échéance le {{expires_at}}. </span><br>Pour continuer, vous devez signer le contrat, et fournir ou confirmer vos renseignements bancaires.</p>"
+  },
+  "TICKET_FORM": {
+    "DESCRIPTION": "Détails",
+    "DESCRIPTION_ERROR": "Veuillez entrer les détails",
+    "DESCRIPTION_PLACEHOLDER": "Expliquez votre préoccupation ou les détails de votre problème, y compris les étapes que vous avez suivies.",
+    "HAVE_A_QUESTION": "AVEZ-VOUS UNE QUESTION?",
+    "HAVE_A_QUESTION_TEXT": "Nous sommes désolés que vous ayez rencontré un problème. Dites-nous comment nous pouvons vous aider.",
+    "SUBMIT": "Envoyer",
+    "TICKET_FORM": "Formulaire de requête",
+    "TOPIC": "Sujet",
+    "TOPIC_PLACEHOLDER": "Donnez un bref aperçu de votre problème ou question."
+  },
+  "TRACKED_OBJECT": {
+    "CLICKED": "Cliqué",
+    "CREATED": "Créé",
+    "CREATED_FROM_QUICKBOOKS": "Créé à partir de QuickBooks",
+    "INVITED": "Invité",
+    "INVOICED": "Facturé",
+    "LINKED": "Lié",
+    "PAID": "Paiement enregistré",
+    "SENT": "Envoyé",
+    "SECURITY_VIOLATION": "Violation de sécurité",
+    "SUBSCRIBED_AUTO_SEND": "S'abonner à l'envoi automatique",
+    "UNKNOWN": "Inconnu",
+    "UNSUBSCRIBED_AUTO_SEND": "se désabonner de l'envoi automatique",
+    "UPDATED_FROM_QUICKBOOKS": "Mis à jour à partir de QuickBooks",
+    "VIEWED": "Vu"
+  },
+  "UNABLE_TOBE_CERTIFIED": {
+    "ALTERNATELY": "Autrement, vous pouvez revenir en arrière pour vérifier que vous avez entré les informations correctes.",
+    "LIVE_CHAT": "Cliquez sur le bouton “Clavardage” pour démarrer une discussion en temps réel avec notre équipe de support.",
+    "TITLE": "Nous rencontrons des difficultés à vérifier certaines de vos informations."
+  },
+  "DOCUMENTS": {
+    "DESCRIPTION_HTML": "Téléversez et consultez vos documents ici pour appuyer votre demande.<br>Pour toute question, n’hésitez pas à <a class=\"intercom-trigger\" role=\"button\">clavarder avec nous</a>.",
+    "SUCCESS_MULTIPLE": "Vos documents ont été téléversé avec succès pour révision.",
+    "SUCCESS_SINGLE": "Votre document a été téléversé avec succès pour révision.",
+    "TABLE": {
+      "HEADER": {
+        "ACTIONS": "Actions",
+        "DOCUMENT_NAME": "Nom du document",
+        "DOCUMENT_TYPE": "Sélectionnez un type de document",
+        "UPLOAD_DATE": "Date de téléchargement"
+      }
+    },
+    "TITLE": "Gestionnaire de documents",
+    "UPLOAD_BANKING": {
+      "DESCRIPTION_1": "Afin de confirmer votre demande et d’établir le montant possible de financement, nous avons besoin des documents suivants:",
+      "DESCRIPTION_2_HTML": "<strong>Après avoir téléversé tous les fichiers, cliquez sur le bouton Confirmer et envoyer.</strong><br>Pour toute question, n’hésitez pas à <a class=\"intercom-trigger\" role=\"button\">clavarder avec nous</a>.",
+      "LI_BANK_STATEMENTS": "Vos relevés bancaires des 12 derniers mois;",
+      "LI_VOID_CHEQUE": "Un chèque annulé pour les remboursements.",
+      "TITLE": "Transfert de documents"
+    }
+  },
+  "UPLOAD": {
+    "ACTIONS": {
+      "CANCEL": "Annuler",
+      "NO_ACTION": "",
+      "REMOVE": "Retirer"
+    },
+    "ADD_FILE": "Ajouter un autre document",
+    "CANCEL": "Annuler",
+    "COMPLETE": "Terminé",
+    "DOCUMENT_TYPE": "Sélectionnez un type de document",
+    "ERROR": "Une erreur s'est produite lors du téléversement du document.",
+    "ETA": "Temps estimé",
+    "FILE_SPECS": "Types de fichiers acceptés : {{ supportedFileFormats }}. La taille maximale de téléversement du fichier est de {{ fileSize }} Mo. {{ maxUploads }} fichiers peuvent être téléchargés à la fois.",
+    "ILLEGAL_FILE_SIZE": "Le fichier fourni est trop volumineux. La taille maximale de téléversement du fichier est de {{ fileSize }} Mo.",
+    "REJECTED_FILE": "Le fichier suivant n'a pas été ajouté: {{ filename }}",
+    "INPUT_1": "Déposez vos documents ici ou",
+    "INPUT_2": "recherchez-les",
+    "INPUT_3": "pour le téléverser",
+    "SELECT_TYPE": "Veuillez sélectionner un type de document",
+    "SUBMIT": "Confirmer et envoyer",
+    "UPLOADING": "En cours..."
+  },
+  "VERIFY_YOURSELF": {
+    "DELEGATED_MODE": "Vous ne pouvez pas répondre aux questions d'authentification puisque vous êtes présentement en mode lecture seulement.",
+    "HEADER": "Confirmez votre identité en répondant aux questions ci-dessous. Vous ne pouvez tenter de répondre aux questions que 2 fois pendant une période de trois jours. Évitez de rafraîchir ou de relancer cette page, ce qui compterait comme une tentative échouée.",
+    "INCORRECT_ANSWERS": "Les réponses sont incorrectes. Veuillez réessayer."
+  },
+  "WCA_APPLICATION": {
+    "UPLOAD": {
+      "CANCEL": "Annuler",
+      "CRA_DOC": "Avis de cotisation TPS / TVH de l'Agence du revenu du Canada (ARC)",
+      "DESCRIPTION": "Nous avons besoin d'une copie du (des) document (s) suivant (s) pour votre entreprise:",
+      "SUBMIT": "Envoyer",
+      "TITLE": "Documents de votre entreprise",
+      "TOOLTIP": "L’Agence du revenu du Canada (ARC) vous envoie un avis d’évaluation de la TPS / TVH lorsque vous déposez les taxes de votre entreprise. Si votre entreprise est exonérée de la TPS / TVH, téléchargez les évaluations à partir de vos comptes de paie (RP) et d'entreprise (RC)."
+    }
+  },
+  "OFFER": {
+    "METRICS": {
+      "BALANCE": "Solde",
+      "MAX_LIMIT": "Limite"
+    },
+    "CTA_STATE": {
+      "CONNECT": {
+        "BUTTON": "Connecter un compte bancaire",
+        "MESSAGE": "Connectez votre banque en ligne via notre portail sécurisé pour activer votre marge de crédit.",
+        "TITLE": "Débloquez votre crédit"
+      },
+      "NOT_NEEDED": {
+        "BUTTON": "",
+        "MESSAGE": "",
+        "TITLE": ""
+      },
+      "PROCESSING": {
+        "MESSAGE": "La mise à jour de votre limite de crédit s’effectuera automatiquement après le traitement des données.",
+        "TITLE": "en traitement"
+      },
+      "REFRESH": {
+        "BUTTON": "Réactiver",
+        "TITLE": "Réactiver votre crédit",
+        "MESSAGE": "Pour réactiver votre limite de crédit, veuillez reconnecter votre banque."
+      },
+      "RECONNECT": {
+        "BUTTON": "Reconnecter un compte bancaire",
+        "TITLE": "Réactiver votre crédit",
+        "MESSAGE": "Une erreur d'authentification s'est produite. Veuillez reconnecter votre banque en ligne via notre portail sécurisé pour réactiver votre marge de crédit."
+      }
+    },
+    "SMALL_TEXT": "Chiffrement 256 bits SSL"
+  },
+  "OFFER_APPLY_BUTTON": {
+    "LABEL": "Demander des fonds"
+  },
+  "WITHDRAWAL": {
+    "TITLE": "Combien voulez-vous aujourd'hui?",
+    "FORM": {
+      "AMOUNT": {
+        "PLACEHOLDER": "minimum {{minPrincipal}} $",
+        "ERROR": {
+          "BELOW_MIN_PRINCIPAL": "Le montant que vous avez demandé est inférieur au minimum de {{minPrincipal}}",
+          "ABOVE_AVAILABLE_AMOUNT": "Le montant que vous avez demandé est supérieur à votre crédit disponible de {{availableAmount}}"
+        }
+      }
+    },
+    "IN_PROGRESS": {
+      "DESCRIPTION": "Votre dernière demande est en cours de traitement. Veuillez patienter pour soumettre votre nouvelle demande."
+    },
+    "CONTINUE": {
+      "DESCRIPTION": "Vous avez déjà entamé une demande de financement. Veuillez poursuivre là où vous vous êtes arrêté.",
+      "LINK": "Continuer"
+    }
+  },
+  "WIDGET_BALANCE_LOC": "Votre marge de crédit",
+  "WIDGET_BALANCE_WCA": "Votre avance en fonds de roulement",
+  "WIDGET_OVERDUE_INVOICES": "Factures en retard",
+  "WIDGET_PAYMENT_DAILY": "Paiement quotidien",
+  "WIDGET_UNPAID_INVOICES": "Factures impayées",
+  "WORKING": "Traitement en cours... <i class=\"fas fa-circle-notch fa-spin\"></i>",
+  "WORKING_SHORT": "En cours..."
+}

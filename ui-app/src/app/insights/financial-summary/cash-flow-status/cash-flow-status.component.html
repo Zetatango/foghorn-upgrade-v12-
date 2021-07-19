@@ -1,0 +1,32 @@
+<div class="card bg-transparent shadow-none d-flex ml-auto mr-2">
+  <ng-container *ngIf="(insightsService.operatingRatioData | async)?.operatingRatioChange as operatingRatioChange; else noChangeBlock">
+    <div class="d-flex title-container" *ngIf="operatingRatioChange > 0; else elseBlock">
+      <i class="fas fa-exclamation-circle position-absolute fa-xs" id="cash-status-down-icon" alt="exclamation-icon"></i>
+      <h1 class="financial-card-value font-weight-bold title">
+        {{ 'INSIGHTS.CASH_FLOW_STATUS.CASH_FLOW_DOWN' | translate : { percent: operatingRatioChange | percent } }}
+      </h1>
+    </div>
+
+    <ng-template #elseBlock>
+      <div class="d-flex title-container">
+        <i class="fas fa-check-circle position-absolute fa-xs" id="cash-status-up-icon" alt="check-icon"></i>
+        <h1 class="financial-card-value font-weight-bold title">
+          {{ 'INSIGHTS.CASH_FLOW_STATUS.CASH_FLOW_UP' | translate : { percent: -operatingRatioChange | percent } }}
+        </h1>
+      </div>
+    </ng-template>
+  </ng-container>
+
+  <ng-template #noChangeBlock>
+    <div class="d-flex title-container">
+      <i class="fas fa-check-circle fa-xs" id="cash-status-same-icon" alt="check-icon"></i>
+      <h1 class="financial-card-value font-weight-bold title">
+        {{ 'INSIGHTS.CASH_FLOW_STATUS.CASH_FLOW_SAME' | translate }}
+      </h1>
+    </div>
+  </ng-template>
+
+  <div class="d-flex compared-to-text pt-2 pb-5">
+    {{ 'INSIGHTS.CASH_FLOW_STATUS.COMPARED_TO' | translate }}
+  </div>
+</div>

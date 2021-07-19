@@ -1,0 +1,9 @@
+<div *ngIf="!isFlinksReady" class="d-flex justify-content-center align-items-center loading-container">
+  <div class="text text-center">
+    <span>{{ 'LOADING' | translate }} <i class="fas fa-circle-notch fa-spin"></i></span>
+  </div>
+</div>
+
+<ng-container *ngIf="flinksUrl">
+  <iframe [src]="flinksUrl" #iframe id="frameFlks" width="100%" height="550" (load)="flinksIframeLoaded()"></iframe>
+</ng-container>

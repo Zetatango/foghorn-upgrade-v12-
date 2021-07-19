@@ -1,0 +1,24 @@
+<div
+  #datePicker="bsDatepicker"
+  [bsConfig]="config"
+  (bsValueChange)="onBsValueChange($event)"
+  (onHidden)="onDatePickerHidden()"
+  bsDatepicker
+>
+  <div class="input-group" [formGroup]="dateFormGroup">
+    <input
+      [name]="name"
+      type="text"
+      class="form-control"
+      [class.is-invalid]="dateFormGroup.controls['dateFormControl'].touched && isInvalid"
+      formControlName="dateFormControl"
+      [imask]="mask"
+      (blur)="propagateTouch()"
+      [placeholder]="placeholder | translate">
+    <div class="input-group-append">
+      <div class="input-group-text text-accent bg-white" id="btnGroupAddon">
+        <span class="fas fa-calendar" for="wrapper" (click)="toggle($event)"></span>
+      </div>
+    </div>
+  </div>
+</div>

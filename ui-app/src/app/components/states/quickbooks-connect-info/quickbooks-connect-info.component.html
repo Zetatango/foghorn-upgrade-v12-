@@ -1,0 +1,29 @@
+<div class="container-fluid" id="ztt-quickbooks-connect-info">
+  <div class="row py-4">
+    <div class="col-12">
+      <h4 class="text-left">{{ 'QUICKBOOKS.TITLE' | translate }}</h4>
+    </div><!--.col-->
+  </div><!--.row-->
+  <div class="row">
+    <div class="col-12">
+      <p>
+        {{ 'QUICKBOOKS.INFO' | translate }}
+      </p>
+
+      <div class="list-group list-group-flush">
+        <ul>
+          <li *ngFor="let step of noteList"><small>{{ step | translate }}</small></li>
+        </ul>
+      </div>
+    </div><!--.col-->
+  </div><!--.row-->
+  <div class="container-fluid" id="ztt-quickbooks-connect-button">
+    <div class="row justify-content-end p-2">
+      <button type="button"
+              data-ng-id="close-quickbooks-window"
+              class="btn btn-secondary"
+              (click)="closeWindow()">{{ 'COMMON.BTN.CANCEL' | translate }}</button>
+      <ztt-quickbooks-connect-button></ztt-quickbooks-connect-button>
+    </div><!--.row-->
+  </div><!--.container-fluid-->
+</div><!--.container-fluid-->

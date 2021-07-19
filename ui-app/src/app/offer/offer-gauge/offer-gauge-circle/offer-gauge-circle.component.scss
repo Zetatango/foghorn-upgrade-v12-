@@ -1,0 +1,20 @@
+/*! ng component: OFFER GAUGE CIRCLE */
+
+.ztt-offer-gauge-circle {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .gauge-circle {
+    height: 100%;
+    width: 100%;
+  }
+
+  .gauge-circle-subtitle {
+    bottom: 35%;
+    color: $gray-600;
+    font-weight: $font-weight-normal;
+    position: absolute;
+  }
+}

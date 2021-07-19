@@ -1,0 +1,11 @@
+#ztt-cfa-landing-page {
+  .title {
+    font-size: 4rem;
+  }
+
+  @include media-breakpoint-down(md) {
+    .title {
+      font-size: 2.5rem;
+    }
+  }
+}

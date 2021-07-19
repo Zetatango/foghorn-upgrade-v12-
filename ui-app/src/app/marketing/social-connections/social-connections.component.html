@@ -1,0 +1,18 @@
+<div *ngFor="let alert of alerts">
+  <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" (onClosed)="onClosed(alert)">{{ alert.msg | translate }}</alert>
+</div>
+
+<div class="row align-items-center">
+  <div class="col-12 col-md-5 mb-3 mb-md-0">
+    <button class="btn btn-block btn-accent"
+            (click)="connectFacebook()"
+            [innerHtml]="'SOCIAL_CONNECTIONS.FACEBOOK.CONNECT' | translate">
+    </button>
+  </div><!--.col-->
+
+  <div class="col-12 col-md-7">
+    <p class="mb-0 font-weight-bold text-center text-md-right">
+      {{ 'SOCIAL_CONNECTIONS.FACEBOOK.STATUS' | translate }}: {{ facebookStatusDisplay | translate }}
+    </p>
+  </div><!--.col-->
+</div><!--.row-->

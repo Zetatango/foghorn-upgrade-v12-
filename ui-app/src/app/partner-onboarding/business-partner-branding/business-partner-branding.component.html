@@ -1,0 +1,220 @@
+<div class="ztt-container" id="ztt-about-you">
+  <div class="row">
+    <div class="col-12 col-lg-10 offset-lg-1">
+      <div class="card">
+        <div class="card-body">
+          <form class="form-horizontal ztt-borderless-inputs" id="branding-form" [formGroup]="brandingFormGroup">
+            <h4>{{'BUSINESS_PARTNER.BRANDING_HEADER' | translate}}</h4>
+
+            <hr />
+
+            <!-- VANITY -->
+            <div class="row">
+              <div class="col-12 col-md-6 col-lg-4">
+                <p class="lead mb-3">{{ 'BUSINESS_PARTNER.CUSTOM_VANITY_LABEL' | translate }}</p>
+
+                <p class="text-muted small mb-1">{{ vanityScheme() | translate }}<b>{{ brandingFormGroup.controls['vanity'].value.toLowerCase() }}</b>.{{ arioDomain() }}</p>
+                <input class="form-control"
+                       id="vanity"
+                       name="vanity"
+                       type="text"
+                       formControlName="vanity"
+                       pattern="[a-zA-Z0-9\-]+"
+                       [class.is-invalid]="brandingFormGroup.controls['vanity'].touched && brandingFormGroup.controls['vanity'].invalid"
+                       autofocus>
+                <div class="invalid-feedback">{{'BUSINESS_PARTNER.CUSTOM_VANITY_INVALID' | translate}}</div>
+              </div><!--.col-->
+            </div><!--.row-->
+
+            <hr />
+
+            <p class="lead mb-3">{{ 'BUSINESS_PARTNER.COLOUR_HEADER' | translate }}</p>
+
+            <!-- PRIMARY COLOUR -->
+            <div class="row mb-3">
+              <div class="col-12 col-md-4 mb-3 mb-md-0">
+                <p>{{ 'BUSINESS_PARTNER.COLOUR_PRIMARY' | translate }}</p>
+
+                <div class="align-items-center d-flex form-group">
+                  <!-- COLOUR PICKER -->
+                  <span class="color-sample flex-shrink-0"
+                        [ngStyle]="{ 'background-color': primaryColor }"
+                        [(colorPicker)]="primaryColor"
+                        (colorPickerClose)="onPrimaryColorChanged($event)"
+                        (colorPickerChange)="onPrimaryColorChanged($event)"
+                        [cpAlphaChannel]="'disabled'"
+                        [cpPosition]="'top'"></span>
+
+                  <!-- PICKER INPUT -->
+                  <input class="form-control ml-3"
+                         id="primary"
+                         name="primary"
+                         type="text"
+                         formControlName="primary"
+                         required
+                         pattern="#[a-f0-9]{6}"
+                         [(colorPicker)]="primaryColor"
+                         (colorPickerClose)="onPrimaryColorChanged($event)"
+                         (colorPickerChange)="onPrimaryColorChanged($event)"
+                         [cpAlphaChannel]="'disabled'"
+                         [cpPosition]="'bottom'"
+                         [value]="primaryColor"
+                         [class.is-invalid]="brandingFormGroup.controls['primary'].touched && brandingFormGroup.controls['primary'].invalid">
+
+                  <!-- ERRORS -->
+                  <div class="invalid-feedback" *ngIf="brandingFormGroup.controls['primary'].hasError('required')">{{ 'BUSINESS_PARTNER.COLOUR_REQUIRED' | translate }}</div>
+                  <div class="invalid-feedback" *ngIf="brandingFormGroup.controls['primary'].hasError('pattern')">{{ 'BUSINESS_PARTNER.COLOUR_PATTERN' | translate }}</div>
+                </div><!--.d-flex-->
+              </div><!--.col-->
+
+              <!-- DESCRIPTION -->
+              <div class="col-12 col-md-8">
+                <p>{{ 'BUSINESS_PARTNER.COLOUR_PRIMARY_USED' | translate }}</p>
+                <p class="small mb-1">{{ 'BUSINESS_PARTNER.COLOUR_PRIMARY_WHERE' | translate }}</p>
+                <p class="small" [innerHTML]="'BUSINESS_PARTNER.COLOUR_PRIMARY_WHERE_NOTE' | translate"></p>
+              </div>
+            </div><!--.row-->
+
+            <!-- ACCENT COLOUR -->
+            <div class="row">
+              <div class="col-12 col-md-4 mb-3 mb-md-0">
+                <p>{{ 'BUSINESS_PARTNER.COLOUR_ACCENT' | translate }}</p>
+
+                  <div class="align-items-center d-flex form-group">
+                    <!-- COLOUR PICKER -->
+                    <span class="color-sample flex-shrink-0"
+                          [ngStyle]="{ 'background-color': secondaryColor }"
+                          [(colorPicker)]="secondaryColor"
+                          (colorPickerClose)="onSecondaryColorChanged($event)"
+                          (colorPickerChange)="onSecondaryColorChanged($event)"
+                          [cpAlphaChannel]="'disabled'"
+                          [cpPosition]="'top'"></span>
+
+                    <!-- PICKER INPUT -->
+                    <input class="form-control ml-3"
+                           id="secondary"
+                           name="secondary"
+                           type="text"
+                           formControlName="secondary"
+                           required
+                           pattern="#[a-f0-9]{6}"
+                           [(colorPicker)]="secondaryColor"
+                           (colorPickerClose)="onSecondaryColorChanged($event)"
+                           (colorPickerChange)="onSecondaryColorChanged($event)"
+                           [cpAlphaChannel]="'disabled'"
+                           [cpPosition]="'bottom'"
+                           [value]="secondaryColor"
+                           [class.is-invalid]="(brandingFormGroup.controls['secondary'].touched && brandingFormGroup.controls['secondary'].invalid) || !validSecondaryColor">
+                  </div><!--.d-flex-->
+
+                <!-- ERRORS -->
+                <div class="d-block invalid-feedback" *ngIf="brandingFormGroup.controls['secondary'].hasError('required')">{{ 'BUSINESS_PARTNER.COLOUR_REQUIRED' | translate }}</div>
+                <div class="d-block invalid-feedback" *ngIf="brandingFormGroup.controls['secondary'].hasError('pattern')">{{ 'BUSINESS_PARTNER.COLOUR_PATTERN' | translate }}</div>
+              </div><!--.col-->
+
+              <!-- DESCRIPTION -->
+              <div class="col-12 col-md-8">
+                <p>{{ 'BUSINESS_PARTNER.COLOUR_ACCENT_USED' | translate }}</p>
+                <p class="small mb-1">{{ 'BUSINESS_PARTNER.COLOUR_ACCENT_WHERE' | translate }}</p>
+                <p class="small" [innerHTML]="'BUSINESS_PARTNER.COLOUR_ACCENT_WHERE_NOTE' | translate"></p>
+
+                <!-- ACCENT EXAMPLES -->
+                <p>{{ 'BUSINESS_PARTNER.COLOUR_ACCENT_EXAMPLES.LABEL' | translate }}</p>
+
+                <!-- TEXT EXAMPLES -->
+                <h3 class="d-inline-block text-accent">{{ 'BUSINESS_PARTNER.COLOUR_ACCENT_EXAMPLES.HEADER' | translate }},</h3>
+                <p class="d-inline-block ml-3 lead text-accent">{{ 'BUSINESS_PARTNER.COLOUR_ACCENT_EXAMPLES.LEAD' | translate }},</p>
+                <p class="d-inline-block ml-3 text-accent">{{ 'BUSINESS_PARTNER.COLOUR_ACCENT_EXAMPLES.PARAGRAPH' | translate }},</p>
+                <p class="d-inline-block ml-3 text-accent"><strong>{{ 'BUSINESS_PARTNER.COLOUR_ACCENT_EXAMPLES.BOLD' | translate }}</strong>,</p>
+
+
+                <!-- BUTTON EXAMPLES -->
+                <div class="row">
+                  <div class="col-4 col-xxl-2">
+                    <!-- button -->
+                    <button class="btn btn-accent btn-block">{{ 'BUSINESS_PARTNER.COLOUR_ACCENT_EXAMPLES.BUTTON' | translate }}</button>
+                  </div>
+
+                  <div class="col-8 col-xxl-4">
+                    <!-- button group -->
+                    <div class="btn-group btn-block" role="group">
+                      <button class="btn ztt-btn-group-icon" type="button">
+                        <i class="fas fa-check"></i>
+                      </button>
+                      <button class="btn btn-block btn-accent">
+                        {{ 'BUSINESS_PARTNER.COLOUR_ACCENT_EXAMPLES.BUTTON_GROUP' | translate }}
+                      </button>
+                    </div><!--.btn-group-->
+                  </div>
+
+                  <div class="col-4 col-xxl-3 mt-3 mt-xxl-0">
+                    <!-- outline button -->
+                    <button class="btn btn-outline-accent btn-block">{{ 'BUSINESS_PARTNER.COLOUR_ACCENT_EXAMPLES.BUTTON_OUTLINE' | translate }}</button>
+                  </div>
+
+                  <div class="col-8 col-xxl-3 mt-3 mt-xxl-0">
+                    <!-- disabled button -->
+                    <button class="btn btn-accent btn-block" disabled>{{ 'BUSINESS_PARTNER.COLOUR_ACCENT_EXAMPLES.BUTTON_DISABLED' | translate }}</button>
+                  </div>
+                </div><!--.row-->
+
+                <div class="d-block invalid-feedback mt-3" *ngIf="!validSecondaryColor"><i class="fas fa-exclamation-triangle"></i> {{ 'BUSINESS_PARTNER.COLOUR_TOO_LIGHT' | translate }}</div>
+              </div><!--.col-->
+            </div><!--.row-->
+
+            <hr />
+
+            <!-- LOGO -->
+            <div class="row">
+              <div class="col-12">
+                <p class="lead mb-3">{{ 'BUSINESS_PARTNER.LOGO_HEADER' | translate }}</p>
+                <ztt-upload-box [options]="uploadOptions"
+                                (fileChangedEvent)="onFileChangedEvent($event)">
+                </ztt-upload-box>
+              </div><!--.col-->
+              <div class="col-12">
+                <image-cropper
+                  [imageFile]="imageFile"
+                  [maintainAspectRatio]="false"
+                  [cropperMinWidth]="128"
+                  [onlyScaleDown]="true"
+                  [roundCropper]="false"
+                  format="png"
+                  outputType="base64"
+                  (imageCropped)="imageCropped($event)"
+                  (imageLoaded)="imageLoaded()"
+                  (loadImageFailed)="loadImageFailed()"
+                  [style.display]="showCropper ? null : 'none'"
+                  [alignImage]="'left'"
+                ></image-cropper>
+              </div>
+            </div><!--.row-->
+          </form>
+
+          <div class="ztt-card-button-holder">
+            <!-- Back -->
+            <button class="btn btn-light"
+                    (click)="back()">{{ 'COMMON.BTN.BACK' | translate }}
+            </button>
+
+            <!-- Next -->
+            <button class="btn btn-accent ml-auto"
+                    [disabled]="brandingFormGroup.invalid || usingDefaults() || working || !validSecondaryColor"
+                    (click)="next()"
+                    [innerHTML]="(working ? 'WORKING' : 'COMMON.BTN.NEXT') | translate">
+            </button>
+          </div><!--.ztt-card-button-holder-->
+
+          <div class="flex-column justify-content-center ztt-card-button-holder">
+            <p class="text-center">{{ 'BUSINESS_PARTNER.BRANDING_DEFAULTS.NOT_READY' | translate }}</p>
+            <button class="btn btn-accent btn-accent-static mt-1"
+                    [disabled]="working"
+                    (click)="skip()">
+              {{ 'BUSINESS_PARTNER.BRANDING_DEFAULTS.SKIP' | translate }}
+            </button>
+          </div><!--.ztt-card-button-holder-->
+        </div><!--.card-body-->
+      </div><!--.card-->
+    </div><!--.col-->
+  </div><!--.row-->
+</div><!--.ztt-container-->

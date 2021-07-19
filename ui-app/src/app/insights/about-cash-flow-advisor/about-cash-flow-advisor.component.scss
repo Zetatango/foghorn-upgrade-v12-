@@ -1,0 +1,28 @@
+#about-cash-flow-advisor {
+  .title {
+    font-size: 3rem;
+  }
+
+  .connection-required-text {
+    font-size: 1.25rem;
+  }
+
+  #cash-flow-features {
+    p {
+      font-size: 0.9rem;
+    }
+
+    .img-wrapper {
+      img {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .title {
+      font-size: 2.5rem;
+    }
+  }
+}

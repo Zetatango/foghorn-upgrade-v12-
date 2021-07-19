@@ -1,0 +1,22 @@
+.form-group {
+  // Input character max length are used to infer proper ratio of the flexbox items.
+
+  // transit_number | institution_number | account_number
+  //        5       |          3         |    5 to 12
+  //                                        (max is 12)
+
+  &#fg_transit_number {
+    flex-grow: 5;
+    flex-shrink: 15; // 20 - 5
+  }
+
+  &#fg_institution_number {
+    flex-grow: 3;
+    flex-shrink: 17; // 20 - 3
+  }
+
+  &#fg_account_number {
+    flex-grow: 12;
+    flex-shrink: 8; // 20 - 12
+  }
+}

@@ -1,0 +1,17 @@
+<!--TODO remove zttCarouselSwiper custom directive when https://github.com/valor-software/ngx-bootstrap/issues/885 is resolved  -->
+<carousel class="carousel"
+          [itemsPerSlide]="itemPerSlide"
+          [showIndicators]="showIndicators"
+          [isAnimated]="true"
+          zttCarouselSwiper
+          [interval]="0" #coursel>
+  <slide>
+    <ztt-cash-on-hand id="ztt-cash-on-hand-container"></ztt-cash-on-hand>
+  </slide>
+  <slide>
+    <ztt-operating-ratio id="ztt-operating-ratio"></ztt-operating-ratio>
+  </slide>
+  <slide *ngIf="!offerService.isOfferRejected(offer)">
+    <ztt-credit-available id="ztt-credit-available"></ztt-credit-available>
+  </slide>
+</carousel>

@@ -1,0 +1,245 @@
+version: '3.7'
+
+services:
+  foghorn:
+    image: foghorn
+    stdin_open: true
+    tty: true
+    shm_size: 1gb
+    depends_on:
+      - database
+      - redis
+      - roadrunner
+      - wile_e
+      - zetatango
+    build:
+      args:
+        BUNDLE_GITHUB__COM: ${BUNDLE_GITHUB__COM}
+      context: .
+    environment:
+      - RAILS_ENV
+      - RUBYOPT
+      - DISABLE_RECAPTCHA
+      - INTERCOM_APP_ID
+      - KYC2020_API_KEY
+      - KYC2020_EMAIL
+      - LOG_LEVEL
+      - RAILS_EAGER_LOAD
+      - THIRD_PARTY_CALLS_ENABLED
+      - ZT_SANDBOX
+      - E2E_ADMIN_PASSWORD
+      - VCR_CALLS_ENABLED
+      - VCR_CLOUD_CALLS_ENABLED
+      - AWS_ACCESS_KEY_ID
+      - AWS_ACCESS_KEY
+      - AWS_S3_VCR_BUCKET
+      - AWS_REGION
+      - NG_CLI_ANALYTICS=ci
+      - DATABASE_HOST=database
+      - DATABASE_PORT=5432
+      - REDIS_URL=redis://redis:6379
+      - ZTT_BASE_URL=zetatango:3000
+    ports:
+      - 3001:3001
+    volumes:
+      - .:/foghorn
+      - foghorn-gems:/usr/local/bundle
+      - foghorn-node-modules:/foghorn/node_modules
+      - tempfiles:/tmp
+    networks:
+      default:
+        aliases:
+          - foghorn
+          - wlmp.zetatango.local
+          - skinfxtest.zetatango.local
+          - dreampayments.zetatango.local
+
+  roadrunner:
+    image: roadrunner
+    stdin_open: true
+    tty: true
+    depends_on:
+      - database
+      - rabbitmq
+      - redis
+    build:
+      args:
+        BUNDLE_GITHUB__COM: ${BUNDLE_GITHUB__COM}
+      context: ../roadrunner
+    environment:
+      - RAILS_ENV
+      - RUBYOPT
+      - DISABLE_RECAPTCHA
+      - INTERCOM_APP_ID
+      - KYC2020_API_KEY
+      - KYC2020_EMAIL
+      - LOG_LEVEL
+      - RAILS_EAGER_LOAD
+      - THIRD_PARTY_CALLS_ENABLED
+      - ZT_SANDBOX
+      - E2E_ADMIN_PASSWORD
+      - VCR_CALLS_ENABLED
+      - VCR_CLOUD_CALLS_ENABLED
+      - AWS_ACCESS_KEY_ID
+      - AWS_ACCESS_KEY
+      - AWS_S3_VCR_BUCKET
+      - AWS_REGION
+      - DATABASE_HOST=database
+      - DATABASE_PORT=5432
+      - REDIS_URL=redis://redis:6379
+      - CLOUDAMQP_URL=amqp://guest:guest@rabbitmq:5672
+    ports:
+      - 3002:3002
+    volumes:
+      - ../roadrunner:/roadrunner
+      - roadrunner-gems:/usr/local/bundle
+      - roadrunner-node-modules:/roadrunner/node_modules
+      - tempfiles:/tmp
+    networks:
+      default:
+        aliases:
+          - roadrunner
+          - idp.zetatango.local
+          - id.ztt-auth.zetatango.local
+          - id.e2e-admin.zetatango.local
+
+  wile_e:
+    image: wile_e
+    stdin_open: true
+    tty: true
+    depends_on:
+      - database
+      - rabbitmq
+      - redis
+    build:
+      args:
+        BUNDLE_GITHUB__COM: ${BUNDLE_GITHUB__COM}
+      context: ../wile_e
+    environment:
+      - RAILS_ENV
+      - RUBYOPT
+      - DISABLE_RECAPTCHA
+      - INTERCOM_APP_ID
+      - KYC2020_API_KEY
+      - KYC2020_EMAIL
+      - LOG_LEVEL
+      - RAILS_EAGER_LOAD
+      - THIRD_PARTY_CALLS_ENABLED
+      - ZT_SANDBOX
+      - E2E_ADMIN_PASSWORD
+      - VCR_CALLS_ENABLED
+      - VCR_CLOUD_CALLS_ENABLED
+      - AWS_ACCESS_KEY_ID
+      - AWS_ACCESS_KEY
+      - AWS_S3_VCR_BUCKET
+      - AWS_REGION
+      - SMARTYSTREETS_CLIENT_ID
+      - SMARTYSTREETS_CLIENT_SECRET
+      - DATABASE_HOST=database
+      - DATABASE_PORT=5432
+      - REDIS_URL=redis://redis:6379
+      - CLOUDAMQP_URL=amqp://guest:guest@rabbitmq:5672
+    ports:
+      - 3003:3003
+    volumes:
+      - ../wile_e:/wile_e
+      - wile_e-gems:/usr/local/bundle
+      - wile_e-node-modules:/wile_e/node_modules
+      - tempfiles:/tmp
+    networks:
+      default:
+        aliases:
+          - wile_e
+          - kyc.zetatango.local
+
+  zetatango:
+    image: zetatango
+    stdin_open: true
+    tty: true
+    depends_on:
+      - database
+      - rabbitmq
+      - redis
+      - roadrunner
+      - wile_e
+    build:
+      args:
+        BUNDLE_GITHUB__COM: ${BUNDLE_GITHUB__COM}
+        BUNDLE_GEMS__RAPIDRAILSTHEMES__COM: ${BUNDLE_GEMS__RAPIDRAILSTHEMES__COM}
+      context: ../zetatango
+    environment:
+      - RAILS_ENV
+      - RUBYOPT
+      - DISABLE_RECAPTCHA
+      - INTERCOM_APP_ID
+      - KYC2020_API_KEY
+      - KYC2020_EMAIL
+      - LOG_LEVEL
+      - RAILS_EAGER_LOAD
+      - THIRD_PARTY_CALLS_ENABLED
+      - ZT_SANDBOX
+      - E2E_ADMIN_PASSWORD
+      - VCR_CALLS_ENABLED
+      - VCR_CLOUD_CALLS_ENABLED
+      - AWS_ACCESS_KEY_ID
+      - AWS_ACCESS_KEY
+      - AWS_S3_VCR_BUCKET
+      - AWS_REGION
+      - DATABASE_HOST=database
+      - DATABASE_PORT=5432
+      - REDIS_URL=redis://redis:6379
+      - CLOUDAMQP_URL=amqp://guest:guest@rabbitmq:5672
+    ports:
+      - 3000:3000
+    volumes:
+      - ../zetatango:/zetatango
+      - zetatango-gems:/usr/local/bundle
+      - zetatango-node-modules:/zetatango/node_modules
+      - tempfiles:/tmp
+    networks:
+      default:
+        aliases:
+          - zetatango
+          - dev.zetatango.local
+          - admin.dreampayments.zetatango.local
+          - admin.skinfxtest.zetatango.local
+
+  database:
+    image: postgres:11.2
+    environment:
+      POSTGRES_USER: root
+      LANG: C
+      POSTGRESQL_INITDB_ARGS: -E UTF8
+      PGCLIENTENCODING: UTF8
+    ports:
+      - 5432:5432
+    volumes:
+      - database-data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:5.0.5-alpine
+    ports:
+      - 6379:6379
+    volumes:
+      - redis:/var/lib/redis/data
+
+  rabbitmq:
+    image: rabbitmq:3.7.17-alpine
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASSWORD: guest
+    ports:
+      - 5672:5672
+
+volumes:
+  foghorn-gems:
+  foghorn-node-modules:
+  roadrunner-gems:
+  roadrunner-node-modules:
+  zetatango-gems:
+  zetatango-node-modules:
+  wile_e-gems:
+  wile_e-node-modules:
+  tempfiles:
+  database-data:
+  redis:

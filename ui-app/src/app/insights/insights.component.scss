@@ -1,0 +1,14 @@
+/*! ng component: INSIGHTS */
+@include media-breakpoint-down(md) {
+  .charts-container {
+    background: white;
+  }
+}
+
+.legend {
+  width: 100px;
+
+  .legend-text {
+    font-size: 0.6rem;
+  }
+}

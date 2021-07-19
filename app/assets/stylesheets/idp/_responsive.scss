@@ -1,0 +1,28 @@
+/*! RESPONSIVE.SCSS */
+
+@include media-breakpoint-down(sm) {
+  // TYPOGRAPHY
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+} // @include media-breakpoint-down(sm)
+
+@include media-breakpoint-up(sm) {
+} // @include media-breakpoint-up(sm)
+
+@include media-breakpoint-up(md) {
+} // @include media-breakpoint-up(md)
+
+@include media-breakpoint-up(lg) {
+} // @include media-breakpoint-up(lg)
+
+@include media-breakpoint-up(xl) {
+} // @include media-breakpoint-up(xl)

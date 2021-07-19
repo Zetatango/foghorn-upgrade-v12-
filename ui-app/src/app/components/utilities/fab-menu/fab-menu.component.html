@@ -1,0 +1,12 @@
+<div id="ztt-fab-menu" class="fab-container d-flex flex-column align-items-end justify-content-end vw-100 fab-vh-100 fixed-top">
+  <div *ngFor="let menuItem of menu" class="d-flex justify-content-end align-items-center p-3">
+    <ng-container *ngIf="menuItem.isVisible()">
+      <span class="text-accent font-weight-bold px-3" *ngIf="menuItem.titleKey">
+        {{ menuItem.titleKey | translate }}
+      </span>
+      <button class="btn-accent" (click)="menuItem.onClick()" [zttGtmEvent] name="{{menuItem.titleKey | translate}}">
+        <i class="fas" [ngClass]="menuItem.icon"></i>
+      </button>
+    </ng-container>
+  </div>
+</div><!--.fab-container-->

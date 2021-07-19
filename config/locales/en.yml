@@ -1,0 +1,66 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  merchants:
+    apply_now: Apply now
+    cash_now_title: Get cash now
+    cash_now_description: Wish you could build your business based on need, not budget? Let us help you access the cash you need for our next project together.
+    financing_title: See how much financing your business qualifies for
+    financing_bullet_1: Finance up to $300,000
+    financing_bullet_2: Choose your repayment terms
+    financing_bullet_3: Register from anywhere within minutes
+    financing_bullet_4: Signing up is free and doesn't affect your credit score
+    footer_text_1: We have partnered with Ario to provide you financing options.
+    footer_text_2: Ario provides the digital banking platform and manages the balance sheet for lending.
+    footer_text_3_html: Want to offer financing to your customers? Learn more at <a href="https://www.arioplatform.com/">www.arioplatform.com</a>
+    get_started: Get started
+    get_started_today: Get started today
+    help: Help
+    main_description_html: Our digital financing platform gives you instant access to credit and extended payment terms to your suppliers.
+    main_title_html: Cash flow management made easy
+    mobile_svg: mobile-english.svg
+    pay_later_title: Buy now, pay later
+    pay_later_description: Take your time! Sign up for extended repayment terms and spread your bill out over the coming months.
+    privacy_policy: Privacy policy
+    sign_in: Sign in
+    title_account_info: Account information
+    title_choose_profile: Choose a profile
+    partner_admin_label: Partner Portal
+    continue_onboarding_label: Continue On Boarding
+    new_business_label: Add New Business
+    business_number_label_html: Business Number <strong>%{business_number}</strong>
+    title_welcome: Welcome!
+  unsupported:
+    current_browser: "Your current browser is: "
+    message: You are using a web browser that we do not support. Try one of these options to have a better experience.
+    mobile_recommendation: "Mobile:"
+    desktop_recommendation: "Desktop:"

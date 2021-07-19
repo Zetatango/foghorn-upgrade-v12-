@@ -1,0 +1,10 @@
+.bs-datepicker-head,
+.bs-datepicker-body .selected {
+  @include var(background-color, accent, '!important');
+}
+
+@media screen and (max-width: 767px) and (max-width: 660px) {
+  .bs-datepicker-container {
+    z-index: 2147483005;
+  }
+}

@@ -1,0 +1,23 @@
+<ztt-application-progress
+  [subtext]="'APPLICATION_PROGRESS.GET_CERTIFIED_TITLE' | translate"
+  [step]="step"
+  [stepLabels]="{
+    first: 'APPLICATION_PROGRESS.NEW_BUSINESS_LABEL' | translate,
+    second: 'APPLICATION_PROGRESS.ABOUT_YOU' | translate,
+    third: 'APPLICATION_PROGRESS.VERIFY_YOURSELF' | translate,
+    fourth: 'APPLICATION_PROGRESS.GET_CERTIFIED' | translate }">
+</ztt-application-progress>
+
+<div class="ztt-container" id="waiting-lending-offers">
+  <div class="row">
+    <div class="col-12 col-lg-10 offset-lg-1">
+      <div class="card">
+        <div class="dialogue-icon"><i class="fas fa-circle-notch fa-spin"></i></div>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ 'RESULT_INPROGRESS_TITLE' | translate }}</h5>
+          <p class="card-text text-muted mb-3">{{ 'RESULT_INPROGRESS_BODY' | translate }}</p>
+        </div><!--.card-body .text-center-->
+      </div><!--.card-->
+    </div><!--.col-12-->
+  </div><!--.row-->
+</div><!--.waiting-lending-offers-->

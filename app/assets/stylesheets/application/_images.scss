@@ -1,0 +1,49 @@
+/*! BUSINESS PARTNER LANDING */
+
+#business-partner-landing {
+  .intro-section {
+    background-image: linear-gradient(35deg, rgba(10, 71, 82, 0.5) 60%, rgba(10, 71, 82, 0) 75%), url('cover.jpg');
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @mixin step-image($url) {
+    background: image-url($url) no-repeat;
+    background-size: contain;
+  }
+
+  [class*='step-image-'] {
+    display: table-cell;
+    height: 3.8rem;
+    vertical-align: middle;
+  }
+
+  .step-image-1 {
+    @include step-image('01.png');
+  }
+
+  .step-image-2 {
+    @include step-image('02.png');
+  }
+
+  .step-image-3 {
+    @include step-image('03.png');
+  }
+
+  .dashboard-image {
+    @media (min-width: 768px) {
+      background: image-url('generic-dashboard.png') 600px 170px no-repeat transparent;
+      background-size: 709px 550px;
+    }
+
+    @media (min-width: 1200px) {
+      background-position: calc(52% + (709px / 2)) 170px;
+    }
+  }
+
+  .faq-section {
+    background: image-url('ario-watermark.png') left center no-repeat;
+    background-size: cover;
+  }
+}

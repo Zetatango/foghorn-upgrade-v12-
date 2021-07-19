@@ -1,0 +1,121 @@
+<div class="card d-flex flex-row justify-content-between align-items-center">
+  <div class="flex-fill profile-bar m-1"
+       *ngFor="let completedAction of completedActions; let i = index"
+       (mouseenter)="selectedInfoBox = completedAction"
+       [ngClass]="'step' + (i + 1) + '-filled'">
+    <p class="text-center" *ngIf="selectedInfoBox === completedAction">
+      <i class="fas fa-caret-up text-white"></i>
+    </p>
+  </div><!-- Complete actions -->
+
+  <div class="flex-fill profile-bar m-1"
+       *ngFor="let incompleteAction of incompleteActions; let i = index"
+       (mouseenter)="selectedInfoBox = incompleteAction"
+       [ngClass]="'step' + (i + 1 + completedActions.length) + '-empty'">
+    <p class="text-center" *ngIf="selectedInfoBox === incompleteAction">
+      <i class="fas fa-caret-up"
+         [ngClass]="'step' + (i + 1 + completedActions.length) + '-caret'"></i>
+    </p>
+  </div><!-- Incomplete actions -->
+</div><!--.card-->
+
+<!-- Business Partner Agreement Info -->
+<div class="card mt-2"
+     [hidden]="selectedInfoBox !== BUSINESS_PARTNER_PROFILE_STEPS.agreement">
+  <div class="card-body">
+    <h5 class="card-title">{{ 'PARTNER_DASHBOARD.PROFILE_AGREEMENT_INFO_TITLE' | translate }}</h5>
+    <p class="card-text">{{ 'PARTNER_DASHBOARD.PROFILE_AGREEMENT_INFO' | translate }}</p>
+    <p class="card-text text-muted small"
+       *ngIf="businessPartnerProfile && businessPartnerProfile.created_at">{{ 'PARTNER_DASHBOARD.PROFILE_AGREEMENT_INFO_COMPLETED' | translate: { 'completed': businessPartnerProfile.created_at | localizeDate:translateService.currentLang } }}</p>
+  </div><!--.card-body-->
+</div><!--.card-->
+
+<!-- Partner Demo Info -->
+<div class="card mt-2"
+     [hidden]="selectedInfoBox !== BUSINESS_PARTNER_PROFILE_STEPS.partner_training">
+  <div class="card-body">
+    <h5 class="card-title">{{ 'PARTNER_DASHBOARD.PROFILE_PARTNER_TRAINING_INFO_TITLE' | translate }}</h5>
+    <p class="card-text">{{ 'PARTNER_DASHBOARD.PROFILE_PARTNER_TRAINING_INFO' | translate }}</p>
+
+    <div class="row">
+      <div class="col-12 col-md-5">
+        <div class="btn-group btn-block" role="group">
+          <button type="button"
+                  class="btn ztt-btn-group-icon"
+                  (click)="schedulePartnerTrainingWithCalendly()">
+            <i class="fas fa-calendar-day"></i>
+          </button>
+          <button class="btn btn-block btn-accent"
+                  (click)="schedulePartnerTrainingWithCalendly()"
+                  [innerHtml]="'PARTNER_DASHBOARD.SCHEDULE_DEMO' | translate">
+          </button>
+        </div><!--.btn-group-->
+      </div>
+    </div>
+
+    <p class="card-text text-muted small mb-0 mt-3"
+       *ngIf="businessPartnerProfile && businessPartnerProfile.partner_training_completed_at">{{ 'PARTNER_DASHBOARD.PROFILE_PARTNER_TRAINING_INFO_COMPLETED' | translate: { 'completed': businessPartnerProfile.partner_training_completed_at | localizeDate:translateService.currentLang } }}</p>
+  </div><!--.card-body-->
+</div><!--.card-->
+
+<!-- First Invite Info -->
+<div class="card mt-2"
+     [hidden]="selectedInfoBox !== BUSINESS_PARTNER_PROFILE_STEPS.invited">
+  <div class="card-body">
+    <h5 class="card-title">{{ 'PARTNER_DASHBOARD.PROFILE_INVITE_INFO_TITLE' | translate }}</h5>
+    <p class="card-text">{{ 'PARTNER_DASHBOARD.PROFILE_INVITE_INFO' | translate }}</p>
+    <p class="card-text text-muted small"
+       *ngIf="businessPartnerProfile && businessPartnerProfile.first_customer_invited_at">{{ 'PARTNER_DASHBOARD.PROFILE_INVITE_INFO_COMPLETED' | translate: { 'completed': businessPartnerProfile.first_customer_invited_at | localizeDate:translateService.currentLang } }}</p>
+  </div><!--.card-body-->
+</div><!--.card-->
+
+<!-- First Invoice Info -->
+<div class="card mt-2"
+     [hidden]="selectedInfoBox !== BUSINESS_PARTNER_PROFILE_STEPS.invoiced">
+  <div class="card-body">
+    <h5 class="card-title">{{ 'PARTNER_DASHBOARD.PROFILE_INVOICE_INFO_TITLE' | translate }}</h5>
+    <p class="card-text">{{ 'PARTNER_DASHBOARD.PROFILE_INVOICE_INFO' | translate }}</p>
+    <p class="card-text text-muted small"
+       *ngIf="businessPartnerProfile && businessPartnerProfile.first_customer_invoiced_at">{{ 'PARTNER_DASHBOARD.PROFILE_INVOICE_INFO_COMPLETED' | translate: { 'completed': businessPartnerProfile.first_customer_invoiced_at | localizeDate:translateService.currentLang } }}</p>
+  </div><!--.card-body-->
+</div><!--.card-->
+
+<div class="mt-1 d-flex flex-row justify-content-between align-items-center">
+  <button class="btn btn-link btn-sm text-dark"
+          (click)="previousStep()"
+          [disabled]="selectedInfoBox === 0"><i class="fas fa-angle-left mr-2"></i>Prev
+  </button>
+  <button class="ml-1 btn btn-link btn-sm text-dark"
+          (click)="nextStep()"
+          [disabled]="!nextStepAllowed()">Next<i class="fas fa-angle-right ml-2"></i>
+  </button>
+
+  <div class="flex-fill small text-muted text-right d-none d-md-block profile-step-label"
+       [ngClass]="selectedInfoBox === BUSINESS_PARTNER_PROFILE_STEPS.agreement ? 'font-weight-bold' : ''"
+       (click)="selectedInfoBox = BUSINESS_PARTNER_PROFILE_STEPS.agreement;
+                onSelectTab('PARTNER_DASHBOARD.PROFILE_AGREEMENT_INFO_LABEL')">
+    <i class="fas fa-check text-success mr-2" *ngIf="businessPartnerProfile && businessPartnerProfile.created_at"></i>
+    {{ 'PARTNER_DASHBOARD.PROFILE_AGREEMENT_INFO_LABEL' | translate}}
+  </div>
+  <div class="flex-fill small text-muted text-right d-none d-md-block profile-step-label"
+       [ngClass]="selectedInfoBox === BUSINESS_PARTNER_PROFILE_STEPS.partner_training ? 'font-weight-bold' : ''"
+       (click)="selectedInfoBox = BUSINESS_PARTNER_PROFILE_STEPS.partner_training;
+                onSelectTab('PARTNER_DASHBOARD.PROFILE_PARTNER_TRAINING_INFO_LABEL')">
+    <i class="fas fa-check text-success mr-2" *ngIf="businessPartnerProfile && businessPartnerProfile.partner_training_completed_at"></i>
+    {{ 'PARTNER_DASHBOARD.PROFILE_PARTNER_TRAINING_INFO_LABEL' | translate}}
+  </div>
+  <div class="flex-fill small text-muted text-right d-none d-md-block profile-step-label"
+       [ngClass]="selectedInfoBox === BUSINESS_PARTNER_PROFILE_STEPS.invited ? 'font-weight-bold' : ''"
+       (click)="selectedInfoBox = BUSINESS_PARTNER_PROFILE_STEPS.invited;
+                onSelectTab('PARTNER_DASHBOARD.PROFILE_INVITE_INFO_LABEL')">
+    <i class="fas fa-check text-success mr-2" *ngIf="businessPartnerProfile && businessPartnerProfile.first_customer_invited_at"></i>
+    {{ 'PARTNER_DASHBOARD.PROFILE_INVITE_INFO_LABEL' | translate}}
+  </div>
+  <div class="flex-fill small text-muted text-right d-none d-md-block profile-step-label"
+       [ngClass]="selectedInfoBox === BUSINESS_PARTNER_PROFILE_STEPS.invoiced ? 'font-weight-bold' : ''"
+       (click)="selectedInfoBox = BUSINESS_PARTNER_PROFILE_STEPS.invoiced;
+                onSelectTab('PARTNER_DASHBOARD.PROFILE_INVOICE_INFO_LABEL')">
+    <i class="fas fa-check text-success mr-2" *ngIf="businessPartnerProfile && businessPartnerProfile.first_customer_invoiced_at"></i>
+    {{ 'PARTNER_DASHBOARD.PROFILE_INVOICE_INFO_LABEL' | translate}}
+  </div>
+</div>

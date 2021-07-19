@@ -1,0 +1,84 @@
+{
+  "list": [
+    {
+      "name": "@angular-devkit/build-angular",
+      "severity": "high",
+      "range": "*"
+    },
+    {
+      "name": "postcss",
+      "severity": "moderate",
+      "range": "7.0.0 - 8.2.9"
+    },
+    {
+      "name": "resolve-url-loader",
+      "severity": "moderate",
+      "range": "3.0.0-alpha.1 - 4.0.0"
+    },
+    {
+      "name": "webpack-dev-server",
+      "severity": "moderate",
+      "range": "2.0.0-beta - 3.11.2"
+    },
+    {
+      "name": "@angular-devkit/build-webpack",
+      "severity": "moderate",
+      "range": "*"
+    },
+    {
+      "name": "chokidar",
+      "severity": "moderate",
+      "range": "1.0.0-rc1 - 2.1.8"
+    },
+    {
+      "name": "css-select",
+      "severity": "high",
+      "range": "<=3.1.2"
+    },
+    {
+      "name": "css-what",
+      "severity": "high",
+      "range": "<5.0.1"
+    },
+    {
+      "name": "cssnano",
+      "severity": "high",
+      "range": ">=4.0.0-nightly.2020.1.9"
+    },
+    {
+      "name": "cssnano-preset-default",
+      "severity": "high",
+      "range": "*"
+    },
+    {
+      "name": "glob-parent",
+      "severity": "moderate",
+      "range": "<5.1.2"
+    },
+    {
+      "name": "postcss-svgo",
+      "severity": "high",
+      "range": ">=4.0.0-nightly.2020.1.9"
+    },
+    {
+      "name": "svgo",
+      "severity": "high",
+      "range": ">=1.0.0"
+    },
+    {
+      "name": "watchpack",
+      "severity": "moderate",
+      "range": "1.7.2 - 1.7.5"
+    },
+    {
+      "name": "watchpack-chokidar2",
+      "severity": "moderate",
+      "range": "*"
+    },
+    {
+      "name": "webpack",
+      "severity": "moderate",
+      "range": "4.44.0 - 4.46.0"
+    }
+  ]
+}

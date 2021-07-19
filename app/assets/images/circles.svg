@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="494px" height="495px" viewBox="0 0 494 495" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 9</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#05B3A5" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#04B4A5" stop-opacity="0.13243007" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="desktop_home" transform="translate(-806.000000, -1129.000000)" fill="url(#linearGradient-1)">
+            <g id="Body" transform="translate(-64.000000, 112.000000)">
+                <g id="Contact-Form" transform="translate(64.000000, 822.000000)">
+                    <g id="Group-9" transform="translate(806.000000, 195.000000)">
+                        <path d="M335,495 C447.113804,495 538,404.113804 538,292 C538,179.886196 460.113804,137 348,137 C235.886196,137 132,179.886196 132,292 C132,404.113804 222.886196,495 335,495 Z" id="Oval"></path>
+                        <path d="M250,442 C384.205194,442 521,397.035498 521,263 C521,128.964502 392.766771,5.68434189e-14 258.561576,5.68434189e-14 C124.356382,5.68434189e-14 0,51.2717648 0,185.307263 C0,319.34276 115.794806,442 250,442 Z" id="Oval"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

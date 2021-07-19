@@ -1,0 +1,16 @@
+<div class="text-center">
+  <h5>{{ 'OFFER.CTA_STATE.REFRESH.TITLE' | translate }}</h5>
+
+  <button
+    class="btn btn-accent my-3"
+    name="{{ 'OFFER.CTA_STATE.REFRESH.BUTTON' | translate }}"
+    [zttGtmEvent]
+    (click)="refreshOffers()"
+  >
+    {{ 'OFFER.CTA_STATE.REFRESH.BUTTON' | translate }}
+  </button>
+
+  <p class="card-text font-weight-light mt-1 small">
+    <i class="fas fa-shield-alt pr-2"></i>{{ 'OFFER.SMALL_TEXT' | translate }}
+  </p>
+</div><!--.text-center-->

@@ -1,0 +1,133 @@
+<div class="container"
+     data-ng-id="add-bank-account-manual">
+  <div class="row">
+    <p class="card-title"
+       [innerHtml]="'ADD_BANK_ACCOUNT_MANUAL.TITLE_html' | translate">
+    </p>
+  </div><!--.row-->
+
+  <!-- FORM CARD -->
+
+  <div class="row my-3">
+    <div class="col-12 col-sm-10 offset-sm-1 col-xl-8 offset-xl-2">
+      <div [formGroup]="bankInformationFormGroup"
+           data-ng-id="add-bank-account-manual-form"
+           class="d-flex flex-column flex-sm-row align-items-stretch justify-content-around justify-content-sm-center text-sm-center">
+          <div class="form-group px-sm-1" id="fg_transit_number">
+            <label for="transit_number" class="control-label">
+              {{ 'ADD_BANK_ACCOUNT_MANUAL.TRANSIT_NUMBER.LABEL' | translate }}
+            </label>
+            <input type="text"
+                   id="transit_number"
+                   class="form-control text-sm-center"
+                   formControlName="transit_number"
+                   [minLength]="transitNumberMinLength"
+                   [maxLength]="transitNumberMaxLength"
+                   [pattern]="transitNumberRegexp"
+                   placeholder="{{ 'ADD_BANK_ACCOUNT_MANUAL.TRANSIT_NUMBER.PLACEHOLDER' | translate }}"
+                   [class.is-valid]="isTransitNumberTouched && isTransitNumberValid"
+                   [class.is-invalid]="isTransitNumberTouched && isTransitNumberInvalid"
+                   zttExcludeEmoji>
+
+            <div *ngIf="isTransitNumberTouched" class="invalid-feedback d-sm-none">{{'ADD_BANK_ACCOUNT_MANUAL.TRANSIT_NUMBER.INVALID' | translate}}</div>
+          </div><!--.form-group-->
+
+          <div class="form-group px-sm-1" id="fg_institution_number">
+            <label for="institution_number" class="control-label">
+              {{ 'ADD_BANK_ACCOUNT_MANUAL.INSTITUTION_NUMBER.LABEL' | translate }}
+            </label>
+            <input type="text"
+                   id="institution_number"
+                   class="form-control text-sm-center"
+                   formControlName="institution_number"
+                   [minLength]="institutionNumberMinLength"
+                   [maxLength]="institutionNumberMaxLength"
+                   [pattern]="institutionNumberRegexp"
+                   placeholder="{{ 'ADD_BANK_ACCOUNT_MANUAL.INSTITUTION_NUMBER.PLACEHOLDER' | translate }}"
+                   [class.is-valid]="isInstitutionNumberTouched && isInstitutionNumberValid"
+                   [class.is-invalid]="isInstitutionNumberTouched && isInstitutionNumberInvalid"
+                   zttExcludeEmoji>
+
+            <div *ngIf="isInstitutionNumberTouched" class="invalid-feedback d-sm-none">{{'ADD_BANK_ACCOUNT_MANUAL.INSTITUTION_NUMBER.INVALID' | translate}}</div>
+          </div><!--.form-group-->
+
+          <div class="form-group px-sm-1" id="fg_account_number">
+            <label for="account_number" class="control-label">
+              {{ 'ADD_BANK_ACCOUNT_MANUAL.ACCOUNT_NUMBER.LABEL' | translate }}
+            </label>
+            <input type="text"
+                   id="account_number"
+                   class="form-control text-sm-center"
+                   formControlName="account_number"
+                   [minLength]="accountNumberMinLength"
+                   [maxLength]="accountNumberMaxLength"
+                   [pattern]="accountNumberRegexp"
+                   placeholder="{{ 'ADD_BANK_ACCOUNT_MANUAL.ACCOUNT_NUMBER.PLACEHOLDER' | translate }}"
+                   [class.is-valid]="isAccountNumberTouched && isAccountNumberValid"
+                   [class.is-invalid]="isAccountNumberTouched && isAccountNumberInvalid"
+                   zttExcludeEmoji>
+
+            <div *ngIf="isAccountNumberTouched" class="invalid-feedback d-sm-none">{{'ADD_BANK_ACCOUNT_MANUAL.ACCOUNT_NUMBER.INVALID' | translate}}</div>
+          </div><!--.form-group-->
+      </div><!--.d-flex-->
+
+      <!-- FORMS ERROR: [breakpoint] sm and up -->
+      <div class="col-12 text-center my-3">
+        <div *ngIf="isTransitNumberTouched" class="invalid-feedback" data-ng-id='transit-validation-error' [ngClass]="{ 'd-sm-block': isTransitNumberInvalid }">
+          <i class="fas fa-times pr-1"></i>
+          <span class="text-muted">{{'ADD_BANK_ACCOUNT_MANUAL.TRANSIT_NUMBER.INVALID' | translate}}</span>
+        </div>
+        <div *ngIf="isInstitutionNumberTouched" class="invalid-feedback" data-ng-id='institution-validation-error' [ngClass]="{ 'd-sm-block': isInstitutionNumberInvalid }">
+          <i class="fas fa-times pr-1"></i>
+          <span class="text-muted">{{'ADD_BANK_ACCOUNT_MANUAL.INSTITUTION_NUMBER.INVALID' | translate}}</span>
+        </div>
+        <div *ngIf="isAccountNumberTouched" class="invalid-feedback" data-ng-id='account-validation-error' [ngClass]="{ 'd-sm-block': isAccountNumberInvalid }">
+          <i class="fas fa-times pr-1"></i>
+          <span class="text-muted">{{'ADD_BANK_ACCOUNT_MANUAL.ACCOUNT_NUMBER.INVALID' | translate}}</span>
+        </div>
+      </div><!--.col-->
+
+      <div class="text-center text-md-right">
+        <a class="text-info"
+           role="button"
+           href="#sampleVoidCheque"
+           data-toggle="collapse"
+           aria-expanded="false">
+          <small><strong>{{ 'ADD_BANK_ACCOUNT_MANUAL.HELP' | translate }}</strong></small>
+        </a>
+      </div><!--.text-center-->
+    </div><!--.col-->
+  </div><!--.row-->
+
+  <div class="row">
+    <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3 collapse" id="sampleVoidCheque">
+      <img class="my-3"
+           alt="Sample void cheque image"
+           [src]="'ADD_BANK_ACCOUNT_MANUAL.SAMPLE_VOID_CHEQUE_ASSET_PATH' | translate">
+    </div><!--.col-->
+  </div><!--.row-->
+
+</div><!--.container-->
+
+<!-- STEP NAVIGATION -->
+
+<div class="ztt-card-button-holder d-flex align-items-center justify-content-between">
+  <button class="btn btn-light"
+          data-ng-id='cancel-add-bank-account-manual'
+          [disabled]="cancelling || creatingBankAccount"
+          (click)="cancel()"
+          [innerHtml]="(cancelling ? 'WORKING' : 'COMMON.BTN.CANCEL') | translate">
+  </button>
+
+  <button class="btn btn-accent"
+          data-ng-id='next-add-bank-account-manual'
+          [disabled]="isFormInvalid || creatingBankAccount"
+          (click)="create()"
+          [innerHtml]="(creatingBankAccount ? 'WORKING' : 'COMMON.BTN.ADD') | translate">
+  </button>
+</div><!--.ztt-card-button-holder-->
+
+<ng-template>
+  {{ 'SET_BANK_INSTRUCTIONS.BANK_ACCOUNT' | translate }}
+  {{ 'SET_BANK_INSTRUCTIONS.GENERIC' | translate }}
+</ng-template>

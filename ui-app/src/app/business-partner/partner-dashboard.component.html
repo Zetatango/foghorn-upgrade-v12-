@@ -1,0 +1,4 @@
+<router-outlet *ngIf="loaded; else loading"></router-outlet>
+<ng-template #loading>
+  <ztt-loading [name]="mainLoader"></ztt-loading>
+</ng-template>

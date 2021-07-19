@@ -1,0 +1,28 @@
+<div class="ztt-container" id="ztt-set-up-bank">
+  <div class="row">
+    <!-- LEFT CARD: SET-UP-BANK -->
+    <div [ngClass]="includeAvailableFinancing ? 'col-12 col-lg-8' : 'col-12 col-lg-8 offset-lg-2 order-2'">
+      <div class="card">
+        <div class="card-body">
+          <ng-container *ngIf="!displayError()">
+            <h5 class="card-title">{{ 'SET_BANK_TITLE' | translate }}</h5>
+            <hr>
+
+            <ztt-add-bank-account-manual *ngIf="displayManualEntry()"></ztt-add-bank-account-manual>
+            <ztt-bank-accounts-register *ngIf="displayFlinks()"></ztt-bank-accounts-register>
+            <ztt-bank-accounts-loading *ngIf="displayLoading()"></ztt-bank-accounts-loading>
+            <ztt-bank-accounts-picker *ngIf="displayPicker()"></ztt-bank-accounts-picker>
+          </ng-container>
+
+          <ztt-bank-accounts-error *ngIf="displayError()"></ztt-bank-accounts-error>
+        </div><!--.card-body-->
+      </div><!--.card -->
+    </div><!--.col-12 col-lg-8 -->
+
+    <!-- RIGHT CARD: AVAILABLE FINANCING -->
+    <!-- TODO: remove this. It's a LoC offer gauge. Doesn't make sense here. -->
+    <div *ngIf="includeAvailableFinancing" class="col-12 col-lg-4 my-3 my-lg-0">
+      <ztt-offer-gauge></ztt-offer-gauge>
+    </div><!--.col-12 .col-lg-4 -->
+  </div><!--.row -->
+</div><!--.ztt-set-up-bank-->

@@ -1,0 +1,29 @@
+<div class="card"><!-- card-body default padding is enough here -->
+  <div class="card-body">
+    <ng-container *ngIf="!isOfferDisabled; else unavailable">
+      <p class="small">{{ 'OFFER_GAUGE.AVAILABLE_TITLE' | translate }}</p>
+      <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar"
+             [attr.aria-valuenow]="offerAvailableAmount"
+             [attr.aria-valuemin]="0"
+             [attr.aria-valuemax]="offerMaxAmount"
+             [style.width]="offerCapacity + '%'"><!-- Hack to debug bootstrap progress-bar in angular -->
+        </div>
+      </div><!--.progress-->
+
+      <p class="text-accent my-2">
+        {{ offerAvailableAmount | zttCurrency : translateService.currentLang }}
+        <span class="float-right">
+          {{ 'OFFER_GAUGE.AVAILABLE_CONNECTOR' | translate }}
+          {{ offerMaxAmount | zttCurrency : translateService.currentLang }}
+        </span>
+      </p>
+    </ng-container><!--*ngIf -->
+  </div><!--.card-body-->
+</div><!--.card-->
+
+<ng-template #unavailable>
+  <p class="font-weight-bold p-2">
+    {{ 'OFFER_GAUGE.UNAVAILABLE' | translate }}
+  </p>
+</ng-template><!-- #unavailable-->

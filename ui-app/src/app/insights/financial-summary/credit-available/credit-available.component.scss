@@ -1,0 +1,16 @@
+#ztt-credit-available {
+  .card {
+    border-left: 2px solid $heather;
+  }
+
+  .apply-wrapper {
+    width: 200px;
+  }
+
+  @include media-breakpoint-down(md) {
+    .card {
+      padding-bottom: 2px;
+      border-left: 0;
+    }
+  }
+}

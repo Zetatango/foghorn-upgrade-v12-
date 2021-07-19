@@ -1,0 +1,37 @@
+# For help consult: https://help.github.com/articles/about-codeowners/
+
+# Lines starting with '#' are comments.
+# Each line is a file pattern followed by one or more owners.
+
+# These owners will be the default owners for everything in the repo.
+#*       @Zetatango/security
+
+# Order is important. The last matching pattern has the most precedence.
+# So if a pull request only touches javascript files, only these owners
+# will be requested to review.
+# *.js    @octocat @github/js
+
+# You can also use email addresses if you prefer.
+# docs/*  docs@example.com
+
+app/controllers/concerns/partner_identity.rb  @Zetatango/security
+app/controllers/concerns/user_identity.rb @Zetatango/security
+app/controllers/jwt_controller.rb @Zetatango/security
+app/helpers/api/v1/user_sessions_helper.rb  @Zetatango/security
+app/helpers/rack_attack_helper.rb @Zetatango/security
+app/helpers/user_session_helper.rb  @Zetatango/security
+app/models/user.rb  @Zetatango/security
+app/models/ability.rb @Zetatango/security
+app/services/api_access_token_service.rb  @Zetatango/security
+app/services/backchannel_logout_service.rb  @Zetatango/security
+app/services/profile_access_token_service.rb  @Zetatango/security
+app/services/session_manager_service.rb @Zetatango/security
+config/initializers/csp.rb  @Zetatango/security
+config/initializers/omniauth.rb @Zetatango/security
+config/initializers/rack_attack.rb  @Zetatango/security
+config/initializers/rack_attack_logger.rb @Zetatango/security
+config/initializers/token_validator.rb  @Zetatango/security
+config/initializers/filter_parameter_logging.rb  @Zetatango/security
+config/secrets.yml  @Zetatango/security
+test/models/ability_test.rb @Zetatango/security
+ui-app/scripts/whitelist.json @Zetatango/security

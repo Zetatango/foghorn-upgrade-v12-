@@ -1,0 +1,13 @@
+development:
+  adapter: redis
+  url: <%= ENV.fetch('REDIS_URL', 'redis://localhost:6379') %>
+
+test:
+  adapter: async
+
+production:
+  adapter: redis
+  channel_prefix: foghorn_production
+  driver: :ruby
+  ssl_params:
+    verify_mode: <%= OpenSSL::SSL::VERIFY_NONE %>

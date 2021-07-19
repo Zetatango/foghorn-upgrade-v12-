@@ -1,0 +1,115 @@
+<div class="ztt-container" id="ztt-active-ubls">
+  <ztt-loading [name]="mainLoader"></ztt-loading>
+
+  <!-- Note: [Graham] this whole loading situation needs revamped -->
+  <ng-container *ngIf="loaded"><!-- DO NOT DISPLAY UNTIL LOADED SET -->
+    <!-- COVID-19 alert -->
+    <alert *ngIf="isCovidDisabled" type="warning" [dismissible]="false">
+      <div class="d-flex flex-wrap flex-md-nowrap justify-content-center align-items-center flex-horizontal-center">
+        <div>
+          <p class="font-weight-bold text-center text-align-center">
+            <strong class="fas fa-lg fa-exclamation-circle py-2 pr-2"></strong>
+            {{ 'DASHBOARD.COVID.TITLE' | translate }}
+          </p>
+          <p class="text-center text-align-center">{{ 'DASHBOARD.COVID.CONTENT' | translate }}</p>
+        </div>
+      </div><!--.d-flex-->
+    </alert>
+
+    <!-- KYC FAILED NOTIFICATION -->
+    <alert *ngIf="isSelfFixableKycFailure" type="warning" [dismissible]="false">
+      <div class="d-flex flex-wrap flex-md-nowrap justify-content-between align-items-between">
+        <div>
+          <p class="font-weight-bold">
+            <strong class="fas fa-lg fa-exclamation-circle py-2 pr-2"></strong>
+            {{ 'DASHBOARD.KYC_FAILED.SELF_FIXABLE.LEAD' | translate }}
+          </p>
+          <!-- TODO: [Graham] set white-space: pre-wrap on paragraphs to enable \n in locale file -->
+          <p class="mb-0">{{ 'DASHBOARD.KYC_FAILED.SELF_FIXABLE.BODY_1' | translate }}</p>
+          <p>
+            {{ 'DASHBOARD.KYC_FAILED.SELF_FIXABLE.BODY_2.START' | translate }}
+            <!-- TODO: [Graham] have [zttGtmEvent] grab innerHtml for name, and remove it from element -->
+            <a role="button"
+               name="{{ 'DASHBOARD.KYC_FAILED.SELF_FIXABLE.BODY_2.CTA' | translate }}"
+               data-ng-id="edit-merchant-link"
+               (click)="showEditMerchant()"
+               [zttGtmEvent]
+            >{{ 'DASHBOARD.KYC_FAILED.SELF_FIXABLE.BODY_2.CTA' | translate }}</a>
+            {{ 'DASHBOARD.KYC_FAILED.SELF_FIXABLE.BODY_2.END' | translate }}
+          </p>
+        </div>
+      </div><!--.d-flex-->
+    </alert>
+
+    <alert *ngIf="isNonFixableKycFailure" type="warning" [dismissible]="false">
+      <div class="d-flex flex-wrap flex-md-nowrap justify-content-between align-items-between">
+        <div>
+          <p class="font-weight-bold">
+            <strong class="fas fa-lg fa-exclamation-circle py-2 pr-2"></strong>
+            {{ 'DASHBOARD.KYC_FAILED.NON_FIXABLE.LEAD' | translate }}
+          </p>
+          <p>{{ 'DASHBOARD.KYC_FAILED.NON_FIXABLE.BODY_1' | translate }}</p>
+        </div>
+
+        <div class="align-self-center">
+          <button class="btn btn-warning border-0 intercom-trigger text-white"
+                        name="{{ 'DASHBOARD.KYC_FAILED.NON_FIXABLE.CTA' | translate }}"
+                        [zttGtmEvent]>
+            {{ 'COMMON.BTN.INTERCOM_CTA' | translate }}
+          </button>
+        </div>
+      </div><!--.d-flex-->
+    </alert>
+
+    <alert *ngIf="isKycSelfFixInProgress" type="info" [dismissible]="true">
+      <p class="font-weight-bold">
+        <i class="fas fa-lg fa-circle-notch fa-spin"></i>
+        <span class="pl-2">{{ 'DASHBOARD.KYC_FAILED.SELF_FIX_IN_PROGRESS.LEAD' | translate }}</span>
+      </p>
+      <p>
+        {{ 'DASHBOARD.KYC_FAILED.SELF_FIX_IN_PROGRESS.BODY_1' | translate }}
+      </p>
+    </alert>
+
+    <alert *ngIf="hasPaymentPlan" id="payment_plan_warning" type="warning" [dismissible]="false">
+      <p>
+        <strong class="fas fa-exclamation-circle pr-2"></strong>
+        <strong>{{ 'DASHBOARD.PAYMENT_PLAN.PLAN_ACTIVE' | translate }}</strong>
+      </p>
+      <p>{{ 'DASHBOARD.PAYMENT_PLAN.RESTRICTIONS_DESC' | translate }}</p>
+    </alert>
+
+    <alert *ngIf="isDelinquent" id="delinquent_warning" type="warning" [dismissible]="false">
+      <p>
+        <strong class="fas fa-exclamation-circle pr-2"></strong>
+        <strong>{{ 'DASHBOARD.DELINQUENT.MESSAGE' | translate }}</strong>
+      </p>
+      <p>{{ 'DASHBOARD.DELINQUENT.RESTRICTIONS_DESC' | translate }}</p>
+    </alert>
+
+    <!-- OFFER / WITHDRAWAL -->
+    <div class="row align-items-stretch">
+      <!-- Offer -->
+      <div class="col-12 col-lg-5 mt-lg-0">
+        <ztt-offer></ztt-offer>
+      </div><!--.col-->
+
+      <div class="col-12 col-lg-7 mt-3 mt-lg-0">
+        <!-- Offer Withdrawal -->
+        <ztt-offer-withdrawal></ztt-offer-withdrawal>
+
+        <!-- LEGACY WCA OFFER -->
+        <ztt-offer-wca *ngIf="!isWcaCardDisabled" class="d-block mt-3"></ztt-offer-wca>
+      </div><!--.col-->
+    </div><!--.row-->
+
+    <ztt-dashboard-table></ztt-dashboard-table>
+  </ng-container><!--*ngIf="loaded"-->
+</div><!-- ztt-active-ubls -->
+
+<!-- TODO [VAL] Follow-up PR: Display in it's own route rather than a modal. -->
+<ng-template #editMerchantModal>
+  <div class="modal-body h-100">
+    <ztt-edit-merchant (doneEvent)="hideEditMerchant()"></ztt-edit-merchant>
+  </div><!--.modal-body-->
+</ng-template>

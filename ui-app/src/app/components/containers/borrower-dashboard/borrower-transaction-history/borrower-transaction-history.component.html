@@ -1,0 +1,26 @@
+  <ztt-dashboard-data-list
+    [config]="configType"
+    [isSearchEnabled]="false"
+    [missingDataMessage]="missingDataMessage"
+    [primaryTemplate]="primaryTemplate">
+  </ztt-dashboard-data-list>
+
+  <ng-template #primaryTemplate let-transaction="item">
+    <div class="list-column small-column text-accent font-weight-bold">
+      {{ transaction?.created_at ? ( transaction?.created_at | localizeDate: currentLang ) : 'COMMON.NOT_AVAILABLE' | translate }}
+    </div><!--.list-column-->
+    <div class="list-column">
+      <p translate [translateParams]="{
+        invoiceNumber: transaction?.description?.values.invoiceNumber | translate,
+        merchantName: transaction?.description?.values.merchantName | translate,
+        offlineEntityName: transaction?.description?.values.offlineEntityName | translate,
+        referenceNumber: transaction?.description?.values.referenceNumber | translate,
+        supplierName: transaction?.description?.values.supplierName | translate
+      }">
+        {{ transaction?.description?.key }}
+      </p>
+    </div><!--.list-column-->
+    <div class="list-column small-column font-weight-bold">
+        {{ transaction?.amount ? ( transaction?.amount | zttCurrency : currentLang ) : 'COMMON.NOT_AVAILABLE' | translate }}
+    </div><!--.list-column-->
+  </ng-template>

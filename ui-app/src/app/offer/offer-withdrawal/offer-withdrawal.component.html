@@ -1,0 +1,54 @@
+<div class="card">
+  <div class="card-body">
+    <!-- Title -->
+    <h5 class="card-title font-weight-bold">{{ 'WITHDRAWAL.TITLE' | translate }}</h5>
+
+    <!-- WITHDRAWAL FORM -->
+    <!-- Note: [Graham] change this to just an input? -->
+    <div class="form-row" [formGroup]="withdrawalForm">
+      <div class="col-7 col-md-8">
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">$</div>
+          </div><!--.input-group-prepend-->
+          <input type="text"
+                 class="form-control"
+                 formControlName="amount"
+                 inputmode="decimal"
+                 required
+                 [placeholder]="'WITHDRAWAL.FORM.AMOUNT.PLACEHOLDER' | translate: { minPrincipal: offerMinAmount }"
+                 [cleave]="currencyCleaveConfig"
+                 [class.is-invalid]="amount.invalid && amount.touched"
+                 (keyup.enter)="amount.valid && offerApplyButton.applyForOffer()">
+          <!-- ERRORS -->
+          <div class="invalid-feedback" *ngIf="!amount.hasError('required') && amount.hasError('principalTooLow')">{{ 'WITHDRAWAL.FORM.AMOUNT.ERROR.BELOW_MIN_PRINCIPAL' | translate: { minPrincipal: offerMinAmount | zttCurrency: translateService.currentLang } }}</div>
+          <div class="invalid-feedback" *ngIf="amount.dirty && amount.hasError('principalTooHigh')">{{ 'WITHDRAWAL.FORM.AMOUNT.ERROR.ABOVE_AVAILABLE_AMOUNT' | translate: { availableAmount: offerAvailableAmount | zttCurrency: translateService.currentLang } }}</div>
+        </div><!--.input-group-->
+      </div><!--.col-->
+
+      <div class="col-5 col-md-4 text-right">
+        <ztt-offer-apply-button [isButtonDisabled]="withdrawalForm.invalid" [requestedAmount]="requestedAmount"></ztt-offer-apply-button>
+      </div>
+    </div><!--[formGroup]-->
+
+    <ng-container *ngIf="hasInProgressApplication">
+      <ng-container *ngIf="hasActionableInProgressApplication; else noAction">
+        <hr>
+        <h6 class="card-subtitle font-weight-bold">{{ 'WITHDRAWAL.CONTINUE.DESCRIPTION' | translate }}</h6>
+        <br/>
+        <button class="btn btn-accent" [routerLink]="applicationRouterLink" data-ng-id="withdrawal.continue.button">{{ 'WITHDRAWAL.CONTINUE.LINK' | translate }}</button>
+      </ng-container>
+
+       <!-- else noAction -->
+      <ng-template #noAction>
+        <hr>
+        <h6 class="card-subtitle font-weight-bold">{{ 'WITHDRAWAL.IN_PROGRESS.DESCRIPTION' | translate }}</h6>
+        <br/>
+      </ng-template>
+    </ng-container>
+
+    <hr>
+
+    <h6 class="card-subtitle text-muted">{{ 'OFFER.CTA_STATE.' + offerCtaState + '.MESSAGE' | translate }}</h6>
+  </div><!-- .card-body -->
+</div><!-- .card -->

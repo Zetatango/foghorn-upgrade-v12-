@@ -1,0 +1,30 @@
+
+#These files are being removed from the final slug (dyno container) in Heroku.
+
+/.circleci
+/.github
+/test
+/log/*
+/tmp/*
+.gitignore
+
+#Docker related files
+Dockerfile
+Dockerfile-Prod
+docker-compose.yaml
+.dockerignore
+/scripts/docker_start.sh
+Makefile
+
+#Angular test related files
+*.spec.ts
+/ui-app/e2e
+/ui-app/src/app/test.declarations.ts
+/ui-app/src/app/test-stubs
+/ui-app/src/test-utilities
+
+/doc/bank_info_flow.puml
+/doc/observables_pattern.md
+/doc/architecture
+/doc/maxmind/COPYRIGHT.txt
+/doc/maxmind/LICENSE.txt

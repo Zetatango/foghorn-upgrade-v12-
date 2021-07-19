@@ -1,0 +1,9 @@
+<div id="ztt-quickbooks-connect-button">
+  <button *ngIf="openModal" class="btn btn-default p-0" (click)="connectQuickbooks()"
+    name="{{ 'FAB_MENU.CONNECT_QUICKBOOKS' | translate}}" [zttGtmEvent]>
+    <img src="{{ quickbooksConnectButtonImage() }}" height="40"/>
+  </button>
+  <a *ngIf="!openModal" class="btn btn-default p-0" href="{{ quickbooksStartFlowUrl() }}">
+    <img src="{{ quickbooksConnectButtonImage() }}" height="40"/>
+  </a>
+</div>

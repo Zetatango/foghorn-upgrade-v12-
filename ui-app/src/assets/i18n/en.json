@@ -1,0 +1,1712 @@
+{
+  "ABOUT_YOU": {
+    "ADDITIONAL_VERIFICATION": "No record found",
+    "ADDRESS_INVALID_ERROR": "Invalid Address",
+    "ADDRESS_TITLE": "Home address",
+    "BODY_FOOTER": "Thinking Capital will complete a soft credit check to validate the information provided. By clicking Next, you consent to having your credit checked periodically to ensure your ongoing eligibility for offers and funding as per our {{pp}} and {{tou}}.",
+    "DATE_BIRTH": "Date of birth",
+    "ENTER_DATE_BIRTH": "Invalid date of birth",
+    "ENTER_LAST_NAME": "Required.",
+    "ENTER_NAME": "Required.",
+    "ENTER_NUMBER": "Invalid phone number.",
+    "ENTER_SIN": "Invalid Social Insurance Number",
+    "ENTER_VALID_DATE": "Invalid date",
+    "ERROR": "Please double-check your information.",
+    "FIRST_NAME": "First name",
+    "LAST_NAME": "Last name",
+    "NUMBER": "Mobile number",
+    "OWNER": "ABOUT YOU (BUSINESS OWNER)",
+    "OWNER_SINCE": "Owner since",
+    "PHONE_NUMBER_INVALID_ERROR": "The phone number <strong>{{phone_number}}</strong> is invalid.",
+    "SOC_NUMBER": "Social Insurance Number",
+    "SORRY_TROUBLE": "Additional verification needed."
+  },
+  "ABOUT_YOUR_BUSINESS": {
+    "ADDRESS_INVALID_ERROR": "Invalid Address",
+    "ERROR": "Verify your business information.",
+    "PHONE_NUMBER_INVALID_ERROR": "Invalid phone number.",
+    "SERVICE_ERROR": "We are currently experiencing an outage with one of our service providers. We recognize how frustrating this can be. We recommend trying again later and apologize for the inconvenience. Feel free to chat with us if you have any questions."
+  },
+  "ADDRESS_FORM": {
+    "ADDRESS_LINE_1": "Address",
+    "ADDRESS_LINE_1_ERROR": "Required.",
+    "ADDRESS_LINE_1_PLACEHOLDER": "Enter address",
+    "ALBERTA": "AB",
+    "BRITISH_COLUMBIA": "BC",
+    "CANADA": "CD",
+    "CITY": "City",
+    "CITY_ERROR": "Required.",
+    "MANITOBA": "MB",
+    "NEWFOUNDLAND_AND_LABRADOR": "NL",
+    "NEW_BRUNSWICK": "NB",
+    "NORTHWEST_TERRITORIES": "NT",
+    "NOVA_SCOTIA": "NS",
+    "NUNAVUT": "NU",
+    "ONTARIO": "ON",
+    "POSTAL_CODE": "Postal code",
+    "POSTAL_CODE_ERROR": "Required.",
+    "PRINCE_EDWARD_ISLAND": "PE",
+    "PROVINCE": "Province",
+    "PROVINCE_ERROR": "Required.",
+    "PROVINCE_SELECT_DEFAULT": "Select",
+    "QUEBEC": "QC",
+    "SASKATCHEWAN": "SK",
+    "YUKON": "YT"
+  },
+  "ADD_ACCOUNT": {
+    "ACCOUNT_NUMBER": "Account #",
+    "ACCOUNT_NUMBER_VALIDATION": "Must be between 5 to 12 digits.",
+    "BACK": "Back",
+    "BANK_DETAILS": "BANKING DETAILS",
+    "BANK_NAME": "Bank Name",
+    "INST_NUMBER": "Institution #",
+    "INST_NUMBER_VALIDATION": "Select Institution #.",
+    "REQUIRED": "Required.",
+    "TRANSIT_NUMBER": "Transit #",
+    "TRANSIT_NUMBER_VALIDATION": "Must be 5 digits.",
+    "USE_THIS": "Use This Account"
+  },
+  "ADD_BANK_ACCOUNT_MANUAL": {
+    "ACCOUNT_NUMBER": {
+      "INVALID": "Invalid Account #. Must contain 5-12 digits.",
+      "LABEL": "Account #",
+      "PLACEHOLDER": "5-12 digits"
+    },
+    "HELP": "Where do I find this information?",
+    "INSTITUTION_NUMBER": {
+      "INVALID": "Invalid Institution #. Must contain 3 digits.",
+      "LABEL": "Institution #",
+      "PLACEHOLDER": "3 digits"
+    },
+    "SAMPLE_VOID_CHEQUE_ASSET_PATH": "/assets/sample_void_cheques/sample_void_cheque_EN.svg",
+    "TITLE_html": "Which <strong>business bank account</strong> would you like to use?",
+    "TRANSIT_NUMBER": {
+      "INVALID": "Invalid Transit #. Must contain 5 digits",
+      "LABEL": "Transit #",
+      "PLACEHOLDER": "5 digits"
+    }
+  },
+  "AGREEMENT": {
+    "CONTAINER_TEXT_BOTTOM": "If you agree to the terms of this agreement, click SIGN below to be prompted for your password instead of a handwritten signature.",
+    "CONTAINER_TEXT_TOP": {
+      "BUSINESS_PARTNER": "Before becoming an Ario Business Partner, please take the time to review and sign the Business Partner Agreement below if you wish to continue.",
+      "PAD": "Please review and sign the Pre-authorized Debit Agreement below if you wish to continue.",
+      "PAF": "Please review and sign the Pre-authorized Financing Agreement below if you wish to continue.",
+      "UNSECURED_BUSINESS_LOAN": "By signing in below, I declare and represent that I have read and agree, on behalf of the Borrower and in each of my capacities of Owner and of Guarantor, to the terms of the Loan Agreement, and that I have the signing authority to bind the Borrower to all terms and conditions stipulated in the Loan Agreement."
+    },
+    "CONTAINER_TITLE": "Read and sign agreement",
+    "CONTRACT_SUBHEAD": "Agreement Form",
+    "FILE_HEADER": "{{agreementName}} between <br /> {{merchantName}} and Ario Platform.",
+    "NAME": {
+      "BUSINESS_PARTNER": "Business Partner Agreement",
+      "PAD": "Pre-authorized Debit Agreement",
+      "PAF": "Pre-authorized Financing Agreement",
+      "UNSECURED_BUSINESS_LOAN": "Loan Agreement"
+    },
+    "NO_CONTRACT_AVAILABLE": "Sorry, your application contract is currently unavailable.",
+    "SIGN_BUTTON_LABEL": "Sign"
+  },
+  "APPLICATION": {
+    "ADDRESS": "Address",
+    "AFTER_CLICKING": "We will verify your business, calculate a fee, and prepare your working capital agreement for your review.",
+    "BUSINESS_DETAILS": "Business details",
+    "BUSINESS_NUMBER": "Business #",
+    "INCORPORATED_IN": "Incorporated in",
+    "I_AGREE_THAT": "I agree that I have reviewed and verified the provided information. I confirm that I am authorized to apply on behalf of the business.",
+    "NAME": "Name",
+    "PROCESSING": "Processing…",
+    "SUB_TITLE": "With an XYZ Payments working capital advance.",
+    "TITLE": "Get the capital you need for your business."
+  },
+  "APPLICATION_DECLINED": {
+    "BODY": "We were unable to fund your request.",
+    "TITLE": "Your application has been declined."
+  },
+  "APPLICATION_PROGRESS": {
+    "ABOUT_YOU": "About you",
+    "ABOUT_YOU_TITLE": "Tell us about yourself",
+    "GET_CERTIFIED": "Get certified",
+    "GET_CERTIFIED_TITLE": "Congratulations!",
+    "NEW_BUSINESS_LABEL": "About your business",
+    "NOT_CERTIFIED_TITLE": "Unable to certify",
+    "ON_BOARDING_SUBTEXT": "To make this application go as smoothly as possible, we need some details about your business and you. This will only take a few minutes.",
+    "REVIEW_AND_CONFIRM": "Review and confirm",
+    "SELECT_ADVANCE": "Select advance",
+    "SET_UP_BANKING": "Connect your bank",
+    "SIGN_THE_AGREEMENT": "Sign the agreement",
+    "UNABLE_TO_CERTIFY_TITLE": "Certification in progress",
+    "VERIFY_YOURSELF": "Verify yourself"
+  },
+  "APPLICATION_SUMMARY": {
+    "APPLICATION_SUMMARY": "Application Summary"
+  },
+  "APPLY_FOR_CAPITAL": {
+    "ADVANCE?": "What is a working capital advance?",
+    "AMOUNT?": "What is the % of daily sales amount?",
+    "AN_EXAMPLE": "An example",
+    "BACK?": "How long will it take to pay my advance back?",
+    "FEE?": "What is the fee?",
+    "FOR_EXAMPLE": "<p class=\"ztt_panel-text\"> For example, let’s assume you’ve accepted a working capital advance with the following terms:</p><p class=\"ztt_panel-text\">Amount: $10,000 <br>% of daily sales: 15% <br>Fee: $3,000 <br>Total owed: $13,000</p><p class=\"ztt_panel-text\">If on a given day you make $1,000 in gross sales, you’ll repay $150 towards the total amount owed. You’ll have $12,850 left to pay back. And if you make $2000 in sales the following day, your next payment will be $300. You’ll continue to pay 15% of each day’s sales until the total advance plus fee amount is repaid.</p>",
+    "THE_FEE_IS": "<p class=\"ztt_panel-text\"> The fee is the cost of the advance. In addition to paying back the advance amount, you will also pay back the fee. Before you apply, the fee is approximated. You’ll have an opportunity to see the actual fee before you sign the terms and conditions for the advance. </p><p class=\"ztt_panel-text\">    Related to the fee is a figure called total amount owed. This is the sum of the fee and your advance. Each daily payment repays part of the advance and part of the fee until you’ve repayed the total amount owed.</p>",
+    "THE_PERCENTAGE_OF": "<p class=\"ztt_panel-text\">It’s the percentage of your gross sales that you agree to pay back each day. By using a percent, the daily dollar-value of the payback amount ebbs and flows with your sales. This way you always have enough money left over to pay for all the other essential things your business does!</p>",
+    "TIME_TO_PAY": "<p class=\"ztt_panel-text\"> The time to pay off your advance depends on the total amount owed and the % of daily sales you choose for payback. But in general, we expect it might take 3 or 4 months. If you have exceptional sales, it may take a little less time, and if sales are more sluggish than usual, it may take a bit more.</p>",
+    "WORKING_CAPITAL_ADVANCE": "<p class=\"ztt_panel-text\">A working capital advance is an agreement to sell some of your future sales. You get you the money you need now, and the amount you pay back each day follows the same ebbs and flows as your sales. It’s a quick and easy way to get the extra funds your business needs to get things done. </p><p class=\"ztt_panel-text\"> Get a little or get a lot - whatever your business needs right now. Most people see the cash in their bank account within 48 hours of starting the process.</p>"
+  },
+  "APPROVAL_PENDING": {
+    "BODY": "We will review your information and you'll hear back from us soon!",
+    "TITLE": "Thanks for applying!"
+  },
+  "APPROVED_ADVANCE": {
+    "BANK_TRANSACTIONS": "The deposit was made on {{date}}. If it’s been more than 3 business days and the transaction has not appeared in your bank account, start a chat with support.",
+    "CONGRATULATIONS": "Congratulations!",
+    "DON’T_SEE_THE": "I don’t see the working capital cash in my account, where is it?",
+    "GO_DASHBOARD": "Go to dashboard",
+    "TITLE": "Congratulations! Your cash is on its way.",
+    "YOUR_BANK_ACCOUNT": "Your bank account details are complete and the working capital cash deposit will appear in your bank account shortly."
+  },
+  "AUTO_SEND": {
+    "BUTTON_CANCEL": "Cancel",
+    "BUTTON_EDIT": "Edit",
+    "BUTTON_SELECT_ALL": "Select All",
+    "BUTTON_SUBSCRIBE": "Subscribe to Auto-Send Invoices",
+    "BUTTON_UNSELECT_ALL": "Unselect All",
+    "BUTTON_UNSUBSCRIBE": "Unsubscribe from Auto-Send Invoices"
+  },
+  "BANK_INFO": {
+    "ACCOUNT_SELECT_DEFAULT": "Select Account",
+    "ADD_NEW": "add a new one",
+    "ADD_NEW_NO_SELECT": "Please add a new bank account.",
+    "CHOOSE_BANK": "Select your account or",
+    "CHOOSE_ENTERED": "Select one already entered.",
+    "CONTINUE": "Continue",
+    "FLINKS_FAILED": "We are currently unable to establish a connection to your institution. We recognize that such issues are frustrating for our users.<br><br> We recommend waiting and attempting to connect to your institution again after an appropriate time interval.<br><br> Please <a class=\"intercom-trigger\" role=\"button\">chat with us</a> if you have any questions.",
+    "FLINKS_FAILED_TITLE": "We could not connect your bank",
+    "FLINKS_INVALID_ACCOUNT_TYPE": "Oops! No business chequing account could be matched with your business information. Please try again or start a chat with support.",
+    "FLINKS_ACCOUNT_RECONNECT_MISMATCH": "Oops! We could not find your previously connected bank account with the banking credentials you provided. Please try again or start a chat with support.",
+    "HEREBY_WAIVE": "I hereby waive the right to a written notice of 10 days before each PAD.",
+    "MANUALLY": "I’ll enter my account manually",
+    "NEARLY": "Pre-authorized Debit (PAD) Agreement between <br> {{merchantName}} (Payor) and Ario Platform (Payee)",
+    "NEARLY_THERE": "Nearly there!",
+    "NO_THANKS": " No thanks, ",
+    "OR": "or",
+    "OTHER_CONFIRMATION": "I waive all other confirmation before the first payment.",
+    "REVIEWED_AND_CONFIRMED": "I have reviewed and confirmed the bank account selected. I authorize the working capital deposit into this account and pre-authorized debits from this account, as specified in the PAD agreement above.",
+    "TITLE": "Confirm banking info",
+    "BANK_CONNECT_ERROR_HEADER": "We were unable to connect to your account.",
+    "BANK_CONNECT_ERROR_MESSAGE": "This sometimes happens - don't worry.<br><br>To help us determine your credit limit, you can upload 12 months of bank statements and a void cheque and you'll get a response within 48 hours.",
+    "BANK_CONNECT_ERROR_CHAT_TEXT": "If you have any questions, ",
+    "BANK_CONNECT_ERROR_CHAT_LINK": "chat with us",
+    "YOUR_WORKING_CAPITAL": "<p class=\"ztt_panel-text\">Your working capital advance will be directly deposited into your bank account. To set up automatic withdrawals we require your bank account info and a pre-authorized debit agreement.</p>"
+  },
+  "BORROWER_DASHBOARD": {
+    "INVOICES": {
+      "AMOUNT": "Amount",
+      "AMOUNT_PAID": "Amount paid",
+      "DUE_DATE": "Due Date",
+      "INVOICE_NUMBER": "Invoice #{{number}}",
+      "PAY_BTN": "Pay Invoice",
+      "REVIEW_BTN": "Review"
+    }
+  },
+  "BORROWER_INVOICES_COMPONENT": {
+    "DT_COLUMNS": {
+      "ACTIONS": "Action",
+      "AMOUNT": "Amount",
+      "AMOUNT_PAID": "Amount paid",
+      "DUE_DATE": "Due Date",
+      "INVOICE_NUMBER": "Invoice #",
+      "PAYEE": "Supplier",
+      "PAY_BTN": "Pay Invoice",
+      "STATUS": "Status"
+    },
+    "STATUS_OVERPAID": "Overpaid",
+    "STATUS_PAID": "Paid",
+    "STATUS_PARTIAL": "Partial",
+    "STATUS_PROCESSING": "Processing",
+    "STATUS_SCHEDULED": "Scheduled",
+    "STATUS_UNPAID": "Unpaid",
+    "TITLE": "Invoices"
+  },
+  "BUSINESS_PARTNER": {
+    "BRANDING_DEFAULTS": {
+      "NOT_READY": "Not ready to customize your site yet? You can use Ario's default theme for now.",
+      "SKIP": "Skip"
+    },
+    "BRANDING_HEADER": "Customize your website's look",
+    "COLOUR_HEADER": "2. Choose your colours",
+    "COLOUR_TOO_LIGHT": "Colour is too light, and will be dificult to see.",
+    "COLOUR_PATTERN": "Must be a hex colour code (#ffffff)",
+    "COLOUR_PRIMARY": "Menu background",
+    "COLOUR_PRIMARY_USED": "Where menu background is used:",
+    "COLOUR_REQUIRED": "Required",
+    "COLOUR_ACCENT": "Accent",
+    "COLOUR_ACCENT_USED": "Where accent is used:",
+    "COLOUR_PRIMARY_WHERE": "Its primary use is to set the background colour of the navigation menu.",
+    "COLOUR_PRIMARY_WHERE_NOTE": "<b>Note:</b> when set to a light colour, the navigation links will darken once the theme is published.",
+    "COLOUR_ACCENT_WHERE": "The accent colour is usually for things that need to stand out and be \"clicked.\"",
+    "COLOUR_ACCENT_WHERE_NOTE": "<b>Note:</b> choose a colour that stands out against a light background. Your clients will need to be aware of what they can \"click.\"",
+    "COLOUR_ACCENT_EXAMPLES": {
+      "LABEL": "Accent colour preview:",
+      "HEADER": "Header",
+      "LEAD": "Lead",
+      "PARAGRAPH": "Paragraph",
+      "BOLD": "Bold",
+      "BUTTON": "button",
+      "BUTTON_GROUP": "button group",
+      "BUTTON_OUTLINE": "outline",
+      "BUTTON_DISABLED": "button disabled"
+    },
+    "CONTRACT_SIGN_ABOVE": "To become an Ario Business Partner, review and sign the Business Partner agreement.",
+    "CONTRACT_SIGN_BELOW": "Click SIGN if you agree to the terms of this Business Partner agreement. You will be prompted for your password instead of a handwritten signature.",
+    "CREATE_BUSINESS_PARTNER_ERROR": "There was an error sending the request. Start a live chat with our support team.",
+    "CUSTOM_VANITY_INVALID": "Valid characters are A-Z a-z 0-9",
+    "CUSTOM_VANITY_LABEL": "1. Customize your web address",
+    "CUSTOM_VANITY_SUFFIX": ".arioplatform.com",
+    "GET_APPLICATION_ERROR": "There was an error loading the Business Partner agreement. Start a live chat with our support team.",
+    "LANDING": {
+      "CONTACT_LEAD": "Have questions about Ario's Business Partner service?",
+      "CONTACT_US": "Contact us:",
+      "FAQ_HEADER": "Contact",
+      "LEAD": "As an Ario Business Partner, you can provide customers with access to credit solutions through a simple, yet powerful platform. The best part? You can get set up within minutes.",
+      "SETUP": "GET STARTED",
+      "SLOGAN": "Time is money.<br/>Ario gives you both.",
+      "STEP_1": "Onboarding",
+      "STEP_1_TEXT": "Once you’ve decided to partner with Ario, we’ll send you an onboarding packet to review and get your company’s branding info to help us customize your platform!",
+      "STEP_2": "Market to Your Customers",
+      "STEP_2_TEXT": "What’s a platform without customers to use it? We’ll set you up with handy guides and email templates so you can start promoting the service right away. Remember, you’ll want to let your customers know about their new financing options through word of mouth too.",
+      "STEP_3": "Customers Get a Loan & You Get Paid",
+      "STEP_3_TEXT": "After sign up, your customers are able to immediately apply for credit. Once approved, they can pay you instantly!",
+      "THREE_STEPS_HEADER": "How It Works"
+    },
+    "LOGO_HEADER": "3. Upload your logo",
+    "NOT_CONNECTED_TO_QUICKBOOKS": "Connect to QuickBooks to  use this feature",
+    "PREVIEW": "Preview",
+    "VANITY_INVALID": "The requested web address is invalid. Enter a new value or chat with support for assistance."
+  },
+  "CALCULATE_FEE": {
+    "ADVANCE_VAL_INVALID": "Amount unavailable.",
+    "APPLY_NOW": "Apply now",
+    "APPROXIMATELY_FEE": "Total fee",
+    "CALCULATING": "Calculating",
+    "CHOOSE_RATE_SELECT_DEFAULT": "Select Rate",
+    "CHOOSE_REPAYMENT": "Select a repayment amount",
+    "ENTER_AMOUNT": "Enter a working capital amount",
+    "FORM_HEADING": "Your business is approved for <span class=\"amount\"> {{amount}} </span>",
+    "OF_DAILY_SALES": "of daily sales",
+    "YOU_GET": "You could get up to {{amount}} within 24 hours",
+    "increased_%": "Note: Your selected % of daily sales was increased.",
+    "largest_advance": "The largest advance you can get is {{advance}}",
+    "smallest_advance": "The smallest advance you can get is {{advance}}"
+  },
+  "CAPITAL_SUMMARY": {
+    "AGREEMENT_COMPLETE": "Agreement completed {{date}}",
+    "BALANCE": "Balance",
+    "CASH": "Cash",
+    "CLICK_CANCEL": "Click Cancel to change the selected terms.",
+    "ESTIMATED_FEE": "Estimated fee",
+    "ESTIMATED_TOTAL": "Estimated total",
+    "FEE": "Fee",
+    "GROSS_SALES": "% of gross sales",
+    "OFFER_EXPIRES": "This offer expires {{date}}.",
+    "PAYMENTS": "Payments",
+    "RATE": "Remittance rate",
+    "SUMMARY": "Working Capital Summary",
+    "TOTAL_OWED": "Total Owed",
+    "YOU_APPLIED": "You applied {{date}}."
+  },
+  "CASH_FLOW": {
+    "INCREASE_LIMIT": {
+      "CARD_BODY": "Increase your limit by linking your business bank account.",
+      "CARD_BODY_NOTE": "Your linked bank account will also be used for repayments.",
+      "CARD_ERROR": "We have encountered a problem and we are looking into it now.",
+      "CARD_FINISHED_BODY": "We're processing this information. Changes to your limits will be reflected in your dashboard in the next few minutes.<br>For assistance start a live chat with our support team.",
+      "CARD_FINISHED_HEADER": "Thank you for connecting your account.",
+      "CARD_HEADER": "Increase Your Limit",
+      "REQUIREMENT": "To qualify for an increase, your business requires a minimum of $9,100 CAD average monthly reported sales for the last 12 months."
+    }
+  },
+  "CHOOSE_BANKACCT_BTN": "Use This Account",
+  "CHOOSE_BANKACCT_ERROR_HEADING": "Looks like you have already selected a bank account!",
+  "CHOOSE_BANKACCT_ERROR_TEXT": "Click OK to be redirected to the dashboard where you can resume your application.",
+  "CHOOSE_BANKACCT_INSTRUCTIONS": "Select your primary business chequing account that best reflects your business performance.",
+  "CHOOSE_BANKACCT_INSTRUCTIONS_BUSINESS_PARTNER": "Select your primary business chequing account.<br></br><b>This account will be used for future invoice payment deposits.</b>",
+  "CHOOSE_BANKACCT_INSTRUCTIONS_CASH_FLOW": "Select your primary business chequing account that best reflects your business cash flow.",
+  "CHOOSE_BANKACCT_INSTRUCTIONS_SALES_VOLUME": "Select your primary business chequing account.<br></br><b>This account will be used to determine your line of credit based on your average monthly sales.</b>",
+  "CHOOSE_BANKACCT_INSTRUCTIONS_INSIGHTS": "Select one or more accounts for insights.",
+  "CHOOSE_BANKACCT_LABEL": "Select your primary business chequing account",
+  "CHOOSE_BANKACCT_SELECT_DEFAULT": "Select Bank Account",
+  "CHOOSE_BANKACCT": {
+    "INSIGHTS_OPT_IN": "Send me weekly Cash Flow Advisor insights. <a target=\"_blank\" href=\"https://thinkingcapital.ca/products/cash-flow-advisor/\">Learn more.</a>"
+  },
+  "COMMON": {
+    "BTN": {
+      "ADD": "Add",
+      "ADD_NEW_BANK": "Go Back",
+      "APPLY": "Apply",
+      "BACK": "Back",
+      "CANCEL": "Cancel",
+      "DASHBOARD": "Back to My Dashboard",
+      "MODIFY": "Modify",
+      "NEXT": "Next",
+      "SIGN_UP": "Become a Partner",
+      "SKIP": "Skip",
+      "SUBMIT": "Submit",
+      "TRY_AGAIN": "Try again",
+      "INTERCOM_CTA": "Start a chat"
+    },
+    "NOT_AVAILABLE": "N/A",
+    "OR": "Or",
+    "STOP_SHOWING": "Do not show this message again"
+  },
+  "COMPLETING_APPLICATION": {
+    "BODY": "We are now processing your request. We will send you an email in 1-2 business days with an update.",
+    "TITLE": "You're all done!"
+  },
+  "CONFIRM_EMAIL": {
+    "CAPITAL_ADVANCE?": "What is a working capital advance?",
+    "CAPITAL_ADVANCE_IS": "<p class=\"ztt_panel-text\">A working capital advance is an agreement to sell some of your future sales. You get you the money you need now, and the amount you pay back each day follows the same ebbs and flows as your sales. It’s a quick and easy way to get the extra funds your business needs to get things done. \nGet a little or get a lot - whatever your business needs right now. Most people see the cash in their bank account within 48 hours of starting the process.</p>",
+    "CONFIRM_EMAIL": "Please confirm your email address.",
+    "DETAILS": "To use your account, you need to confirm your email address. Check your inbox  \nfor a message from no-reply@arioplatform.com. Didn’t get the email? Click below to send it again.",
+    "RESEND_EMAIL": "Resend email",
+    "SOLVE_NO_CONFIRMATION": "<p class=\"ztt_panel-text\">We send the confirmation email from no-reply@arioplatform.com, with the email subject “Confirm your address”. The email normally arrives in your inbox within a few minutes. \nCheck your spam folder and make sure you add no-reply@arioplatform.com to your list of allowed senders. If you can’t find the email, resend it.</p>",
+    "WHY_NO_CONFIRMATION?": "I didn’t get the confirmation email, what do I do?"
+  },
+  "DASHBOARD": {
+    "ACTIVE_CAPITAL": "ACTIVE WORKING CAPITAL ADVANCE ",
+    "AMOUNT": "Amount",
+    "APPLICATION_STARTED": "Application started",
+    "BANK_ACCOUNT_DETAILS": "<p class=\"ztt_panel-text\">The working capital cash desposit will appear in your bank account shortly.</p><p class=\"ztt_panel-text\">Bank transactions can take up to 3 business days to appear in your bank account. The deposit was initiated on {{advance_sent_at}}.</p>",
+    "BECOME_PARTNER": "Offer financing solutions to your customers while earning revenue.",
+    "BUSINESS_PARTNER_REQUEST_RECEIVED": "Thank you. You will receive an email when your custom website is ready.",
+    "COVID": {
+      "TITLE": "COVID-19 Update:",
+      "CONTENT": "In light of the economic circumstances brought on by COVID-19, we’ve been experiencing an increase in demand and longer processing times. Since these are unusual circumstances, we would like to reach out to you personally to support your application."
+    },
+    "KYC_FAILED": {
+      "SELF_FIXABLE": {
+        "LEAD": "We need to verify your identity.",
+        "BODY_1": "We verify your identity to make sure you are you - not someone pretending to be you.",
+        "BODY_2": {
+          "START": "Please ",
+          "CTA": "confirm your information",
+          "END": " promptly to help us process your loan application."
+        }
+      },
+      "SELF_FIX_IN_PROGRESS": {
+        "LEAD": "Thank you for confirming your information.",
+        "BODY_1": "We are reviewing your application."
+      },
+      "NON_FIXABLE": {
+        "LEAD": "We were unable to verify your identity.",
+        "BODY_1": "Please chat with us if you have any questions."
+      }
+    },
+    "COMPLETED": "Completed transactions",
+    "DATE": "Date",
+    "DATE_CONNECTOR": "as of: ",
+    "DELINQUENT": {
+      "MESSAGE": "You have missed payments on your account.",
+      "RESTRICTIONS_DESC": "Chat with a customer success advisor to make a payment. Once your account is in good standing, your Line of Credit will be reinstated."
+    },
+    "DEPOSITED": "Working capital advance deposited",
+    "DESCRIPTION": "Description",
+    "FEES_CHARGED": "Working capital advance fees charged",
+    "HAVE_REPAID": "You’ve repaid your working capital advance",
+    "HAVE_TO_PAY": "You have {{balance}} left to pay.",
+    "INVOICES_TAB": {
+      "TITLE": "My invoices"
+    },
+    "INVOICE_FOR": "Invoice for {{ issued_on }}",
+    "INVOICE_FOR_ID": "This is invoice # {{selectedInvoice.invoice_number}} for your Working Capital Advance.",
+    "MAIN_TITLE": "Financing Details",
+    "NEXT_PAYMENT": "Next payment",
+    "ON_ITS_WAY": "Your cash is on its way.",
+    "PAD_AGREEMENT_LINK": "Pre-Authorized Debit (PAD) agreement",
+    "PAD_AGREEMENT_POST": "was executed on {{activated_at}} and signed on behalf of {{merchantName}}.",
+    "PAD_AGREEMENT_PRE": "The",
+    "PAD_COMPLETED": "Working capital advance <span class=\"link\">PAD agreement </span>completed",
+    "PAYED_FULL": "Advance paid back in full",
+    "PAYMENT_PLAN": {
+      "PLAN_ACTIVE": "A payment plan has been added to your account.",
+      "RESTRICTIONS_DESC": "Your access to additional funding is temporarily disabled. If you have any questions, please chat with a support representative about what this means for your account."
+    },
+    "PENDING": "Pending transactions",
+    "SEE_INVOICE": "see invoice",
+    "STATUS": "Status",
+    "TRANSACTIONS_TAB": {
+      "DESCRIPTION": {
+        "DIRECT_DEBIT_INVOICE_PAYMENT_TO": "Direct debit payment to {{ supplierName }} for invoice {{ invoiceNumber }}",
+        "DIRECT_DEBIT_PAYMENT_TO": "Direct debit payment to {{ supplierName }}",
+        "FINANCING_DEPOSIT": "Funds deposited (Reference #: {{ referenceNumber }})",
+        "FINANCING_INVOICE_PAYMENT_TO": "Financing payment to {{ supplierName }} for invoice {{ invoiceNumber }} (Reference #: {{ referenceNumber }})",
+        "FINANCING_INVOICE_REPAYMENT": "Financing repayment for invoice {{ invoiceNumber }} (Reference #: {{ referenceNumber }})",
+        "FINANCING_PAYMENT_TO": "Financing payment to {{ supplierName }} (Reference #: {{ referenceNumber }})",
+        "FINANCING_REPAYMENT": "Financing repayment (Reference #: {{ referenceNumber }})",
+        "INVOICE_PAYMENT_FROM": "Payment from {{ merchantName }} for invoice {{ invoiceNumber }}",
+        "OFFLINE_PAYMENT": "Offline payment to {{ offlineEntityName }} (Reference #: {{ referenceNumber }})",
+        "PAYMENT_FROM": "Payment from {{ merchantName }}"
+      },
+      "TITLE": "My transactions"
+    },
+    "TRANSACTION_STATE": {
+      "COMPLETING": "Completing",
+      "ERROR": "Failed",
+      "FAIL_RETRY": "Failed, will retry",
+      "IN_PROGRESS": "In progress",
+      "PENDING": "Pending",
+      "PROGRESSING": "Progressing",
+      "REQUESTED": "Requested",
+      "REQUESTING": "Requesting",
+      "SUCCESS": "Completed",
+      "VERIFIED": "Verified",
+      "VERIFY_FAILED": "Verification failed"
+    },
+    "WC_AGREEMENT_LINK": "Working Capital (WC) agreement",
+    "WC_AGREEMENT_POST": "was executed on {{activated_at}} and signed on behalf of {{merchantName}}.",
+    "WC_AGREEMENT_PRE": "The",
+    "WITHDRAWAL_AMOUNT": "Withdrawal amount",
+    "WORKING_CAPITAL": "Working capital advance <span class=\"link\">contract</span> completed",
+    "WORKING_CAPITAL_ADVANCE": "You have an active working capital advance.",
+    "WORKING_CAPITAL_ADVANCE_INVOICE": "Working Capital Advance Invoice"
+  },
+  "DASHBOARD_TABLE": {
+    "INVOICES": {
+      "TITLE": "Invoices"
+    },
+    "RECENT_ACTIVITY": {
+      "TITLE": "Recent Activity",
+      "EMPTY": "Your recent withdraws and payments will appear here."
+    }
+  },
+  "DATA_SOURCE": {
+    "QUICKBOOKS": "Quickbooks"
+  },
+  "DATE_PICKER": {
+    "PLACEHOLDER_DD_MM_YYYY": "dd-mm-yyyy",
+    "PLACEHOLDER_MM_YYYY": "mm-yyyy"
+  },
+  "DELEGATED_BANNER": {
+    "VIEWING": "<p class=\"ztt-delegated-mode-text\">You are viewing <span class=\"bold\">{{merchantName}}</span>’s platform with read-only access. You’re not authorized to make changes on behalf of this user.</p>"
+  },
+  "DIRECT_DEBIT": {
+    "AMOUNT_LABEL": "Amount",
+    "BANK_ACCOUNT_LABEL": "Bank Account",
+    "CONFIRM_LABEL": "Confirm",
+    "EXPECTED_BY_LABEL": "Expected By",
+    "EXPECTED_BY_TEXT": "Your payment is expected to go through within 5 business days",
+    "FREQUENCY_LABEL": "Frequency",
+    "INVOICE_NUM_LABEL": "Invoice Number",
+    "PAYEE_LABEL": "Supplier",
+    "REVIEW_TITLE": "Review Payment"
+  },
+  "DOCUMENT_TYPE": {
+    "BANK_STATEMENTS": "Bank statements",
+    "GST_NOTICE": "GST Notice",
+    "NOTARIZED_DOCUMENTS": "Notarized Documents",
+    "OTHER": "Other",
+    "PHOTO_IDENTIFICATION": "Photo Identification",
+    "VOID_CHEQUE": "Void cheque"
+  },
+  "EDIT_MERCHANT": {
+    "FORMS": {
+      "ADDRESS": {
+        "TITLE": "Registered Corporate Business Address"
+      },
+      "BUSINESS": {
+        "BUSINESS_NUMBER": {
+          "LABEL": "Business Registration Number (optional)",
+          "TOOLTIP": "Hint: Enter the number you were issued when you registered your business (provincially or federally). This is not your CRA business number",
+          "VALIDATION_ERRORS": {
+            "INVALID_ALPHANUMERIC_CHARACTER": "Valid characters are A-Z a-z 0-9",
+            "INVALID_ALPHA_START_CHARACTER": "Must start with a letter.",
+            "INVALID_CHARACTER": "You have entered an invalid character.",
+            "INVALID_FEDERAL_CHARACTER": "Only numbers and dashes allowed.",
+            "INVALID_LENGTH": "Too many characters entered.",
+            "INVALID_NUMERIC_CHARACTER": "Only numbers allowed."
+          }
+        },
+        "DOING_BUSINESS_AS": {
+          "LABEL": "Doing Business As",
+          "SAME_CHECKBOX": "Same as legal business name",
+          "SHORTHAND": "as",
+          "VALIDATION_ERRORS": {
+            "REQUIRED": "Required."
+          }
+        },
+        "JURISDICTION": {
+          "LABEL": "Jurisdiction (optional)",
+          "VALIDATION_ERRORS": {
+            "BUSINESS_NUMBER": "Select the jurisdiction."
+          }
+        },
+        "NAME": {
+          "LABEL": "Legal business name",
+          "VALIDATION_ERRORS": {
+            "REQUIRED": "Required."
+          }
+        },
+        "TITLE": "YOUR BUSINESS"
+      }
+    },
+    "INFO_CARD": {
+      "TITLE": "EDIT YOUR BUSINESS INFORMATION",
+      "BODY": {
+        "ISSUE": "We're having trouble to confirm the existence of your business based on the information you provided.",
+        "SOLUTION": "Please make sure that all the information matches the corporate record of your business."
+      },
+      "FOOTER": {
+        "LEAD": "If you still having trouble, don't hesitate to ",
+        "ACTION_LABEL": "start a chat."
+      }
+    }
+  },
+  "EQUIFAX_SERVICE_DOWN": "Oops, something went wrong on our end. Please try again later.",
+  "ERROR_MODAL": {
+    "DELEGATED_MODE": {
+      "ER401": "Unauthorized",
+      "ER401DELEGATED": "401 - Unauthorized",
+      "REMINDER": "<p class=\"body-text\">You’re not authorized to make changes.</p>",
+      "REMINDER_DELEGATED": "<p class=\"body-title\">Reminder</p><p class=\"body-text\">You are viewing {{merchantName}}’s platform with read-only access. </p><p class=\"body-text\"> You’re <span class=\"bold\">not authorized to make changes </span> on behalf of this user.</p>",
+      "SIGN_IN": "<p class=\"body-text\"> If you think you’re viewing this message in error, <a href=\"{{url}}\"> sign in </a>again.<br><span class=\"small\"> (Note: this will sign you out of all other tabs.)</span></p>",
+      "SUPPORT": "If you continue to see this message, start a chat with support"
+    },
+    "DUPLICATE_EMAIL_ERROR": "Sorry, this business was previously registered using another email address.",
+    "GENERIC": {
+      "BODY_MESSAGE1": "If the problem persists, start a live chat with our support team.",
+      "BODY_MESSAGE2": "Please try again.",
+      "HEADING": "Oops, something went wrong on our end."
+    },
+    "NO_SUPPLIERS_ERROR": "Sorry, there are no suppliers available for you.",
+    "PAD_ACCEPT_ERROR": "You need to check all checkboxes to continue or select account",
+    "SERVICE_ERROR": "Temporary Service Interruption.",
+    "SET_BANK_FAILED": "Oops.. Failed to load your bank accounts."
+  },
+  "FAB_MENU": {
+    "CONNECT_QUICKBOOKS": "Connect to QuickBooks",
+    "INVITE_CUSTOMERS": "Invite Customers",
+    "SHARE": "Share"
+  },
+  "FOOTER": {
+    "COPY": "© {{currentYear}} ZetaTango Technology Inc. and Thinking Capital Financial Corporation. All rights reserved. Ario and Ario Platform are trade names of ZetaTango Technology Inc. Ario, Ario & Design, and Ario Platform are registered trademarks of ZetaTango Technology Inc. Thinking Capital is a registered trademark of Thinking Capital Financial Corporation.",
+    "SUPPORT": {
+      "HELP_HOURS": "9am - 5pm (EST)",
+      "HELP_TEXT": "Chat is available Monday through Friday",
+      "HELP_TITLE": "Looking for Help? Start a live chat with our support team."
+    }
+  },
+  "GENERIC_ERROR": {
+    "LINE_1": "Start a live chat with our support team.",
+    "LINE_2": "Available 9am - 5pm (EST) — Monday to Friday.",
+    "TITLE": "An Error has Occurred"
+  },
+  "HEAD": {
+    "TITLE": {
+      "AGREEMENT": "",
+      "APPLICATION": "Application",
+      "CASH_FLOW": "Cash Flow",
+      "DASHBOARD": "My Business",
+      "ERROR": "Error",
+      "HELP": "Help",
+      "INSIGHTS": "Cash Flow Advisor",
+      "MARKETING": "Marketing",
+      "ONBOARDING": "Setup Your Business",
+      "PARTNER_DASHBOARD": "My Business",
+      "PARTNER_ONBOARDING": "Become A Partner",
+      "QUICKBOOKS": "QuickBooks Connect",
+      "DOCUMENTS": {
+        "MY_DOCUMENTS": "Supporting Documentation",
+        "UPLOAD_BANKING": "Upload Banking Documents"
+      }
+    }
+  },
+  "GUARANTOR": {
+    "GUARANTOR": "Guarantor",
+    "FIRST_NAME": "First Name",
+    "ENTER_NAME": "Required",
+    "LAST_NAME": "Last Name",
+    "ENTER_LAST_NAME": "Required",
+    "DATE_BIRTH": "Date of Birth",
+    "ENTER_DATE_BIRTH": "Invalid date of birth",
+    "NUMBER": "Phone Number",
+    "ENTER_NUMBER": "Required",
+    "EMAIL": "Email Address",
+    "ENTER_EMAIL": "Invalid email address",
+    "RELATIONSHIP": "Relationship",
+    "ENTER_RELATIONSHIP": "Required"
+  },
+  "HOME": {
+    "TITLE": "We don’t have a working capital offer for you. \nCheck back again soon…",
+    "TITLE_SUB": "for an opportunity to get \nthe cash your business needs"
+  },
+  "HTTP": "http://",
+  "HTTPS": "https://",
+  "INDUSTRIES": {
+    "APPAREL_AND_ACCESSORIES": "Apparel and Accessories",
+    "ANTIQUE_SHOPS": "Antique Shops",
+    "ART_GALLERY": "Art/Gallery",
+    "AUTOMOBILE_DEALERSHIPS": "Automobile Dealerships",
+    "AUTOMOBILE_PARTS_AND_ACCESSORIES": "Automobile Parts & Accessories",
+    "AUTOMOBILE_RELATED": "Automobile Related",
+    "AUTOMOBILE_RENTALS_AND_LEASING": "Automobile Rentals & Leasing",
+    "AUTOMOBILE_REPAIR_SHOP": "Automobile Repair Shop",
+    "AUTOMOBILE_TIRE_SHOP": "Automobile Tire Shop",
+    "BAKERIES": "Bakeries",
+    "BAR": "Bar",
+    "BEAUTY_HAIR_SALON_RETAIL": "Beauty/Hair Salon-Retail",
+    "BEAUTY_HAIR_SALON_RETAIL_AND_WHOLESALE": "Beauty/Hair Salon-Retail & Wholesale",
+    "BEAUTY_HAIR_SALON_WHOLESALE": "Beauty/Hair Salon-Wholesale",
+    "BICYCLE_SHOPS_SALES_AND_SERVICE": "Bicycle Shops-Sales & Service",
+    "BILLIARDS_AND_POOL_HALLS": "Billiards and Pool Halls",
+    "BOOK_STORES": "Book Stores",
+    "BUTCHER": "Butcher",
+    "CANDY_CHOCOLATE": "Candy/Chocolate",
+    "CARPET_FLOORING": "Carpet/Flooring",
+    "CAR_WASHES": "Car Washes",
+    "CATERER": "Caterer",
+    "CEMETERY_BURIAL_HOME": "Cemetery/Burial Home",
+    "CHILDRENS_CLOTHING": "Children's Clothing",
+    "CLEANING_PRODUCTS": "Cleaning Products",
+    "CLOTHING": "Clothing",
+    "COFFEE_SHOP": "Coffee Shop",
+    "COMPUTER_ELECTRONICS_REPAIR": "Computer/Electronics Repair",
+    "COMPUTER_ELECTRONICS_RETAIL": "Computer/Electronics Retail",
+    "CONSTRUCTION_RELATED": "Construction Related",
+    "CONVENIENCE_STORE": "Convenience Store",
+    "COSMETICS_RETAIL": "Cosmetics-Retail",
+    "CRAFT_SHOP": "Craft Shop",
+    "DANCE_STUDIO": "Dance Studio",
+    "DENTIST": "Dentist",
+    "DOCTOR": "Doctor",
+    "DOLLAR_STORE": "Dollar Store",
+    "DRUG_STORE": "Drug Store",
+    "DRY_CLEANERS": "Dry Cleaners",
+    "ELECTRICAL_AND_SMALL_APPLIANCE_REPAIR": "Electrical & Small Appliance Repair",
+    "EQUIPMENT_RENTAL_AND_LEASING_SERVICES": "Equipment Rental & Leasing Services",
+    "FAST_FOOD_RESTAURANT": "Fast Food Restaurant",
+    "FLORIST": "Florist",
+    "FOOD_STORE": "Food Store",
+    "FURNITURE": "Furniture",
+    "GARDENING": "Gardening",
+    "GAS_STATIONS": "Gas Stations",
+    "GENERAL_RETAIL": "General Retail",
+    "GIFT_CARD": "Gift Card",
+    "GIFT_CARD_NOVELTY_AND_STATIONERY": "Gift Card, Novelty & Stationery",
+    "GOLF_COURSE": "Golf Course",
+    "GYM": "Gym",
+    "HARDWARE": "Hardware",
+    "HEALTH_SERVICES": "Health Services",
+    "HOME_AND_GARDEN": "Home & Garden",
+    "HOBBY_TOY_GAME": "Hobby/Toy/Game",
+    "HOME_FURNISHINGS": "Home Furnishings",
+    "HOUSEHOLD_APPLIANCE_REPAIR": "Household Appliance-Repair",
+    "HOUSEHOLD_APPLIANCE_RETAIL": "Household Appliance-Retail",
+    "JEWELLERY": "Jewellery",
+    "LIGHTING": "Lighting",
+    "LIQUOR_STORE": "Liquor Store",
+    "LODGING": "Lodging",
+    "MACHINERY": "Machinery",
+    "MANUFACTURING": "Manufacturing",
+    "MEMBERSHIP_CLUBS": "Membership Clubs",
+    "MISC_BLUE_COLLAR_SERVICES": "Misc. Blue Collar Services",
+    "MISC_WHITE_COLLAR_SERVICES": "Misc. White Collar Services",
+    "MUSIC_STORES": "Music Stores",
+    "NOVELTY_AND_STATIONERY": "Novelty & Stationery",
+    "OPTICIANS": "Opticians",
+    "OTHER": "Other",
+    "OTHER_CONTRACTING_SERVICES": "Other Contracting Services",
+    "OTHER_OFFICE_BASED_SERVICES": "Other Office-based Services",
+    "OTHER_TRANSPORTATION": "Other Transportation",
+    "PARTY_STORE": "Party Store",
+    "PAWN_SHOP": "Pawn Shop",
+    "PET_RELATED": "Pet Related",
+    "PHOTO_STUDIO": "Photo Studio",
+    "PLUMBER": "Plumber",
+    "POOLS_HOT_TUBS": "Pools / Hot Tubs",
+    "PRINT_SHOP": "Print Shop",
+    "REAL_ESTATE": "Real Estate",
+    "RECREATION_SERVICES": "Recreation Services",
+    "RESTAURANT": "Restaurant",
+    "SHOE_REPAIR": "Shoe Repair",
+    "SHOE_STORE_RETAIL": "Shoe Store-Retail",
+    "SNOW_REMOVAL": "Snow Removal",
+    "SPA": "Spa",
+    "SPORTING_GOODS": "Sporting Goods",
+    "TAILOR_SEAMSTRESS": "Tailor/Seamstress",
+    "TANNING_SALON": "Tanning Salon",
+    "TATTOO_PARLOUR": "Tattoo Parlour",
+    "TAXI_LIMOUSINE": "Taxi/Limousine",
+    "TAX_PREPARATION_SERVICES": "Tax Preparation Services",
+    "TOURIST": "Tourist",
+    "TOWING_SERVICES": "Towing Services",
+    "TRANSPORTATION": "Transportation",
+    "TRAVEL": "Travel",
+    "TRUCKING": "Trucking"
+  },
+  "ABOUT_CFA_LANDING": {
+    "TOP_PARAGRAPH_TITLE": "You're almost there!",
+    "TOP_PARAGRAPH_TEXT": "You’re one step away from your free personal cash flow companion. Simply connect your bank account(s) to Cash Flow Advisor Beta and you’ll have access to your business cash flow insights whenever and wherever you need it.",
+    "CONTINUE": "Connect your account(s)"
+  },
+  "INSIGHTS": {
+    "CHART_LABEL_ACCOUNT_BALANCE": "Account Balance",
+    "CHART_LABEL_PROJECTIONS": "Projections",
+    "CHART_LABEL_DEBITS": "Debits",
+    "CHART_LABEL_CREDITS": "Credits",
+    "CHART_LABEL_DATE": "Date",
+    "CHART_LABEL_SALES": "Average Monthly Sales",
+    "CHART_TITLE": "Your cash balance",
+    "CASH_FLOW_BUTTON_TEXT": "Cash flow",
+    "CASH_BALANCE_BUTTON_TEXT": "Cash balance",
+    "CHART_CASH_BALANCE_TITLE": "Your cash balance",
+    "CHART_CASH_FLOW_TITLE": "Your cash flow",
+    "CHART_DATA_AS_OF": "as of",
+    "ACCOUNT_BALANCE_CHART": {
+      "MIN_RESERVES": "Min reserves",
+      "ACTUAL": "Actual",
+      "FORECAST": "Forecast"
+    },
+    "ABOUT_CASH_FLOW_ADVISOR": {
+      "CASH_FLOW_ADVISOR": "Cash Flow Advisor Beta",
+      "CONNECT_YOUR_BANK_BUTTON_TEXT": "Connect your bank",
+      "CFA_CONNECTION_REQUIRED_TEXT": "Cash Flow Advisor Beta requires an active connection to your business bank account.",
+      "ABOUT_TEXT": "Your personalized financial companion",
+      "CFA_DESCRIPTION": "Designed for the small business owner, Cash Flow Advisor Beta helps you crush your financial goals and make better decisions for the future – all for free.",
+      "LEARN_MORE_BUTTON_TEXT": "Learn more",
+      "VIEW_YOUR_FINANCES": "360° view of your finances",
+      "VIEW_YOUR_FINANCES_DESCRIPTION": "Stay on top of your cash flow with easy-to-understand weekly reporting and forecasting for the future.",
+      "GOAL_SETTING": "Goal setting & alerts",
+      "GOAL_SETTING_DESCRIPTION": "Set financial goals, and we’ll let you know about your progress and when to take action.",
+      "CREDIT_POWERED_FLEXIBILITY": "Credit-powered flexibility",
+      "CREDIT_POWERED_FLEXIBILITY_DESCRIPTION": "On-demand access to cash flow gives you peace of mind to make decisions that help you grow."
+    },
+    "CFA_FEATURES": {
+      "VIEW_YOUR_FINANCES": "360° view of your finances",
+      "VIEW_YOUR_FINANCES_DESCRIPTION": "Stay on top of your cash flow with easy-to-understand weekly reporting and forecasting for the future.",
+      "GOAL_SETTING": "Goal setting & alerts",
+      "GOAL_SETTING_DESCRIPTION": "Set financial goals, and we’ll let you know about your progress and when to take action.",
+      "CREDIT_POWERED_FLEXIBILITY": "Credit-powered flexibility",
+      "CREDIT_POWERED_FLEXIBILITY_DESCRIPTION": "On-demand access to cash flow gives you peace of mind to make decisions that help you grow.",
+      "CFA_LINK": "https://www.thinkingcapital.ca/products/cash-flow-advisor/",
+      "ASSETS": {
+        "LAPTOP": "/assets/insights/macbook-with-cfa-preview.svg",
+        "LAPTOP_ALT": "macbook with cfa preview"
+      }
+    },
+    "CREDIT_AVAILABLE": {
+      "CREDIT_AVAILABLE_TEXT": "Credit Available",
+      "WITHDRAW_FUNDS_BUTTON_TEXT": "Withdraw funds",
+      "APPLY_NOW_BUTTON_TEXT": "Apply now"
+    },
+    "CONNECT_BANK": {
+      "BUTTON_TEXT": "Connect",
+      "MAIN_TEXT": "Cash Flow Advisor",
+      "SUB_TEXT": "Connect your bank online through our secure portal to get Insights.",
+      "SMALL_TEXT": "We use 256-bit SSL encryption"
+    },
+    "CASH_BUFFER": {
+      "TITLE": "Configuration",
+      "SUBTITLE": "Minimum cash reserves",
+      "DESCRIPTION": "Set the desired cash reserves you wish to have in your account. We will notify you when you risk going below.",
+      "SAVE": "Set",
+      "OPT_OUT_TEXT": "If you no longer wish to receive insights, go to",
+      "MY_PROFILE": "my profile",
+      "SUCCESS": "Successfully updated.",
+      "ERROR": "Unable to update. Please try again."
+    },
+    "CASH_FLOW_STATUS": {
+      "CASH_FLOW_UP": "Your operating ratio has improved by {{ percent }}",
+      "CASH_FLOW_DOWN": "Your operating ratio is {{ percent }} higher",
+      "CASH_FLOW_SAME": "Your operating ratio has not changed",
+      "COMPARED_TO": "(compared to last month)"
+    },
+    "CASH_FLOW_CHART" : {
+      "CASH_IN": "Cash in",
+      "CASH_OUT": "Cash out",
+      "FORECASTED": "Forecasted"
+    },
+    "CASH_ON_HAND": {
+      "CASH_ON_HAND_TEXT": "CASH ON HAND",
+      "DAYS_CASH_RESERVES": "days cash reserves",
+      "ESTIMATE_CASH_RESERVES": "Estimate cash reserves"
+    },
+    "EMAIL_TOGGLE": {
+      "TITLE": "Your Personal Cash Flow Advisor Awaits!",
+      "DESCRIPTION": "Stay on top of your ongoing expenses and make better, more informed decisions for the success of your business with our Cash Flow Advisor",
+      "COMPLETE_WITH": "Complete with:",
+      "BULLET_POINT_1": "Cash flow management tips",
+      "BULLET_POINT_2": "Performance insights",
+      "BULLET_POINT_3": "Helpful guidance",
+      "OPT_IN": "Send me my business insights",
+      "NEXT": "Next",
+      "SUCCESS": "Successfully updated.",
+      "ERROR": "Unable to update. Please try again."
+    },
+    "ERROR": {
+      "MESSAGE": "We are experiencing difficulties retrieving your data",
+      "PLEASE": "Please",
+      "REFRESH_PAGE": "refresh your page.",
+      "NOT_RESOLVE_ISSUE_TEXT": "If this does not resolve the issue  <a class=\"intercom-trigger\" role=\"button\">chat with us.</a>"
+    },
+    "OPERATING_RATIO": {
+      "OPERATING_RATIO_TEXT": "Operating ratio",
+      "CASH_IN": "Cash in",
+      "CASH_OUT": "Cash out",
+      "DESCRIPTION": "<p> Operating ratio is calculated by dividing your losses (cash out) by your gains (cash in). It’s best to keep it at 79% or less, but every business is unique.</p> <p> <strong>Why it is important:</strong> It measures the operational efficiency of your business. </p>"
+    }
+  },
+  "INVITE": {
+    "ACCOUNT_NUMBER": "Account #",
+    "ACTION": "Invite",
+    "EMAIL": "Email",
+    "EMAIL_INVALID": "Invalid email address",
+    "EMAIL_REQUIRED": "Required.",
+    "ERROR": "Error. Check the email address.",
+    "NAME": "Customer",
+    "NAME_PATTERN": "Valid characters are A-Z a-z 0-9 ._-.",
+    "NAME_REQUIRED": "Required.",
+    "SUCCESS": "Invite sent successfully"
+  },
+  "INVOICE": {
+    "ACCOUNT_BANNER_HEADING": "Account: <span class='account-number-heading'><b>{{account_number}}</b></span>",
+    "ACCOUNT_NUMBER_LABEL": "Account # (optional)",
+    "ACCOUNT_NUMBER_PATTERN": "Valid characters are A-Z a-z 0-9 ._-.",
+    "ACCOUNT_NUMBER_REQUIRED": "Required.",
+    "ACTION_SEND": "Send",
+    "AMOUNT_DUE_LABEL": "Invoice Amount Due",
+    "AMOUNT_DUE_NO_DATE": "Amount Due",
+    "AMOUNT_DUE_WITH_DATE": "Amount Due on {{invoice_due_date}}",
+    "AMOUNT_DUE_WITH_PAF": "Scheduled to be paid on {{activation_date}}",
+    "AMOUNT_LABEL": "Invoice Amount",
+    "AMOUNT_PATTERN": "Must be a positive value",
+    "AMOUNT_REQUIRED": "Required.",
+    "AMOUNT_USED": "{{amount_used}} of {{amount_limit}}",
+    "APP_ALREADY_IN_PROGRESS": "An application is already in progress.",
+    "COST": "Cost",
+    "DUE_DATE_LABEL": "Due Date",
+    "DUE_DATE_PLACEHOLDER": "DD/MM/YYYY",
+    "DUE_DATE_REQUIRED": "Required.",
+    "DUPLICATE_INVOICE_NUMBER_ERROR": "Invoice with the same invoice number already exists.",
+    "ERROR": "There was an error trying to send the invoice. Please try again.",
+    "FREQUENCY_BIWEEKLY": "bi-weekly",
+    "FREQUENCY_DAILY": "daily",
+    "FREQUENCY_MONTHLY": "monthly",
+    "FREQUENCY_ONE_TIME": "one time",
+    "FREQUENCY_WEEKLY": "weekly",
+    "INVOICE_NUMBER_PATTERN": "Valid characters are A-Z a-z 0-9 ._-.",
+    "INVOICE_NUMBER_REQUIRED": "Required.",
+    "LOAD_ERROR": "There was an error loading the invoice. Please try again.",
+    "NOT_ELIGIBLE": "You do not have sufficient funds.",
+    "NUMBER_LABEL": "Invoice #",
+    "OF_ORIGINAL_AMOUNT": "of <span class='text-accent'>{{invoice_amount}}</span> for invoice <span class='text-accent'><b>{{invoice_number}}</b></span>",
+    "PAF_ACCEPTED_AT": "Pre-authorized financing setup: {{accepted_at}}",
+    "PAF_INFO1": "Spend time running your business, not paying suppliers.",
+    "PAF_INFO2": "Skip the hassle of remembering to pay recurring invoices. Set up a pre-authorized financing payment plan today.",
+    "PAF_INFO_HEADER": "Save time with pre-authorized payments",
+    "PAF_OPT_OUT": "Disable automatic payments",
+    "PAF_OPT_OUT_BUTTON": "Confirm",
+    "PAF_OPT_OUT_HEADER": "Are you sure you want to disable pre-authorized payments?",
+    "PAF_OPT_OUT_INFO": "By disabling pre-authorized payments, your invoices from {{supplier}} will no longer be paid automatically. Click Confirm to continue to opt-out. You will be asked to login again as confirmation. If you would like to continue using pre-authorized payments, simply close this window.",
+    "PAF_SIGNUP": "Set up automatic payments",
+    "PAF_SIGNUP_BUTTON": "Sign Up",
+    "PAYEE_LABEL": "Supplier: ",
+    "PAYMENT_FREQUENCY": "Frequency",
+    "PAYMENT_FREQUENCY_BIWEEKLY": "Bi-weekly",
+    "PAYMENT_FREQUENCY_DAILY": "Daily",
+    "PAYMENT_FREQUENCY_WEEKLY": "Weekly",
+    "PAYMENT_METHOD": "Method",
+    "PAYMENT_METHOD_FINANCE": "Finance",
+    "PAYMENT_METHOD_PAY_NOW": "Direct debit",
+    "PAYMENT_TERM": "Term",
+    "PAYMENT_WITH_FREQUENCY": "{{payment_amount}} (<b>{{payment_frequency}}</b>)",
+    "PAYOR": "Payor",
+    "PROCESSING_AMOUNT": "Amount processing",
+    "PROCESSING_AMOUNT_DESCRIPTION": "Amount will reflect in your invoice once processed",
+    "PROMO": "Promo",
+    "SEND_ERROR": "There was an error trying to send the invoice",
+    "SUCCESS": "Invoice sent successfully",
+    "TITLE": "Send an invoice to {{payor}} ({{email}})",
+    "TOTAL_REPAYMENT": "Total Repayment",
+    "UPLOAD": {
+      "DESCRIPTION": "Upload a copy of your invoice*",
+      "SESSION_EXPIRED_ERROR": "Your session has expired. Please try again."
+    }
+  },
+  "INVOICE_STATUS": {
+    "OVERPAID": "Overpaid",
+    "PAID": "Paid",
+    "PARTIALLY": "Partially",
+    "PROCESSING": "Processing",
+    "SENT": "Sent",
+    "UNSENT": "Unsent",
+    "UNPAID": "Unpaid"
+  },
+  "I_ACCEPT": "I Accept",
+  "JURISDICTION_SELECT": {
+    "VALUES": {
+      "AB": "Alberta",
+      "BC": "British Colombia",
+      "CD": "Canada",
+      "DEFAULT": "Select",
+      "MB": "Manitoba",
+      "NL": "Newfoundland & Labrador",
+      "NB": "New Brunswick",
+      "NT": "Northwest Territories",
+      "NS": "Nova Scotia",
+      "NU": "Nunavut",
+      "ON": "Ontario",
+      "PE": "Prince Edward Island",
+      "QC": "Quebec",
+      "SK": "Saskatchewan",
+      "YT": "Yukon"
+    },
+    "ERRORS": {
+      "REQUIRED": "Required."
+    }
+  },
+  "KYC_FAILED": {
+    "DESCRIPTION": "There is a problem with the information provided."
+  },
+  "KYC_IN_PROGRESS": {
+    "BODY": "Hang on, we are currently verifying your information. This should only take a few minutes so be sure to check back again shortly!",
+    "TITLE": "Please try again later"
+  },
+  "LAYOUT_CONFIG": {
+    "SHOW_OFFERS": {
+      "DISPLAY_CALL_TO_ACTION": "false"
+    }
+  },
+  "LENDING_AGREEMENT": {
+    "FILE_NAME": "Agreement",
+    "NO_CONTRACT_AVAILABLE": "Sorry, your agreement is currently unavailable.",
+    "PAY_CONTRACT_DISCLAIMER": "By signing in below, I declare and represent that I have read and agree, on behalf of the Borrower and in each of my capacities of Owner and of Guarantor, to the terms of the Loan Agreement, and that I have the signing authority to bind the Borrower to all terms and conditions stipulated in the Loan Agreement.",
+    "PAY_CONTRACT_SIGN_ABOVE": "Review and sign the agreement below to submit your financing request.",
+    "PAY_CONTRACT_SIGN_BELOW": "If you agree to the terms of this Loan Agreement, on behalf of the Borrower and in each of your capacity of Owner and of Guarantor, click SIGN below to be prompted for your password instead of a handwritten signature.",
+    "PAY_CONTRACT_SUBHEAD": "Loan Agreement",
+    "PAY_CONTRACT_TITLE": "You're almost there",
+    "SIGN_BUTTON_LABEL": "SIGN"
+  },
+  "LENDING_APPLICATION_FLOW": {
+    "INFORMATION": {
+      "CARD_HEADER": "Financing Application",
+      "DURATION": "Follow these steps to apply",
+      "LEAD": "",
+      "PROCEED_FASTER": "Connecting your bank online is the fastest way to process your request.",
+      "REQUIRED_DOCUMENTS": {
+        "INVOICE": "Your invoice information.",
+        "TAX_ASSESSMENT": "Copy of your most recent CRA GST/HST or Revenue Quebec QST Notice of Assessment."
+      },
+      "STEPS": {
+        "CONNECT_YOUR_BANK": "Connect your bank online.",
+        "PROVIDE_YOUR_INVOICE": "Provide your invoice details.",
+        "SELECT_YOUR_FINANCING": "Select your financing terms.",
+        "SELECT_YOUR_PAYMENT": "Select your payment terms and sign.",
+        "UPLOAD_THE_MOST": "Upload the most recent GST/HST or QST Notice of Assessment."
+      }
+    }
+  },
+  "LINKS": {
+    "TERMS_OF_USE": "<a href='https://www.thinkingcapital.ca/terms-conditions/' target='_blank' noopener>Terms of Use</a>",
+    "PRIVACY_POLICY": "<a href='https://www.thinkingcapital.ca/privacy-policy/' target='_blank' noopener>Privacy Policy</a>"
+  },
+  "LOADING": "Loading",
+  "OFFER_GAUGE": {
+    "AVAILABLE_CONNECTOR": "of ",
+    "AVAILABLE_TITLE": "Available Financing",
+    "UNAVAILABLE": "No line of credit found.",
+    "BELOW_MINIMUM_FUNDS": "Below minimum withdrawal",
+    "NO_FUNDS_AVAILABLE": "No funds available"
+  },
+  "MARKETING": {
+    "BLOG_LINK": "Here's a sample",
+    "GET_STARTED": "Don't know where to start? Get personalized help from our experts.",
+    "SCHEDULE_MEETING": "Schedule a 15-minute call",
+    "SCHEDULE_MEETING_COMPLETED": "Meeting request sent on {{completed_at}}",
+    "SCHEDULE_MEETING_SUCCESS": "Your marketing meeting has been scheduled!",
+    "SHOWCASING": "Content showcasing your new financing solutions is a great way to differentiate you from your competitors.",
+    "STRATEGY": "Build a solid marketing strategy to get your customers on board, using our Boost services:",
+    "STRATEGY_BULLET_1": "content curation (ex. blog & social posts)",
+    "STRATEGY_BULLET_2": "creating and managing ad campaigns",
+    "STRATEGY_BULLET_3": "email marketing campaigns",
+    "STRATEGY_BULLET_4": "and more...",
+    "SUBTITLE": "Reach your business goals faster",
+    "TITLE": "Promote your platform"
+  },
+  "MARKETING_CAMPAIGN": {
+    "STRATEGY": "With Ario, you can plan a social media campaign to help drive customers to your financing platform and business. Just authenticate the social channel you want to use and when you want to launch it, and we will handle the rest.",
+    "TITLE": "Digital Campaign"
+  },
+  "NAV": {
+    "ACCOUNT_INFO": "Account info",
+    "ACCOUNT_ADD": "Add new business",
+    "AGREEMENT": "Agreements",
+    "DASHBOARD": {
+      "LENDING": "My Business",
+      "PARTNER": "My Partner"
+    },
+    "DASHBOARDS": "Dashboards",
+    "INSIGHTS": "Cash Flow Advisor",
+    "MARKETING": "Marketing",
+    "MENU": "Menu",
+    "OFFERS": "Certification",
+    "ONBOARDING": "Onboarding",
+    "PARTNER_ADMIN": "Partner Portal",
+    "SIGN_OUT": "Sign out",
+    "DOCUMENTS": "My Documents",
+    "YOUR_ACCOUNT": "Your account"
+  },
+  "NEW_BUSINESS": {
+    "BODY_FOOTER": "In this step we will search for your business information from government registries in accordance with our {{tou}} and {{pp}}.",
+    "CONFIRM_PICKER": {
+      "NEXT_BTN": "Confirm your business",
+      "NOT_IN_LIST": "My business isn’t listed above",
+      "SUBTITLE": "Is this you? Select your business below.",
+      "TITLE": "CONFIRM BUSINESS"
+    },
+    "FORMS": {
+      "ADDRESS": {
+        "TITLE": "Registered Corporate Business Address"
+      },
+      "BUSINESS": {
+        "AVERAGE_MONTHLY_SALES": {
+          "LABEL": "Average monthly sales",
+          "VALIDATION_ERRORS": {
+            "REQUIRED": "Required."
+          }
+        },
+        "BUSINESS_NUMBER": {
+          "LABEL": "Business Registration Number (optional)",
+          "TOOLTIP": "Hint: Enter the number you were issued when you registered your business (provincially or federally). This is not your CRA business number",
+          "VALIDATION_ERRORS": {
+            "INVALID_ALPHANUMERIC_CHARACTER": "Valid characters are A-Z a-z 0-9",
+            "INVALID_ALPHA_START_CHARACTER": "Must start with a letter.",
+            "INVALID_CHARACTER": "You have entered an invalid character.",
+            "INVALID_FEDERAL_CHARACTER": "Only numbers and dashes allowed.",
+            "INVALID_LENGTH": "Too many characters entered.",
+            "INVALID_NUMERIC_CHARACTER": "Only numbers allowed."
+          }
+        },
+        "DATE_ESTABLISHED": {
+          "LABEL": "Date established",
+          "VALIDATION_ERRORS": {
+            "REQUIRED": "Required."
+          }
+        },
+        "DOING_BUSINESS_AS": {
+          "LABEL": "Doing Business As",
+          "SAME_CHECKBOX": "Same as legal business name",
+          "SHORTHAND": "as",
+          "VALIDATION_ERRORS": {
+            "REQUIRED": "Required."
+          }
+        },
+        "INDUSTRY": {
+          "LABEL": "Industry",
+          "SELECT_DEFAULT": "Select",
+          "VALIDATION_ERRORS": {
+            "REQUIRED": "Required."
+          }
+        },
+        "JURISDICTION": {
+          "LABEL": "Jurisdiction (optional)",
+          "VALIDATION_ERRORS": {
+            "BUSINESS_NUMBER": "Select the jurisdiction."
+          }
+        },
+        "NAME": {
+          "LABEL": "Legal business name",
+          "VALIDATION_ERRORS": {
+            "REQUIRED": "Required."
+          }
+        },
+        "PHONE_NUMBER": {
+          "LABEL": "Business phone number",
+          "VALIDATION_ERRORS": {
+            "INVALID": "Invalid phone number."
+          }
+        },
+        "TITLE": "ABOUT YOUR BUSINESS"
+      }
+    },
+    "NOT_FOUND": {
+      "BODY_1_1_NO_MATCH": "We didn’t find a match for your business in the credit bureau registry. ",
+      "BODY_1_1_NO_SELECTION": "We didn’t find a match for your business in the credit bureau registry.",
+      "BODY_1_2": " and check that you filled in the form properly.",
+      "BODY_1_GO_BACK": "Go back",
+      "BODY_2": "Entered everything correctly? Click Next to continue creating your account. We will be in touch.",
+      "TITLE": "Verify the information provided"
+    }
+  },
+  "NO_OFFERS": {
+    "CARD_BODY": "Looks like we weren’t able to get your business certified. Don’t worry, we will notify you when your business can be certified.",
+    "CARD_TITLE": "Sorry, you are unable to be certified at this time"
+  },
+  "NO_OFFER_AVAILABLE": "There are currently no offers available for you.",
+  "NO_OFFER": {
+    "ADVANCE_TODAY?": "Why can’t I get a working capital advance today?",
+    "CAPITAL_ADVANCE?": "What is a working capital advance?",
+    "CAPITAL_ADVANCE_IS": "<p class=\"ztt_panel-text\">A working capital advance is an agreement to sell some of your future sales. You get you the money you need now, and the amount you pay back each day follows the same ebbs and flows as your sales. It’s a quick and easy way to get the extra funds your business needs to get things done. \nGet a little or get a lot - whatever your business needs right now. Most people see the cash in their bank account within 48 hours of starting the process.</p>",
+    "NUMBER_OF_FACTORS": "<p class=\"ztt_panel-text\">There are a number of factors that affect when a business can get a working capital advance. In general, your business have been with your current payment processor for at least two years, and your sales history must demonstrate that you would be able to pay off an advance in a reasonable time. \nAdditionally, there are many of factors outside your control. For example, there is a fixed pool of funds available for advances, and if it is all allocated, there is none available for new advances.</p>"
+  },
+  "NO_DATA_AVAILABLE": "No data available.",
+  "NO_PAYEE_AVAILABLE": "No suppliers available.",
+  "OK": "OK",
+  "PAF_TERMS_MODAL": {
+    "ACCOUNT": "Account #",
+    "AMOUNT": {
+      "APPROVED": "Approved",
+      "REQUESTED": "Requested",
+      "TOTAL": "Total"
+    },
+    "ESTIMATES": {
+      "COST": "Estimated cost of borrowing",
+      "TITLE_SUB_3": "Estimated repayment details",
+      "TOTAL_REPAY": "Estimated total repayment"
+    },
+    "INVOICE": "Invoice #",
+    "RECIPIENT": "Deposit to",
+    "SUBTITLE": "Review the details below",
+    "SUMMARY": "Your cost of borrowing ({{cost_of_borrowing}}) represented as a daily percentage rate is {{apr}}.",
+    "TERM": "Term",
+    "TITLE": {
+      "MAIN": "Review financing details",
+      "SUB_1": "Financing summary",
+      "SUB_2": "Loan summary",
+      "SUB_3": "Repayment details"
+    }
+  },
+  "PARTNER_DASHBOARD": {
+    "CUSTOMER_SUMMARY": {
+      "AUTO_SEND": "Auto Send",
+      "CREATE_INVOICE": "Create Invoice",
+      "CREDIT": "Credit:",
+      "EMAIL": "Email",
+      "INVITED": "Customer signed up with different email: {{ email }}",
+      "LAST_ACTIVITY": "Last Activity",
+      "LAST_ACTIVITY_WITH_DATE": "{{ activity }} on {{ date }}",
+      "MANUAL_PAY": "Manual Pay",
+      "MANUAL_SEND": "Manual Send",
+      "OTHER_EMAIL": "Invited Email",
+      "PAYMENT_PLAN": "Payment Plan",
+      "SIGN_UP_EMAIL": "Sign Up Email",
+      "SOURCE": "Source",
+      "VIEW_HISTORY": "View History"
+    },
+    "CUSTOMER_SUMMARY_TITLE": "Customer Summary",
+    "EDIT_THEME": {
+      "NOT_READY": "<i class=\"fas fa-pencil-alt mr-1 text-accent\"></i> Want to <strong>edit</strong> your business partner theme?",
+      "START_CHAT": "<i class=\"fas fa-comments mr-1 text-accent\"></i> <a class=\"intercom-trigger\" role=\"button\">Start a chat</a> with our support team."
+    },
+    "GRADE_MODAL_A_INFO": "This business currently has the highest grade available - an Equifax indication of outstanding credit! They likely pay bills within terms and keep balances low on credit cards and other revolving credit lines.",
+    "GRADE_MODAL_A_TITLE": "Grade: A",
+    "GRADE_MODAL_BLANK_INFO": "We could not locate a credit grade for this business.",
+    "GRADE_MODAL_BLANK_TITLE": "Grade: Blank (-)",
+    "GRADE_MODAL_B_INFO": "This business currently has a high grade - an Equifax indication of good credit. They likely pay most bills within terms and keep balances relatively low on credit cards and other revolving credit lines.",
+    "GRADE_MODAL_B_TITLE": "Grade: B",
+    "GRADE_MODAL_C_INFO": "This business currently has an average grade - an Equifax indication of average credit. They typically pay bills within terms but may carry balances on credit cards and other revolving credit lines.",
+    "GRADE_MODAL_C_TITLE": "Grade: C",
+    "GRADE_MODAL_D_INFO": "This business currently has a below-average grade - an Equifax indication of poor credit. They may not pay bills within terms and may carry balances on credit cards and other revolving credit lines.",
+    "GRADE_MODAL_D_TITLE": "Grade: D",
+    "GRADE_MODAL_E_INFO": "This business currently has the lowest grade available - an Equifax indication of very poor credit. They likely do not often pay bills within terms and carry balances on credit cards and other revolving credit lines. They may also have a recorded default, court judgement or company insolvency on file.",
+    "GRADE_MODAL_E_TITLE": "Grade: E",
+    "GRADE_MODAL_TITLE_MULTI": "What do the grades mean?",
+    "GRADE_MODAL_TITLE_SINGLE": "What does this grade mean?",
+    "HEADER_ACCOUNT_NUMBER": "Account #",
+    "HEADER_ACTION": "Action",
+    "HEADER_AMOUNT": "Amount",
+    "HEADER_AMOUNT_AVAILABLE": "Available Amount",
+    "HEADER_AMOUNT_PAID": "Amount Paid",
+    "HEADER_AUTO_SEND": "Auto Send",
+    "HEADER_DATE": "Date",
+    "HEADER_DUE_DATE": "Due Date",
+    "HEADER_EMAIL": "Email",
+    "HEADER_GRADE": "Grade",
+    "HEADER_INVOICE_CREATED_DATE": "Created Date",
+    "HEADER_INVOICE_NUMBER": "Invoice #",
+    "HEADER_LAST_ACTION": "Last Action",
+    "HEADER_NAME": "Customer",
+    "HEADER_PAF_OPT_IN": "Payment Plan",
+    "HEADER_STATUS": "Status",
+    "INVITED_NAME": "Invite was sent to {{name}} ({{email}})",
+    "INVOICE_MODAL_TITLE": "Invoice #{{invoice_number}} sent to {{name}} (account #{{account_number}})",
+    "INVOICE_MODAL_TITLE_WITHOUT_ACC_NUMBER": "Invoice #{{invoice_number}} sent to {{name}}",
+    "INVOICE_TOOLTIP": "Create invoice",
+    "INVOICING": {
+      "ACCOUNT_NUMBER": "Account #",
+      "AMOUNT": "Amount",
+      "AMOUNT_PAID": "Amount Paid",
+      "DUE_DATE": "Due Date",
+      "INVITED": "Invoice was sent to email address that does not match their original: {{ email }}",
+      "INVOICE_NUMBER": "Invoice #",
+      "LAST_ACTION": "Last Action",
+      "LAST_ACTIVITY": "Last Activity",
+      "LAST_ACTIVITY_WITH_DATE": "{{ activity }} on {{ date }}",
+      "PAID": "Paid",
+      "SENT": "Sent",
+      "SENT_TO": "Sent To",
+      "SOURCE": "Source",
+      "STATUS": "Status",
+      "VIEW_HISTORY": "View History"
+    },
+    "PROFILE_AGREEMENT_INFO": "Congratulations! Your customers can now finance their business and grow! We recommend a few more steps to maximize your share in revenue from your new financing service.",
+    "PROFILE_AGREEMENT_INFO_COMPLETED": "Agreement signed: {{completed}}",
+    "PROFILE_AGREEMENT_INFO_LABEL": "Sign Up",
+    "PROFILE_AGREEMENT_INFO_TITLE": "Congratulations! You are now an Ario Business Partner",
+    "PROFILE_INVITE_INFO": "Invite customers by email to use your financing service by providing their name and email. Customers will be directed straight to your customized platform to sign up for free.",
+    "PROFILE_INVITE_INFO_COMPLETED": "First customer invited: {{completed}}",
+    "PROFILE_INVITE_INFO_LABEL": "Invite Customers",
+    "PROFILE_INVITE_INFO_TITLE": "Invite your customers",
+    "PROFILE_INVOICE_INFO": "Click the invoice icon next to your customer's name to upload and email an invoice with financing options.",
+    "PROFILE_INVOICE_INFO_COMPLETED": "First customer invoiced: {{completed}}",
+    "PROFILE_INVOICE_INFO_LABEL": "Invoice Customers",
+    "PROFILE_INVOICE_INFO_TITLE": "Invoice your customers, manage your cash flow",
+    "PROFILE_PARTNER_TRAINING_INFO": "This platform will evolve with new and exciting features. Become an Ario Champion by scheduling a demo for yourself or make it a training session for your team.",
+    "PROFILE_PARTNER_TRAINING_INFO_COMPLETED": "Training scheduled on: {{completed}}",
+    "PROFILE_PARTNER_TRAINING_INFO_LABEL": "Training",
+    "PROFILE_PARTNER_TRAINING_INFO_TITLE": "Training your staff",
+    "PROFILE_SOCIAL_SHARING_INFO": "Promote your financing services on social media and help you and your customers grow.",
+    "PROFILE_SOCIAL_SHARING_INFO_COMPLETED_FB": "Last shared on Facebook: {{completed}}",
+    "PROFILE_SOCIAL_SHARING_INFO_COMPLETED_LINKEDIN": "Last shared on LinkedIn: {{completed}}",
+    "PROFILE_SOCIAL_SHARING_INFO_COMPLETED_TWITTER": "Last shared on Twitter: {{completed}}",
+    "PROFILE_SOCIAL_SHARING_INFO_LABEL": "Marketing",
+    "PROFILE_SOCIAL_SHARING_INFO_TITLE": "Promote your financing solutions",
+    "RESEND_INVITE_TOOLTIP": "Re-send invite",
+    "SCHEDULE_DEMO": "Schedule Training",
+    "SENT_INVOICES_TITLE": "Invoicing",
+    "SOCIAL_HINT": "Awareness is the key to more sales! Spread the word about your new financing options on social media. Here's an example post you can use. Just copy the text below and paste it into the share box.",
+    "SOCIAL_MESSAGE": "Great news! We now offer credit solutions for all our valued business customers. Through our fully automated digital platform, it's now easier and faster than ever to setup payment on terms that work for you and your business. Check it out!",
+    "SOCIAL_MODAL": "Share on social media",
+    "TITLE": "Customer Management Dashboard"
+  },
+  "PAY_ACCOUNT_NUMBER": "Account # (optional)",
+  "PAY_ACCOUNT_NUMBER_HINT": "Enter your account #",
+  "PAY_CONFIGURE_TITLE": "Configure Payee",
+  "PAY_CONGRATULATIONS": {
+    "BUTTON_1": "Configure Another",
+    "BUTTON_2": "Pay This Supplier",
+    "TEXT": "Your account is all set up for ",
+    "TITLE": "Congratulations!"
+  },
+  "PAY_DETAILS_AMT": "Amount",
+  "PAY_DETAILS_AMT_INVALID": "Maximum allowed is {{max_available}}.",
+  "PAY_DETAILS_AMT_LOW": "Minimum is {{min_available}}.",
+  "PAY_DETAILS_TITLE": "Select Your Payment Details",
+  "PAY_INSTRUCTIONS": "Ensure the information entered is correct.",
+  "PAY_INVOICE_NUMBER": "Invoice #",
+  "PAY_INVOICE_NUMBER_ERROR": "Invalid invoice #.",
+  "PAY_INVOICE_NUMBER_HINT": "Enter your invoice #",
+  "PAY_REVIEW": {
+    "BI_WEEKLY": "Bi-weekly repayment",
+    "DAILY": "Daily repayment",
+    "MONTHLY": "Monthly repayment",
+    "WEEKLY": "Weekly repayment"
+  },
+  "PAY_REVIEW_ACCT": "Account #",
+  "PAY_REVIEW_AMT": {
+    "APPROVED": "Approved",
+    "REQUESTED": "Requested",
+    "TOTAL": "Amount Requested"
+  },
+  "PAY_REVIEW_COST": "Cost of borrowing",
+  "PAY_REVIEW_LENDING_FORMULA": {
+    "BI_WEEKLY": "To calculate the annual percentage rate, multiply the daily percentage rate by 365 days.",
+    "DAILY": "To calculate the annual percentage rate, multiply the daily percentage rate by 365 days.",
+    "MONTHLY": "To calculate the annual percentage rate, multiply the daily percentage rate by 365 days.",
+    "WEEKLY": "To calculate the annual percentage rate, multiply the daily percentage rate by 365 days."
+  },
+  "PAY_REVIEW_INVOICE": "Invoice #",
+  "PAY_REVIEW_PAYOUT": {
+    "LABEL": "Disbursements",
+    "TOOLTIP": "Disbursements are payments made from a given fund. As such, your principal amount will be paid as per instructions below. Expand to view.",
+    "TYPE": {
+      "ACCOUNT": "Account",
+      "COMPETITOR": "Competitor",
+      "CRA": "CRA",
+      "KEY_SUPPLIER": "Key supplier",
+      "LANDLORD": "Landlord",
+      "OTHER": "Other"
+    }
+  },
+  "PAY_REVIEW_RECIPIENT": "Deposit to",
+  "PAY_REVIEW_SUBTITLE": "",
+  "PAY_REVIEW_SUMMARY": "Your cost of borrowing ({{cost_of_borrowing}}) represented as a daily percentage rate is {{apr}}.",
+  "PAY_REVIEW_TERM": "Term",
+  "PAY_REVIEW_TERM_DURATION": "days",
+  "PAY_REVIEW_TEXT_LESS": "You were approved for less than you requested.",
+  "PAY_REVIEW_TIME_DELAY": "This summary and the amounts shown are subject to final verification.",
+  "PAY_REVIEW_TITLE": {
+    "MAIN": "Review your financing details",
+    "SUB_1": "Financing summary",
+    "SUB_2": "Loan summary",
+    "SUB_3": "Repayment details"
+  },
+  "PAY_REVIEW_TOTAL_REPAY": "Total repayment",
+  "PAY_SEARCH": {
+    "SEARCH_BAR_TEXT": "Search to pay a new supplier.",
+    "SUPPLIER_SEARCH_RESULTS": {
+      "SUB_TITLE": "Select a supplier",
+      "TITLE": "Supplier Search Results"
+    }
+  },
+  "PAY_STEPPER_STEP1": "Amount & details",
+  "PAY_STEPPER_STEP2": "Add extra info",
+  "PAY_STEPPER_STEP3": "Review & sign",
+  "PAY_STEPPER_STEP4": "Done!",
+  "PAY_STEPPER_TITLE_STEP1_A": "Pay a Supplier",
+  "PAY_STEPPER_TITLE_STEP1_B": "Select amount and terms",
+  "PAY_STEPPER_TITLE_STEP2_A": "Connect your bank",
+  "PAY_STEPPER_TITLE_STEP2_B": "Upload required documents",
+  "PAY_STEPPER_TITLE_STEP2_C": "Come back soon for results",
+  "PAY_STEPPER_TITLE_STEP3_A": "Review financing details",
+  "PAY_STEPPER_TITLE_STEP3_B": "Sign your agreement",
+  "PAY_STEPPER_TITLE_STEP4": "Transfer in progress - Congratulations!",
+  "PAY_STEPPER_TITLE_STEP4_DECLINED": "Sorry, application declined",
+  "PAY_TERMS": {
+    "LABEL_DAY": " day",
+    "LABEL_DAYS": " days",
+    "LABEL_MONTH": " month",
+    "LABEL_MONTHS": " months",
+    "LABEL_WEEK": " week",
+    "LABEL_WEEKS": " weeks",
+    "MEDIUM_HEADER_DETAILS": "Term Details",
+    "MEDIUM_HEADER_REPAYMENT_TERMS": "Repayment Terms",
+    "SMALL_HEADER_COST": "Cost of Borrowing",
+    "SMALL_HEADER_FREQUENCY": "Frequency",
+    "SMALL_HEADER_PAYMENT": "Payment",
+    "SMALL_HEADER_TOTAL": "Total Repayment"
+  },
+  "PAY_WHO": {
+    "BUTTON_LABEL": {
+      "SELF": "Make a withdrawal",
+      "SUPPLIER": "Pay an invoice"
+    },
+    "CAPTION": "Select a supplier",
+    "ERROR": "Required",
+    "SELECT_DEFAULT": "Select",
+    "TITLE": "How do you want to use your funds?"
+  },
+  "PENDING_BANK_ACCOUNT_VERIFICATION": {
+    "BODY_1": "Hang on, our support team is currently verifying your bank information.",
+    "BODY_2": "This usually takes up to 1 business day. Check back later.",
+    "NOTE": "Start a live chat with our support team.",
+    "TITLE": "Verifying Bank Information"
+  },
+  "PROCESSING": {
+    "JUST_CHECKING": "<p>We are processing your application. It usually takes less than 1 business day.</p>"
+  },
+  "BETTER_INSIGHTS": {
+    "INSIGHTS_TITLE": "Get better insights",
+    "QUICKBOOKS_DESCRIPTION": "Get more financial details by connecting your Quickbooks account.",
+    "MULTIPLE_ACCOUNTS_DESCRIPTION": "Add more accounts to get a more holistic snapshot of your business finances in your cashflow insights.",
+    "MULTIPLE_ACCOUNTS_PLACEHOLDER": "Select accounts",
+    "BTN": {
+      "UPDATE": "Update"
+    }
+  },
+  "QUICKBOOKS": {
+    "CONNECT_FAIL": "Unable to connect your QuickBooks account with Thinking Capital",
+    "CONNECT_FAIL_REALMID": "We were unable to connect your QuickBooks account with Thinking Capital. The QuickBooks business selected does not match the business you previously connected (QuickBooks business ID {{realm_id}})",
+    "CONNECT_MESSAGE": "Connect your account to import customers and automatically send your invoices",
+    "CONNECT_SUCCESS": "Your QuickBooks account was connected with Thinking Capital",
+    "INFO": "By connecting your QuickBooks account:",
+    "INSIGHTS_DESCRIPTION": "We can provide you with better insights if you connect your QuickBooks account.",
+    "LAST_IMPORTED": "Last imported from QuickBooks",
+    "NOTE_1": "Get a more complete picture of your cash flow health",
+    "NOTE_2": "Make better decisions with forecasts that take into your account payables and receivables",
+    "TITLE": "Connect with QuickBooks"
+  },
+  "REJECT": "Reject",
+  "RESULT_INPROGRESS_BODY": "Thank You! We are now processing your information.\nYou will be automatically redirected to your dashboard.",
+  "RESULT_INPROGRESS_TITLE": "Processing information.",
+  "SEARCH_BOX": {
+    "PLACEHOLDER": "Search"
+  },
+  "SESSION_EXPIRED": {
+    "BTN": {
+      "NEXT": "Sign In"
+    },
+    "TITLE": "Oops, it looks like you need to sign in again"
+  },
+  "SET_BANK_INSTRUCTIONS": {
+    "BANK_ACCOUNT": "This final step lets us verify your business, analyze its performance, and set your credit limit. This will not affect your credit score.",
+    "BUSINESS_PARTNER": "We need to authorize and connect a bank account where future invoice payments will be deposited.<br/>Please select your business banking institution.",
+    "DELEGATED_MODE": "You aren't allowed to configure banking information because you are currently in read-only access.",
+    "DISCLAIMER": "Rest assured that we never see or store your password information. Your data is encrypted and protected.",
+    "MANUAL_ENTRY": {
+      "CTA": "Add manually",
+      "TITLE": "Having trouble connecting or don't see your bank listed?"
+    },
+    "SALES_VOLUME": "To provide an accurate quote for your line of credit, we need to connect to your bank account to analyze your business performance. We’ll use this to make a credit decision.<br/>Please select your business banking institution.",
+    "INSIGHTS": "We need to authorize and connect a bank account to use for your insights.<br/>Please select your business banking institution.",
+    "REFRESH_BANK": "We need to reauthorize your bank account.<br/>Please reconnect the same bank account that you previously connected.",
+    "INSTITUTION_NAME": "Institution:",
+    "ACCOUNT_NUMBER": "Account number:",
+    "UNKNOWN": "Unknown",
+    "SAFARI_FRENCH_ERROR": "<i class=\"fas fa-exclamation-triangle\"></i> It seems you're using Safari with your system language in French.  You may run into an error while connecting your bank, which we are working to fix.  If you are unable to connect, please try one of the following: <ul><li>Retry with Chrome or Firefox.</li><li>Change your system language to English, restart Safari, and retry.</li></ul>"
+  },
+  "SET_BANK_IN_PROGRESS": "We are working with your financial institution to bring up a list of your accounts for you to select. Hang tight, this may take a few minutes...",
+  "SET_BANK_TITLE": "Connect Your Business Bank Account",
+  "SHOW_OFFERS": {
+    "AS_OF": "As of",
+    "AVAILABLE_AMOUNT": "Available Financing",
+    "FAQ": {
+      "Q1_BODY": "You’re done signing up and you now have access to funds to pay your invoices!",
+      "Q1_TITLE": "Congratulations!",
+      "Q2_BODY": "",
+      "Q2_BODY_-": "We're having trouble verifying some of your information. Start a live chat with our support team.",
+      "Q2_BODY_A": "Your business has the highest grade available. To maintain this grade, continue to pay bills within terms and keep balances low on credit cards and other revolving credit.",
+      "Q2_BODY_B": "Your business currently has a high grade; however, in order to achieve a higher grade, continue to pay bills within terms, keep balances low on credit cards and other revolving credit, and if you have missed payments, get current and stay current.",
+      "Q2_BODY_C": "Your business currently has an average grade; however, in order to achieve a higher grade, pay bills within terms, keep balances low on credit cards and other revolving credit, if you have missed payments, get current and stay current, and pay off debt rather than shifting it to other accounts.",
+      "Q2_BODY_D": "Your business currently has a below-average grade. It takes time to rebuild your credit history and positively impact your grade. In order to achieve a higher grade, pay bills within terms, keep balances low on credit cards and other revolving credit, pay off debt rather than shifting to other accounts, and apply for and open new credit accounts only as needed.",
+      "Q2_BODY_E": "Your business currently has the lowest grade available. It takes time to rebuild your credit history and positively impact your grade. In order to achieve a higher grade, pay unpaid collections, keep balances low on credit cards and other revolving credit, pay off debt rather than shifting to other accounts, and apply for and open new credit accounts only as needed.",
+      "Q2_TITLE": "",
+      "Q2_TITLE_-": "Why don't I have a grade?",
+      "Q2_TITLE_A": "What does the “A” mean?",
+      "Q2_TITLE_B": "What does the “B” mean?",
+      "Q2_TITLE_C": "What does the “C” mean?",
+      "Q2_TITLE_D": "What does the “D” mean?",
+      "Q2_TITLE_E": "What does the “E” mean?",
+      "Q3_BODY": "The “{{ maxAmount }}” is the amount of available financing you have.",
+      "Q3_TITLE": "What is the “{{ maxAmount }}” for?",
+      "TITLE": "Things to Know"
+    },
+    "INFO_CARD": {
+      "MANUAL_CTA": {
+        "API_REASON": "Get additional financing up to $300,000",
+        "BODY": "Get additional financing up to $300,000",
+        "BTN": "Request a Call",
+        "FAILURE": "Sorry, couldn't request your call. Try again later.",
+        "SUCCESS": "Thank you we will get back to you as soon as possible."
+      },
+      "OFFERS": {
+        "NO_OFFER": {
+          "TITLE": "Your business does not qualify for this offer",
+          "TEXT": "Unfortunately, your business does not meet one or more of our requirements to qualify for this financing offer. If you have any question <a class=\"intercom-trigger\" role=\"button\">start a chat</a> with our support team."
+        },
+        "WCA": {
+          "BTN_LABEL": {
+            "APPROVED": "Review & Sign",
+            "IN_PROGRESS": "Your application is being reviewed",
+            "NEW": "Get funded"
+          },
+          "TITLE_LABEL": {
+            "NEW": "Get up to"
+          },
+          "TITLE": {
+            "APPROVED": "Congratulations, your loan was approved!",
+            "IN_PROGRESS": "Requested financing amount",
+            "NEW": "Apply for working capital"
+          },
+          "TOOLTIP": {
+            "BODY": "Working capital is an advance to help your business grow. Access this now, and pay back over time.",
+            "UNAVAILABLE": "Unfortunately you do not qualify for this offer. Please start a live chat with our support team."
+          }
+        },
+        "LOC": {
+          "TITLE_LABEL": "Available Credit",
+          "IN_PROGRESS": "Your application is being reviewed",
+          "EXPIRY_DATE": "Your limit will be available until <strong>{{date}}</strong>."
+        }
+      },
+      "SUBTITLE": "Now that you're certified, you have options:",
+      "TITLE": "Your financing options"
+    },
+    "MAIN_TITLE": "My Certification Report",
+    "NOTIFICATION": "Congratulations! You're certified.",
+    "TOOLTIPS": {
+      "AVAILABLE_AMOUNT": "Available amount",
+      "USED_AMOUNT": "Used amount"
+    }
+  },
+  "SMALL_BUSINESS_GRADE": {
+    "TOOLTIP_BODY_-": "We're having trouble verifying some of your information. Start a live chat with our support team.",
+    "TOOLTIP_BODY_A": "Your business currently has the highest grade available. To maintain this grade, continue to pay bills within terms and keep balances low on credit cards and other revolving credit.",
+    "TOOLTIP_BODY_B": "Your business currently has a high grade; however, in order to achieve a higher grade, continue to pay bills within terms, keep balances low on credit cards and other revolving credit, and if you have missed payments, get current and stay current.",
+    "TOOLTIP_BODY_C": "Your business currently has an average grade; however, in order to achieve a higher grade, pay bills within terms, keep balances low on credit cards and other revolving credit, if you have missed payments, get current and stay current, and pay off debt rather than shifting it to other accounts.",
+    "TOOLTIP_BODY_D": "Your business currently has a below-average grade. It takes time to rebuild your credit history and positively impact your grade. In order to achieve a higher grade, pay bills within terms, keep balances low on credit cards and other revolving credit, pay off debt rather than shifting to other accounts, and apply for and open new credit accounts only as needed.",
+    "TOOLTIP_BODY_E": "Your business currently has the lowest grade available. It takes time to rebuild your credit history and positively impact your grade. In order to achieve a higher grade, pay unpaid collections, keep balances low on credit cards and other revolving credit, pay off debt rather than shifting to other accounts, and apply for and open new credit accounts only as needed.",
+    "TOOLTIP_TITLE_-": "Why don't I have a grade?",
+    "TOOLTIP_TITLE_A": "What does the “A” mean?",
+    "TOOLTIP_TITLE_B": "What does the “B” mean?",
+    "TOOLTIP_TITLE_C": "What does the “C” mean?",
+    "TOOLTIP_TITLE_D": "What does the “D” mean?",
+    "TOOLTIP_TITLE_E": "What does the “E” mean?"
+  },
+  "SOCIAL_CONNECTIONS": {
+    "FACEBOOK": {
+      "CONNECT": "Connect to Facebook",
+      "CONNECTED_STATUS": "Connected",
+      "CONNECT_FAIL": "We were unable to connect your Facebook account with Ario",
+      "CONNECT_SUCCESS": "Your Facebook account was connected with Ario",
+      "INVALID_CONNECTION_STATUS": "Invalid connection",
+      "NOT_CONNECTED_STATUS": "Not connected",
+      "STATUS": "Facebook status"
+    }
+  },
+  "TERMS_CONDITIONS": {
+    "APPROVED": "Approved!",
+    "BUSINESS_PARTNER": "Business Partner Agreement between <br /> {{merchantName}} and Ario Platform.",
+    "CONFIRM_REJECT": "Confirm Reject",
+    "HIGHER_FEE": "The repayment fee is higher than I want to pay.",
+    "LEGAL_CONTRACT": "<p><span class=\"bold\">This is a legal contract.</span> After clicking <span class=\"bold\"> I Accept, </span> you’ll be asked to re-enter your password. You agree, by completing this process, that entering your password is as legally binding as if you were signing a paper document.</p>",
+    "NO_NEED": "I no longer need the money.",
+    "NUMBERS_MEAN?": "What do the numbers mean?",
+    "OTHER": "Other",
+    "TAKE_MOMENT": "Please take a moment to let us know why you are rejecting this working capital.",
+    "TITLE": "Sign the agreement",
+    "TOO_LONG": "The application process took too long.",
+    "WC": "Working Capital (WC) Agreement between <br>{{merchantName}} and Ario Platform.",
+    "WE_ARE_OFFERING": "<p>We are offering to purchase {{advance_amount}} of your future sales. That means we’ll give you the {{advance_amount}} now and over the next weeks and months, we’ll take a part of your gross sales each day ({{remittance_rate}}) until you’ve paid the total owed. The total amount you owe is the initial {{advance_amount}}  plus a fee of {{calculated_fee}}.</p><p>After reading and signing the agreement below, and providing your bank account information, you’ll get the money right away. We’ll start taking {{remittance_rate}} of your gross sales right after you get the money. Read more about it in the contract below.</p>",
+    "WORKING_CAPITAL": "<p class=\"ztt_panel-text\">Your working capital application is approved. <br><span class=\"bold\">You're just a couple quick steps away.</span></p><p class=\"ztt_panel-text\">This offer <span class=\"bold\">expires {{expires_at}}.</span><br>To process, you must sign the agreement and provide or confirm banking information.</p>"
+  },
+  "TICKET_FORM": {
+    "DESCRIPTION": "Description",
+    "DESCRIPTION_ERROR": "Required.",
+    "DESCRIPTION_PLACEHOLDER": "Describe the issue. Include steps taken.",
+    "HAVE_A_QUESTION": "REPORT A PROBLEM",
+    "HAVE_A_QUESTION_TEXT": "We're sorry you're having a problem! Please let us know how we can help.",
+    "SUBMIT": "Submit",
+    "TICKET_FORM": "TICKET FORM",
+    "TOPIC": "Topic",
+    "TOPIC_PLACEHOLDER": "Add a topic here"
+  },
+  "TRACKED_OBJECT": {
+    "CLICKED": "Clicked",
+    "CREATED": "Created",
+    "CREATED_FROM_QUICKBOOKS": "Created from QuickBooks",
+    "INVITED": "Invited",
+    "INVOICED": "Invoiced",
+    "LINKED": "Linked",
+    "PAID": "Payment recorded",
+    "SENT": "Sent",
+    "SECURITY_VIOLATION": "Security violation",
+    "SUBSCRIBED_AUTO_SEND": "Subscribed to Auto-Send",
+    "UNKNOWN": "Unknown",
+    "UNSUBSCRIBED_AUTO_SEND": "Unsubscribed from Auto-Send",
+    "UPDATED_FROM_QUICKBOOKS": "Updated from QuickBooks",
+    "VIEWED": "Viewed"
+  },
+  "UNABLE_TOBE_CERTIFIED": {
+    "ALTERNATELY": "Alternatively, go back and verified the entered information.",
+    "LIVE_CHAT": "Start a live chat with our support team.",
+    "TITLE": "We're having trouble verifying some of your information"
+  },
+  "DOCUMENTS": {
+    "DESCRIPTION_HTML": "Upload and view your documentation here to support your account or application.<br>If you have any questions, feel free to <a class=\"intercom-trigger\" role=\"button\">chat with us</a>.",
+    "SUCCESS_MULTIPLE": "Your documents were successfully uploaded for review.",
+    "SUCCESS_SINGLE": "Your document was successfully uploaded for review.",
+    "TABLE": {
+      "HEADER": {
+        "ACTIONS": "Actions",
+        "DOCUMENT_NAME": "Document name",
+        "DOCUMENT_TYPE": "Document type",
+        "UPLOAD_DATE": "Upload date"
+      }
+    },
+    "TITLE": "Document manager",
+    "UPLOAD_BANKING": {
+      "DESCRIPTION_1": "In order to complete your application and determine your offer amount, we will need the following:",
+      "DESCRIPTION_2_HTML": "<strong>Once you’ve uploaded all your documents, click the Finish and Submit button.</strong><br>If you have any questions, please <a class=\"intercom-trigger\" role=\"button\">chat with us</a>.",
+      "LI_BANK_STATEMENTS": "Bank statements (last 12 months)",
+      "LI_VOID_CHEQUE": "Void cheque for repayments",
+      "TITLE": "Upload your documents"
+    }
+  },
+  "UPLOAD": {
+    "ACTIONS": {
+      "CANCEL": "Cancel",
+      "NO_ACTION": "",
+      "REMOVE": "Remove"
+    },
+    "ADD_FILE": "Add another document",
+    "COMPLETE": "Done",
+    "DOCUMENT_TYPE": "Document type",
+    "ERROR": "There was an error uploading this document.",
+    "ETA": "ETA",
+    "FILE_SPECS": "Supported file types: {{ supportedFileFormats }}. Max file size is {{ fileSize }} MB. {{ maxUploads }} files can be uploaded at once.",
+    "ILLEGAL_FILE_SIZE": "The file is too large. Max file size is {{ fileSize }} MB.",
+    "REJECTED_FILE": "The following file was not added: {{ filename }}",
+    "INPUT_1": "Drag files here or",
+    "INPUT_2": "browse",
+    "INPUT_3": "to upload",
+    "SELECT_TYPE": "Please select a document type",
+    "SUBMIT": "Finish and submit",
+    "UPLOADING": "Uploading..."
+  },
+  "VERIFY_YOURSELF": {
+    "DELEGATED_MODE": "You aren't allowed to answer the questions because you are in read-only access.",
+    "HEADER": "Confirm your identity by answering the questions below. You may only attempt these questions twice in three days. Don't worry, this won't affect your credit score.",
+    "INCORRECT_ANSWERS": "Your answers are incorrect. Try again!"
+  },
+  "WCA_APPLICATION": {
+    "UPLOAD": {
+      "CANCEL": "Cancel",
+      "CRA_DOC": "Canada Revenue Agency (CRA) GST/HST Notice of Assessment",
+      "DESCRIPTION": "We need a copy of the following document(s) for your business:",
+      "SUBMIT": "Submit",
+      "TITLE": "Supporting documents for your business",
+      "TOOLTIP": "Canada Revenue Agency (CRA) issues you a GST/HST Notice of Assessment when you file your business’s taxes. If your business is exempt from GST/HST, upload assessments from your payroll (RP) and corporate (RC) accounts."
+    }
+  },
+  "OFFER": {
+    "METRICS": {
+      "BALANCE": "Balance",
+      "MAX_LIMIT": "Max Limit"
+    },
+    "CTA_STATE": {
+      "CONNECT": {
+        "BUTTON": "Connect Bank",
+        "MESSAGE": "Connect your bank online through our secure portal to activate your line of credit.",
+        "TITLE": "Unlock your credit"
+      },
+      "NOT_NEEDED": {
+        "BUTTON": "",
+        "MESSAGE": "",
+        "TITLE": ""
+      },
+      "PROCESSING": {
+        "MESSAGE": "Your credit limit will automatically update once processing is complete.",
+        "TITLE": "processing"
+      },
+      "REFRESH": {
+        "BUTTON": "Reactivate",
+        "MESSAGE": "To reactivate your credit limit, please reconnect your bank.",
+        "TITLE": "Reactivate your credit"
+      },
+      "RECONNECT": {
+        "BUTTON": "Reconnect",
+        "MESSAGE": "An authentication error occurred. Please reconnect your bank online through our secure portal to reactivate your line of credit.",
+        "TITLE": "Reactivate your credit"
+      }
+    },
+    "SMALL_TEXT": "256-bit SSL encryption"
+  },
+  "OFFER_APPLY_BUTTON": {
+    "LABEL": "Request Funds"
+  },
+  "WITHDRAWAL": {
+    "TITLE": "How much would you like today?",
+    "FORM": {
+      "AMOUNT": {
+        "PLACEHOLDER": "minimum ${{minPrincipal}}",
+        "ERROR": {
+          "BELOW_MIN_PRINCIPAL": "The amount you have requested is below the minimum draw of {{minPrincipal}}",
+          "ABOVE_AVAILABLE_AMOUNT": "The amount you have requested is above your available credit of {{availableAmount}}"
+        }
+      }
+    },
+    "IN_PROGRESS": {
+      "DESCRIPTION": "Your last request is being processed. Please wait to submit your new request."
+    },
+    "CONTINUE": {
+      "DESCRIPTION": "You already started a financing request. Pick up where you left off.",
+      "LINK": "Continue"
+    }
+  },
+  "WIDGET_BALANCE_LOC": "Your line of credit",
+  "WIDGET_BALANCE_WCA": "Your working capital advance",
+  "WIDGET_OVERDUE_INVOICES": "Overdue invoices",
+  "WIDGET_PAYMENT_DAILY": "Daily payment",
+  "WIDGET_UNPAID_INVOICES": "Unpaid invoices",
+  "WORKING": "Working <i class=\"fas fa-circle-notch fa-spin\"></i>",
+  "WORKING_SHORT": "Working..."
+}

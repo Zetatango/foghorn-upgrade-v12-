@@ -1,0 +1,74 @@
+@startuml
+actor Alice
+participant WLMP
+participant flinks
+participant "ZTT API" as API
+participant "ZTT Core" as ZTT
+participant Wilee
+
+
+WLMP -> ZTT: get merchant
+ZTT -> WLMP: merchant_state ... connection_required=true, selected_bank_account=nil
+WLMP -> WLMP: redirect to dashboard
+Alice -> WLMP: Connect my bank
+WLMP -> flinks: render flinks iframe (redirect_uri = foghorn url)
+flinks -> WLMP: show institution picker
+Alice -> flinks: choose institution
+flinks -> Alice: present username/password/mfa form
+Alice -> flinks: enter credentials
+flinks -> flinks: verify credentials (internally post Authorize)
+flinks -> WLMP: redirect to foghorn (login_id=<>)
+WLMP -> ZTT: post api/flinks/logins/(merchant_id, :login_id, :institution_name)
+ZTT -> Wilee: create_flinks_login_id(loginInfo)
+Wilee -> Wilee: save loginId (Flinks::Login) - encrypted loginId
+Wilee -> ZTT: 201
+ZTT -> ZTT: save cache entry : flinks-query-<uuid> : state: pending
+ZTT -> ZTT: FlinksAccountDetailsJob perform later
+ZTT -> WLMP: 201 (request_guid)
+
+group WLMP poll for flinks completion
+loop while not completed
+WLMP -> ZTT: get api/flinks/request_state?request_id
+ZTT -> WLMP: request_state
+end
+WLMP -> ZTT: get /bank_accounts
+ZTT -> Wilee: get bank_accounts
+Wilee -> Wilee: filter "eft-able" accounts (e.g has routing information)
+Wilee -> ZTT: filtered bank account list
+ZTT -> WLMP: filtered bank account list
+WLMP -> Alice: account picker
+Alice -> WLMP: choose account
+WLMP -> ZTT: post selected bank account (ba_id)
+ZTT -> ZTT: create merchant selected bank account attribute
+ZTT -> ZTT: recalculate offer (will use sales volume for that account)
+end
+
+group FlinksAccountDetailsJob
+ZTT -> flinks: /Authorize (login_id)
+flinks -> ZTT: ok (request Id)
+ZTT -> flinks: post AccountDetails (requestId)
+flinks -> ZTT: 202
+loop until 200 or timeout
+ZTT -> flinks: post AccountDetailsAsync
+flinks -> ZTT: 202/200
+end
+flinks -> ZTT: 200 (account transactions)
+ZTT -> ZTT: mark bank connection required = false
+ZTT -> ZTT: validate and remove invalid holder accounts (fuzzy match)
+ZTT -> Wilee: store each bank account (encrypted attributes)
+ZTT -> AWS: store processed and raw response
+ZTT -> ZTT: calculate sales volumes
+group sales_volume_for_accounts
+loop for each transaction
+  ZTT->ZTT: read industry lookup table -> accept_e_transfer, accept_lrc
+  ZTT->ZTT: read desc lookup table
+  ZTT->ZTT: get cleaned description
+  ZTT->ZTT: lookup description
+  ZTT->ZTT: proc_trans_amount ( revenue - reversal )
+  ZTT->ZTT: update bucket (per account / per month)
+end
+
+ZTT -> ZTT: update cache entry flinks-query-<uuid>: state = 'completed'
+end
+
+@enduml

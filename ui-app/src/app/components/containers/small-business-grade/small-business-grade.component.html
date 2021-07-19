@@ -1,0 +1,22 @@
+<div class="card h-100">
+  <div class="card-body col-12 col-sm-4 col-lg-12 p-3 mx-auto">
+    <div class="d-flex align-items-center h-100 ztt-small-business-grade" [ngClass]="{ 'w-50 m-auto': isModal, 'justify-content-center': isMyBusinessGrade, 'justify-content-start': !isMyBusinessGrade }">
+      <ng-container *ngIf="isLoadingGrade">
+        <i class="fas fa-circle-notch fa-spin fa-4x text-muted"></i>
+      </ng-container>
+
+      <ng-container *ngIf="!isLoadingGrade">
+        <i *ngIf="isMyBusinessGrade" class="far fa-question-circle text-muted px-1"
+           [tooltip]="tooltipTemplate"
+           placement="right"
+           containerClass="grade-tooltip"></i>
+        <img class="p-0 cert-grade" [ngClass]="{col :isMyBusinessGrade}" src="{{ cert_grade_image_src }}" id="cert_grade" alt="Certification Grad">
+      </ng-container>
+    </div>
+  </div><!--.card-body-->
+</div><!--.card-->
+
+<ng-template #tooltipTemplate>
+  <h5>{{ tooltipTitle | translate }}</h5>
+  <p [innerHTML]="tooltipBody | translate"></p>
+</ng-template>

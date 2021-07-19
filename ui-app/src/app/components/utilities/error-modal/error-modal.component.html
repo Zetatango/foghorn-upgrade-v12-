@@ -1,0 +1,319 @@
+<ng-template #template>
+  <div class="dialogue-icon"><i class="fas fa-exclamation-circle text-accent"></i></div>
+
+  <!-- BASE ERROR MODAL -->
+  <!-------------------------------------------------------->
+
+  <div class="modal-body">
+    <ng-container [ngSwitch]="error">
+      <ng-container *ngSwitchCase="UiError.acceptPad">
+        <ng-template *ngTemplateOutlet="acceptPad"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.flinksInvalidAccountOrHolder">
+        <ng-template *ngTemplateOutlet="flinksInvalidAccountOrHolder"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.flinksAccountReconnectMismatch">
+        <ng-template *ngTemplateOutlet="flinksAccountReconnectMismatch"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.loadBankAccounts">
+        <ng-template *ngTemplateOutlet="loadBankAccounts"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.merchantAlreadyExists">
+        <ng-template *ngTemplateOutlet="merchantAlreadyExists"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.createBankAccount">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.loadBankAccount">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.noSuppliersAvailable">
+        <ng-template *ngTemplateOutlet="noSuppliersAvailable"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.equifaxAuthentication">
+        <ng-template *ngTemplateOutlet="equifaxAuthentication"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.sessionExpired">
+        <ng-template *ngTemplateOutlet="sessionExpired"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.getOffers">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.getMerchants">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.getMerchant">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.putMerchant">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.getUserSession">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.postMerchant">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.postSelectBankAccount">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.routing">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.getSuppliers">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.postLendingApplication">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.loadUbls">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.loadLendingApplications">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.signByReauth">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.acceptLendingApplication">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.general">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.loadRepayments">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.cancelLendingApplication">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.amendLendingApplication">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.getOfferFee">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.getLendingApplicationFee">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.loadSuppliers">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.newBusinessPartnerError">
+        <ng-template *ngTemplateOutlet="newBusinessPartnerError"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.getBusinessPartnerApplicationError">
+        <ng-template *ngTemplateOutlet="getBusinessPartnerApplicationError"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.businessPartnerVanityInvalidError">
+        <ng-template *ngTemplateOutlet="businessPartnerVanityInvalidError"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.putBusinessPartnerProfileError">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.getBusinessPartnerProfileError">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.loadInvoiceError">
+        <ng-template *ngTemplateOutlet="loadInvoiceError"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.appInProgressError">
+        <ng-template *ngTemplateOutlet="appInProgressError"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.notEligibleForOffer">
+        <ng-template *ngTemplateOutlet="notEligibleForOffer"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.notConnectedToQuickbooks">
+        <ng-template *ngTemplateOutlet="notConnectedToQuickbooks"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.delegatedMode">
+        <ng-template *ngTemplateOutlet="delegatedMode"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.getAgreement">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.subscribeToAutoSend">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.failedToLoadSocialConnections">
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+
+      <ng-container *ngSwitchDefault>
+        <ng-template *ngTemplateOutlet="genericErrorModal"></ng-template>
+      </ng-container>
+    </ng-container><!--ngSwitch-->
+  </div><!--.modal-body-->
+
+  <!-- ngSwitch for footer-->
+  <div class="modal-footer justify-content-center">
+    <ng-container [ngSwitch]="error">
+      <ng-container *ngSwitchCase="UiError.sessionExpired">
+        <button class="btn btn-accent"
+                (click)="redirectToSignIn()"
+                [disabled]="btnActionDisabled">
+          {{'SESSION_EXPIRED.BTN.NEXT' | translate}}
+        </button>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="UiError.bankConnectError">
+        <div class="text-center">
+          <button class="btn btn-accent" (click)="hide()">{{ 'BANK_INFO.CONTINUE' | translate }}</button>
+          <p class="mt-3">{{ 'BANK_INFO.BANK_CONNECT_ERROR_CHAT_TEXT' | translate }}<a (click)="intercomShow()">{{ 'BANK_INFO.BANK_CONNECT_ERROR_CHAT_LINK' | translate }}</a>.</p>
+        </div>
+      </ng-container>
+
+      <ng-container *ngSwitchDefault>
+        <button class="btn btn-accent" (click)="hide()">{{'OK' | translate}}</button>
+      </ng-container>
+    </ng-container><!--ngSwitch-->
+  </div><!--.modal-footer-->
+
+  <!-- SPECIFIC ERROR TEMPLATES -->
+  <!-------------------------------------------------------->
+
+  <ng-template #acceptPad>
+    <p>{{ 'ERROR_MODAL.PAD_ACCEPT_ERROR' | translate }}</p>
+  </ng-template>
+
+  <ng-template #flinksInvalidAccountOrHolder>
+    <p [innerHtml]="'BANK_INFO.FLINKS_INVALID_ACCOUNT_TYPE' | translate"></p>
+  </ng-template>
+
+  <ng-template #flinksAccountReconnectMismatch>
+    <p [innerHtml]="'BANK_INFO.FLINKS_ACCOUNT_RECONNECT_MISMATCH' | translate"></p>
+  </ng-template>
+
+  <ng-template #loadBankAccounts>
+    <p>{{ 'ERROR_MODAL.SET_BANK_FAILED' | translate }}</p>
+  </ng-template>
+
+  <ng-template #merchantAlreadyExists>
+    <p>{{ 'ERROR_MODAL.DUPLICATE_EMAIL_ERROR' | translate }}</p>
+  </ng-template>
+
+  <ng-template #noSuppliersAvailable>
+    <p>{{ 'ERROR.MODAL.NO_SUPPLIERS_ERROR' | translate }}</p>
+  </ng-template>
+
+  <ng-template #equifaxAuthentication>
+    <p>{{ 'EQUIFAX_SERVICE_DOWN' | translate }}</p>
+  </ng-template>
+
+  <ng-template #sessionExpired>
+    <p class="text-center">{{ 'SESSION_EXPIRED.TITLE' | translate }}</p>
+  </ng-template>
+
+  <ng-template #newBusinessPartnerError>
+    <p>{{ 'BUSINESS_PARTNER.CREATE_BUSINESS_PARTNER_ERROR' | translate }}</p>
+  </ng-template>
+
+  <ng-template #getBusinessPartnerApplicationError>
+    <p>{{ 'BUSINESS_PARTNER.GET_APPLICATION_ERROR' | translate }}</p>
+  </ng-template>
+
+  <ng-template #businessPartnerVanityInvalidError>
+    <p>{{ 'BUSINESS_PARTNER.VANITY_INVALID' | translate }}</p>
+  </ng-template>
+
+  <ng-template #loadInvoiceError>
+    <p>{{ 'INVOICE.LOAD_ERROR' | translate }}</p>
+  </ng-template>
+
+  <ng-template #appInProgressError>
+    <p>{{ 'INVOICE.APP_ALREADY_IN_PROGRESS' | translate }}</p>
+  </ng-template>
+
+  <ng-template #notEligibleForOffer>
+    <p>{{ 'INVOICE.NOT_ELIGIBLE' | translate }}</p>
+  </ng-template>
+
+  <ng-template #notConnectedToQuickbooks>
+    <p>{{ 'BUSINESS_PARTNER.NOT_CONNECTED_TO_QUICKBOOKS' | translate }}</p>
+  </ng-template>
+
+  <!-- GENERIC ERROR TEMPLATE -->
+  <!-------------------------------------------------------->
+
+  <ng-template #genericErrorModal>
+    <div class="text-center">
+      <p class="lead">{{ (context?.heading ? context.heading : 'ERROR_MODAL.GENERIC.HEADING') | translate }}</p><!--.lead-->
+      <p *ngFor="let message of context?.messages" [innerHtml]="message | translate"></p>
+    </div>
+  </ng-template>
+
+  <!-- DELEGATED ACCESS ERROR TEMPLATE -->
+  <!-------------------------------------------------------->
+  <ng-template #delegatedMode>
+    <div class="modal-message text-center">
+      <div class="modal-heading">
+        <h3><i class="fas fa-exclamation-triangle"></i>
+          <span *ngIf="isDelegatedAccessMode()">
+            {{'ERROR_MODAL.DELEGATED_MODE.ER401DELEGATED' | translate}}
+          </span>
+          <span *ngIf="!isDelegatedAccessMode()">
+            {{'ERROR_MODAL.DELEGATED_MODE.ER401' | translate}}
+          </span>
+        </h3>
+      </div><!--.modal-heading-->
+
+      <div class="modal-body">
+        <div *ngIf="!isDelegatedAccessMode()"
+             [innerHtml]="'ERROR_MODAL.DELEGATED_MODE.REMINDER' | translate"></div>
+        <div *ngIf="isDelegatedAccessMode()"
+             [innerHtml]="'ERROR_MODAL.DELEGATED_MODE.REMINDER_DELEGATED' | translate:{merchantName: merchantName}"></div>
+        <div [innerHtml]="'ERROR_MODAL.DELEGATED_MODE.SIGN_IN' | translate:{url: logoutUrl}"></div>
+        <div class="error-modal-footer small">{{'ERROR_MODAL.DELEGATED_MODE.SUPPORT' | translate}}</div>
+      </div><!--.modal-body-->
+    </div><!--.modal-message-->
+  </ng-template><!--.error-modal-->
+</ng-template><!--#template-->
+
+<ng-template>
+  {{ 'ERROR_MODAL.GENERIC.HEADING' | translate }}
+  {{ 'ERROR_MODAL.GENERIC.BODY_MESSAGE1' | translate }}
+  {{ 'ERROR_MODAL.GENERIC.BODY_MESSAGE2' | translate }}
+</ng-template>

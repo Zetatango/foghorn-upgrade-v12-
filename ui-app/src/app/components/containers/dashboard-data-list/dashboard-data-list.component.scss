@@ -1,0 +1,12 @@
+.ztt-dashboard-data-list {
+  .long-tooltip,
+  .tooltip-inner {
+    max-width: none !important;
+    width: 300px;
+
+    .tooltip-inner {
+      overflow-wrap: break-word;
+      white-space: normal;
+    }
+  }
+}

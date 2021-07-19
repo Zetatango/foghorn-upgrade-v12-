@@ -1,0 +1,88 @@
+/*! IDP STYLES.SCSS */
+
+// IDP STYLES
+// ========================================================
+//
+// Table of Contents:
+//
+//  0. Imports
+//  1. IDP styles
+//  2. Merchant Profile Picker
+//  00. Responsive / Overrides
+
+// 0. IMPORTS
+// --------------------------------------------------------
+
+@import 'fonts';
+
+// default / global variables
+@import 'defaults/global_variables';
+@import 'idp/variables';
+
+/*! THEME VARIABLES IMPORTS */ // (DO NOT REMOVE/UNCOMMENT)
+// require theme_variables
+
+// node_modules
+@import 'bootstrap/scss/bootstrap';
+
+// custom mixins
+@import 'theming/mixins';
+
+// global styles
+@import 'defaults/global_styles';
+
+
+// 1. IDP STYlES
+// --------------------------------------------------------
+
+#main {
+  background: -webkit-linear-gradient(90deg - 127deg, rgba(var(--accent, theme-color('accent')), .8), rgba(var(--accent, theme-color('accent')), 0) 70.71%),
+              -webkit-linear-gradient(90deg - 27deg, rgba(var(--accent, theme-color('accent')), .8), rgba(var(--accent, theme-color('accent')), 0) 70.71%),
+              -webkit-linear-gradient(90deg - 336deg, rgba(var(--primary, theme-color('primary')), 1), rgba(var(--primary, theme-color('primary')), 0) 70.71%);
+  background: linear-gradient(127deg, rgba(var(--accent, theme-color('accent')), .8), rgba(var(--accent, theme-color('accent')), 0) 70.71%),
+              linear-gradient(27deg, rgba(var(--accent, theme-color('accent')), .8), rgba(var(--accent, theme-color('accent')), 0) 70.71%),
+              linear-gradient(336deg, rgba(var(--primary, theme-color('primary')), 1), rgba(var(--primary, theme-color('primary')), 0) 70.71%);
+}
+
+.ztt-container {
+  @extend .container;
+  @extend .py-5;
+}
+
+// 2. MERCHANT PROFILE PICKER
+// --------------------------------------------------------
+
+.picker-element {
+  background-color: $body-bg;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.25s ease-out;
+
+  .picker-icon > i {
+    width: 40px;
+  }
+
+  &:hover {
+    background-color: theme-color('primary');
+
+    p,
+    h5,
+    .picker-icon > i {
+      color: white !important;
+    }
+  }
+
+  &:active {
+    background-color: theme-color('accent');
+  }
+
+  .picker-label {
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@import "defaults/global_responsive";
+@import "idp/responsive";

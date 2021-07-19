@@ -1,0 +1,67 @@
+<ng-container *ngIf="loaded">
+  <div class="ztt-container" id="ztt-lending-agreement">
+    <div class="row">
+      <div class="col-12 col-lg-8 offset-lg-2">
+        <!-- CARD: AGREEMENT -->
+        <div class="card">
+          <div class="dialogue-icon"><i class="fas fa-check-circle"></i></div>
+          <div class="card-body">
+            <h5 class="card-title">{{ 'LENDING_AGREEMENT.PAY_CONTRACT_TITLE' | translate }}</h5>
+            <hr>
+
+            <p *ngIf="!currentTerms" class="card-text text-center">{{ 'LENDING_AGREEMENT.NO_CONTRACT_AVAILABLE' | translate }}</p><!--.text-center .my-5 -->
+
+            <div *ngIf="currentTerms">
+              <p class="card-text mb-5">{{'LENDING_AGREEMENT.PAY_CONTRACT_SIGN_ABOVE' | translate}}</p>
+              <p class="card-text text-muted">{{ 'LENDING_AGREEMENT.PAY_CONTRACT_SUBHEAD' | translate }}</p>
+
+              <div id="LendingTermsFrame">
+                <p class="card-text text-muted">
+                  <markdown [data]="currentTerms.content"></markdown>
+                </p>
+              </div><!--#LendingTermsFrame-->
+
+              <ztt-print-pdf [text]="currentTerms.content | markdown"
+                             [heading]="'LENDING_AGREEMENT.PAY_CONTRACT_SUBHEAD' | translate"
+                             [fileName]="'LENDING_AGREEMENT.FILE_NAME' | translate">
+              </ztt-print-pdf>
+
+              <p class="card-text mt-5">{{'LENDING_AGREEMENT.PAY_CONTRACT_SIGN_BELOW' | translate}}</p>
+
+              <p class="card-text mt-3">{{ 'LENDING_AGREEMENT.PAY_CONTRACT_DISCLAIMER' | translate }}</p>
+            </div><!--*ngIf-->
+
+            <div class="ztt-card-button-holder">
+              <!-- Back -->
+              <button class="btn btn-light" (click)="back()">{{ 'COMMON.BTN.BACK' | translate }}</button>
+
+              <!-- Submit -->
+              <div *ngIf="currentTerms" class="btn-group ml-auto" role="group">
+                <button class="btn ztt-btn-group-icon"
+                        (click)="signAgreementByReauth()"
+                        [disabled]="isProcessingAgreement">
+                  <i class="fas fa-signature"></i>
+                </button>
+                <button class="btn btn-block btn-accent"
+                        id="lending-agreement-sign-btn"
+                        (click)="signAgreementByReauth()"
+                        [disabled]="isProcessingAgreement"
+                        [innerHTML]="(isProcessingAgreement ? 'WORKING' : 'LENDING_AGREEMENT.SIGN_BUTTON_LABEL') | translate">
+                </button>
+              </div><!--.btn-group-->
+            </div><!-- ztt-card-button-holder -->
+          </div><!--.card-body-->
+        </div><!--.card -->
+      </div><!--.col -->
+    </div><!--.row -->
+  </div><!--.ztt-lending-agreement-->
+</ng-container>
+
+<ng-template>
+  {{ 'LENDING_AGREEMENT.NO_CONTRACT_AVAILABLE' | translate }}
+  {{ 'LENDING_AGREEMENT.PAY_CONTRACT_SIGN_ABOVE' | translate }}
+  {{ 'LENDING_AGREEMENT.PAY_CONTRACT_SUBHEAD' | translate }}
+  {{ 'LENDING_AGREEMENT.PAY_CONTRACT_SIGN_BELOW' | translate }}
+  {{ 'LENDING_AGREEMENT.SIGN_BUTTON_LABEL' | translate }}
+  {{ 'WORKING' | translate }}
+</ng-template>

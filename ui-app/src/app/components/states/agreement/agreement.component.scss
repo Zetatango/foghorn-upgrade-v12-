@@ -1,0 +1,15 @@
+#terms-frame {
+  max-height: 40vh;
+  overflow: scroll;
+
+  // Helps rendering the markdown numbered list properly:
+  markdown::ng-deep ol {
+    // Note: ng-deep is required because the markdown tag created a sub-component.
+    padding-left: 20px;
+
+    li {
+      list-style: decimal;
+      padding-left: 20px;
+    }
+  }
+}

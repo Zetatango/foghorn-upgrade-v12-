@@ -1,0 +1,18 @@
+<div class="ztt-container" id="lending-application-declined">
+  <div class="card">
+    <div class="dialogue-icon"><i class="fas fa-times-circle text-danger"></i></div>
+    <div class="card-body text-center">
+        <h5 class="card-title">{{ 'APPLICATION_DECLINED.TITLE' | translate }}</h5>
+
+        <p class="card-text text-muted mb-3">
+          {{ 'APPLICATION_DECLINED.BODY' | translate }}
+        </p>
+
+        <div class="ztt-card-button-holder justify-content-center">
+          <button class="btn btn-accent" [routerLink]="dashboardLink">
+            {{ 'COMMON.BTN.DASHBOARD' | translate }}
+          </button>
+        </div><!--.ztt-card-button-holder-->
+    </div><!--.card-body -->
+  </div><!--.card -->
+</div><!--.lending-application-declined -->

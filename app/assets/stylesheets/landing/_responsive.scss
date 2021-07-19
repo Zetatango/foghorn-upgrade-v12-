@@ -1,0 +1,31 @@
+/*! RESPONSIVE.SCSS */
+
+@include media-breakpoint-down(sm) {
+  .landing-hero-container {
+    .landing-hero {
+      &::before {
+        @include gradient-y(rgba(0, 0, 0, .45), rgba(0, 0, 0, .75));
+      }
+    }
+  }
+} // @include media-breakpoint-down(sm)
+
+@include media-breakpoint-up(lg) {
+  $landing-panel-height: 500px;
+
+  .landing-hero-container {
+    .landing-hero {
+      min-height: $landing-panel-height;
+    }
+  }
+
+  #landing-hero-container-2 {
+    min-height: $landing-panel-height;
+  }
+
+  #landing-hero-container-3 {
+    #invfin-card, #wca-card {
+      min-height: $landing-panel-height;
+    }
+  }
+} // @include media-breakpoint-up(lg)

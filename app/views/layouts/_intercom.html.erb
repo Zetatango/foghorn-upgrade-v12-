@@ -1,0 +1,4 @@
+<%= javascript_tag nonce: true do -%>
+  window.intercomSettings = <%= sanitize intercom_config.to_json %>;
+<% end %>
+<%= javascript_include_tag 'intercom' %>

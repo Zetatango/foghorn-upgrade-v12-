@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme" content="<%= partner_theme_name %>">
+    <meta name="partner_id" content="<%= current_partner&.id %>">
+    <meta name="merchant_id" content="<%= current_user&.merchant_on_selected_profile %>" />
+
+    <%= csrf_meta_tags %>
+
+    <title><%= @title.present? ? @title : 'Ario Platform' %></title>
+
+    <!-- Google Tag Manager -->
+    <%= render 'layouts/gtm' unless gtm_container_id.blank? %>
+    <!-- End Google Tag Manager -->
+
+    <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'shortcut icon' %>
+
+    <%= stylesheet_link_tag 'landing', media: 'all' %>
+    <%= javascript_include_tag 'landing' %>
+
+    <!-- RENDERED THEME STYLES -->
+    <%= content_tag('style', render_theme_styles) %>
+
+    <base href="<%= base_url %>">
+  </head>
+
+  <body class="<%= controller_name %> <%= action_name %>" >
+    <%= yield %>
+
+    <% if use_ga? %>
+      <%= render 'shared/google_analytics' %>
+    <% end %>
+  </body>
+</html>

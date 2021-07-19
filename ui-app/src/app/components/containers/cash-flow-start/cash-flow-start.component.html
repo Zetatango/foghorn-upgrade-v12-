@@ -1,0 +1,38 @@
+<div class="ztt-container" id="ztt-cash-flow-start">
+  <div class="row">
+    <div class="col-12 col-lg-8 offset-lg-2 order-2 order-lg-1">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ 'CASH_FLOW.INCREASE_LIMIT.CARD_HEADER' | translate }}</h5>
+          <img id="bank_image"
+               class="mx-auto d-block my-3"
+               src="{{ bank_src }}">
+
+          <p class="card-text text-left" [innerHTML]="'CASH_FLOW.INCREASE_LIMIT.CARD_BODY' | translate"></p>
+          <p class="card-text text-left" [innerHTML]="'CASH_FLOW.INCREASE_LIMIT.REQUIREMENT' | translate"></p>
+          <div>
+            <ul>
+                <li *ngFor="let document of documentList"><small>{{ document | translate }}</small></li>
+            </ul>
+          </div>
+          <p class="card-text text-left" [innerHTML]="'CASH_FLOW.INCREASE_LIMIT.CARD_BODY_NOTE' | translate"></p>
+
+          <div class="ztt-card-button-holder">
+            <!-- Cancel -->
+            <button class="btn btn-light"
+                    (click)="cancel()"
+                    [disabled]="false"
+                    [innerHTML]=" 'COMMON.BTN.BACK' | translate">
+            </button>
+
+            <!-- Submit -->
+            <button class="btn btn-accent ml-auto"
+                    (click)="next()"
+                    [innerHTML]=" 'COMMON.BTN.NEXT' | translate">
+            </button>
+          </div><!--.ztt-card-button-holder-->
+        </div><!--.card-body-->
+      </div><!--.card-->
+    </div><!--.col-->
+  </div><!--.row-->
+</div><!--#ztt-cash-flow-start-->

@@ -1,0 +1,28 @@
+<div class="card bg-transparent border-0 shadow-none" *ngIf="(insightsService.cashOnHandData | async) as cashOnHandData;">
+  <div class="wrapper text-left text-sm-center text-lg-left mx-auto mx-lg-0">
+    <div class="d-flex">
+      <h1 class="financial-card-value font-weight-bold">
+        {{cashOnHandData.currentBalance | zttCurrency: translateService.currentLang:'1.0-0'}}
+      </h1>
+      <img *ngIf="cashOnHandData.balanceChange > 0" src="/assets/insights/up.svg" class="custom-caret-up" alt="up-icon">
+      <img *ngIf="cashOnHandData.balanceChange < 0" src="/assets/insights/down.svg" class="custom-caret-up" alt="down-icon">
+    </div>
+    <div>
+      <h6 class="financial-card-value-name mt-1 mb-2 text-uppercase">
+        {{'INSIGHTS.CASH_ON_HAND.CASH_ON_HAND_TEXT'| translate}}</h6>
+      <p class="mb-1 financial-card-cash-description">{{cashOnHandData.cashBufferDays | number : '1.0-0' }}
+        {{'INSIGHTS.CASH_ON_HAND.DAYS_CASH_RESERVES'|translate}}</p>
+
+      <!--TODO: uncomment code when the dropdown is enabled-->
+      <!--    <div dropdown (isOpenChange)="isOpenChange()">-->
+      <!--      <a class="text-decoration-none text-primary" id="cash-reserve-estimation-toggler" dropdownToggle-->
+      <!--         aria-controls="basic-link-dropdown"><span class="font-weight-bold">{{'INSIGHTS.CASH_ON_HAND.ESTIMATE_CASH_RESERVES' | translate}}</span>-->
+      <!--        <i-->
+      <!--          class="fa fa-chevron-{{isCashReserveDropdownOpen? 'up' : 'down'}} position-relative"></i> </a>-->
+      <!--      <ul id="basic-link-dropdown" *dropdownMenu class="dropdown-menu"-->
+      <!--          role="menu" aria-labelledby="basic-link">-->
+      <!--      </ul>-->
+      <!--    </div>-->
+    </div>
+  </div>
+</div>

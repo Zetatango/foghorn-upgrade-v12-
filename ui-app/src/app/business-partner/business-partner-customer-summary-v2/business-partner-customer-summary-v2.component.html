@@ -1,0 +1,146 @@
+<ng-container>
+  <ztt-dashboard-data-list 
+    id="ztt-business-partner-customer-summary-v2"
+    [config]="configType"
+    [editTemplate]="editTemplate"
+    [isSearchEnabled]="true"
+    [primaryTemplate]="primaryTemplate"
+    [secondaryTemplate]="secondaryTemplate">
+  </ztt-dashboard-data-list>
+  <ng-template
+    #editTemplate
+    let-merchants="listItems" 
+    let-isEditing="isEditing" 
+    let-toggleEditEvent="toggleEditEvent"
+    let-finishEditEvent="finishEditEvent"
+    let-areAnySelected="areAnySelected"
+    let-areAllSelected="areAllSelected">
+    <div class="m-2" *ngIf="isQuickBooksConnected">
+      <button class="btn btn-accent m-1"
+              type="button"
+              (click)="toggleEdit(merchants, toggleEditEvent)">
+              {{ editButtonLabel | translate }}
+      </button>
+      <button class="btn btn-accent m-1"
+              type="button"
+              (click)="toggleSelectAll(merchants)"
+              *ngIf="isEditing">
+              {{ selectAllButtonLabel(areAllSelected) | translate }}
+      </button>
+      <button class="btn btn-accent m-1"
+              type="button"
+              (click)="subscribeToAutoSend(merchants, true, finishEditEvent, toggleEditEvent)"
+              [disabled]="!areAnySelected"
+              *ngIf="isEditing">
+              {{ 'AUTO_SEND.BUTTON_SUBSCRIBE' | translate }}
+      </button>
+      <button class="btn btn-accent m-1"
+              type="button"
+              (click)="subscribeToAutoSend(merchants, false, finishEditEvent, toggleEditEvent)"
+              [disabled]="!areAnySelected"
+              *ngIf="isEditing">
+              {{ 'AUTO_SEND.BUTTON_UNSUBSCRIBE' | translate }}
+      </button>
+    </div><!--.mx-2 .my-2-->
+  </ng-template>
+  <ng-template #primaryTemplate let-merchant="item">
+    <div class="list-column">
+      <p class="font-weight-bold">{{ merchant.sign_up_name ? merchant?.sign_up_name : merchant?.name }}</p>
+      <span class="status" [ngClass]="{'positive-status' : hasAutoSend(merchant)}">{{ getAutoSendStatus(merchant) | translate }}</span>
+      <span class="status" [ngClass]="{'positive-status' : hasAutoPay(merchant)}">{{ getAutoPayStatus(merchant) | translate }}</span>
+    </div><!--.list-column-->
+    <div class="list-column">
+      <ztt-small-business-grade
+        *ngIf="hasSmallBusinessGrade(merchant)"
+        [grade]="merchant?.linked_merchants[0]?.small_business_grade"
+        (click)="showBusinessGradeModal(merchant?.linked_merchants[0]?.small_business_grade)">
+      </ztt-small-business-grade>
+      <div class="list-row">
+        <p>
+          {{ 'PARTNER_DASHBOARD.CUSTOMER_SUMMARY.CREDIT' | translate }}
+          {{ hasAvailableAmount(merchant) ? ( merchant?.linked_merchants[0]?.available_amount | zttCurrency : getCurrentLang() ) : 'COMMON.NOT_AVAILABLE' | translate }}
+        </p>
+      </div>
+    </div><!--.list-column-->
+  </ng-template>
+
+  <ng-template #secondaryTemplate let-merchant="item">
+    <div class="list-row expanded">
+      <p>
+        {{ 'PARTNER_DASHBOARD.CUSTOMER_SUMMARY.EMAIL' | translate }}
+        <i class="fas fa-info-circle text-muted px-1"
+          [tooltip]="'PARTNER_DASHBOARD.INVITED_NAME' | translate :{ name: merchant?.name, email: merchant?.email }"
+          placement="right"
+          containerClass="tooltips"
+          *ngIf="hasDifferentSignupProperties(merchant)">
+        </i>
+      </p>
+      <p>{{ merchant.sign_up_email ? merchant?.sign_up_email : merchant?.email }}</p>
+    </div><!--.list-row-->
+    <div class="list-row expanded">
+      <p>{{ 'PARTNER_DASHBOARD.CUSTOMER_SUMMARY.LAST_ACTIVITY' | translate }}</p>
+      <p>
+        {{ 'PARTNER_DASHBOARD.CUSTOMER_SUMMARY.LAST_ACTIVITY_WITH_DATE'
+              | translate: { activity: ( getCustomerLastEvent(merchant.last_event) | translate) , date: ( merchant.last_event_at | localizeDate: getCurrentLang(): null: 'UTC' ) } }}
+      </p>
+    </div><!--.list-row-->
+    <div class="list-row expanded" *ngIf="getCustomerSource(merchant)">
+      <p>{{ 'PARTNER_DASHBOARD.CUSTOMER_SUMMARY.SOURCE' | translate }}</p>
+      <p>{{ getCustomerSource(merchant) | translate }}</p>
+    </div><!--.list-row-->
+    <div class="list-row expanded justify-content-end">
+      <button class="btn btn-accent" type="button" (click)="createInvoice(merchant)">
+        {{ 'PARTNER_DASHBOARD.CUSTOMER_SUMMARY.CREATE_INVOICE' | translate }}
+      </button>
+      <button class="btn btn-accent" type="button" (click)="openCustomerHistoryModal(merchant)">
+        {{ 'PARTNER_DASHBOARD.CUSTOMER_SUMMARY.VIEW_HISTORY' | translate }}
+      </button>
+    </div><!--.list-row-->
+  </ng-template>
+
+  <!-- Business Grade modal -->
+  <ng-template #businessGradeModal>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">{{ ( grade ? 'PARTNER_DASHBOARD.GRADE_MODAL_TITLE_SINGLE' : 'PARTNER_DASHBOARD.GRADE_MODAL_TITLE_MULTI' ) | translate }}</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <h5 class="grade-a" *ngIf="!grade || grade.toLowerCase() === 'a'">
+        {{ 'PARTNER_DASHBOARD.GRADE_MODAL_A_TITLE' | translate }}
+      </h5>
+      <p *ngIf="!grade || grade.toLowerCase() === 'a'">{{ 'PARTNER_DASHBOARD.GRADE_MODAL_A_INFO' | translate }}</p>
+
+      <h5 class="grade-b" *ngIf="!grade || grade.toLowerCase() === 'b'">
+        {{ 'PARTNER_DASHBOARD.GRADE_MODAL_B_TITLE' | translate }}
+      </h5>
+      <p *ngIf="!grade || grade.toLowerCase() === 'b'">{{ 'PARTNER_DASHBOARD.GRADE_MODAL_B_INFO' | translate }}</p>
+
+      <h5 class="grade-c" *ngIf="!grade || grade.toLowerCase() === 'c'">
+        {{ 'PARTNER_DASHBOARD.GRADE_MODAL_C_TITLE' | translate }}
+      </h5>
+      <p *ngIf="!grade || grade.toLowerCase() === 'c'">{{ 'PARTNER_DASHBOARD.GRADE_MODAL_C_INFO' | translate }}</p>
+
+      <h5 class="grade-d" *ngIf="!grade || grade.toLowerCase() === 'd'">
+        {{ 'PARTNER_DASHBOARD.GRADE_MODAL_D_TITLE' | translate }}
+      </h5>
+      <p *ngIf="!grade || grade.toLowerCase() === 'd'">{{ 'PARTNER_DASHBOARD.GRADE_MODAL_D_INFO' | translate }}</p>
+
+      <h5 class="grade-e" *ngIf="!grade || grade.toLowerCase() === 'e'">
+        {{ 'PARTNER_DASHBOARD.GRADE_MODAL_E_TITLE' | translate }}
+      </h5>
+      <p *ngIf="!grade || grade.toLowerCase() === 'e'">{{ 'PARTNER_DASHBOARD.GRADE_MODAL_E_INFO' | translate }}</p>
+
+      <h5 *ngIf="!grade || grade === '-'">{{ 'PARTNER_DASHBOARD.GRADE_MODAL_BLANK_TITLE' | translate }}</h5>
+      <p *ngIf="!grade || grade === '-'">{{ 'PARTNER_DASHBOARD.GRADE_MODAL_BLANK_INFO' | translate }}</p>
+    </div>
+  </ng-template>
+</ng-container>
+
+<!-- Customer tracking event history modal -->
+<ng-template #merchantTrackedObjectModal>
+  <ztt-business-partner-customer-history [trackedBusinessPartnerMerchant]="trackedBusinessPartnerMerchant"
+                                         (sendHideModalEvent)="hideModal()">
+  </ztt-business-partner-customer-history>
+</ng-template>

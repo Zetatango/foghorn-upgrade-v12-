@@ -1,0 +1,23 @@
+# This file only applies at build time. It does not affect mounted volumes.
+
+# Files we don't want in the container
+Dockerfile
+docker-compose.yaml
+.dockerignore
+
+/.circleci
+/.github
+README.md
+
+/doc/bank_info_flow.puml
+/doc/observables_pattern.md
+/doc/architecture
+/doc/maxmind/COPYRIGHT.txt
+/doc/maxmind/LICENSE.txt
+
+# Build and runtime artifacts we definitely don't want
+node_modules
+build
+/tmp/*
+/log/*
+/.bundle

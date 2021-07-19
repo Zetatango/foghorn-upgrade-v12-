@@ -1,0 +1,19 @@
+/*! ng component: ACTIVE UBLS */
+
+.ztt-data-table {
+  min-width: 100%;
+}
+
+.tabset > ul {
+  justify-content: flex-end;
+}
+
+.tabset > ul > li > a {
+  color: #000000;
+  padding: 10px;
+}
+
+.tabset > ul > li.nav-item.active > a {
+  @include var(background-color, accent);
+  color: color-yiq(theme-color('accent'));
+}

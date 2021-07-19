@@ -1,0 +1,16 @@
+$search-padding-width: map-get($spacers, 3);
+
+.search-box {
+  background: #f0f2f5;
+  height: 2.5rem;
+  margin: map-get($spacers, 0) map-get($spacers, 1) map-get($spacers, 2);
+
+  input {
+    flex: auto;
+  }
+
+  .before-search-box,
+  .after-search-box {
+    padding: map-get($spacers, 0) $search-padding-width;
+  }
+}

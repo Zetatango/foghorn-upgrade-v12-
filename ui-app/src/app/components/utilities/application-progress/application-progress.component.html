@@ -1,0 +1,95 @@
+<div class="application-progress bg-white pt-3 pb-5">
+  <!-- PROGRESS BAR -->
+  <progressbar id="ngx-progressbar" [max]="progressBarMax"
+    [ngClass]="{ 'waiting' : isWaiting() }"
+    [value]="0"
+    [striped]="isWaiting()"
+    [animate]="isWaiting()">
+  </progressbar>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-8 offset-lg-2 steps-holder">
+        <!-- STEP 1 -->
+        <div class="progress-item">
+          <div [ngClass]="{
+              'progress-item-circle' : true,
+              'active-step' : isActiveStep(1),
+              'completed-step' : isCompletedStep(1)
+            }">
+            <span>1</span>
+            <i class="fas fa-check"></i>
+          </div>
+          <div class="progress-item-description">
+            {{ stepLabels.first }}
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="progress-item">
+          <div [ngClass]="{
+              'progress-item-circle' : true,
+              'active-step' : isActiveStep(2),
+              'completed-step' : isCompletedStep(2)
+            }">
+            <span>2</span>
+            <i class="fas fa-check"></i>
+          </div>
+          <div class="progress-item-description">
+            {{ stepLabels.second }}
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="progress-item">
+          <div [ngClass]="{
+              'progress-item-circle' : true,
+              'active-step' : isActiveStep(3),
+              'completed-step' : isCompletedStep(3)
+            }">
+            <span>3</span>
+            <i class="fas fa-check"></i>
+          </div>
+          <div class="progress-item-description">
+            {{ stepLabels.third }}
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="progress-item">
+          <div [ngClass]="{
+              'progress-item-circle' : true,
+              'active-step' : isActiveStep(4),
+              'completed-step' : isCompletedStep(4)
+            }">
+            <span>4</span>
+            <i class="fas fa-check"></i>
+          </div>
+          <div class="progress-item-description">
+            {{ stepLabels.fourth }}
+          </div>
+        </div>
+      </div><!--.steps-holder-->
+    </div><!--.row-->
+  </div><!--.container-->
+</div><!--.application-progress-->
+
+<div class="container-fluid bg-white mb-3 mb-md-5 pb-3">
+  <div class="row">
+    <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+      <p class="mb-0 small text-center">{{ subtext }}</p>
+    </div>
+  </div>
+</div>
+
+<!-- something to do with being blown away -->
+<ng-template>
+  {{'APPLICATION_PROGRESS.SELECT_ADVANCE' | translate}}
+  {{'APPLICATION_PROGRESS.REVIEW_AND_CONFIRM' | translate}}
+  {{'APPLICATION_PROGRESS.SIGN_THE_AGREEMENT' | translate}}
+  {{'APPLICATION_PROGRESS.SET_UP_BANKING' | translate}}
+  {{'APPLICATION_PROGRESS.NEW_BUSINESS_LABEL' | translate}}
+  {{'APPLICATION_PROGRESS.ABOUT_YOU' | translate}}
+  {{'APPLICATION_PROGRESS.VERIFY_YOURSELF' | translate}}
+  {{'APPLICATION_PROGRESS.GET_CERTIFIED' | translate}}
+</ng-template>

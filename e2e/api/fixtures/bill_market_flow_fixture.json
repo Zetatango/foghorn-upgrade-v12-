@@ -1,0 +1,61 @@
+{
+  "happy_path": {
+    "merchant_queries_payload": {
+      "partner_id": "1",
+      "name": "DUNDEE BANCORP INC",
+      "doing_business_as": "DUNDEE",
+      "address_line_1": "5500 King",
+      "address_line_2": "",
+      "city": "Toronto",
+      "state_province": "ON",
+      "country": "CANADA",
+      "postal_code": "M5H4A9",
+      "phone_number": "(416) 365-5157",
+      "industry": "BAR"
+    },
+    "merchant_queries_select_payload": {
+      "partner_id": "1",
+      "industry": "BAR",
+      "avg_monthly_sales": "1000.00",
+      "date_at_address": "12-02-1974"
+    },
+    "create_applicant_payload": {
+      "merchant_guid": "1",
+      "first_name": "Katie",
+      "last_name": "Ronald",
+      "date_of_birth": "03-03-1971",
+      "address_line1": "48 Confederation rd",
+      "owner_since": "19-11-2016",
+      "city": "Toronto",
+      "province": "ON",
+      "postal_code": "M2B3R4",
+      "phone_number": "6134000365",
+      "country": "CANADA",
+      "email": "test@example.com"
+    },
+    "create_supplier_payload": {
+      "name": "Parmalat",
+      "institution_number": "004",
+      "transit_number": "05002",
+      "account_number": "54321199",
+      "address_line_1": "490 Gordon St",
+      "city": "Winchester",
+      "country": "Canada",
+      "postal_code": "K0C 2K0",
+      "state_province": "ON",
+      "phone_number": "(613) 774-2310",
+      "business_number": "998877665544",
+      "jurisdiction": "ON",
+      "operate_in": "ON",
+      "supplier_url": "parmalat",
+      "ef_merchant_number": "1232123",
+      "ef_customer_code": "AB443322"
+    },
+    "bank_account_payload": {
+      "currency": "CAD",
+      "institution_number": "004",
+      "transit_number": "05002",
+      "account_number": "5255348"
+    }
+  }
+}

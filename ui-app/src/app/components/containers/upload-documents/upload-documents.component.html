@@ -1,0 +1,39 @@
+<div class="ztt-container" id="ztt-upload-documents">
+  <div class="row">
+    <!-- LEFT CARD: DOCUMENTS UPLOAD -->
+    <div class="col-12">
+      <div class="card" data-ng-id="documents-uploader">
+        <div class="card-body">
+          <h5 class="card-title text-accent font-weight-bold">{{ 'WCA_APPLICATION.UPLOAD.TITLE' | translate }}</h5>
+          <hr>
+          <p class="mb-0">{{'WCA_APPLICATION.UPLOAD.DESCRIPTION' | translate }}</p>
+          <p><strong>{{ 'WCA_APPLICATION.UPLOAD.CRA_DOC' | translate }}</strong><i class="fas fa-info-circle px-1" [tooltip]="'WCA_APPLICATION.UPLOAD.TOOLTIP' | translate" placement="top" container="body"></i></p>
+          <ztt-upload-box
+            [isUserSubmitting]="isSubmittingDocuments()"
+            [options]="uploaderOptions"
+            (statusChanged)="onStatusChange($event)">
+          </ztt-upload-box>
+
+          <!-- STEP NAVIGATION -->
+          <div class="ztt-card-button-holder">
+            <!-- Cancel -->
+            <button class="btn btn-light"
+                    data-ng-id="docs-cancel-btn"
+                    (click)="cancel()"
+                    [disabled]="isSubmittingDocuments()">
+              {{ 'WCA_APPLICATION.UPLOAD.CANCEL' | translate }}
+            </button>
+
+            <!-- Submit -->
+            <button class="btn btn-accent ml-auto"
+                    id="docs-submit-btn"
+                    (click)="submit()"
+                    [disabled]="isSubmitDisabled()"
+                    [innerHtml]="(isSubmittingDocuments() ? 'WORKING' : 'WCA_APPLICATION.UPLOAD.SUBMIT') | translate">
+            </button>
+          </div><!--.ztt-card-button-holder-->
+        </div><!--.card-body -->
+      </div><!--.card -->
+    </div><!--.col -->
+  </div><!--.row-->
+</div><!--#ztt-upload-documents-->

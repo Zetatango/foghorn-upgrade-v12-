@@ -1,0 +1,144 @@
+<header class="bg-light mb-3 mb-md-5 navbar navbar-expand-lg navbar-light" id="ztt-header">
+  <!-- LOGO -->
+  <div class="partner-logo navbar-brand"></div>
+
+  <!-- COLLAPSE TOGGLE -->
+  <button (click)="toggleCollapse()" class="navbar-toggler" type="button">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- MAIN NAV -->
+  <div [collapse]="isCollapsed" [isAnimated]="true" class="collapse mt-3 mt-lg-0 navbar-collapse">
+    <div class="navbar-nav">
+      <!-- my business -->
+      <a *ngIf="isMyBusinessLinkVisible"
+         class="nav-item nav-link"
+         data-ng-id="dash-link"
+         [routerLink]="businessRouterLink"
+         routerLinkActive="active"
+         name="{{ 'NAV.DASHBOARD.LENDING' | translate }}"
+         [zttGtmEvent]>
+         {{ 'NAV.DASHBOARD.LENDING' | translate }}
+      </a>
+      <ng-container *ngIf="isInsightsVisible">
+        <!-- cash flow insights -->
+        <a class="nav-item nav-link"
+          id="insights-link"
+          [routerLink]="insightsRouterLink"
+          routerLinkActive="active"
+          name="{{ 'NAV.INSIGHTS' | translate }}"
+          [zttGtmEvent]>
+          {{ 'NAV.INSIGHTS' | translate }}
+        </a><!--.nav-item-->
+
+        <!-- already business partner -->
+        <a *ngIf="isPartnerDashboardLinkVisible"
+          [ngClass]="{ 'disabled': !isPartnerDashboardLinkEnabled }"
+          class="nav-item nav-link"
+          data-ng-id="partner-dashboard-link"
+          [routerLink]="partnerDashboardRouterLink"
+          routerLinkActive="active"
+          name="{{ 'NAV.DASHBOARD.PARTNER' | translate }}"
+          [zttGtmEvent]>
+          {{ 'NAV.DASHBOARD.PARTNER' | translate }}
+        </a>
+
+        <!-- can become business partner -->
+        <a *ngIf="isBecomeAPartnerLinkVisible"
+          class="nav-item nav-link"
+          data-ng-id="become-partner-dashboard-link"
+          [routerLink]="partnerOnboardingRouterLink"
+          routerLinkActive="active"
+          name="{{ 'COMMON.BTN.SIGN_UP' | translate }}">
+          {{ 'COMMON.BTN.SIGN_UP' | translate }}
+        </a>
+
+        <!-- marketing -->
+        <a *ngIf="isMarketingLinkVisible"
+          class="nav-item nav-link"
+          id="marketing-dashboard-link"
+          [routerLink]="marketingRouterLink"
+          routerLinkActive="active"
+          name="{{ 'NAV.MARKETING' | translate }}"
+          [zttGtmEvent]>
+          {{ 'NAV.MARKETING' | translate }}
+        </a>
+      </ng-container>
+
+      <!-- documents -->
+      <a *ngIf="isDocumentsLinkVisible"
+         class="nav-item nav-link"
+         id="documents-dropdown-item"
+         [routerLink]="documentsRouterLink"
+         routerLinkActive="active"
+         name="{{ 'NAV.DOCUMENTS' | translate }}"
+         [zttGtmEvent]>
+         {{ 'NAV.DOCUMENTS' | translate }}
+      </a>
+      <!-- USER MENU -->
+      <div class="dropdown ml-lg-auto nav-item" id="dropdown-user-menu">
+        <!-- TOGGLE -->
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+          <span class="text-truncate crop mr-2" data-ng-id="merchant-name">{{ merchant ? merchant.doing_business_as : ( 'NAV.YOUR_ACCOUNT' | translate ) }}</span>
+          <i class="fas fa-chevron-down"></i>
+        </a>
+
+        <!-- DROPDOWN MENU -->
+        <div *ngIf="!isDelegatedAccessMode()" class="dropdown-menu dropdown-menu-right">
+          <!-- profiles -->
+          <ng-container *ngIf="showProfilePicker">
+            <!-- profile link -->
+            <a *ngFor="let profile of userProfiles"
+               [href]="switchProfile(profile.uid)"
+               [ngSwitch]="profile.properties.role"
+               data-ng-id="profile-link"
+               class="align-items-start d-flex dropdown-item ellipsis flex-wrap ml-auto"
+               role="button"
+               name="Profile Select"
+               [zttGtmEvent]>
+              <!-- add new merchant -->
+              <ng-container *ngSwitchCase="'merchant_add'">
+                <i class="fas fa-plus-circle"></i> {{ 'NAV.ACCOUNT_ADD' | translate }}
+              </ng-container>
+
+              <!-- switch profile -->
+              <ng-container *ngSwitchCase="'merchant_new'">
+                <i class="fas fa-user-circle"></i> {{ profile.properties.merchant.name }}
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'partner_admin'">
+                <i class="fas fa-user-shield"></i> {{ 'NAV.PARTNER_ADMIN' | translate }}
+              </ng-container>
+            </a><!--*ngFor-->
+
+            <div class="dropdown-divider"></div>
+          </ng-container>
+
+          <!-- account info -->
+          <a class="dropdown-item"
+             href="{{ accountInfoUrlString }}"
+             rel="noopener"
+             target="_blank"
+             name="{{ 'NAV.ACCOUNT_INFO' | translate }}"
+             [zttGtmEvent]>
+            <i class="fas fa-info-circle"></i> {{ 'NAV.ACCOUNT_INFO' | translate }}
+          </a>
+
+          <!-- sign out -->
+          <a class="dropdown-item"
+             href="{{ logoutUrlString }}"
+             id="link-sign-out"
+             name="{{ 'NAV.SIGN_OUT' | translate }}"
+             [zttGtmEvent]>
+            <i class="fas fa-circle-notch"></i> {{ 'NAV.SIGN_OUT' | translate }}
+          </a>
+        </div><!--.dropdown-menu-->
+      </div><!--.dropdown-->
+
+      <!-- locale -->
+      <ztt-lang-selector></ztt-lang-selector>
+    </div><!--.navbar-nav-->
+  </div><!--.navbar-collapse-->
+</header>
+
+<ztt-delegated-mode *ngIf="isDelegatedAccessMode()"></ztt-delegated-mode>

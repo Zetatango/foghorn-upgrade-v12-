@@ -1,0 +1,59 @@
+<!-- INVITE ACTION CARD -->
+<div class="row mt-3">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body py-1 px-0">
+        <form class="form-horizontal ztt-borderless-inputs" id="invite-form" [formGroup]="inviteFormGroup">
+          <div class="row my-3 mx-1 align-items-center">
+            <div class="form-group col-12 col-md-4">
+              <label class="small" for="name">{{ 'INVITE.NAME' | translate }}*</label>
+              <input class="form-control"
+                     id="name"
+                     name="name"
+                     type="text"
+                     formControlName="name"
+                     maxlength="64"
+                     pattern="[\w\-\.' ]*"
+                     required
+                     [class.is-invalid]="inviteFormGroup.controls['name'].touched && inviteFormGroup.controls['name'].invalid">
+              <div class="invalid-feedback" *ngIf="inviteFormGroup.controls['name'].hasError('required')">{{ 'INVITE.NAME_REQUIRED' | translate }}</div>
+              <div class="invalid-feedback" *ngIf="inviteFormGroup.controls['name'].hasError('pattern')">{{ 'INVITE.NAME_PATTERN' | translate }}</div>
+            </div><!--.form-group-->
+
+            <div class="form-group col-12 col-md-5">
+              <label class="small" for="email">{{ 'INVITE.EMAIL' | translate }}*</label>
+              <input class="form-control"
+                     id="email"
+                     name="email"
+                     type="email"
+                     formControlName="email"
+                     maxlength="128"
+                     email
+                     required
+                     [class.is-invalid]="inviteFormGroup.controls['email'].touched && inviteFormGroup.controls['email'].invalid">
+              <div class="invalid-feedback" *ngIf="inviteFormGroup.controls['email'].hasError('required')">{{ 'INVITE.EMAIL_REQUIRED' | translate }}</div>
+              <div class="invalid-feedback" *ngIf="inviteFormGroup.controls['email'].hasError('email')">{{ 'INVITE.EMAIL_INVALID' | translate }}</div>
+            </div><!--.form-group-->
+
+            <div class="col-12 col-md-3">
+              <div class="btn-group btn-block mt-md-0 mt-3" role="group">
+                <button type="button"
+                        class="btn ztt-btn-group-icon"
+                        (click)="sendInvite()"
+                        [disabled]="inviteFormGroup.invalid || inviting">
+                  <i class="fas fa-user-plus"></i>
+                </button>
+
+                <button class="btn btn-block btn-accent"
+                        (click)="sendInvite()"
+                        [disabled]="inviteFormGroup.invalid || inviting"
+                        [innerHtml]="(inviting ? 'WORKING_SHORT' : 'INVITE.ACTION') | translate">
+                </button>
+              </div><!--.btn-group-->
+            </div><!--.col-->
+          </div><!-- row -->
+        </form>
+      </div><!--.card-body-->
+    </div><!--.card-->
+  </div><!--.col-->
+</div><!--.row-->

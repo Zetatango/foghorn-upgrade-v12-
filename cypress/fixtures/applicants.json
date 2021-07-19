@@ -1,0 +1,17 @@
+[
+  {
+    "first_name": "MARY",
+    "last_name": "ROBERTS",
+    "dob": "29031966",
+    "formatted_dob": "29-03-1966",
+    "phone_number": "4037811712",
+    "formatted_phone_number": "(403) 781-1712",
+    "owner_since": "05012019",
+    "formatted_owner_since": "05-01-2019",
+    "address": "311 Aurora Dr SE",
+    "city": "HIRI",
+    "province": "AB",
+    "postal_code": "T1V1J5",
+    "formatted_postal_code": "T1V 1J5"
+  }
+]

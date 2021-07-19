@@ -1,0 +1,174 @@
+<alert *ngFor="let alert of alerts" [type]="alert.type" [dismissOnTimeout]="alert.timeout" [dismissible]="true">
+  <i class="fas fa-exclamation-triangle"></i> {{ alert.msg | translate : { filename: alert?.params?.filename} }}
+</alert>
+
+<div
+  *ngIf="options.uploader"
+  class="upload-box{{ isUploaderDisabled() ? '--disabled' : '' }}"
+  [options]="options.uploader"
+  [uploadInput]="uploadInput"
+  (uploadOutput)="onUploadOutput($event)"
+  ngFileDrop
+>
+  <div class="dialogue-icon--circle position-absolute">
+    <i class="fas fa-upload"></i>
+  </div>
+
+  <div class="upload-box__drop-zone">
+    <!-- Upload CTA Link -->
+    <p>
+      {{ 'UPLOAD.INPUT_1' | translate }}
+
+      <label class="link">
+        <input
+          #fileInput
+          type="file"
+          data-ng-id="file-uploader"
+          [disabled]="isUploaderDisabled()"
+          [options]="options.uploader"
+          [uploadInput]="uploadInput"
+          (uploadOutput)="onUploadOutput($event)"
+          multiple
+          ngFileSelect
+          hidden
+        >
+        {{ 'UPLOAD.INPUT_2' | translate }}
+      </label><!--.link-->
+
+      {{ 'UPLOAD.INPUT_3' | translate }}
+    </p>
+
+    <!-- Supported File Types -->
+    <p>{{ 'UPLOAD.FILE_SPECS' | translate: { supportedFileFormats: supportedFileFormats, fileSize: fileSize, maxUploads: options.uploader.maxUploads } }}</p>
+  </div><!--.upload-box__drop-zone-->
+
+  <ng-container *ngIf="files.length">
+    <!-- Upload Files Header -->
+    <div class="upload-box__item-layout--header container-fluid d-none d-md-block">
+      <div class="row align-items-center">
+        <!-- Document Name -->
+        <div class="col-md-5">
+          <p>{{ 'DOCUMENTS.TABLE.HEADER.DOCUMENT_NAME' | translate }}</p>
+        </div><!--.col-->
+
+        <!-- Document Type -->
+        <div *ngIf="options.requireDocumentType" class="col-md-4">
+          <p>{{ 'DOCUMENTS.TABLE.HEADER.DOCUMENT_TYPE' | translate }}</p>
+        </div><!--.col-->
+
+        <!-- Document Actions -->
+        <div class="col-md-2 ml-auto">
+          <p>{{ 'DOCUMENTS.TABLE.HEADER.ACTIONS' | translate }}</p>
+        </div><!--.col-->
+      </div><!--.row-->
+    </div><!--.upload-box__item-layout--header-->
+
+    <!-- Upload Files -->
+    <ng-container *ngFor="let file of files">
+      <div class="upload-box__item-layout container-fluid">
+        <!-- Upload Item -->
+        <div class="row align-items-center mb-3">
+          <!-- File Name -->
+          <div class="col-12 col-md-4">
+            <p class="mb-0">{{ file.name }}</p>
+          </div><!--.col-->
+
+          <!-- File Type -->
+          <div *ngIf="options.requireDocumentType" class="col-12 col-md-4 mt-3 mt-md-0">
+            <select
+              class="form-control"
+              name="documentType"
+              [(ngModel)]="file.documentType"
+              [disabled]="disableInputs"
+              (change)="updateSelectStatus()"
+              required>
+              <option disabled [value]="undefined" selected>
+                {{ 'UPLOAD.DOCUMENT_TYPE' | translate }}
+              </option>
+              <option *ngFor="let documentType of documentTypes" [value]="documentType.value">
+                {{ documentType.label | translate }}
+              </option>
+            </select>
+          </div><!--.col-->
+
+          <!-- File Actions -->
+          <div class="col-12 col-md-2 ml-auto mt-3 mt-md-0">
+            <!-- remove file -->
+            <button
+              class="btn btn-link p-0"
+              [disabled]="disableInputs"
+              (click)="removeFile(file)">
+              {{ 'UPLOAD.ACTIONS.REMOVE' | translate }}
+            </button><!--.btn-link-->
+          </div><!--.col-->
+        </div><!--.row-->
+
+        <!-- Upload Progress -->
+        <div class="row">
+          <div class="col">
+            <progressbar
+              type="success"
+              *ngIf="fileUploadPercent(file) && !file.error"
+              [animate]="isFileUploading(file)"
+              [striped]="isFileUploading(file)"
+              [value]="fileUploadPercent(file)">
+            </progressbar>
+          </div><!--.col-->
+        </div><!--.row-->
+
+        <!-- Upload Messages -->
+        <div *ngIf="hasMessage(file)" class="row">
+          <div class="col text-center">
+            <p *ngIf="options.autoUpload" class="text-center text-success">
+              <span *ngIf="isFileValid(file)">{{ fileUploadPercent(file) }}% </span>
+              <span *ngIf="isUploadMessageVisible(file)">{{ 'UPLOAD.UPLOADING' | translate }}</span>
+              <span *ngIf="isFileUploadDone(file)">{{ 'UPLOAD.COMPLETE' | translate }}</span>
+            </p>
+
+            <!-- Select Document Type -->
+            <p *ngIf="isMissingFileType(file)" class="text-danger">
+              {{ 'UPLOAD.SELECT_TYPE' | translate }}
+            </p>
+
+            <!-- File Too Large -->
+            <p *ngIf="!isFileSizeAllowed(file)" class="text-danger">
+              {{ 'UPLOAD.ILLEGAL_FILE_SIZE' | translate: { fileSize: fileSize } }}
+            </p>
+
+            <!-- Upload Progress -->
+            <p *ngIf="isFileUploading(file)" class="text-success">
+              {{ file?.progress?.data?.speedHuman }} {{ 'UPLOAD.ETA' | translate }}
+              {{ file?.progress?.data?.etaHuman }}
+            </p>
+
+            <!-- Upload Error -->
+            <p *ngIf="file.error" class="text-danger">{{ 'UPLOAD.ERROR' | translate}}</p>
+          </div><!--.col-->
+        </div><!--.row-->
+      </div><!--.upload-box__item-layout-->
+    </ng-container><!--*ngFor-->
+
+    <div class="upload-box__item-layout container-fluid">
+      <div class="row">
+        <div class="col">
+          <label class="link">
+            +
+            <input
+              #fileInput
+              type="file"
+              data-ng-id="file-uploader-add"
+              [disabled]="isUploaderDisabled()"
+              [options]="options.uploader"
+              [uploadInput]="uploadInput"
+              (uploadOutput)="onUploadOutput($event)"
+              multiple
+              ngFileSelect
+              hidden
+            >
+            {{ 'UPLOAD.ADD_FILE' | translate }}
+          </label><!--.link-->
+        </div><!--.col-->
+      </div><!--.row-->
+    </div><!--.container-fluid-->
+  </ng-container><!--*ngIf-->
+</div><!--.upload-box-->

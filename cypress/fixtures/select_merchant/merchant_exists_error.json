@@ -1,0 +1,5 @@
+{
+  "status": "ERROR",
+  "message": "This merchant already has an open account",
+  "code": 20115
+}

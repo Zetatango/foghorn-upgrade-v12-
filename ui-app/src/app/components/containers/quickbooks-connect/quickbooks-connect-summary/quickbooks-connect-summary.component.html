@@ -1,0 +1,8 @@
+<div *ngIf="isQuickBooksConnected()" class="px-2">
+  <p>
+    <small>
+      {{ 'QUICKBOOKS.LAST_IMPORTED' | translate }}:
+      {{ merchant.quickbooks_imported_at | localizeDate: translateService.currentLang: 'medium'| default:'-' }}
+    </small>
+  </p>
+</div>

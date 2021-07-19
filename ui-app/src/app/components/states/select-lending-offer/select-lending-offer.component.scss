@@ -1,0 +1,79 @@
+/*! ng component: SELECT LENDING OFFER */
+
+.ztt-btn-group { // TODO: Not boostrap native
+  display: flex;
+  flex-flow: row wrap;
+
+  input {
+    visibility: hidden;
+  }
+
+  .btn {
+    border: 1px solid gray('500');
+    color: gray('500');
+
+    &.active {
+      @include var(border-color, accent);
+      @include var(background-color, accent);
+      color: white;
+    }
+  }
+}
+
+.supplier-info {
+  background-color: $carolina-blue;
+}
+
+.supplier-info-heading {
+  color: $dark-lava;
+  max-width: 50%;
+  overflow: auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.invoice-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 1rem !important;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 1rem !important;
+  width: 100%;
+}
+
+@include media-breakpoint-up(md) {
+  .amount-due,
+  .repayment-details {
+    font-size: 1.25rem;
+  }
+}
+
+.invoice-amount {
+  color: $dark-lava;
+  font-size: 40px;
+}
+
+.invoice-original-amount {
+  color: $auro-metal-saurus;
+}
+
+.invoice-inputs {
+  font-size: 20px;
+}
+
+.account-number-heading {
+  color: $ghost-white;
+}
+
+.invoice-progress-meter {
+  height: 28px;
+  width: 100%;
+}
+
+#ztt-select-lending-offer {
+  .progress {
+    background-color: $light-gray;
+    height: 28px;
+  }
+}

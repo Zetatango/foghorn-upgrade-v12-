@@ -1,0 +1,73 @@
+<ng-container *ngIf="loaded; else loading">
+  <ztt-application-progress
+    [subtext]="'APPLICATION_PROGRESS.ON_BOARDING_SUBTEXT' | translate"
+    [step]="step"
+    [stepLabels]="{
+      first: 'APPLICATION_PROGRESS.NEW_BUSINESS_LABEL' | translate,
+      second: 'APPLICATION_PROGRESS.ABOUT_YOU' | translate,
+      third: 'APPLICATION_PROGRESS.VERIFY_YOURSELF' | translate,
+      fourth: 'APPLICATION_PROGRESS.GET_CERTIFIED' | translate }">
+  </ztt-application-progress>
+
+  <div class="ztt-container" id="ztt-authenticate-applicant">
+    <div class="row">
+      <div class="col-12 col-lg-8 offset-lg-2">
+        <!-- TODO: test this -->
+        <alert type="warning" [dismissible]="true">
+          <i class="fas fa-exclamation-triangle"></i>&nbsp;
+          <span *ngIf="isDelegatedAccessMode()">{{ 'VERIFY_YOURSELF.DELEGATED_MODE' | translate }}</span>
+          <span *ngIf="!isDelegatedAccessMode()">{{ 'VERIFY_YOURSELF.HEADER' | translate }}</span>
+        </alert>
+
+        <div class="card">
+          <div class="card-body">
+            <p *ngIf="isDelegatedAccessMode()"
+               class="text-center font-weight-bold py-3">
+              ~
+            </p>
+
+            <alert *ngIf="failedAuthentication" type="danger" [dismissible]="true">
+              <i class="fas fa-warning fa-lg"></i> {{ 'VERIFY_YOURSELF.INCORRECT_ANSWERS' | translate }}
+            </alert>
+
+            <form *ngIf="questions?.length > 0" class="form-horizontal" id="verify-yourself-form" [formGroup]="verifyYourselfForm">
+              <div *ngFor="let question of questions; index as i" class="form-group p-4">
+                <p class="mb-4"><i class="fas fa-question-circle text-accent"></i> {{ question.question_text }}</p>
+                <div *ngFor="let answer of question.answers" class="form-check">
+                  <input type="radio" name="question_{{question.id}}"
+                         [(ngModel)]="answers[question.id - 1]"
+                         [ngModelOptions]="{standalone: true}" value="{{ answer.id }}"
+                         [ngClass]="{
+                      'form-check-input' : true,
+                      'correct-answer-input' : answer?.correct_answer
+                    }"
+                         id="question_{{ question.id }}_answer_{{ answer.id }}">
+                  <label [ngClass]="{
+                    'form-check-label' : true,
+                    'font-weight-bold' : answer?.correct_answer
+                    }"
+                         for="question_{{ question.id }}_answer_{{ answer.id }}">
+                    {{ answer.answer_text }}
+                  </label>
+                </div><!--.form-check-->
+              </div><!--.form-group -->
+            </form>
+
+            <div class="ztt-card-button-holder">
+              <button class="btn btn-accent ml-auto"
+                      id="verify-yourself-btn"
+                      (click)="submit()"
+                      [disabled]="submittingAuthentication || questions?.length === 0"
+                      [innerHTML]="(submittingAuthentication ? 'WORKING' : 'COMMON.BTN.NEXT') | translate">
+              </button>
+            </div><!--.ztt-card-button-holder-->
+          </div><!--.card-body -->
+        </div>  <!--.card -->
+      </div><!--.col-12-->
+    </div><!--.row-->
+  </div><!--#ztt-authenticate-applicant-->
+</ng-container>
+
+<ng-template #loading>
+  <ztt-loading [name] = "mainLoader"></ztt-loading>
+</ng-template>

@@ -1,0 +1,32 @@
+/*! RESPONSIVE.SCSS */
+
+@include media-breakpoint-down(sm) {
+  // TYPOGRAPHY
+  h1,
+  h2,
+  h3,
+  h4,
+  .lead,
+  .card-title,
+  .card-subtitle {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .card {
+    .card-body {
+      padding: $card-spacer-x/2;
+    }
+  }
+} // @include media-breakpoint-down(sm)

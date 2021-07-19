@@ -1,0 +1,54 @@
+<ztt-paf-terms-modal></ztt-paf-terms-modal>
+
+<ng-container>
+  <ztt-dashboard-data-list
+    id="ztt-borrower-invoices"
+    [config]="configType"
+    [isSearchEnabled]="false"
+    [primaryTemplate]="primaryTemplate">
+  </ztt-dashboard-data-list>
+
+  <ng-template #primaryTemplate let-invoice="item">
+    <div class="list-column">
+      <p class="font-weight-bold">
+        {{ ( invoice?.supplier_entity && invoice?.supplier_entity.name ) ? invoice?.supplier_entity?.name : 'COMMON.NOT_AVAILABLE' | translate }}
+      </p>
+      <p>
+        {{ 'BORROWER_DASHBOARD.INVOICES.INVOICE_NUMBER' | translate : { 'number': invoice?.invoice_number || 'COMMON.NOT_AVAILABLE' | translate } }}
+      </p>
+      <span class="status" [ngClass]="getInvoiceDisplayStatusClass(invoice)">{{ invoice.displayStatus | translate }}</span>
+    </div><!--.list-column-->
+    <div class="list-column">
+      <div class="list-row">
+        <p>{{ 'BORROWER_DASHBOARD.INVOICES.DUE_DATE' | translate }}</p>
+        <p class="font-weight-bold">{{ invoice?.due_date ? ( invoice?.due_date | localizeDate : currentLang ) : 'COMMON.NOT_AVAILABLE' | translate }}</p>
+      </div>
+      <div class="list-row">
+        <p>{{ 'BORROWER_DASHBOARD.INVOICES.AMOUNT' | translate }}</p>
+        <p class="font-weight-bold">{{ ( invoice?.amount || 0 ) | zttCurrency : currentLang }}</p>
+      </div>
+      <div class="list-row">
+        <p>{{ 'BORROWER_DASHBOARD.INVOICES.AMOUNT_PAID' | translate }}</p>
+        <p class="font-weight-bold">{{ ( invoice?.amount_paid || 0 ) | zttCurrency : currentLang }}</p>
+      </div>
+    </div><!--.list-column-->
+    <div class="list-column no-grow">
+        <button class="btn btn-accent"
+                name="{{ 'BORROWER_DASHBOARD.INVOICES.PAY_BTN' | translate }}"
+                type="button"
+                (click)="payInvoice(invoice)"
+                *ngIf="canInvoiceBePaid(invoice)"
+                [zttGtmEvent]>
+                {{ 'BORROWER_DASHBOARD.INVOICES.PAY_BTN' | translate }}
+        </button>
+        <button class="btn btn-accent"
+                name="{{ 'BORROWER_DASHBOARD.INVOICES.REVIEW_BTN' | translate }}"
+                type="button"
+                (click)="showPaymentPlanReview(invoice)"
+                *ngIf="isPaidByPaf(invoice)"
+                [zttGtmEvent]>
+                {{ 'BORROWER_DASHBOARD.INVOICES.REVIEW_BTN' | translate }}
+        </button>
+    </div><!--.list-column-->
+  </ng-template>
+</ng-container>

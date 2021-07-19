@@ -1,0 +1,51 @@
+require: rubocop-performance
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - bin/*
+    - db/**/*.rb
+    - node_modules/**/*
+    - output/**/*
+    - vendor/**/*
+    - ui-app/node_modules/**/*
+  TargetRubyVersion: 2.7.2
+
+Style/Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 160
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 50
+
+Metrics/MethodLength:
+  Max: 50
+
+Performance/CollectionLiteralInLoop:
+  MinSize: 6
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+Style/SoleNestedConditional:
+  Enabled: false
+
+Lint/ConstantDefinitionInBlock:
+  Enabled: false
+
+Naming/VariableNumber:
+  Enabled: false
+
+Layout/SpaceBeforeBrackets:
+  Enabled: false
+
+Layout/EmptyLineBetweenDefs:
+  Enabled: false

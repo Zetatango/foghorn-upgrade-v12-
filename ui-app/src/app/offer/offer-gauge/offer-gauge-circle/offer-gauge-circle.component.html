@@ -1,0 +1,8 @@
+<circle-progress
+  [percent]="offerCapacity"
+  [showTitle]="showOffer"
+  [title]="offerAvailableAmount | zttCurrency : translateService.currentLang"
+  class="gauge-circle"
+></circle-progress>
+
+<h6 *ngIf="showOffer" class="gauge-circle-subtitle">{{ availabilityTitle | translate }}</h6>

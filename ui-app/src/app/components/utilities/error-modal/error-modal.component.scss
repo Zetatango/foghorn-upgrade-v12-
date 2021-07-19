@@ -1,0 +1,7 @@
+/*! ng component: ERROR MODAL */
+
+.error-modal {
+  .delegated-modal-background {
+    @include var(background-color, accent);
+  }
+}

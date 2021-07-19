@@ -1,0 +1,466 @@
+/*! APPLICATION STYLES.SCSS */
+
+// ON BOARDING STYLES
+// ========================================================
+//
+// Table of Contents:
+//
+//  0. Imports
+//  1. App / Main
+//  2. Buttons
+//  3. Cards
+//  4. Dropdowns
+//  5. Footer
+//  6. Forms
+//  7. Modals
+//  8. Navigation
+//  9. Tables
+//  10. Typography
+//  00. Misc
+//  000. Responsive / Overrides
+
+// 0. IMPORTS
+// --------------------------------------------------------
+@import 'fonts';
+
+// default / global variables
+@import 'defaults/global_variables';
+
+// unsupported browser warning styles
+@import 'application/unsupported_browser';
+
+/*! THEME VARIABLES IMPORTS */ // (DO NOT REMOVE/UNCOMMENT)
+// require theme_variables
+
+// node_modules
+@import 'bootstrap/scss/bootstrap';
+
+// custom mixins
+@import 'theming/mixins';
+
+// global styles
+@import 'defaults/global_styles';
+
+/*! ANGULAR COMPONENT IMPORTS */ // (DO NOT REMOVE/UNCOMMENT)
+// require ng_component_imports
+
+// 1. APP / MAIN
+// --------------------------------------------------------
+
+/*! ng component: APP */
+
+ztt-min-layout,
+ztt-app-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.ztt-container {
+  @extend .container;
+}
+
+// 2. BUTTONS
+// --------------------------------------------------------
+
+.ztt-btn-group-icon {
+  background-color: $white-tint-medium;
+  border-right: 1px solid $white-tint-high;
+  color: color-yiq(theme-color('accent'));
+  opacity: .8;
+  z-index: 1;
+
+  &:hover {
+    color: color-yiq(theme-color('accent'));
+  }
+}
+
+.ztt-btn-group-disabled {
+  button {
+    pointer-events: none;
+    opacity: $btn-disabled-opacity;
+  }
+}
+
+// 3. CARDS
+// --------------------------------------------------------
+
+.card {
+  @extend .shadow-sm;
+  border: none;
+
+  .card-title {
+    &.card-cap {
+      @include var(background-color, primary);
+      border-top-left-radius: $card-border-radius;
+      border-top-right-radius: $card-border-radius;
+      color: color-yiq(theme-color('primary'));
+      margin: -#{$card-spacer-x} -#{$card-spacer-x} #{$card-spacer-x};
+      padding: $card-spacer-x;
+      text-align: center;
+    }
+  }
+
+  .ztt-card-button-holder {
+    @extend .mt-4;
+    align-items: center;
+    display: flex;
+    width: 100%;
+  }
+}
+
+// 4. DROPDOWNS
+// --------------------------------------------------------
+
+.dropdown {
+  .dropdown-menu {
+    .dropdown-item {
+      text-decoration: none;
+
+      i {
+        color: theme-color('accent');
+        margin-right: map-get($spacers, 1);
+        opacity: 0.5;
+      }
+
+      &:hover,
+      &:focus {
+        i {
+          color: $white;
+        }
+
+        color: $dropdown-link-hover-color;
+      }
+
+      &:active,
+      &.active {
+        color: $dropdown-link-active-color;
+      }
+    }
+  }
+}
+
+// 5. FOOTER
+// --------------------------------------------------------
+
+// 6. FORMS
+// --------------------------------------------------------
+
+form {
+  .lead {
+    @extend .mb-4;
+  }
+
+  &.ztt-borderless-inputs {
+    .form-control {
+      &:focus,
+      &.is-invalid:focus {
+        -webkit-appearance: none;
+        border-radius: 0;
+        border-width: 0 0 2px 0;
+        box-shadow: unset;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+// 7. MODALS
+// --------------------------------------------------------
+
+.modal-dialog-centered {
+  margin-top: -10vh;
+}
+
+// TODO: improve this with bootstrap group lists;
+.ztt-modal {
+  .modal-body {
+    max-height: 420px;
+    overflow-y: scroll;
+
+    .list-group-item {
+      border-radius: 0;
+      border-width: 1px 0 0;
+
+      &:first-child {
+        border-width: 0;
+      }
+
+      .business-list-item {
+        display: flex;
+
+        .business-list-item-left {
+          flex-grow: 1;
+
+          .contacts {
+            font-size: 12px;
+          }
+        }
+
+        .business-list-item-right {
+          align-self: center;
+        }
+      }
+    }
+  }
+}
+
+// 8. NAVIGATION
+// --------------------------------------------------------
+
+.navbar {
+  z-index: $above-loading-overlay;
+  @include box-shadow($navbar-box-shadow);
+
+  .navbar-nav {
+    .nav-link {
+      @include accented-hover;
+    } //.nav-link
+  } //.navbar-nav
+}
+
+// 9. TABLES
+// --------------------------------------------------------
+
+// this class is auto generated on a wrapper element by the library.
+.dataTables_wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+
+  .dataTable {
+    thead {
+      @include var(background-color, primary);
+
+      color: #fff;
+
+      .sorting,
+      .sorting_asc,
+      .sorting_desc,
+      .sorting_asc_disabled,
+      .sorting_desc_disabled {
+        background-image: none;
+
+        &::before {
+          display: inline-block;
+          font-family: 'Font Awesome 5 Free', sans-serif;
+          font-style: normal;
+          font-weight: 900;
+          font-variant: normal;
+          margin-right: map-get($spacers, 2);
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+        }
+      }
+
+      .sorting {
+        &::before {
+          content: '\f0dc';
+        }
+
+        &.sorting_asc::before {
+          content: '\f0dd';
+        }
+
+        &.sorting_desc::before {
+          content: '\f0de';
+        }
+      } // .sorting
+    } // thead
+
+    td,
+    th {
+      padding: map-get($spacers, 3) map-get($spacers, 4);
+    }
+
+    &.no-footer {
+      border-bottom: none;
+    }
+  }
+
+  .dataTables_paginate {
+    align-self: center;
+    margin-top: map-get($spacers, 5);
+
+    .paginate_button {
+      height: auto !important;
+      padding: map-get($spacers, 1) map-get($spacers, 3);
+      min-width: auto !important;
+
+      &.next,
+      &.previous {
+        font-family: 'Font Awesome 5 Free', sans-serif;
+        font-style: normal;
+        font-weight: 900;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+      }
+    }
+  }
+
+  .ztt-dt-button {
+    @include var(border-color, accent);
+    @include var(color, accent);
+    border-radius: $border-radius;
+    border: solid 1px;
+    min-width: 45px;
+    height: 45px;
+    background: $body-bg;
+  }
+
+  .ztt-dt-button-focus {
+    @include var(background, accent);
+    @include var(border-color, accent);
+    border: solid 1px;
+    color: color-yiq(theme-color('accent')) !important;
+  }
+
+  .dt-buttons, .dataTables_filter {
+    @extend .mb-3;
+  }
+
+  .dt-buttons {
+    .dt-button {
+      @extend .ztt-dt-button;
+
+      &:hover, &:active {
+        @extend .ztt-dt-button-focus;
+      }
+    }
+    .disabled {
+      opacity: 0.65;
+      pointer-events: none;
+    }
+  }
+
+  .dataTables_filter {
+    input[type='search'] {
+      &,
+      &:focus {
+        -webkit-appearance: none;
+        border-radius: 0;
+        border-width: 0 0 2px;
+        box-shadow: unset;
+        padding-left: 0;
+        outline: none;
+      }
+    }
+  }
+
+  .dataTables_paginate {
+    span a.paginate_button {
+      @extend .ztt-dt-button;
+    }
+
+    span a.paginate_button:hover,
+    span a.paginate_button:active,
+    span a.paginate_button.current,
+    span a.paginate_button.current:hover,
+    span a.paginate_button.current:active {
+      @extend .ztt-dt-button-focus;
+    }
+  }
+
+  .table.dataTable thead th {
+    padding: 8px 10px;
+  }
+}
+
+// 10. TYPOGRAPHY
+// --------------------------------------------------------
+
+markdown {
+  h1, p {
+    padding: 5px;
+    margin: 5px;
+    border: 5px;
+    font-size: initial;
+    vertical-align: initial;
+    letter-spacing: initial;
+  }
+  strong {
+    font-weight: $font-weight-bold;
+  }
+  h1 {
+    font-size: 16px;
+    font-weight: $font-weight-bold;
+    text-decoration: underline;
+  }
+  p {
+    font-size: 14px;
+  }
+}
+
+// this could be removed when span.link is converted to <a> or <button> tag.
+.link {
+  color: $link-color;
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+}
+
+.divider {
+  @extend .mb-5;
+  border-color: gray("600");
+  width: 3vw;
+}
+
+.ellipsis {
+  display: inline-block !important;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 00. MISC
+// --------------------------------------------------------
+
+$dialogue-icon-size: 3.5rem;
+.dialogue-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: $dialogue-icon-size;
+  height: $dialogue-icon-size;
+  border-radius: 50%;
+  left: 50%;
+  margin-left: -#{$dialogue-icon-size / 2};
+  top: -#{$dialogue-icon-size / 2};
+  margin-bottom: -#{$dialogue-icon-size / 1.75};
+  background-color: #fff;
+
+  i[class*="fa"] {
+    font-size: #{$dialogue-icon-size - 0.5rem};
+    color: $text-muted;
+  }
+
+  &--circle {
+    @extend .dialogue-icon;
+    @include var(background-color, accent);
+
+    i[class*="fa"] {
+      color: #fff;
+      font-size: #{$dialogue-icon-size - 1.75rem};
+    }
+  }
+}
+
+.ztt-row-cta {
+  @extend .py-3;
+  @extend .align-items-center;
+
+  border-bottom: solid $hr-border-width $hr-border-color;
+}
+
+// 000. RESPONSIVE / OVERRIDES
+// --------------------------------------------------------
+
+@import 'defaults/global_responsive';
+@import 'application/responsive';
+@import 'overrides';

@@ -1,0 +1,213 @@
+<ng-container *ngIf="loaded">
+  <div class="ztt-container" id="ztt-review-lending-application">
+    <div class="row">
+      <!-- CARD: APPLICATION SUMMARY -->
+      <div class="col-12 col-lg-8 offset-lg-2 order-first">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-7 text-center text-md-left">
+                <h5 class="card-title mb-0">{{ 'PAY_REVIEW_TITLE.MAIN' | translate }}</h5>
+              </div><!--.col-->
+
+            </div><!--.row-->
+
+            <hr>
+
+            <div class="row">
+              <div class="col-12">
+                <p class="text-muted">{{ 'PAY_REVIEW_SUBTITLE' | translate }}</p>
+                <p class="lead">{{ 'PAY_REVIEW_TITLE.SUB_1' | translate }}</p>
+                <hr>
+                <div class="row">
+                  <!-- RECIPIENT -->
+                  <ng-container *ngIf="lendingApplication?.payee_name">
+                    <div class="col-5 col-sm-6">
+                      <p data-ng-id="recipient-label">{{ 'PAY_REVIEW_RECIPIENT' | translate }}</p>
+                    </div><!--.col-->
+                    <div class="col-7 col-sm-6">
+                      <p data-ng-id="recipient-value">{{ lendingApplication.payee_name }}</p>
+                    </div><!--.col-->
+                  </ng-container>
+
+                  <!-- PAYEE ACCOUNT NUMBER -->
+                  <ng-container *ngIf="lendingApplication?.payee_account_num">
+                    <div class="col-5 col-sm-6">
+                      <p data-ng-id="account-num-label">{{ 'PAY_REVIEW_ACCT' | translate }}</p>
+                    </div><!--.col-->
+                    <div class="col-7 col-sm-6">
+                      <p data-ng-id="account-num-value">{{ lendingApplication.payee_account_num }}</p>
+                    </div><!--.col-->
+                  </ng-container>
+
+                  <!-- INVOICE NUMBER -->
+                  <ng-container *ngIf="lendingApplication?.payee_invoice_num">
+                    <div class="col-5 col-sm-6">
+                      <p data-ng-id="invoice-num-label">{{ 'PAY_REVIEW_INVOICE' | translate }}</p>
+                    </div><!--.col-->
+                    <div class="col-7 col-sm-6">
+                      <p data-ng-id="invoice-num-value">{{ lendingApplication.payee_invoice_num }}</p>
+                    </div><!--.col-->
+                  </ng-container>
+                </div><!--.row-->
+
+                <div class="row">
+                  <div class="col-12">
+                    <i *ngIf="approvedLower"
+                       class="fas fa-exclamation text-danger pl-2"
+                       [tooltip]="'PAY_REVIEW_TEXT_LESS' | translate"
+                       container="body"></i>
+                  </div>
+
+                  <!-- REQUESTED & APPROVED AMOUNTS -->
+                  <ng-container *ngIf="displayRequested">
+                    <div class="col-5 col-sm-6">
+                      <p data-ng-id="requested-amount-label">{{ 'PAY_REVIEW_AMT.REQUESTED' | translate }}</p>
+                    </div><!--.col-->
+                    <div class="col-7 col-sm-6">
+                      <p data-ng-id="requested-amount-value">{{ lendingApplication?.requested_amount | zttCurrency : translateService.currentLang }}</p>
+                    </div><!--.col-->
+
+                    <div class="col-5 col-sm-6">
+                      <p data-ng-id="approved-amount-label">{{ 'PAY_REVIEW_AMT.APPROVED' | translate }}</p>
+                    </div><!--.col-->
+                    <div class="col-7 col-sm-6">
+                      <p data-ng-id="approved-amount-value">{{ lendingApplication?.max_principal_amount | zttCurrency : translateService.currentLang }}</p>
+                    </div><!--.col-->
+                  </ng-container>
+
+                  <!-- PRINCIPAL AMOUNT -->
+                  <div class="col-5 col-sm-6">
+                    <p data-ng-id="principal-amount-label">{{ 'PAY_REVIEW_AMT.TOTAL' | translate }}</p>
+                  </div><!--.col-->
+                  <div class="col-7 col-sm-6">
+                    <p class="mb-0 font-weight-bold text-accent" data-ng-id="principal-amount-value">{{ lendingApplication?.principal_amount | zttCurrency : translateService.currentLang }}</p>
+                  </div><!--.col-->
+
+                  <!-- PAYOUT AMOUNT -->
+                  <ng-container *ngIf="hasPayouts">
+                    <div class="col-12 pr-0">
+                      <p class="d-inline" data-ng-id="payout-amount-label">{{ 'PAY_REVIEW_PAYOUT.LABEL' | translate }}</p>
+                      <i class="fas fa-info-circle pl-2"
+                         [tooltip]="'PAY_REVIEW_PAYOUT.TOOLTIP' | translate"
+                         container="body"></i>
+                      <i class="fas fa-chevron-down text-muted pl-2"
+                         [ngClass]="(isCollapsed) ? 'fas fa-chevron-down' : 'fas fa-chevron-up'"
+                         (click)="isCollapsed = !isCollapsed"
+                         [attr.aria-expanded]="!isCollapsed"
+                         aria-controls="collapseBasic"></i>
+                    </div><!--.col-->
+
+                    <!-- EXPANDED PAYOUT -->
+                    <div class="col-12" id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true">
+                      <div *ngFor="let payout of payouts" class="row">
+                        <!-- PAYOUT ROW -->
+                        <ng-container *ngIf="payout">
+                          <div class="col-5 col-sm-6">
+                            <p class="text-muted pl-3" data-ng-id="payout-sub-label">{{ getPayoutLabel(payout) | translate }}</p>
+                          </div><!--.col-->
+                          <div class="col-7 col-sm-6">
+                            <p data-ng-id="payout-sub-value">{{ payout.amount | zttCurrency : translateService.currentLang }}</p>
+                          </div><!--.col-->
+                        </ng-container>
+                      </div><!--.row-->
+
+                      <!-- ACCOUNT ROW -->
+                      <div class="row">
+                        <div class="col-5 col-sm-6">
+                          <p class="text-muted pl-3" data-ng-id="amount-sub-label">{{ 'PAY_REVIEW_PAYOUT.TYPE.ACCOUNT' | translate }}</p>
+                        </div><!--.col-->
+                        <div class="col-7 col-sm-6">
+                          <p data-ng-id="amount-sub-value">{{ lendingApplication.principal_amount - totalPayouts | zttCurrency : translateService.currentLang }}</p>
+                        </div><!--.col-->
+                      </div><!--.row-->
+                    </div><!--.col-->
+                  </ng-container>
+                </div><!--.row-->
+
+                <!-- MODIFY BUTTON -->
+                <div *ngIf="isWcaOffer" class="ztt-card-button-holder">
+                  <div class="btn-group ml-auto"
+                       role="group"
+                       (click)="modify()">
+                    <button type="button" class="btn ztt-btn-group-icon">
+                      <i class="fas fa-pen"></i>
+                    </button>
+                    <button class="btn btn-block btn-accent" data-ng-id="review-lending-app-modify-btn">
+                      {{ 'COMMON.BTN.MODIFY' | translate }}
+                    </button>
+                  </div><!--.btn-group-->
+                </div><!--.ztt-card-button-holder-->
+
+                <p class="lead mt-3">{{ 'PAY_REVIEW_TITLE.SUB_3' | translate }}</p>
+
+                <hr>
+
+                <!-- Repayment Details -->
+                <div class="row">
+                  <!-- COST OF BORROWING -->
+                  <div class="col-6 col-md-3 text-left text-md-center d-flex flex-column justify-content-between">
+                    <p class="text-muted" data-ng-id="cost-borrowing-label">{{ 'PAY_REVIEW_COST' | translate }}</p>
+                    <p data-ng-id="cost-borrowing-value">{{ lendingApplication?.fee | zttCurrency : translateService.currentLang }}</p>
+                  </div><!--.col-->
+
+                  <!-- TOTAL REPAYMENT -->
+                  <div class="col-6 col-md-3 text-left text-md-center d-flex flex-column justify-content-between">
+                    <p class="text-muted" data-ng-id="total-repayment-label">{{ 'PAY_REVIEW_TOTAL_REPAY' | translate }}</p>
+                    <p data-ng-id="total-repayment-value">{{ (lendingApplication?.principal_amount +  lendingApplication?.fee) | zttCurrency : translateService.currentLang }}</p>
+                  </div><!--.col-->
+
+                  <!-- REPAYMENT TERM -->
+                  <div class="col-6 col-md-3 text-left text-md-center d-flex flex-column justify-content-between">
+                    <p class="text-muted" data-ng-id="repayment-term-label">{{ 'PAY_REVIEW_TERM' | translate }}</p>
+                    <p class="font-weight-bold text-accent" data-ng-id="repayment-term-value">{{ lendingApplication?.term_duration }} {{ localizedLoanTermUnit | translate }}</p>
+                  </div><!--.col-->
+
+                  <!-- REPAYMENT AMOUNT -->
+                  <div class="col-6 col-md-3 text-left text-md-center d-flex flex-column justify-content-between">
+                    <p class="text-muted" data-ng-id="contract-repayment-amount-label">{{ repaymentScheduleLocalizationKey | translate }}</p>
+                    <p data-ng-id="contract-repayment-amount-value">{{ lendingApplication?.contract_repayment_amount | zttCurrency : translateService.currentLang }}</p>
+                  </div><!--.col-->
+                </div><!--.row-->
+
+                <!-- APR NOTE -->
+                <div align="center" *ngIf="!isWcaOffer">
+                  <p class="card-text small text-muted py-3" data-ng-id="annual_percentage_rate_summary">
+                    {{ 'PAY_REVIEW_SUMMARY' | translate:{cost_of_borrowing: lendingApplication?.fee | zttCurrency : translateService.currentLang, apr: lendingApplication?.apr/365 | percent:'1.2-5':translateService.currentLang } }}
+                    <br>
+                  {{ payReviewFormulaLocalizationKey | translate }}</p>
+                </div>
+              </div><!--.col-->
+            </div><!--.row-->
+
+            <div class="ztt-card-button-holder">
+              <!-- Cancel -->
+              <button *ngIf="!isWcaOffer"
+                      class="btn btn-light"
+                      data-ng-id="review-lending-app-cancel-btn"
+                      (click)="cancel()"
+                      [disabled]="cancellingApplication || processingApplication"
+                      [innerHTML]="(cancellingApplication ? 'WORKING' : 'COMMON.BTN.CANCEL') | translate">
+              </button>
+
+              <!-- Submit -->
+              <button class="btn btn-accent ml-auto"
+                      data-ng-id="review-lending-app-next-btn"
+                      (click)="next()"
+                      [disabled]="processingApplication || delegatedAccess"
+                      [innerHTML]="(processingApplication? 'WORKING' : 'COMMON.BTN.NEXT') | translate">
+              </button>
+            </div><!--.ztt-card-button-holder-->
+          </div><!--.card-body-->
+        </div><!--.card-->
+      </div><!--.col-->
+    </div><!--.row-->
+
+    <div class="row">
+      <!-- NOTIFICATION CARD -->
+      <alert type="success" [dismissible]="true" class="col-12 col-lg-8 offset-lg-2 order-last my-3">
+        {{ 'PAY_REVIEW_TIME_DELAY' | translate }}
+      </alert>
+    </div>
+  </div><!--#ztt-review-lending-application-->
+</ng-container>

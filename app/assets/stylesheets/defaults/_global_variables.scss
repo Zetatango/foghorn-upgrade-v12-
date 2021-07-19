@@ -1,0 +1,166 @@
+// ==========================================================================
+// Global Variables
+// ==========================================================================
+//
+// Table of Contents:
+//
+//  1. Alerts
+//  2. Buttons
+//  2. Cards
+//  3. Colors
+//  4. Dropdowns
+//  5. Forms
+//  6. Logos
+//  7. Navigation
+//  8. Typography
+//  00. Misc
+
+// 1. Alerts
+// --------------------------------------------------------
+
+$alert-color-level: 7;
+
+// 2. Buttons
+// --------------------------------------------------------
+$btn-box-shadow: none;
+$btn-focus-box-shadow: none;
+$btn-active-box-shadow: none;
+
+// 2. Cards
+// --------------------------------------------------------
+
+$card-spacer-x:               1.5rem;
+$modal-content-border-width:  0px;
+
+// 3. Colors
+// --------------------------------------------------------
+
+// Theme setup colours
+$primary: #862890 !default;
+$light: #FFFEFE;
+$primary-darker: #77216d;
+
+$theme-colors: (
+  'accent': #862890
+) !default;
+
+// Ario theme colours
+$ario-primary: #0a4752;
+$ario-accent: #429f94;
+
+// Generic colours
+$black:   #001226;
+$blue:    #0073ee;
+$red:     #e3163e;
+$yellow:  #e2b62e;
+$green:   #06c87d;
+$charcoal:#454545;
+$silver: #bebebe;
+$heather: #bcbec0;
+// New colours for Foghorn UI redesign
+// Note: [Graham] remove these.
+$carolina-blue: #99bcce;
+$azure: #007bff;
+$dark-lava: #37373c;
+$auro-metal-saurus: #6c757d;
+$ghost-white: #f9f9f9;
+$light-gray: #ced3dc;
+$gray: #afafaf;
+$blurred-gray: #d7d7d7;
+$dark-green: #039e12;
+$darker-green: #119d6f;
+$blurred-green: #88ceb7;
+$accent-light: #dbd1da;
+$dark-red: #9d2639;
+
+// Business Partner 'Tables'
+// Note: [Graham] remove these.
+$no-status: #888f97;
+$positive-status: #299f44;
+$default-status: #2299af;
+$caution-status: #fcbb31;
+
+// Elements
+$body-bg: #f2f4f7;
+
+// Typography
+$headings-color: #1f2d3d;
+$link-color: #0073ee !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-decoration: underline !default;
+
+// Misc
+$white-tint-low: rgba(255, 255, 255, .1);
+$white-tint-medium: rgba(255, 255, 255, .35);
+$white-tint-high: rgba(255, 255, 255, .65);
+
+// 4. Dropdowns
+// --------------------------------------------------------
+
+$dropdown-padding-y: 1.5rem !default;
+$dropdown-border-width: 0 !default;
+$dropdown-link-hover-color: #fff !default;
+$dropdown-link-active-color: $dropdown-link-hover-color !default;
+$dropdown-link-hover-bg: map-get($theme-colors, 'accent') !default;
+$dropdown-link-active-bg: $dropdown-link-hover-bg !default;
+$dropdown-min-width: 13rem !default;
+
+// 5. Forms
+// --------------------------------------------------------
+
+$input-group-addon-bg: $body-bg;
+
+// 6. Logos
+// --------------------------------------------------------
+
+$partner-logo-url: 'https://ario-logo-assets.s3.ca-central-1.amazonaws.com/tc-logo.png' !default;
+$partner-logo-height: 56px !default;
+
+// 7. Navigation
+// --------------------------------------------------------
+
+$navbar-nav-link-padding-x: 1rem !default;
+$nav-divider-margin-y: 1rem !default;
+$navbar-box-shadow: 0 0.12rem 0.25rem rgba($black, 0.1) !default;
+
+// 8. Typography
+// --------------------------------------------------------
+
+@import url($open-sans-url);
+$font-family-base: $font-family-open-sans !default;
+
+@import url($montserrat-url);
+$headings-font-family: $font-family-montserrat !default;
+
+// The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+$yiq-contrasted-threshold: 175; // we check for 170, but set at 175 to give a bit of padding for the switch over.
+
+// 00. Misc
+// --------------------------------------------------------
+
+$enable-shadows: true;
+
+$above-dialog-overlay: 1041;  //1040 is z-index for backdrop
+$above-loading-overlay: 1050;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1340px
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$sizes: (
+  33: 33.333%,
+  66: 66.666%
+) !default;

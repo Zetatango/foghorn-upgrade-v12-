@@ -1,0 +1,107 @@
+<div class="ztt-container" id="ztt-application-guarantor">
+  <div class="row">
+    <div class="col-12 col-lg-10 offset-lg-1">
+      <div class="card">
+        <div class="card-body">
+          <form class="form-horizontal ztt-borderless-inputs" id="application-guarantor-form"
+                [formGroup]="guarantorFormGroup">
+            <p class="lead">{{'GUARANTOR.GUARANTOR' | translate}}</p>
+
+            <div class="row">
+              <!-- FIRST NAME -->
+              <div class="form-group col-12 col-md-6">
+                <label class="control-label" for="first-name">{{'GUARANTOR.FIRST_NAME' | translate}}</label>
+                <input id="first-name" name="first-name" type="text" class="form-control"
+                       formControlName="first_name"
+                       [class.is-invalid]="guarantorFormGroup.controls['first_name'].touched && guarantorFormGroup.controls['first_name'].invalid"
+                       zttExcludeEmoji>
+                <div class="invalid-feedback">{{'GUARANTOR.ENTER_NAME' | translate}}</div>
+              </div><!--.col-->
+
+              <!-- LAST NAME -->
+              <div class="form-group col-12 col-md-6">
+                <label class="control-label" for="last-name">{{'GUARANTOR.LAST_NAME' | translate }}</label>
+                <input id="last-name" name="last-name" type="text" class="form-control"
+                       formControlName="last_name"
+                       [class.is-invalid]="guarantorFormGroup.controls['last_name'].touched && guarantorFormGroup.controls['last_name'].invalid"
+                       zttExcludeEmoji>
+                <div class="invalid-feedback">{{'GUARANTOR.ENTER_LAST_NAME' | translate}}</div>
+              </div><!--.col-->
+            </div><!--.row -->
+
+            <div class="row">
+              <!-- DATE OF BIRTH -->
+              <div class="form-group col-12 col-md-4">
+                <label class="control-label" for="birth-date">{{'GUARANTOR.DATE_BIRTH' | translate}}</label>
+                <ztt-date-picker
+                  id="birth-date"
+                  name="birth-date"
+                  formControlName="date_of_birth"
+                  [class.is-invalid]="guarantorFormGroup.controls['date_of_birth'].touched && guarantorFormGroup.controls['date_of_birth'].invalid">
+                </ztt-date-picker>
+                <div class="invalid-feedback">{{'GUARANTOR.ENTER_DATE_BIRTH' | translate}}</div>
+              </div><!--.col-->
+
+              <!-- MOBILE NUMBER -->
+              <div class="form-group col-12 col-md-4">
+                <label class="control-label" for="phone">{{'GUARANTOR.NUMBER' | translate}}</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="text"
+                  class="form-control"
+                  [imask]="phoneMaskConfig"
+                  formControlName="phone_number"
+                  [class.is-invalid]="guarantorFormGroup.controls['phone_number'].touched && guarantorFormGroup.controls['phone_number'].invalid"
+                  placeholder="(###) ###-####">
+                <div class="invalid-feedback">{{'GUARANTOR.ENTER_NUMBER' | translate}}</div>
+              </div><!--.col-->
+
+            </div><!--.row -->
+
+            <div class="row">
+              <div class="form-group col-12 col-md-6">
+                <label for="email" class="control-label">{{'GUARANTOR.EMAIL' | translate}}</label>
+                <input id="email"
+                       name="email"
+                       type="text"
+                       class="form-control"
+                       formControlName="email"
+                       [class.is-invalid]="guarantorFormGroup.controls['email'].touched && guarantorFormGroup.controls['email'].invalid"
+                       placeholder="abc@xyz.com">
+                <div class="invalid-feedback">{{'GUARANTOR.ENTER_EMAIL' | translate}}</div>
+              </div>
+
+              <div class="form-group col-12 col-md-6">
+                <label for="relationship" class="control-label">{{'GUARANTOR.RELATIONSHIP' | translate}}</label>
+                <input id="relationship"
+                       name="relationship"
+                       type="text"
+                       class="form-control"
+                       formControlName="relationship"
+                       [class.is-invalid]="guarantorFormGroup.controls['relationship'].touched && guarantorFormGroup.controls['relationship'].invalid">
+                <div class="invalid-feedback">{{'GUARANTOR.ENTER_RELATIONSHIP' | translate}}</div>
+              </div>
+            </div><!--.row -->
+
+            <div class="row">
+              <div class="col-12">
+                <ztt-address-form></ztt-address-form>
+              </div><!--.col-12-->
+            </div><!--.row-->
+
+            <div class="ztt-card-button-holder">
+              <button type="submit"
+                      class="btn btn-accent ml-auto"
+                      id="about-you-next-btn"
+                      (click)="next()"
+                      [disabled]="submittingGuarantor"
+                      [innerHTML]="(submittingGuarantor ? 'WORKING' : 'COMMON.BTN.NEXT') | translate">
+              </button>
+            </div><!--.ztt-card-button-holder-->
+          </form><!--#about-you-form-->
+        </div><!--.card-body -->
+      </div><!--.card -->
+    </div><!--.col-->
+  </div><!--.row-->
+</div><!--.body-wrapper -->

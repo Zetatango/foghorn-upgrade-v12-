@@ -1,0 +1,50 @@
+<div class="cash-buffer-card card border">
+  <div class="card-body d-flex flex-column">
+    <h5 class="card-title text-accent font-weight-bold mb-3">{{ 'BETTER_INSIGHTS.INSIGHTS_TITLE' | translate }}</h5>
+    <div *ngIf="showConnectQuickBooks" class="mb-5">
+      <p>{{ 'BETTER_INSIGHTS.QUICKBOOKS_DESCRIPTION' | translate }}</p>
+      <ztt-quickbooks-connect-button [openModal]="true"></ztt-quickbooks-connect-button>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p>{{ 'BETTER_INSIGHTS.MULTIPLE_ACCOUNTS_DESCRIPTION' | translate }}</p>
+      </div>
+      <div class="col-7">
+        <ng-select
+        [items]="bankAccounts"
+        [multiple]="true"
+        [closeOnSelect]="false"
+        bindValue="id"
+        placeholder="Select accounts"
+        [clearable]="false"
+        [(ngModel)]="selectedAccounts">
+
+        <ng-template ng-label-tmp let-item="item">
+          <span *ngIf="item.account_number">{{ item.account_number | mask }}</span>
+        </ng-template>
+
+        <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+          <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected"/> {{ item.account_number | mask }}{{ item.name ? ' - ' + item.name : '' }}
+        </ng-template>
+      </ng-select>
+      <!-- FEEDBACK -->
+        <div *ngIf="success" class="text-success small" >{{ 'INSIGHTS.CASH_BUFFER.SUCCESS' | translate }}</div>
+        <div *ngIf="error" class="text-danger small">{{ 'INSIGHTS.CASH_BUFFER.ERROR' | translate }}</div>
+      </div>
+
+      <div class="col-5 text-right">
+        <button
+          type="submit"
+          class="btn btn-accent"
+          [disabled]="invalidSubmission()"
+          [innerHtml]="(saving ? 'WORKING' : 'BETTER_INSIGHTS.BTN.UPDATE') | translate"
+          name="{{ 'BETTER_INSIGHTS.BTN.UPDATE' | translate }}"
+          [zttGtmEvent]
+          (click)="onSubmitSelectedAccounts()"
+        >
+        </button>
+      </div><!--.col-->
+    </div><!--.row-->
+  </div>
+</div>

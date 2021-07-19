@@ -1,0 +1,44 @@
+<div class="card">
+  <div class="card-body">
+    <div class="d-flex flex-column justify-content-between ztt-offer">
+      <!-- Title -->
+      <h5 class="card-title font-weight-bold">
+        {{ 'SHOW_OFFERS.INFO_CARD.OFFERS.LOC.TITLE_LABEL' | translate }}
+      </h5>
+      <!-- Expiry Date -->
+      <h6
+        *ngIf="showOfferExpiry"
+        class="card-subtitle text-muted"
+        [innerHTML]="'SHOW_OFFERS.INFO_CARD.OFFERS.LOC.EXPIRY_DATE' | translate : { date: offerExpiryDate | localizeDate: translateService.currentLang : null : 'UTC' }"
+      >
+      </h6>
+
+      <ztt-offer-gauge-circle class="align-self-center col-12 col-lg-10 col-xl-8 px-0 py-3"></ztt-offer-gauge-circle>
+
+      <ng-container [ngSwitch]="offerCtaState">
+        <ng-container *ngSwitchCase="enumOfferCtaState.not_needed.toString()"></ng-container><!-- empty container -->
+        <ztt-offer-refresh *ngSwitchCase="enumOfferCtaState.refresh.toString()" class="col-9 offer-cta"></ztt-offer-refresh>
+        <ztt-offer-processing *ngSwitchCase="enumOfferCtaState.processing.toString()" class="col-9 offer-cta"></ztt-offer-processing>
+        <ztt-connect-bank *ngSwitchDefault class="col-9 offer-cta" [offerCtaState]="offerCtaState"></ztt-connect-bank>
+      </ng-container><!-- ngSwitch[offerCtaState] -->
+
+      <div class="d-flex justify-content-between align-items-center">
+        <!-- offer balance -->
+        <div class="text-center">
+          <h5 class="font-weight-bold">
+            {{ balanceOutstanding | zttCurrency : translateService.currentLang }}
+          </h5>
+          <p class="text-muted mb-0">{{ 'OFFER.METRICS.BALANCE' | translate }}</p>
+        </div>
+
+        <!-- offer limit -->
+        <div class="text-center">
+          <h5 class="font-weight-bold" data-ng-id="offerMaxAmount">
+            {{ showOffer ? (offerMaxAmount | zttCurrency : translateService.currentLang) : '-- --' }}
+          </h5>
+          <p class="text-muted mb-0">{{ 'OFFER.METRICS.MAX_LIMIT' | translate }}</p>
+        </div><!--.text-center-->
+      </div><!--.d-flex-->
+    </div><!--.d-flex-->
+  </div><!--.card-body-->
+</div><!--.card-->

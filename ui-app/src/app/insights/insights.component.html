@@ -1,0 +1,41 @@
+<div id="ztt-insights">
+  <ng-container *ngFor="let alert of alerts">
+    <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" (onClosed)="onClosed(alert)">{{ alert.msg |
+      translate:alert.params }}
+    </alert>
+  </ng-container>
+
+  <div class="ztt-container">
+    <ztt-financial-summary class="col-12" id="ztt-financial-summary"></ztt-financial-summary>
+  </div>
+  <!--.ztt-container-->
+  <div class="col-12 mb-3 bg-white no-gutters">
+    <div class="ztt-container">
+
+      <div class="charts-container py-5">
+        <ztt-insights-graph-header [showCashFlowChart]="showCashFlowChart"
+          (onChartTypeChanged)="onChartTypeChanged($event)"></ztt-insights-graph-header>
+        <ng-container *ngIf="showCashFlowChart">
+          <ztt-cash-flow-chart id="ztt-cash-flow-chart"></ztt-cash-flow-chart>
+        </ng-container>
+        <ng-container *ngIf="!showCashFlowChart">
+          <ztt-account-balance-chart id="ztt-account-balance-chart"></ztt-account-balance-chart>
+        </ng-container>
+      </div>
+      <!--.charts-container-->
+
+      <div class="row mb-5 pb-5">
+        <div class="col-12 col-md-6 mb-3 mb-md-0">
+          <ztt-better-insights-card [showConnectQuickBooks]="showConnectQuickBooks">
+          </ztt-better-insights-card>
+        </div>
+        <div class="col-12 col-md-6">
+          <ztt-cash-buffer></ztt-cash-buffer>
+        </div>
+      </div>
+    </div>
+    <!--.ztt-container-->
+  </div>
+  <!--.col-12-->
+</div>
+<!--#ztt-insights-->

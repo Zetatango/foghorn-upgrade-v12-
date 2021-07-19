@@ -1,0 +1,33 @@
+/*! ng component: HEADER */
+
+#ztt-header.navbar .navbar-collapse {
+  .dropdown {
+    .dropdown-toggle {
+      i {
+        -webkit-transition: transform 0.5s ease-in-out 0.2s;
+        -webkit-transform: scale(1, 1);
+        transition: transform 0.5s ease-in-out;
+        transform: scale(1, 1);
+      }
+    }
+
+    &.show {
+      .dropdown-toggle {
+        i {
+          -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+        }
+      }
+    }
+  }
+}
+
+// Partner Logo
+@if variable-exists(partner-logo-url) and variable-exists(partner-logo-height) {
+  .partner-logo {
+    background: url($partner-logo-url) left center no-repeat transparent;
+    background-size: contain;
+    height: $partner-logo-height;
+    width: 109px;
+  }
+}

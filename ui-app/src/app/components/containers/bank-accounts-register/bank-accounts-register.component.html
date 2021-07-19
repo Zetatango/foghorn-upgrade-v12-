@@ -1,0 +1,53 @@
+<!-- FLINKS iFRAME -->
+<div class="row">
+  <div class="col-md-12" data-ng-id="bank-accounts-register-body">
+    <div *ngIf="!delegatedAccess; else delegatedAccessAlert" data-ng-id="flinks-frame">
+      <p data-ng-id="description-text"
+         [innerHtml]="description | translate">
+      </p>
+
+      <p *ngIf="this.bankingFlowService.needConnectionRefresh">
+        {{ 'SET_BANK_INSTRUCTIONS.INSTITUTION_NAME' | translate }} {{ institutionName | translate }}<br>
+        {{ 'SET_BANK_INSTRUCTIONS.ACCOUNT_NUMBER' | translate }} {{ maskedAccountNumber | translate }}
+      </p>
+
+      <p class="small font-weight-bold" data-ng-id="disclaimer-text">{{ 'SET_BANK_INSTRUCTIONS.DISCLAIMER' | translate }}</p>
+
+      <p class="small font-weight-bold" *ngIf="isSafariDesktop() && isUserLangFr()" [innerHtml]="'SET_BANK_INSTRUCTIONS.SAFARI_FRENCH_ERROR' | translate"></p>
+
+      <div class="align-self-center text-center">
+        <ztt-bank-flinks></ztt-bank-flinks>
+
+        <ztt-connect-bank-manually *ngIf="allowManualInput"></ztt-connect-bank-manually>
+      </div>
+    </div><!--#flinks-frame-->
+
+  </div><!--.col-->
+</div><!--.row-->
+
+<!-- STEP NAVIGATION -->
+
+<div class="ztt-card-button-holder">
+    <!-- Cancel -->
+    <button class="btn btn-light"
+            (click)="cancel()">
+      {{ 'COMMON.BTN.CANCEL' | translate }}
+    </button>
+
+    <!-- Skip -->
+    <button *ngIf="skippable"
+            class="btn btn-light ml-auto"
+            (click)="skip()">
+      {{ 'COMMON.BTN.SKIP' | translate }}
+    </button>
+</div><!--.ztt-card-button-holder-->
+
+<ng-template #delegatedAccessAlert>
+  <alert type="warn" [dismissible]="true" data-ng-id="delegate-warn">
+    <i class="fas fa-exclamation-triangle"></i> {{ 'SET_BANK_INSTRUCTIONS.DELEGATED_MODE' | translate }}
+  </alert>
+</ng-template>
+
+<ng-template>
+  {{ 'SET_BANK_INSTRUCTIONS.BANK_ACCOUNT' | translate }}
+</ng-template>

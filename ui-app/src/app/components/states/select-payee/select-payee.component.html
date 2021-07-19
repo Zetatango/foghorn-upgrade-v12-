@@ -1,0 +1,124 @@
+<div *ngIf="loaded" class="ztt-container" data-ng-id="ztt-select-payee">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-md-3">
+      <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ 'PAY_WHO.TITLE' | translate }}</h5>
+            <hr>
+
+            <!-- TODO: remove ngIf once LoC is live. -->
+            <form *ngIf="locEnabled" [formGroup]="payeeTypeFormGroup" class="mb-3">
+              <div class="row">
+                <!-- PAYEE = SELF -->
+                <div class="col-12 col-md-6">
+                  <div class="border border-dark form-check p-3 rounded">
+                    <input
+                      [value]="'payee-self'"
+                      class="form-check-input ml-0"
+                      type="radio"
+                      formControlName="payeeType"
+                      data-toggle="collapse"
+                      data-target="#paySupplierOptions.show"
+                      id="payee-self">
+                    <label class="form-check-label ml-4" for="payee-self">{{ 'PAY_WHO.BUTTON_LABEL.SELF' | translate }}</label>
+                  </div><!--.form-check-->
+                </div><!--.border-->
+
+                <!-- PAYEE = SUPPLIER -->
+                <div class="col-12 col-md-6">
+                  <div class="border form-check p-3 rounded" [ngClass]="suppliers.length > 0 ? 'border-dark' : 'border-grey'">
+                    <input
+                      [value]="'payee-supplier'"
+                      [attr.disabled]="suppliers.length === 0 ? '' : null"
+                      class="form-check-input ml-0"
+                      type="radio"
+                      formControlName="payeeType"
+                      data-toggle="collapse"
+                      data-target="#paySupplierOptions:not(.show)"
+                      id="payee-supplier">
+                    <label class="form-check-label ml-4" for="payee-supplier">{{ 'PAY_WHO.BUTTON_LABEL.SUPPLIER' | translate }}</label>
+                  </div><!--.form-check-->
+                </div><!--.border-->
+              </div><!--.d-flex-->
+            </form><!-- payeeTypeFormGroup -->
+
+            <!-- PAY SUPPLIER OPTIONS -->
+            <form *ngIf="suppliers.length > 0" [formGroup]="selectSupplierFormGroup" class="collapse show" id="paySupplierOptions">
+                <div class="row">
+                  <div class="form-group col-12 col-md-8">
+                    <label for="payee" class="control-label py-2">{{ 'PAY_WHO.CAPTION' | translate }}</label>
+                    <select class="form-control"
+                            id="payee"
+                            formControlName="payee"
+                            required
+                            [class.is-invalid]="payee.invalid && (payee.dirty || payee.touched)">
+                      <option value="" disabled>{{ 'PAY_WHO.SELECT_DEFAULT' | translate }}</option>
+                      <option *ngFor="let supplier of suppliers" [value]="supplier?.id">
+                        {{ supplier?.name }}
+                      </option>
+                    </select>
+
+                    <!-- Errors -->
+                    <div class="invalid-feedback">{{ 'PAY_WHO.ERROR' | translate }}</div>
+                  </div><!--.col-->
+                </div><!--.row-->
+
+                <div class="row">
+                  <div class="col-12">
+                    <p class="text-muted">{{ 'PAY_INSTRUCTIONS' | translate }}</p>
+                  </div><!--.col-->
+                </div><!-- .row-->
+
+                <div class="row">
+                  <!-- INVOICE NUMBER -->
+                  <div class="form-group col-12 col-md-6">
+                    <label for="invoiceNumber" class="control-label py-2">{{ 'PAY_INVOICE_NUMBER' | translate }}</label>
+                    <input type="text"
+                           class="form-control"
+                           id="invoiceNumber"
+                           formControlName="invoiceNumber"
+                           zttExcludeEmoji
+                           required
+                           [class.is-invalid]="invoiceNumber.invalid && (invoiceNumber.dirty || invoiceNumber.touched)">
+
+                    <!-- Errors -->
+                    <div class="invalid-feedback">{{ 'PAY_INVOICE_NUMBER_ERROR' | translate }}</div>
+                  </div><!--.col-12 .col-md-6 -->
+
+                  <!-- ACCOUNT NUMBER -->
+                  <div class="form-group col-12 col-md-6">
+                    <label for="accountNumber" class="control-label py-2">{{ 'PAY_ACCOUNT_NUMBER' | translate }}</label>
+                    <input type="text"
+                           class="form-control"
+                           id="accountNumber"
+                           formControlName="accountNumber"
+                           zttExcludeEmoji>
+                  </div><!--.col-->
+                </div><!--.row -->
+              </form><!-- selectPayeeFormGroup -->
+
+            <!-- BACK / NEXT -->
+            <div class="ztt-card-button-holder">
+              <!-- Back -->
+              <button class="btn btn-light"
+                      [routerLink]="dashboardLink"
+                      name="SELECT PAYEE {{ 'COMMON.BTN.BACK' | translate }}"
+                      [zttGtmEvent]>
+                {{ 'COMMON.BTN.BACK' | translate }}
+              </button>
+
+              <!-- Next -->
+              <button class="btn btn-accent ml-auto"
+                      id="select-supplier-btn"
+                      (click)="next()"
+                      [disabled]="isPayeeSupplierAndInvalid"
+                      name="SELECT PAYEE {{ 'COMMON.BTN.NEXT' | translate }}"
+                      [zttGtmEvent]>
+                {{ 'COMMON.BTN.NEXT' | translate }}
+              </button>
+            </div><!--.ztt-card-button-holder-->
+          </div><!--.card-body-->
+        </div><!--.card-->
+    </div><!--.col-->
+  </div><!--.row-->
+</div><!--.container-->

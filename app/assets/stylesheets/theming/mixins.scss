@@ -1,0 +1,7 @@
+/*! MIXINS.SCSS */
+
+// var theming and fallback
+@mixin var($property, $var-name, $opts: '') {
+  #{$property}: map-get($theme-colors, $var-name) #{$opts}; // IE 11 fallback
+  #{$property}: var(--#{$var-name}, map-get($theme-colors, $var-name)) #{$opts};
+}

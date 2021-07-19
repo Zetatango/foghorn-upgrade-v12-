@@ -1,0 +1,54 @@
+<ng-template
+    [ngTemplateOutlet]="editTemplate"
+    [ngTemplateOutletContext]="
+      {
+        listItems : listItems,
+        isEditing: isEditing,
+        toggleEditEvent: toggleEditEvent,
+        finishEditEvent: finishEditEvent,
+        areAnySelected: areAnySelected,
+        areAllSelected: areAllSelected
+      }">
+</ng-template>
+  <ng-container *ngIf="!listItems?.length">
+    <div *ngIf="!missingDataMessage" class="text-center">
+      <i class="fas fa-exclamation-circle text-info text-muted"></i> {{ 'NO_DATA_AVAILABLE' | translate }}
+    </div>
+    <div *ngIf="missingDataMessage" class="text-muted">
+      {{ missingDataMessage | translate}}
+    </div>
+  </ng-container><!--.text-center-->
+<div
+  class="ztt-expandable-list" 
+  *ngIf="listItems?.length"
+  [infiniteScrollDisabled]="disableScroll"
+  [infiniteScrollDistance]="2" 
+  [infiniteScrollThrottle]="1000"
+  [scrollWindow]="false"
+  (scrolled)="onScroll()"
+  infiniteScroll>
+  <ng-container *ngFor="let item of listItems">
+    <div class="main-list-row list-row py-3">
+      <div class="list-column edit-column mr-2" *ngIf="isEditing">
+        <input type="checkbox" [(ngModel)]="item.isSelected"/>
+      </div>
+      <div class="list-data-column" *ngIf="primaryTemplate">
+        <ng-template
+          [ngTemplateOutlet]="primaryTemplate"
+          [ngTemplateOutletContext]="{ item : item.data }">
+        </ng-template>
+      </div><!--.list-data-column-->
+      <div class="list-column expand-column" *ngIf="secondaryTemplate">
+        <button class="btn m-1" type="button" (click)="toggle(item)">
+          <i class="fas" [ngClass]="item.isOpen ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+        </button>
+      </div><!--.expand-column-->
+    </div><!--.main-list-row-->
+    <div class="secondary-wrapper" *ngIf="item.isOpen">
+      <ng-template
+        [ngTemplateOutlet]="secondaryTemplate"
+        [ngTemplateOutletContext]="{ item : item.data }">
+      </ng-template>
+    </div><!--.secondary-wrapper-->
+  </ng-container>
+</div>

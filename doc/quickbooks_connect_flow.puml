@@ -1,0 +1,27 @@
+@startuml
+participant BrowserWindow
+participant QBWindow
+participant WLMP
+participant Redis
+participant WLMPSession
+participant QuickBooks
+participant ZT
+
+BrowserWindow -> QBWindow: open new QB window
+QBWindow -> WLMP: vanity.domain/quickbooks_start
+WLMP -> Redis : flow_id -> context
+note over WLMP : partner_id, merchant_id, current vanity url, current access token
+WLMP -> WLMP : redirect to wlmp.domain/auth/quickbooks?flow_id=###
+WLMP -> WLMPSession: openid strategy attributes
+WLMP -> QuickBooks: Initiate OpenId with scope=flow_id
+QuickBooks -> WLMP: OpenId response
+WLMPSession -> WLMP : openid strategy attributes
+WLMP -> WLMP : redirect to wlmp.domain/auth/quickbooks/callback
+Redis -> WLMP : read context using scope (flow_id)
+WLMP -> ZT : save refresh token info (using context info)
+WLMP -> Redis : delete context key
+WLMP -> QBWindow : redirect to vanity.domain/end_flow
+QBWindow -> BrowserWindow : QB status using window's\n opener messageChannel
+BrowserWindow -> QBWindow : Close
+BrowserWindow -> BrowserWindow : Refresh QB connect display
+@enduml

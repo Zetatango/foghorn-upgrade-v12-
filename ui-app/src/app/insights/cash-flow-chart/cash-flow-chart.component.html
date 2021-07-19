@@ -1,0 +1,41 @@
+<div class="cash-flow-chart mb-3" id="cash-flow-chart">
+  <ngx-charts-bar-vertical-stacked
+    [scheme]="colorScheme"
+    [results]="insightsService.cashFlowData$ | async"
+    [roundDomains]="roundDomains"
+    [xAxis]="showXAxis"
+    [barPadding]="barPadding"
+    [yAxis]="showYAxis"
+    [xAxisTickFormatting]="formatXAxisTick"
+    [animations]="animations">
+    <ng-template #tooltipTemplate let-model="model">
+      <div>
+       {{model.series | date: 'MMMM d, y': undefined : translateService.currentLang }}
+      </div>
+      <div>
+        {{model.name | translate}} : {{model.value| zttCurrency: translateService.currentLang}}
+      </div>
+    </ng-template>
+    <ng-template #seriesTooltipTemplate let-model="model">
+      <div>
+        {{model[0]?.series | translate}} : {{model[0]?.value | zttCurrency: translateService.currentLang}}
+      </div>
+    </ng-template>
+  </ngx-charts-bar-vertical-stacked>
+</div>
+<div class="legends-container d-flex justify-content-end" id="cash-flow-chart-legend">
+  <div class="legend d-flex justify-content-end mb-2">
+    <span class="cash-in-line legend-line mx-1 align-self-center"></span>
+    <span class="cash-in-text legend-text align-self-center"> {{'INSIGHTS.CASH_FLOW_CHART.CASH_IN' | translate}}</span>
+  </div>
+  <div class="legend d-flex mb-2 justify-content-end">
+    <span class="legend-line align-self-center cash-out-line mx-1"></span>
+    <span class="legend-text align-self-center"> {{'INSIGHTS.CASH_FLOW_CHART.CASH_OUT' | translate}}</span>
+  </div>
+  <div class="legend d-flex mb-2 justify-content-end">
+    <span class="legend-line forecasted-cash-in-line align-self-center mx-1"></span>
+    <span class="legend-line forecasted-cash-out-line align-self-center mr-1"></span>
+    <span class="legend-text align-self-center"> {{'INSIGHTS.CASH_FLOW_CHART.FORECASTED' | translate}}</span>
+  </div>
+</div>
+

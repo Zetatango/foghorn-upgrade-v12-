@@ -1,0 +1,149 @@
+{
+  "$schema": "node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ui-app": {
+      "root": "ui-app",
+      "sourceRoot": "ui-app/src",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "allowedCommonJsDependencies": [
+              "angular2-text-mask",
+              "@bugsnag/js"
+            ],
+            "aot": true,
+            "outputPath": "public",
+            "deleteOutputPath": false,
+            "index": "",
+            "main": "ui-app/src/main.ts",
+            "tsConfig": "ui-app/src/tsconfig.app.json",
+            "polyfills": "ui-app/src/polyfills.ts",
+            "assets": [
+              "ui-app/src/assets"
+            ],
+            "styles": [
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/jszip/dist/jszip.js",
+              "node_modules/pdfmake/build/pdfmake.min.js",
+              "node_modules/pdfmake/build/vfs_fonts.js",
+              "node_modules/datatables.net/js/jquery.dataTables.js",
+              "node_modules/datatables.net-buttons/js/dataTables.buttons.js",
+              "node_modules/datatables.net-buttons/js/buttons.colVis.js",
+              "node_modules/datatables.net-buttons/js/buttons.flash.js",
+              "node_modules/datatables.net-buttons/js/buttons.html5.js",
+              "node_modules/datatables.net-buttons/js/buttons.print.js",
+              "node_modules/tinycolor2/dist/tinycolor-min.js",
+              "node_modules/hammerjs/hammer.min.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "namedChunks": true,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "ui-app/src/environments/environment.ts",
+                  "with": "ui-app/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ui-app:build",
+            "progress": false
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ui-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ui-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "codeCoverage": true,
+            "main": "ui-app/src/test.ts",
+            "karmaConfig": "ui-app/karma.conf.js",
+            "polyfills": "ui-app/src/polyfills.ts",
+            "tsConfig": "ui-app/src/tsconfig.spec.json",
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/datatables.net/js/jquery.dataTables.js",
+              "node_modules/jszip/dist/jszip.js",
+              "node_modules/pdfmake/build/pdfmake.min.js",
+              "node_modules/pdfmake/build/vfs_fonts.js",
+              "node_modules/datatables.net-buttons/js/dataTables.buttons.js",
+              "node_modules/datatables.net-buttons/js/buttons.colVis.js",
+              "node_modules/datatables.net-buttons/js/buttons.flash.js",
+              "node_modules/datatables.net-buttons/js/buttons.html5.js",
+              "node_modules/datatables.net-buttons/js/buttons.print.js",
+              "node_modules/tinycolor2/dist/tinycolor-min.js",
+              "node_modules/hammerjs/hammer.min.js"
+            ],
+            "styles": [],
+            "assets": [
+              "ui-app/src/assets"
+            ]
+          },
+          "configurations": {
+            "ci": {
+              "karmaConfig": "ui-app/karma-ci.conf.js"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "ui-app/src/tsconfig.app.json",
+              "ui-app/src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ui-app",
+  "schematics": {
+    "@schematics/angular:component": {
+      "prefix": "ztt",
+      "style": "scss"
+    },
+    "@schematics/angular:directive": {
+      "prefix": "ztt"
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
+}

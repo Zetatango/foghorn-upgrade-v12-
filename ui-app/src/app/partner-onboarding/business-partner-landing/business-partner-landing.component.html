@@ -1,0 +1,76 @@
+<div id="business-partner-landing">
+  <div class="align-items-center d-flex intro-section px-3">
+    <div class="ztt-container">
+      <div class="row">
+        <div class="col-12 col-lg-8">
+          <h1 class="text-white"
+            [innerHtml]="'BUSINESS_PARTNER.LANDING.SLOGAN' | translate">
+          </h1>
+          <p class="text-white">
+              {{'BUSINESS_PARTNER.LANDING.LEAD' | translate}}
+          </p>
+          <button
+            class="btn btn-accent px-5 d-block mx-auto mx-md-0 mr-md-auto"
+            (click)="next()">
+            {{'BUSINESS_PARTNER.LANDING.SETUP' | translate}}
+          </button>
+        </div><!--.col-->
+      </div><!--.row-->
+    </div><!--.ztt-container-->
+  </div><!--.intro-section-->
+
+  <div class="dashboard-image">
+    <div class="ztt-container py-5">
+      <h2 class="text-center">{{'BUSINESS_PARTNER.LANDING.THREE_STEPS_HEADER' | translate}}</h2>
+      <hr class="divider" />
+
+      <div class="row">
+        <div class="col-12 col-md-8 col-lg-6">
+          <h3 class="step-image-1 text-accent">
+            {{'BUSINESS_PARTNER.LANDING.STEP_1' | translate}}
+          </h3>
+          <p class="mt-3 mb-5">
+            {{'BUSINESS_PARTNER.LANDING.STEP_1_TEXT' | translate}}
+          </p>
+
+          <h3 class="step-image-2 text-accent">
+            {{'BUSINESS_PARTNER.LANDING.STEP_2' | translate}}
+          </h3>
+          <p class="mt-3 mb-5">
+            {{'BUSINESS_PARTNER.LANDING.STEP_2_TEXT' | translate}}
+          </p>
+
+          <h3 class="step-image-3 text-accent">
+            {{'BUSINESS_PARTNER.LANDING.STEP_3' | translate}}
+          </h3>
+          <p class="mt-3">
+            {{'BUSINESS_PARTNER.LANDING.STEP_3_TEXT' | translate}}
+          </p>
+        </div><!--.col-->
+      </div><!--.row-->
+    </div><!--.ztt-container-->
+  </div><!--.dashboard-image-->
+
+  <div class="faq-section">
+    <div class="ztt-container py-5">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center">{{'BUSINESS_PARTNER.LANDING.FAQ_HEADER' | translate}}</h2>
+          <hr class="divider" />
+          <div class="row justify-content-between flex-wrap-reverse">
+            <div class="col-md-12 col-lg-5">
+              <h3 class="text-accent">{{'BUSINESS_PARTNER.LANDING.CONTACT_LEAD' | translate}}</h3>
+              <hr class="divider ml-0 mt-5 mb-3" />
+              <p>{{'BUSINESS_PARTNER.LANDING.CONTACT_US' | translate}}</p>
+              <a href="mailto: support@arioplatform.com">support@arioplatform.com</a>
+            </div>
+
+            <div class="col-md-12 col-lg-7 mb-5">
+              <!-- FAQ -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

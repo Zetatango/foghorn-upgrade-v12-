@@ -1,0 +1,36 @@
+<div class="card bg-transparent border-top-0 rounded-0 border-bottom-0 shadow-none d-flex">
+  <div class="wrapper text-left text-sm-center text-lg-left mx-auto"
+    *ngIf="(insightsService.operatingRatioData | async) as operatingRatioData">
+    <div class="d-flex" *ngIf="operatingRatioData.operatingRatio; else elseBlock">
+      <h1 class="financial-card-value font-weight-bold">
+        {{operatingRatioData.operatingRatio | percent}}
+      </h1>
+      <div *ngIf="operatingRatioData.operatingRatioChange!=0" class="custom-caret-up text-center rounded-circle text-white chevron
+         {{operatingRatioData.operatingRatioChange < 0 ? 'chevron-double-down': 'chevron-double-up'}}">
+        <fa-icon [icon]="operatingRatioData.operatingRatioChange < 0 ? operatingRatioDownIcon : operatingRatioUpIcon">
+        </fa-icon>
+      </div>
+    </div>
+    <ng-template #elseBlock>
+      <hr class="no-data-dash">
+    </ng-template>
+    <h6 class="financial-card-value-name mt-1 mb-2 text-uppercase">
+      {{'INSIGHTS.OPERATING_RATIO.OPERATING_RATIO_TEXT' | translate}}
+      <ng-template #tooltipTmpl>
+        <div [innerHtml]="'INSIGHTS.OPERATING_RATIO.DESCRIPTION' | translate"></div>
+      </ng-template>
+      <fa-icon [icon]="questionMark" class="question-mark-icon text-primary" [tooltip]="tooltipTmpl"
+        [tooltipAppendToBody]="true" containerClass="operating-ration-desc-tooltip"></fa-icon>
+    </h6>
+    <div class="d-flex">
+      <div class="cash-in">
+        <p class="mb-0 op-cash-value">{{operatingRatioData.credits |zttCurrency: translateService.currentLang}}</p>
+        <p class="financial-card-cash-description text-left mb-0">{{'INSIGHTS.OPERATING_RATIO.CASH_IN'| translate}}</p>
+      </div>
+      <div class="cash-out ml-4">
+        <p class="mb-0 op-cash-value">{{operatingRatioData.debits | zttCurrency: translateService.currentLang}}</p>
+        <p class="financial-card-cash-description mb-0">{{'INSIGHTS.OPERATING_RATIO.CASH_OUT'| translate}}</p>
+      </div>
+    </div>
+  </div>
+</div>

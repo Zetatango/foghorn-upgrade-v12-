@@ -1,0 +1,112 @@
+<% @title = t('merchants.title_welcome') %>
+
+<% if current_partner&.valid? %>
+  <div id="landing-header" class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-8 col-lg-7 offset-lg-1 d-flex align-items-center py-4 px-5 px-lg-3">
+        <div class="partner-logo"></div>
+      </div><!--.col-->
+
+      <div id="landing-header-right" class="col-12 col-md-4 col-lg-3 d-flex align-items-center justify-content-around justify-content-md-end py-3 px-5 px-lg-3">
+        <%= render_locale_toggle %>
+        <%= link_to "/auth/user?#{sign_in_query_params.to_query}",
+            class: 'btn btn-accent font-weight-bold text-white text-nowrap px-4 gtm-update',
+            id: 'link-sign-in-landing' do %>
+          <%= image_tag 'ario-logomark-white-no-lines.svg', height: '24', class: 'pr-2', alt: t('merchants.sign_in') %><%= t('merchants.sign_in') %>
+        <% end %>
+      </div><!--.col .d-flex-->
+    </div><!--.row-->
+  </div><!--.container-->
+<% end %>
+
+<div class="landing-hero-container">
+  <div class="container-fluid landing-hero d-flex flex-column py-5 justify-content-around">
+    <div class="col-12 col-lg-5 offset-lg-1 text-center text-md-left">
+      <h1 class="mb-3"><%= t('merchants.main_title_html') %></h1>
+
+      <p class="lead"><%= t('merchants.main_description_html') %></p>
+
+      <%= link_to(t('merchants.get_started'), roadrunner_url('/users/sign_up', sign_up_query_params),
+          class: "btn btn-accent font-weight-bold text-white btn-lg my-3 px-5 shadow gtm-update",
+          id: 'link-sign-up-landing-1',
+          disabled: !current_partner&.valid?) %>
+    </div><!--.col-->
+  </div><!--.container-->
+</div><!--.landing-hero-container-->
+
+<div id="landing-hero-container-2" class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-lg-4 offset-lg-2 d-flex flex-column align-items-center justify-content-center mt-5 mb-0 mb-lg-5">
+      <h1 class="mb-3"><%= t('merchants.financing_title') %></h1>
+
+      <ul class="lead">
+        <li><%= t('merchants.financing_bullet_1') %></li>
+        <li><%= t('merchants.financing_bullet_2') %></li>
+        <li><%= t('merchants.financing_bullet_3') %></li>
+        <li><%= t('merchants.financing_bullet_4') %></li>
+      </ul>
+
+      <%= link_to(t('merchants.apply_now'), roadrunner_url('/users/sign_up', sign_up_query_params),
+          class: "btn btn-accent font-weight-bold text-white btn-lg my-3 px-5 shadow gtm-update",
+          id: 'link-sign-up-landing-2', disabled: !current_partner&.valid?) %>
+    </div><!--.col-->
+
+    <div class="col-12 col-lg-4 text-center">
+        <%= image_tag t('merchants.mobile_svg'),
+            class: 'img-responsive', id: 'mobile-phone',
+            height: '555', width: '320' %>
+    </div><!--.col-->
+  </div><!--.row-->
+</div><!--.container #landing-hero-container-2-->
+
+<div id="landing-hero-container-3" class="container-fluid">
+  <div class="row">
+    <div id="invfin-card" class="col-12 col-lg-6 d-flex flex-column align-items-center justify-content-center p-4 p-lg-5">
+      <h1 class="mb-5 mx-5"><%= t('merchants.pay_later_title') %></h1>
+
+      <p class="lead mx-5"><%= t('merchants.pay_later_description') %></p>
+    </div><!--.col-->
+
+    <div id="wca-card" class="col-12 col-lg-6 d-flex flex-column align-items-center justify-content-center p-4 p-lg-5">
+      <h1 class="mb-5 mx-5"><%= t('merchants.cash_now_title') %></h1>
+
+      <p class="lead mx-5"><%= t('merchants.cash_now_description') %></p>
+    </div><!--.col-->
+  </div><!--.row-->
+</div><!--.container #landing-hero-container-3-->
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-12 col-lg-6 text-center text-lg-right my-4 my-lg-0">
+      <h1><%= t('merchants.get_started_today') %></h1>
+    </div><!--.col-->
+
+    <div class="col-12 col-lg-6 text-center text-lg-left">
+      <%= link_to(t('merchants.apply_now'), roadrunner_url('/users/sign_up', sign_up_query_params),
+          class: "btn btn-accent font-weight-bold text-white btn-lg px-5 shadow gtm-update",
+          id: 'link-sign-up-landing-3', disabled: !current_partner&.valid?) %>
+    </div><!--.col-->
+  </div><!--.row-->
+</div><!--.container #landing-hero-container-4-->
+
+<div id="landing-footer" class="container-fluid py-3">
+ <div class="row">
+    <div class="col-12 col-lg-7 d-flex flex-column justify-content-start text-center text-lg-left offset-lg-1 my-4">
+      <div>
+        <p>
+          <%= t('merchants.footer_text_1') unless ario? %>
+          <%= t('merchants.footer_text_2') %>
+          <br /><br />
+          <%= t('merchants.footer_text_3_html') %>
+        </p>
+      </div>
+      <div class="mt-auto">
+        <a href="https://www.arioplatform.com/privacy-policy"><%= t('merchants.privacy_policy') %></a>
+      </div>
+    </div><!--.col-->
+
+    <div class="col-12 col-lg-3 text-center my-4">
+      <%= link_to image_tag('ario-horizontal.svg', height: '64', class: 'my-3'), '//www.arioplatform.com' %>
+    </div><!--.col-->
+ </div><!--.row-->
+</div><!--.container-->

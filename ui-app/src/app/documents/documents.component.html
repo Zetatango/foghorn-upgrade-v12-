@@ -1,0 +1,35 @@
+<div class="ztt-container">
+  <alert *ngIf="showSuccessMessage" type="success" [dismissible]="true" class="col-12 col-lg-8 order-last my-3">
+    {{ ( filesUploaded > 1 ? 'DOCUMENTS.SUCCESS_MULTIPLE' : 'DOCUMENTS.SUCCESS_SINGLE' ) | translate }}
+  </alert>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card" data-ng-id="documents-uploader">
+        <div class="card-body">
+          <router-outlet></router-outlet>
+
+          <!-- Upload Box -->
+          <div class="form-horizontal">
+            <ztt-upload-box
+              [documentTypes]="documentTypes"
+              [isUserSubmitting]="submittingDocs"
+              [options]="uploaderOptions"
+              (statusChanged)="onStatusChange($event)">
+            </ztt-upload-box>
+
+            <!-- Upload Submit -->
+            <div *ngIf="filesQueued" class="ztt-card-button-holder justify-content-end">
+              <button class="btn btn-accent " id="upload-submit-btn" (click)="onSubmit()"
+                      [disabled]="disableSubmit"
+                      [innerHtml]="(submittingDocs ? 'WORKING' : 'UPLOAD.SUBMIT') | translate">
+              </button>
+            </div><!--.ztt-card-button-holder-->
+          </div><!--.form-horizontal-->
+
+          <ztt-uploaded-documents *ngIf="showMerchantDocuments" [documentTypes]="documentTypes"></ztt-uploaded-documents>
+        </div><!--.card-body-->
+      </div><!--.card-->
+    </div><!--.col-->
+  </div><!--.row-->
+</div><!--.ztt-container-->

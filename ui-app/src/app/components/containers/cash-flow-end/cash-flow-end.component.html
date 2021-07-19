@@ -1,0 +1,20 @@
+<div class="ztt-container" id="ztt-cash-flow-end">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ 'CASH_FLOW.INCREASE_LIMIT.CARD_FINISHED_HEADER' | translate }}</h5>
+          <p class="card-text" [innerHTML]="'CASH_FLOW.INCREASE_LIMIT.CARD_FINISHED_BODY' | translate"></p>
+
+          <div class="ztt-card-button-holder justify-content-center">
+            <button class="btn btn-accent"
+                    [routerLink]="dashboardLink"
+                    [disabled]="false"
+                    [innerHTML]=" 'COMMON.BTN.DASHBOARD' | translate">
+            </button>
+          </div><!--.ztt-card-button-holder-->
+        </div><!--.card-body-->
+      </div><!--.card-->
+    </div><!--.col-->
+  </div><!--.row-->
+</div><!--#ztt-cash-flow-end-->

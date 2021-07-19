@@ -1,0 +1,32 @@
+<ztt-application-progress
+  [subtext]="'APPLICATION_PROGRESS.NOT_CERTIFIED_TITLE' | translate"
+  [step]="step"
+  [stepLabels]="{
+    first: 'APPLICATION_PROGRESS.NEW_BUSINESS_LABEL' | translate,
+    second: 'APPLICATION_PROGRESS.ABOUT_YOU' | translate,
+    third: 'APPLICATION_PROGRESS.VERIFY_YOURSELF' | translate,
+    fourth: 'APPLICATION_PROGRESS.GET_CERTIFIED' | translate }">
+</ztt-application-progress>
+
+<div class="ztt-container" id="no-lending-offers">
+  <div class="row">
+    <div class="col-12 col-lg-10 offset-lg-1">
+      <div class="card">
+        <div class="dialogue-icon"><i class="fas fa-exclamation-circle text-warning"></i></div>
+        <div class="card-body text-center">
+            <h5 class="card-title">
+              {{'NO_OFFERS.CARD_TITLE' | translate}}
+            </h5>
+
+            <p class="card-text text-muted mb-3">
+              {{'NO_OFFERS.CARD_BODY' | translate}}
+            </p>
+        </div><!--.card-body -->
+      </div><!--.card -->
+    </div><!--.col-12-->
+  </div><!--.row-->
+</div><!--.no-lending-offers -->
+
+<ng-template>
+  {{ 'APPLICATION_PROGRESS.NOT_CERTIFIED_TITLE' | translate }}
+</ng-template>

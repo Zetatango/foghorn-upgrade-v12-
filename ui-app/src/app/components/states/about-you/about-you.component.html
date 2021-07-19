@@ -1,0 +1,156 @@
+<ztt-application-progress
+  [subtext]="'APPLICATION_PROGRESS.ON_BOARDING_SUBTEXT' | translate"
+  [step]="step"
+  [stepLabels]="{
+    first: 'APPLICATION_PROGRESS.NEW_BUSINESS_LABEL' | translate,
+    second: 'APPLICATION_PROGRESS.ABOUT_YOU' | translate,
+    third: 'APPLICATION_PROGRESS.VERIFY_YOURSELF' | translate,
+    fourth: 'APPLICATION_PROGRESS.GET_CERTIFIED' | translate}">'
+</ztt-application-progress>
+
+<div class="ztt-container" id="ztt-about-you">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <form class="form-horizontal ztt-borderless-inputs col-12 col-md-8 col-lg-6" id="about-you-form" name="about-you-form" [formGroup]="applicantFormGroup" [zttGtmFormEvent]>
+            <h2 class="h6 text-uppercase font-weight-bold mt-3">{{'ABOUT_YOU.OWNER' | translate}}</h2>
+
+            <div class="row">
+              <!-- FIRST NAME -->
+              <div class="form-group col-12 col-sm-6">
+                <label class="control-label" for="first-name">{{'ABOUT_YOU.FIRST_NAME' | translate}}</label>
+                <input id="first-name" name="first-name" type="text" class="form-control"
+                       formControlName="first_name"
+                       [class.is-invalid]="applicantFormGroup.controls['first_name'].touched && applicantFormGroup.controls['first_name'].invalid"
+                       zttExcludeEmoji
+                       zttTrimWhitespace>
+                <div class="invalid-feedback">{{'ABOUT_YOU.ENTER_NAME' | translate}}</div>
+              </div><!--.col-->
+
+              <!-- LAST NAME -->
+              <div class="form-group col-12 col-sm-6">
+                <label class="control-label" for="last-name">{{'ABOUT_YOU.LAST_NAME' | translate}}</label>
+                <input id="last-name" name="last-name" type="text" class="form-control"
+                       formControlName="last_name"
+                       [class.is-invalid]="applicantFormGroup.controls['last_name'].touched && applicantFormGroup.controls['last_name'].invalid"
+                       zttExcludeEmoji
+                       zttTrimWhitespace>
+                <div class="invalid-feedback">{{'ABOUT_YOU.ENTER_LAST_NAME' | translate}}</div>
+              </div><!--.col-->
+            </div><!--.row -->
+
+            <div class="row">
+              <!-- DATE OF BIRTH -->
+              <div class="form-group col-12 col-sm-6">
+                <label class="control-label" for="birth-date">{{'ABOUT_YOU.DATE_BIRTH' | translate}}</label>
+                <ztt-date-picker
+                  id="birth-date"
+                  name="birth-date"
+                  formControlName="date_of_birth"
+                  [class.is-invalid]="applicantFormGroup.controls['date_of_birth'].touched && applicantFormGroup.controls['date_of_birth'].invalid">
+                </ztt-date-picker>
+                <div class="invalid-feedback">{{'ABOUT_YOU.ENTER_DATE_BIRTH' | translate}}</div>
+              </div><!--.col-->
+            </div>
+            <div class="row">
+              <!-- OWNER SINCE -->
+              <div class="form-group col-12 col-sm-6">
+                <label class="control-label" for="owner-date">{{'ABOUT_YOU.OWNER_SINCE' | translate}}</label>
+                <ztt-date-picker
+                  id="owner-date"
+                  name="owner-date"
+                  formControlName="owner_since"
+                  [class.is-invalid]="applicantFormGroup.controls['owner_since'].touched && applicantFormGroup.controls['owner_since'].invalid">
+                </ztt-date-picker>
+                <div class="invalid-feedback">{{'ABOUT_YOU.ENTER_VALID_DATE' | translate}}</div>
+              </div><!--.col-->
+            </div><!--.row -->
+
+            <h2 class="h6 text-uppercase font-weight-bold mt-3">{{ 'ABOUT_YOU.ADDRESS_TITLE' | translate }}</h2>
+
+            <div class="row">
+              <div class="col-12">
+                <ztt-address-form>
+                  <!-- MOBILE NUMBER -->
+                  <div class="form-group col-12 col-sm-6">
+                    <label class="control-label" for="phone">{{'ABOUT_YOU.NUMBER' | translate}}</label>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="text"
+                      class="form-control"
+                      [imask]="phoneMaskConfig"
+                      formControlName="phone_number"
+                      [class.is-invalid]="applicantFormGroup.controls['phone_number'].touched && applicantFormGroup.controls['phone_number'].invalid"
+                      placeholder="(###) ###-####">
+                    <div class="invalid-feedback">{{'ABOUT_YOU.ENTER_NUMBER' | translate}}</div>
+                  </div><!--.col-->
+                </ztt-address-form>
+              </div><!--.col-12-->
+            </div><!--.row-->
+
+            <div class="ztt-card-button-holder">
+              <button class="btn btn-accent ml-auto px-5"
+                      id="about-you-next-btn"
+                      (click)="next($event)"
+                      [disabled]="isSubmittingApplicant || isButtonDisabled"
+                      [innerHTML]="(isSubmittingApplicant ? 'WORKING' : 'COMMON.BTN.NEXT') | translate">
+              </button>
+            </div><!--.ztt-card-button-holder-->
+          </form><!--#about-you-form-->
+        </div><!--.card-body -->
+      </div><!--.card -->
+
+      <!-- ABOUT: BODY FOOTER TEXT -->
+      <p class="text-muted text-center small mt-5"
+         [innerHTML]="'ABOUT_YOU.BODY_FOOTER' | translate : { tou: 'LINKS.TERMS_OF_USE' | translate, pp: 'LINKS.PRIVACY_POLICY' | translate }">
+      </p>
+    </div><!--.col-->
+  </div><!--.row-->
+</div><!--.body-wrapper -->
+
+<!-- TODO: test this modal -->
+<ng-template #sinInputModal>
+  <div class="enter-sin-modal p-4" [formGroup]="sinForm">
+    <div class="text-left">
+      <h5>{{'ABOUT_YOU.ADDITIONAL_VERIFICATION' | translate}}</h5>
+      <p class="help-text"><small class="text-accent">{{'ABOUT_YOU.SORRY_TROUBLE' | translate}}</small></p>
+    </div>
+
+    <div class="sin-modal-body">
+      <div class="list-group">
+        <div class="flex-column align-items-start">
+          <div class="form-group">
+            <label class="control-label" for="sin-modal">{{'ABOUT_YOU.SOC_NUMBER' | translate}}</label>
+            <div>
+              <input
+                id="sin-modal"
+                name="sin-modal"
+                type="text"
+                class="form-control"
+                [class.is-invalid]="sinForm.controls['sin'].touched && sinForm.controls['sin'].invalid"
+                formControlName="sin"
+                [imask]="sinMaskConfig">
+              <div class="invalid-feedback">
+                {{'ABOUT_YOU.ENTER_SIN' | translate}}
+              </div>
+            </div>
+          </div><!--.form-group -->
+        </div><!--.flex-column -->
+      </div><!--.list-group -->
+    </div><!--.sin-modal-body -->
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modalRef.hide()">{{ 'COMMON.BTN.BACK' | translate }}</button>
+      <button type="submit" class="btn btn-accent" (click)="onSubmitSin($event)" [disabled]="isSubmittingApplicant" [innerHTML]="(isSubmittingApplicant ? 'WORKING' : 'COMMON.BTN.NEXT') | translate"></button>
+    </div>
+
+  </div><!--.enter-sin-modal -->
+</ng-template><!--#sinInputModal-->
+
+<!-- To prevent `npm run extract` from mistakenly removing dynamically displayed translations keys. -->
+<ng-template>
+  {{ 'APPLICATION_PROGRESS.ABOUT_YOU_TITLE' | translate }}
+</ng-template>
+

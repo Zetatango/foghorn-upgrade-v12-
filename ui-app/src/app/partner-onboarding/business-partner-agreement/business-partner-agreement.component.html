@@ -1,0 +1,62 @@
+<div class="ztt-container" id="ztt-business-partner-agreement" *ngIf="loaded">
+  <div class="row">
+    <div class="col-12 col-lg-8 offset-lg-2">
+      <!-- CARD: AGREEMENT -->
+      <div class="card">
+        <div class="dialogue-icon"><i class="fas fa-check-circle"></i></div>
+        <div class="card-body">
+          <h5 class="card-title">{{ 'LENDING_AGREEMENT.PAY_CONTRACT_TITLE' | translate }}</h5>
+          <hr>
+
+          <p *ngIf="businessPartnerApplication && !businessPartnerApplication.terms" class="card-text text-center">
+            {{ 'LENDING_AGREEMENT.NO_CONTRACT_AVAILABLE' | translate }}
+          </p><!--.text-center .my-5 -->
+
+          <ng-container *ngIf="businessPartnerApplication && businessPartnerApplication.terms">
+            <p class="card-text mb-5">{{'BUSINESS_PARTNER.CONTRACT_SIGN_ABOVE' | translate}}</p>
+
+            <div id="terms-frame">
+              <p class="card-text text-muted">
+                {{ 'LENDING_AGREEMENT.PAY_CONTRACT_SUBHEAD' | translate }}
+              </p>
+              <p class="card-text text-muted">
+                <markdown [data]="businessPartnerApplication && businessPartnerApplication.terms"></markdown>
+              </p>
+            </div><!--#TermsFrame-->
+
+            <ztt-print-pdf [text]="businessPartnerApplication.terms"
+                           [heading]="'TERMS_CONDITIONS.BUSINESS_PARTNER' | translate: { merchantName: merchantName() }"
+                           [fileName]="'Ario_Business_Partner_Agreement'">
+            </ztt-print-pdf>
+
+            <p class="card-text mt-5">{{'BUSINESS_PARTNER.CONTRACT_SIGN_BELOW' | translate}}</p>
+          </ng-container><!--*ngIf-->
+
+          <div class="ztt-card-button-holder">
+            <!-- Back -->
+            <button class="btn btn-light"
+                    (click)="back()">
+              {{ 'COMMON.BTN.BACK' | translate }}
+            </button>
+
+            <!-- Sign -->
+            <div *ngIf="businessPartnerApplication && businessPartnerApplication.terms" class="btn-group ml-auto" role="group">
+              <button type="button"
+                      class="btn ztt-btn-group-icon"
+                      (click)="signBusinessPartnerAgreement()"
+                      [disabled]="signingAgreement || acceptingAgreement || becomeBusinessPartnerFailed">
+                <i class="fas fa-signature"></i>
+              </button>
+              <button class="btn btn-accent btn-block"
+                      id="agreement-sign-btn"
+                      (click)="signBusinessPartnerAgreement()"
+                      [disabled]="signingAgreement || acceptingAgreement || becomeBusinessPartnerFailed"
+                      [innerHTML]="(signingAgreement || acceptingAgreement ? 'WORKING' : 'LENDING_AGREEMENT.SIGN_BUTTON_LABEL') | translate">
+              </button>
+            </div><!--.btn-group-->
+          </div><!--.ztt-card-button-holder-->
+        </div><!--.card-body-->
+      </div><!--.card-->
+    </div><!--.col-->
+  </div><!--.row-->
+</div><!--.ztt-container-->

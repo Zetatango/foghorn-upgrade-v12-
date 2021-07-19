@@ -1,0 +1,56 @@
+<div class="insights-email-toggle card">
+  <div class="card-body">
+    <h5 class="card-title text-accent font-weight-bold mb-4">{{ 'INSIGHTS.EMAIL_TOGGLE.TITLE' | translate }}</h5>
+    <div class="row">
+      <div class="col-md-4 d-none d-md-flex align-items-center justify-content-center">
+        <img class="p-0 w-100 align-middle insights-phone-image" src="/assets/insights-phone.svg" id="insights-phone-image" alt="mobile insights">
+      </div><!--.col-->
+      <div class="col-md-8">
+        <p class="card-text mb-4">{{ 'INSIGHTS.EMAIL_TOGGLE.DESCRIPTION' | translate }}</p>
+        <p class="card-text mb-1">{{ 'INSIGHTS.EMAIL_TOGGLE.COMPLETE_WITH' | translate }}</p>
+        <ul class="mb-4 fa-ul">
+          <li>
+            <span class="fa-li text-secondary"><fa-icon [icon]="['fas','badge-check']"></fa-icon></span>
+            {{ 'INSIGHTS.EMAIL_TOGGLE.BULLET_POINT_1' | translate }}
+          </li>
+          <li>
+            <span class="fa-li text-secondary"><fa-icon [icon]="['fas','badge-check']"></fa-icon></span>
+            {{ 'INSIGHTS.EMAIL_TOGGLE.BULLET_POINT_2' | translate }}
+          </li>
+          <li>
+            <span class="fa-li text-secondary"><fa-icon [icon]="['fas','badge-check']"></fa-icon></span>
+            {{ 'INSIGHTS.EMAIL_TOGGLE.BULLET_POINT_3' | translate }}
+          </li>
+        </ul>
+        <form class="form-row d-flex flex-column" [formGroup]="insightsPreferenceForm" (ngSubmit)="savePreference()">
+          <div class="col d-flex flex-row mb-1">
+            <b class="mr-4">{{ 'INSIGHTS.EMAIL_TOGGLE.OPT_IN' | translate }}</b>
+            <div class="custom-control custom-switch">
+              <input
+                class="custom-control-input insights-toggle"
+                id="insights-opt-in"
+                type="checkbox"
+                formControlName="isOptedIn"
+              />
+              <label class="custom-control-label" for="insights-opt-in"></label>
+            </div>
+          </div><!--.col-->
+          <div class="col mb-2">
+            <!-- FEEDBACK -->
+            <div class="text-success small" *ngIf="success">{{ 'INSIGHTS.EMAIL_TOGGLE.SUCCESS' | translate }}</div>
+            <div class="text-danger small" *ngIf="error">{{ 'INSIGHTS.EMAIL_TOGGLE.ERROR' | translate }}</div>
+          </div><!--.col-->
+          <div class="col d-flex flex-row justify-content-end align-items-center">
+            <button
+              type="submit"
+              class="btn btn-accent"
+              [disabled]="insightsPreferenceForm.disabled"
+            >
+              {{ 'INSIGHTS.EMAIL_TOGGLE.NEXT' | translate }}
+            </button>
+          </div><!--.col-->
+        </form>
+      </div><!--.col-->
+    </div><!--.row-->
+  </div><!--.card-body-->
+</div><!--.card-->

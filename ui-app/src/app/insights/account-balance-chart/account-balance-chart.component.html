@@ -1,0 +1,45 @@
+<div class="chart-container">
+  <div class="account-balance-chart mb-3">
+    <ngx-charts-line-chart 
+      [results]="accountBalanceData" 
+      [xAxis]="xAxis" [yAxis]="yAxis" 
+      [curve]="curve"
+      [roundDomains]="roundDomains" 
+      [rotateXAxisTicks]="rotateXAxisTicks" 
+      [referenceLines]="refLines"
+      [showRefLines]="true" 
+      [yAxisTickFormatting]="formatYAxisTick" 
+      [xAxisTickFormatting]="formatXAxisTick"
+      [customColors]="customColors"
+      [autoScale]="true" #chart>
+      <ng-template #tooltipTemplate let-model="model">
+        <div>
+          {{model.name | date: 'MMMM d, y' : undefined : translateService.currentLang}}
+        </div>
+        <div>
+          {{model.series | translate}} : {{model.value| zttCurrency: translateService.currentLang}}
+        </div>
+      </ng-template>
+      <ng-template #seriesTooltipTemplate let-model="model">
+        <div>
+          {{model[0]?.series | translate}} : {{model[0]?.value | zttCurrency: translateService.currentLang}}
+        </div>
+      </ng-template>
+    </ngx-charts-line-chart>
+  </div>
+</div>
+<div class="legends-container d-flex justify-content-end pr-md-3">
+  <div class="legend d-flex justify-content-end mb-2">
+    <span class="threshold-line legend-line align-self-center mx-1"></span>
+    <span class="threshold-text legend-text align-self-center"> {{'INSIGHTS.ACCOUNT_BALANCE_CHART.MIN_RESERVES' |
+      translate}}</span>
+  </div>
+  <div class="legend d-flex mb-2 justify-content-end">
+    <span class="legend-line align-self-center actual-line mx-1"></span>
+    <span class="legend-text align-self-center"> {{'INSIGHTS.ACCOUNT_BALANCE_CHART.ACTUAL' | translate}}</span>
+  </div>
+  <div class="legend d-flex mb-2 justify-content-end">
+    <span class="legend-line align-self-center forecast-line mx-1"></span>
+    <span class="legend-text align-self-center"> {{'INSIGHTS.ACCOUNT_BALANCE_CHART.FORECAST' | translate}}</span>
+  </div>
+</div>

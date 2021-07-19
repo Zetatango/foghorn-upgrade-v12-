@@ -1,0 +1,105 @@
+<div class="modal-header border-bottom">
+  <h5 class="ellipsis">
+    {{ 'INVOICE.TITLE' | translate: {payor: invoicePayor, email: invoiceEmail} }}</h5>
+  <button type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+          (click)="hideModal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+  <form class="form-horizontal ztt-borderless-inputs" id="invoice-form" [formGroup]="invoiceFormGroup">
+
+    <!-- Invoice form -->
+    <div class="row align-items-center">
+      <div class="form-group col-12 col-md-4">
+        <label class="small" for="invInvoiceNumber">{{ 'INVOICE.NUMBER_LABEL' | translate }}</label>
+        <input class="form-control"
+               id="invInvoiceNumber"
+               name="invInvoiceNumber"
+               type="text"
+               formControlName="invInvoiceNumber"
+               maxlength="32"
+               pattern="[\w\-\.]*"
+               required
+               [class.is-invalid]="invoiceFormGroup.controls['invInvoiceNumber'].touched && invoiceFormGroup.controls['invInvoiceNumber'].invalid">
+        <div class="invalid-feedback" *ngIf="invoiceFormGroup.controls['invInvoiceNumber'].hasError('required')">{{ 'INVOICE.INVOICE_NUMBER_REQUIRED' | translate }}</div>
+        <div class="invalid-feedback" *ngIf="invoiceFormGroup.controls['invInvoiceNumber'].hasError('pattern')">{{ 'INVOICE.INVOICE_NUMBER_PATTERN' | translate }}</div>
+      </div><!--.col-->
+
+      <div class="form-group col-12 col-md-4">
+        <label class="small" for="invAccountNumber">{{ 'INVOICE.ACCOUNT_NUMBER_LABEL' | translate }}</label>
+        <input class="form-control"
+               id="invAccountNumber"
+               name="invAccountNumber"
+               type="text"
+               formControlName="invAccountNumber"
+               maxlength="32"
+               pattern="[\w\-\.]*"
+               [class.is-invalid]="invoiceFormGroup.controls['invAccountNumber'].touched && invoiceFormGroup.controls['invAccountNumber'].invalid">
+        <div class="invalid-feedback" *ngIf="invoiceFormGroup.controls['invAccountNumber'].hasError('required')">{{ 'INVOICE.ACCOUNT_NUMBER_REQUIRED' | translate }}</div>
+        <div class="invalid-feedback" *ngIf="invoiceFormGroup.controls['invAccountNumber'].hasError('pattern')">{{ 'INVOICE.ACCOUNT_NUMBER_PATTERN' | translate }}</div>
+      </div><!--.col-->
+
+      <div class="form-group col-12 col-md-4">
+        <label class="small" for="invAmount">{{ 'INVOICE.AMOUNT_LABEL' | translate }}</label>
+        <input class="form-control"
+               id="invAmount"
+               name="invAmount"
+               type="text"
+               formControlName="invAmount"
+               maxlength="16"
+               [cleave]="currencyCleaveConfig"
+               required
+               pattern="[1-9]\d*\.*\d{0,2}"
+               [class.is-invalid]="invoiceFormGroup.controls['invAmount'].touched && invoiceFormGroup.controls['invAmount'].invalid">
+        <div class="invalid-feedback" *ngIf="invoiceFormGroup.controls['invAmount'].hasError('required')">{{ 'INVOICE.AMOUNT_REQUIRED' | translate }}</div>
+        <div class="invalid-feedback" *ngIf="invoiceFormGroup.controls['invAmount'].hasError('pattern')">{{ 'INVOICE.AMOUNT_PATTERN' | translate }}</div>
+      </div><!--.col-->
+
+      <div class="form-group col-12 col-md-4">
+        <label class="small" for="invAmount">{{ 'INVOICE.DUE_DATE_LABEL' | translate }}*</label>
+        <input type="text"
+               id="invDueDate"
+               name="invDueDate"
+               formControlName="invDueDate"
+               placeholder="DD/MM/YYYY"
+               class="form-control"
+               bsDatepicker
+               [bsValue]="dateValue"
+               [bsConfig]="{ isAnimated: true, showWeekNumbers: false, dateInputFormat: 'DD/MM/YYYY' }"
+               required
+               [class.is-invalid]="invoiceFormGroup.controls['invDueDate'].touched && invoiceFormGroup.controls['invDueDate'].invalid">
+        <div class="invalid-feedback" *ngIf="invoiceFormGroup.controls['invDueDate'].hasError('required')">{{ 'INVOICE.DUE_DATE_REQUIRED' | translate }}</div>
+      </div><!-- col -->
+    </div><!-- row -->
+
+    <!-- File upload dropzone -->
+    <p class="mb-0 font-weight-bold">{{ 'INVOICE.UPLOAD.DESCRIPTION' | translate }}</p>
+    <ztt-upload-box [isUserSubmitting]="isSubmittingDocs()"
+                    [options]="uploaderOptions"
+                    (statusChanged)="onStatusChange($event)">
+    </ztt-upload-box>
+    <div class="row">
+      <div class="col">
+        <div class="btn-group float-right mt-md-0 mt-3" role="group">
+          <!-- TODO: [Grahan] move on click to button holder -->
+          <button type="button"
+                  class="btn ztt-btn-group-icon"
+                  (click)="onSubmit()"
+                  [disabled]="invoiceFormGroup.invalid || isSubmitDisabled()">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+          <button class="btn btn-block btn-accent text-uppercase"
+                  (click)="onSubmit()"
+                  [disabled]="invoiceFormGroup.invalid || isSubmitDisabled()"
+                  [innerHtml]="(isSubmittingDocs() ? 'WORKING_SHORT' : 'INVOICE.ACTION_SEND') | translate">
+          </button>
+        </div><!--.btn-group-->
+      </div><!--.col-->
+    </div><!-- row -->
+  </form>
+</div><!--.row-->

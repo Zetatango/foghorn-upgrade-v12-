@@ -1,0 +1,45 @@
+<% @title = t('merchants.title_account_info') %>
+
+<div id="main">
+  <div class="ztt-container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="card">
+          <div class="card-body text-center">
+            <%= image_tag 'https://ario-logo-assets.s3.ca-central-1.amazonaws.com/tc-logo.png', height: '96' %>
+            <h5 class="card-title mb-5"><%= t('merchants.title_choose_profile') %></h5><!--.card-title-->
+
+            <div class="row">
+              <div class="d-flex col-12 col-lg-8 flex-column justify-content-center offset-lg-2">
+                  <% @profiles.each do |profile| %>
+                    <%= form_for :profile, url: accounts_path, html: { class: "form-horizontal mb-3", method: :post } do |f| %>
+                      <%= hidden_field_tag 'profile_uid', profile[:uid] %>
+
+                      <%= button_tag(type: 'submit', class:'align-items-center d-flex picker-element p-3 rounded text-left w-100', value: profile[:btn_value]) do %>
+                        <div class="picker-icon mr-4">
+                          <% if profile[:role] == 'merchant_add' %>
+                            <i class="fas fa-2x fa-user-plus text-accent"></i>
+                          <% elsif profile[:role] == 'partner_admin'  %>
+                            <i class="fas fa-2x fa-user-shield text-accent"></i>
+                          <% else %>
+                            <i class="fas fa-2x fa-user text-accent"></i>
+                          <% end %>
+                        </div><!-- .picker-icon -->
+
+                        <div class="flex-grow-1 picker-label">
+                          <h5 class="mb-0"><%= profile[:label_title] %></h5>
+                          <% if profile[:label_body].present? %>
+                            <p class="mt-2"><%= profile[:label_body] %></p>
+                          <% end %>
+                        </div>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+              </div><!--.profile-picker-->
+            </div><!-- .row -->
+          </div><!--.card-body-->
+        </div><!--.card-->
+      </div><!--.col-8 offset-2-->
+    </div><!--.row-->
+  </div><!--.ztt-container-->
+</div><!--#main-->

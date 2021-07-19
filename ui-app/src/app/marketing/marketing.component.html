@@ -1,0 +1,69 @@
+<div class="ztt-container">
+  <div *ngFor="let alert of alerts">
+    <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" (onClosed)="onClosed(alert)">{{ alert.msg | translate }}</alert>
+  </div>
+
+  <div *ngIf="scheduleMarketingCampaignEnabled" class="row mb-3">
+    <div class="col-12 offset-xl-2 col-xl-8">
+      <ztt-marketing-campaign></ztt-marketing-campaign>
+    </div><!--.col-->
+  </div><!--.row-->
+
+  <div class="row">
+    <div class="col-12 offset-xl-2 col-xl-8">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-accent font-weight-bold">{{ 'MARKETING.TITLE' | translate }}</h5>
+          <hr>
+          <p class="mb-0 font-weight-bold">{{ 'MARKETING.SUBTITLE' | translate }}</p>
+          <br>
+          <p class="mb-0">{{ 'MARKETING.STRATEGY' | translate }}</p>
+          <br>
+          <div>
+            <ul>
+              <li>{{ 'MARKETING.STRATEGY_BULLET_1' | translate }}</li>
+              <li>{{ 'MARKETING.STRATEGY_BULLET_2' | translate }}</li>
+              <li>{{ 'MARKETING.STRATEGY_BULLET_3' | translate }}</li>
+              <li>{{ 'MARKETING.STRATEGY_BULLET_4' | translate }}</li>
+            </ul>
+          </div>
+          <div class="col-md-6 offset-md-3 col-12">
+            <p class="mb-0 text-center">
+              <img src='/assets/marketing/marketing-dashboard.svg' class="w-100" />
+            </p>
+          </div><!--.col-md-6-->
+          <br>
+          <p class="mb-0">{{ 'MARKETING.SHOWCASING' | translate }}</p>
+          <br>
+          <p class="mb-0">{{ 'MARKETING.GET_STARTED' | translate }}</p>
+
+          <div class="align-items-stretch align-items-md-center ztt-card-button-holder flex-column flex-md-row">
+            <!-- Blog -->
+            <a (click)="GTMUpdate($event)"
+               class="btn btn-accent text-light mb-3 mb-md-0"
+               role="button"
+               href="{{ marketingSampleBlogUrl }}"
+               rel="noopener"
+               target="_blank"
+            >
+              {{ 'MARKETING.BLOG_LINK' | translate }}
+            </a>
+
+            <!-- Schedule -->
+            <button class="btn btn-accent ml-md-auto"
+                    (click)="schedulePartnerMarketingWithCalendly()"
+                    [disabled]="requestMeetingDisabled"
+                    [innerHtml]="'MARKETING.SCHEDULE_MEETING' | translate">
+            </button>
+          </div><!--.ztt-card-button-holder-->
+
+          <p class="card-text text-muted small mb-0 mt-3"
+             *ngIf="businessPartnerProfile?.ario_marketing_requested_at">
+            {{ 'MARKETING.SCHEDULE_MEETING_COMPLETED' | translate: { 'completed_at': businessPartnerProfile.ario_marketing_requested_at | localizeDate: translateService.currentLang } }}
+          </p>
+        </div><!--.card-body-->
+      </div><!--.card-->
+    </div><!--.col-12-->
+  </div><!--.row-->
+
+</div><!--.ztt-container-->

@@ -1,0 +1,114 @@
+<ng-container>
+  <ztt-dashboard-data-list 
+    id="ztt-business-partner-sent-invoices-v2"
+    [config]="configType" 
+    [isSearchEnabled]="true"
+    [primaryTemplate]="primaryTemplate"
+    [secondaryTemplate]="secondaryTemplate">
+  </ztt-dashboard-data-list>
+  <ng-template #primaryTemplate let-invoice="item">
+    <div class="list-column">
+      <p class="font-weight-bold">
+        {{ invoice?.receiver_entity?.name }}
+      </p>
+      <span class="status" [ngClass]="{'positive-status': isPaid(invoice), 'default-status': isSentAndNotPaid(invoice)}">
+        {{ getInvoiceStatus(invoice) | translate }}
+      </span>
+    </div><!--.list-column-->
+    <div class="list-column">
+      <div class="list-row">
+        <p>
+          {{ 'PARTNER_DASHBOARD.INVOICING.INVOICE_NUMBER' | translate }}{{ invoice?.invoice_number }}
+        </p>
+      </div><!--.list-row-->
+      <div class="list-row">
+        <p>
+          {{ 'PARTNER_DASHBOARD.INVOICING.AMOUNT' | translate }}
+          {{ invoice?.amount | zttCurrency : getCurrentLang() }}
+        </p>
+      </div><!--.list-row-->
+    </div><!--.list-column-->
+  </ng-template>
+
+  <ng-template #secondaryTemplate let-invoice="item">
+    <div class="list-row expanded">
+      <p>
+        {{ 'PARTNER_DASHBOARD.INVOICING.SENT_TO' | translate }}
+        <i class="fas fa-info-circle text-muted px-1"
+          [tooltip]="'PARTNER_DASHBOARD.INVOICING.INVITED' | translate : { email : invoice?.receiver_entity?.email }"
+          placement="bottom" containerClass="tooltip long-tooltip" *ngIf="hasDifferentEmails(invoice)">
+        </i>
+      </p>
+      <p>
+        {{ invoice?.sent_to }}
+      </p>
+    </div><!--.list-row-->
+    <div class="list-row expanded">
+      <p>
+        {{ 'PARTNER_DASHBOARD.INVOICING.ACCOUNT_NUMBER' | translate }}
+      </p>
+      <p>
+        {{ invoice?.account_number }}
+      </p>
+    </div><!--.list-row-->
+    <div class="list-row expanded">
+      <p>
+        {{ 'PARTNER_DASHBOARD.INVOICING.DUE_DATE' | translate }}
+      </p>
+      <p *ngIf="invoice?.due_date">
+        {{ invoice?.due_date | localizeDate: getCurrentLang(): null: 'UTC' }}
+      </p>
+      <p *ngIf="!invoice?.due_date">
+        {{ 'COMMON.NOT_AVAILABLE' | translate }}
+      </p>
+    </div><!--.list-row-->
+    <div class="list-row expanded">
+      <p>
+        {{ 'PARTNER_DASHBOARD.INVOICING.STATUS' | translate }}
+      </p>
+      <p>
+        {{ getInvoiceStatus(invoice) | translate }}
+      </p>
+    </div><!--.list-row-->
+    <div class="list-row expanded">
+      <p>
+        {{ 'PARTNER_DASHBOARD.INVOICING.AMOUNT_PAID' | translate }}
+      </p>
+      <p>
+        {{ invoice?.amount_paid | zttCurrency : getCurrentLang() }}
+      </p>
+    </div><!--.list-row-->
+    <div class="list-row expanded">
+      <p>
+        {{ 'PARTNER_DASHBOARD.INVOICING.LAST_ACTIVITY' | translate }}
+      </p>
+      <p *ngIf="invoice.last_event_at">
+        {{ 'PARTNER_DASHBOARD.INVOICING.LAST_ACTIVITY_WITH_DATE' | translate: 
+            { activity: ( getInvoiceLastEvent(invoice.last_event) | translate ), date: ( invoice.last_event_at | localizeDate: getCurrentLang(): null: 'UTC' ) } }}
+      </p>
+      <p *ngIf="!invoice.last_event_at">
+        {{ getInvoiceLastEvent(invoice.last_event) | translate }}
+      </p>
+    </div><!--.list-row-->
+    <div class="list-row expanded" *ngIf="getInvoiceSource(invoice)">
+      <p>
+        {{ 'PARTNER_DASHBOARD.INVOICING.SOURCE' | translate }}
+      </p>
+      <p>
+        {{ getInvoiceSource(invoice) | translate }}
+      </p>
+    </div><!--.list-row-->
+    <div class="list-row expanded justify-content-end">
+      <button class="btn btn-accent" type="button" (click)="openInvoiceHistoryModal(invoice)">
+        {{ 'PARTNER_DASHBOARD.INVOICING.VIEW_HISTORY' | translate }}
+      </button>
+    </div><!--.list-row-->
+  </ng-template>
+</ng-container>
+
+<!-- Invoice history modal -->
+<ng-template #invoiceTrackedObjectModal>
+  <ztt-business-partner-invoice-history [trackedInvoice]="trackedInvoice"
+                                        (sendHideModalEvent)="hideModal()">
+  </ztt-business-partner-invoice-history>
+</ng-template>

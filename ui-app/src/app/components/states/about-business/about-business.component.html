@@ -1,0 +1,316 @@
+<ztt-application-progress
+  [subtext]="'APPLICATION_PROGRESS.ON_BOARDING_SUBTEXT' | translate"
+  [step]="step"
+  [stepLabels]="{
+    first: 'APPLICATION_PROGRESS.NEW_BUSINESS_LABEL' | translate,
+    second: 'APPLICATION_PROGRESS.ABOUT_YOU' | translate,
+    third: 'APPLICATION_PROGRESS.VERIFY_YOURSELF' | translate,
+    fourth: 'APPLICATION_PROGRESS.GET_CERTIFIED' | translate }">
+</ztt-application-progress>
+
+<div class="ztt-container" id="ztt-about-business">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <form class="form-horizontal ztt-borderless-inputs col-12 col-md-8 col-lg-6" id="about-business-form" name="about-business-form" [formGroup]="aboutBusinessFormGroup" [zttGtmFormEvent]>
+            <h2 class="h6 text-uppercase font-weight-bold mt-3">{{ 'NEW_BUSINESS.FORMS.BUSINESS.TITLE' | translate }}</h2>
+            <div class="row">
+              <div class="form-group col-12">
+                <label for="business-name">{{ 'NEW_BUSINESS.FORMS.BUSINESS.NAME.LABEL' | translate }}</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="business-name"
+                  formControlName="name"
+                  [class.is-invalid]="isBusinessControlInvalid('name')"
+                  zttExcludeEmoji
+                  zttTrimWhitespace>
+                <div class="invalid-feedback">{{ 'NEW_BUSINESS.FORMS.BUSINESS.NAME.VALIDATION_ERRORS.REQUIRED' | translate }}</div>
+              </div><!--.col-->
+            </div><!--.row-->
+            <div class="row">
+              <!-- DBA -->
+              <div class="form-group col-12">
+                <label class="d-flex flex-wrap justify-content-between align-items-end" for="dba">
+                  {{ 'NEW_BUSINESS.FORMS.BUSINESS.DOING_BUSINESS_AS.LABEL' | translate }}
+
+                  <!-- Checkbox -->
+                  <span class="text-right text-mute small mb-0">
+                    <input class="mr-2" id="dba-checkbox" type="checkbox"
+                          (click)="onDoingBusinessCheckboxClicked()">
+                    <label class="mb-0" for="dba-checkbox">{{ 'NEW_BUSINESS.FORMS.BUSINESS.DOING_BUSINESS_AS.SAME_CHECKBOX' | translate }}</label>
+                  </span>
+                </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="dba"
+                    formControlName="doing_business_as"
+                    [class.is-invalid]="isBusinessControlInvalid('doing_business_as')"
+                    zttExcludeEmoji
+                    zttTrimWhitespace>
+                <div class="invalid-feedback">{{ 'NEW_BUSINESS.FORMS.BUSINESS.DOING_BUSINESS_AS.VALIDATION_ERRORS.REQUIRED' | translate}}</div>
+              </div><!--.col-->
+
+              <!-- INDUSTRY -->
+              <div class="form-group col-12">
+                  <label for="industry">{{ 'NEW_BUSINESS.FORMS.BUSINESS.INDUSTRY.LABEL' | translate }}</label>
+                  <select
+                    class="form-control"
+                    [class.is-invalid]="isBusinessControlInvalid('industry')"
+                    id="industry"
+                    formControlName="industry">
+                    <option value="null" disabled>{{ 'NEW_BUSINESS.FORMS.BUSINESS.INDUSTRY.SELECT_DEFAULT' | translate }}</option>
+                    <option *ngFor="let industryKey of industryKeys"
+                            [value]="industryKey">
+                      {{ 'INDUSTRIES.' + IndustryEnum[industryKey] | translate }}
+                    </option>
+                  </select>
+                  <div class="invalid-feedback">{{ 'NEW_BUSINESS.FORMS.BUSINESS.INDUSTRY.VALIDATION_ERRORS.REQUIRED' | translate }}</div>
+              </div><!--.col-->
+            </div><!--.row-->
+
+            <div *ngIf="isJurisdictionEnabled" class="row">
+              <!-- BUSINESS NUM -->
+              <div class="form-group col-12">
+                <label for="business-number" class="bn-label">{{ 'NEW_BUSINESS.FORMS.BUSINESS.BUSINESS_NUMBER.LABEL' | translate }}</label>
+                <button class="bn-hint"
+                        [tooltip]="'NEW_BUSINESS.FORMS.BUSINESS.BUSINESS_NUMBER.TOOLTIP' | translate"
+                        placement="top"
+                        container="body">
+                  <i class="fas fa-info-circle px-1"></i>
+                </button>
+                <input
+                  id="business-number"
+                  type="text"
+                  class="form-control"
+                  [class.is-invalid]="isBusinessControlInvalid('business_num') || businessNumberHasJurisdictionError()"
+                  formControlName="business_num"
+                  zttExcludeEmoji>
+                <div *ngIf="businessNumberHasInvalidAlphanumericCharacter()"
+                     class="invalid-feedback">{{ 'NEW_BUSINESS.FORMS.BUSINESS.BUSINESS_NUMBER.VALIDATION_ERRORS.INVALID_ALPHANUMERIC_CHARACTER' | translate }}
+                </div>
+                <div *ngIf="businessNumberHasInvalidNumericCharacter()"
+                     class="invalid-feedback">{{ 'NEW_BUSINESS.FORMS.BUSINESS.BUSINESS_NUMBER.VALIDATION_ERRORS.INVALID_NUMERIC_CHARACTER' | translate }}
+                </div>
+                <div *ngIf="businessNumberHasInvalidFederalCharacter()"
+                     class="invalid-feedback">{{ 'NEW_BUSINESS.FORMS.BUSINESS.BUSINESS_NUMBER.VALIDATION_ERRORS.INVALID_FEDERAL_CHARACTER' | translate }}
+                </div>
+                <div *ngIf="businessNumberHasInvalidAlphaStartCharacter()"
+                     class="invalid-feedback">{{ 'NEW_BUSINESS.FORMS.BUSINESS.BUSINESS_NUMBER.VALIDATION_ERRORS.INVALID_ALPHA_START_CHARACTER' | translate }}
+                </div>
+                <div *ngIf="businessNumberHasInvalidLength()"
+                     class="invalid-feedback">{{ 'NEW_BUSINESS.FORMS.BUSINESS.BUSINESS_NUMBER.VALIDATION_ERRORS.INVALID_LENGTH' | translate }}
+                </div>
+              </div><!--.col-->
+
+              <!-- JURISDICTION -->
+              <div class="form-group col-12">
+                <label for="jurisdiction">{{ 'NEW_BUSINESS.FORMS.BUSINESS.JURISDICTION.LABEL' | translate }}</label>
+                <select
+                  class="form-control"
+                  id="jurisdiction"
+                  [class.is-invalid]="aboutBusinessFormGroup.errors?.jurisdictionIncomplete"
+                  formControlName="incorporated_in">
+                  <!-- TODO [Val] Refactor this input to work off of Jurisdiction enum and clear only few ADDRESS_FORM relevant keys -->
+                  <option value="null">{{ 'ADDRESS_FORM.PROVINCE_SELECT_DEFAULT' | translate }}</option>
+                  <option value="CD">{{ 'ADDRESS_FORM.CANADA' | translate }}</option>
+                  <option value="AB">{{ 'ADDRESS_FORM.ALBERTA' | translate }}</option>
+                  <option value="BC">{{ 'ADDRESS_FORM.BRITISH_COLUMBIA' | translate }}</option>
+                  <option value="MB">{{ 'ADDRESS_FORM.MANITOBA' | translate }}</option>
+                  <option value="NB">{{ 'ADDRESS_FORM.NEW_BRUNSWICK' | translate }}</option>
+                  <option value="NL">{{ 'ADDRESS_FORM.NEWFOUNDLAND_AND_LABRADOR' | translate }}</option>
+                  <option value="NS">{{ 'ADDRESS_FORM.NOVA_SCOTIA' | translate }}</option>
+                  <option value="ON">{{ 'ADDRESS_FORM.ONTARIO' | translate }}</option>
+                  <option value="PE">{{ 'ADDRESS_FORM.PRINCE_EDWARD_ISLAND' | translate }}</option>
+                  <option value="QC">{{ 'ADDRESS_FORM.QUEBEC' | translate }}</option>
+                  <option value="SK">{{ 'ADDRESS_FORM.SASKATCHEWAN' | translate }}</option>
+                  <option value="NT">{{ 'ADDRESS_FORM.NORTHWEST_TERRITORIES' | translate }}</option>
+                  <option value="NU">{{ 'ADDRESS_FORM.NUNAVUT' | translate }}</option>
+                  <option value="YT">{{ 'ADDRESS_FORM.YUKON' | translate }}</option>
+                </select>
+                <div class="invalid-feedback">{{ 'NEW_BUSINESS.FORMS.BUSINESS.JURISDICTION.VALIDATION_ERRORS.BUSINESS_NUMBER' | translate }}</div>
+              </div><!--.col-->
+            </div><!--.row-->
+
+            <div class="row">
+              <div class="form-group col-12 col-sm-6">
+                <label for="self_attested_date_established">{{ 'NEW_BUSINESS.FORMS.BUSINESS.DATE_ESTABLISHED.LABEL' | translate }}</label>
+                <ztt-date-picker
+                  id="self_attested_date_established"
+                  name="self_attested_date_established"
+                  formControlName="self_attested_date_established"
+                  [class.is-invalid]="isBusinessControlInvalid('self_attested_date_established')"
+                  [customConfig]="dateEstablishedConfig">
+                </ztt-date-picker>
+                <div class="invalid-feedback">{{ 'NEW_BUSINESS.FORMS.BUSINESS.DATE_ESTABLISHED.VALIDATION_ERRORS.REQUIRED' | translate }}</div>
+              </div><!--.col-->
+              <div class="form-group col-12 col-sm-6">
+                <label for="self_attested_average_monthly_sales">{{ 'NEW_BUSINESS.FORMS.BUSINESS.AVERAGE_MONTHLY_SALES.LABEL' | translate }}</label>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">$</div>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control pl-2"
+                    [class.is-invalid]="isBusinessControlInvalid('self_attested_average_monthly_sales')"
+                    id="self_attested_average_monthly_sales"
+                    formControlName="self_attested_average_monthly_sales"
+                    [cleave]="numeralCleaveConfig">
+                    <div class="invalid-feedback">{{ 'NEW_BUSINESS.FORMS.BUSINESS.AVERAGE_MONTHLY_SALES.VALIDATION_ERRORS.REQUIRED' | translate }}</div>
+                </div>
+              </div>
+            </div><!--.row-->
+
+            <div *ngIf="hasApplicant" class="row">
+              <div class="form-group col-12 col-sm-6">
+                <label class="control-label" for="owner-date">{{ 'ABOUT_YOU.OWNER_SINCE' | translate }}</label>
+                <ztt-date-picker
+                  id="owner-date"
+                  name="owner-date"
+                  formControlName="owner_since"
+                  [class.is-invalid]="isBusinessControlInvalid('owner_since')">
+                </ztt-date-picker>
+                <div class="invalid-feedback">{{'ABOUT_YOU.ENTER_VALID_DATE' | translate}}</div>
+              </div><!--.col-->
+            </div>
+
+            <h2 class="h6 text-uppercase font-weight-bold mt-3">{{ 'NEW_BUSINESS.FORMS.ADDRESS.TITLE' | translate }}</h2>
+            <ztt-address-form>
+              <div class="form-group col-12 col-sm-6">
+                <label for="phone-number">{{ 'NEW_BUSINESS.FORMS.BUSINESS.PHONE_NUMBER.LABEL' | translate }}</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  [class.is-invalid]="isBusinessControlInvalid('phone_number')"
+                  id="phone-number"
+                  formControlName="phone_number"
+                  [imask]="phoneMaskConfig"
+                  placeholder="(###) ###-####">
+                <div class="invalid-feedback">{{ 'NEW_BUSINESS.FORMS.BUSINESS.PHONE_NUMBER.VALIDATION_ERRORS.INVALID' | translate}}</div>
+              </div><!--.col-->
+            </ztt-address-form>
+
+            <div class="ztt-card-button-holder">
+              <button type="submit"
+                      class="btn btn-accent ml-auto px-5"
+                      id="about-business-next-btn"
+                      (click)="submitBusinessInfo($event)"
+                      [disabled]="isNextDisabled"
+                      [innerHTML]="(isNextWorking ? 'WORKING' : 'COMMON.BTN.NEXT') | translate">
+              </button>
+            </div><!--.ztt-card-button-holder-->
+          </form>
+        </div><!--.card-body -->
+      </div><!-- card -->
+
+       <!-- ABOUT: BODY FOOTER TEXT -->
+      <p class="text-center text-muted small mt-5"
+        [innerHTML]="'NEW_BUSINESS.BODY_FOOTER' | translate : { tou: 'LINKS.TERMS_OF_USE' | translate, pp: 'LINKS.PRIVACY_POLICY' | translate }">
+      </p>
+    </div><!--.col-->
+  </div><!--.row-->
+</div><!--#ztt-about-business-->
+
+
+<!-- Confirm your business modal -->
+<ng-template #confirmBusinessModal>
+  <div class="dialogue-icon"><i class="fas fa-info-circle"></i></div>
+  <div class="modal-header flex-column justify-content-center align-items-center">
+    <h5 class="modal-title">{{ 'NEW_BUSINESS.CONFIRM_PICKER.TITLE' | translate }}</h5>
+    <p class="text-muted">{{ 'NEW_BUSINESS.CONFIRM_PICKER.SUBTITLE' | translate }}</p>
+  </div><!--.modal-header-->
+
+  <div class="modal-body">
+    <form #businessList [formGroup]="confirmBusinessFormGroup">
+      <div class="list-group">
+        <div *ngFor="let item of merchantQueryResponse.results"
+          class="list-group-item list-group-item-action"
+          (click)="setBusiness(item.id)"
+          data-ng-id="select-business">
+          <div class="business-list-item">
+            <div class="business-list-item-left">
+              <p class="mb-1">{{ item?.name }}</p>
+              <div class="contacts">
+                <p *ngIf="item.phone_number">{{ item.phone_number }}</p>
+                <p>{{ item?.address_line_1 }}, {{ item?.city }}, {{ item?.state_province }}</p>
+              </div>
+            </div>
+            <div class="business-list-item-right">
+              <input type="radio" class="business-list-picker" formControlName="businessItemFormControl" [value]="item.id">
+            </div>
+          </div><!--.business-list-item -->
+        </div>  <!--.list-group-item -->
+
+        <div class="list-group-item list-group-item-action flex-column align-items-start"
+          (click)="setBusiness(noneOfMyBusinessId)"
+          data-ng-id="select-business-not-found">
+          <div class="business-list-item">
+            <div class="business-list-item-left">
+                <i class="fas fa-exclamation-circle"></i>
+                {{ 'NEW_BUSINESS.CONFIRM_PICKER.NOT_IN_LIST' | translate }}
+            </div>
+            <div class="business-list-item-right">
+              <input type="radio" formControlName="businessItemFormControl" [value]="noneOfMyBusinessId">
+            </div>
+          </div>
+        </div><!--.list-group-item -->
+      </div><!--.list-group -->
+    </form><!--#businessList-->
+  </div><!--.modal-body -->
+
+  <div class="modal-footer ztt-card-button-holder">
+    <!-- Back -->
+    <button type="button" class="btn btn-light"
+      (click)="goBackConfirmBusinessModal()">
+      {{ 'COMMON.BTN.BACK' | translate }}
+    </button>
+
+    <!-- Confirm -->
+    <div class="btn-group ml-auto" role="group"
+      (click)="!confirmBusinessFormGroup.controls['businessItemFormControl'].value || isSubmittingMerchant ?
+                $event.stopPropagation() :
+                onConfirmBusinessClick(confirmBusinessFormGroup.controls['businessItemFormControl'].value)"
+      [ngClass]="{ 'ztt-btn-group-disabled': !confirmBusinessFormGroup.controls['businessItemFormControl'].value || isSubmittingMerchant }">
+      <button type="button" class="btn ztt-btn-group-icon"><i class="fas fa-check"></i></button>
+      <button type="button" class="btn btn-accent btn-block" id="confirm-business-btn">
+        {{ 'NEW_BUSINESS.CONFIRM_PICKER.NEXT_BTN' | translate }}
+      </button>
+    </div><!--.btn-group-->
+  </div><!--.modal-footer-->
+</ng-template>
+
+<ng-template #businessNotFoundModal>
+  <div class="dialogue-icon"><i class="fas fa-exclamation-circle text-warning"></i></div>
+  <div class="modal-header justify-content-center">
+    <p class="modal-title lead">{{ 'NEW_BUSINESS.NOT_FOUND.TITLE' | translate }}</p>
+  </div><!--.modal-header-->
+
+  <div class="modal-body">
+    <p>
+      {{ businessNotFoundMsg | translate}}
+      {{'NEW_BUSINESS.NOT_FOUND.BODY_1_GO_BACK'| translate}}
+      {{'NEW_BUSINESS.NOT_FOUND.BODY_1_2'| translate}}
+    </p>
+
+    <p>{{'NEW_BUSINESS.NOT_FOUND.BODY_2'| translate}}</p>
+  </div><!--.modal-body-->
+
+  <div class="modal-footer ztt-card-button-holder">
+    <!-- Back -->
+    <button type="button" class="btn btn-light"
+      (click)="goBackBusinessNotFoundModal()">
+      {{ 'COMMON.BTN.BACK' | translate }}
+    </button>
+
+    <!-- Confirm -->
+    <button class="btn btn-accent ml-auto"
+      data-ng-id="business-not-found-next"
+      (click)="onBusinessNotFoundNextClick()"
+      [disabled]="isSubmittingMerchant">
+      {{ 'COMMON.BTN.NEXT' | translate }}
+    </button>
+  </div><!--.modal-footer-->
+</ng-template>

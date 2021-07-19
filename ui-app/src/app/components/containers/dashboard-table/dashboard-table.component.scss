@@ -1,0 +1,22 @@
+/*! ng component: DASHBOARD TABLE */
+.ztt-dashboard-table {
+  .table-titles {
+    display: inline-flex;
+
+    a.table-title {
+      @include animated-hover;
+      @include accented-hover;
+
+      $border-size: 4px;
+      text-decoration: none;
+      font-size: 1.25rem;
+      color: black;
+      text-align: center;
+      padding-right: unset;
+
+      &:first-child {
+        padding-left: unset;
+      }
+    }
+  }
+}

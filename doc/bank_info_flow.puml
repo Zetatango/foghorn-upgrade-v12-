@@ -1,0 +1,96 @@
+@startuml
+actor Merchant
+participant WLMP
+participant flinks
+participant PaymentService
+participant "ZTT API" as API
+participant "ZTT Core" as ZTT
+participant "Wile E API" as WileeAPI
+database "Wile E DB" as WileeDB
+participant "Porky API" as PorkyAPI
+
+note over PorkyAPI
+  In production Porky will use
+  a key management service
+  (AWS KMS or Google Cloud KMS).
+  In all other environments the
+  keys will be generated in
+  software and stored in Porky's
+  database.
+end note
+
+WLMP -> API : get account list
+API -> WileeAPI : get account list for merchant
+WileeAPI -> WileeDB: read bank account info for merchant
+WileeDB -> WileeAPI: encrypted bank account info
+WileeAPI -> PorkyAPI: decrypt bank account info for Wile E
+PorkyAPI -> PorkyAPI: get data encryption key for Wile E
+PorkyAPI -> PorkyAPI: decrypt bank account info
+PorkyAPI -> WileeAPI: plaintext bank account info
+WileeAPI -> API: account list
+API -> WLMP : account list
+WLMP -> WLMP : render list of known about verified accounts for that merchant
+WLMP -> WLMP : offer to use NEW account
+Merchant -> WLMP : choose to use NEW account
+alt option 1: use flinks connect (Flinks UI)
+note over WLMP : collect users bank information (May want to present current if we have it)
+WLMP -> flinks : connect to bank acccount (redirect uri = WLMP)
+flinks -> WLMP : prompt for bank institution
+Merchant -> WLMP : choose bank institution X
+WLMP -> flinks : choose bank institution X
+flinks -> WLMP : prompt for creds
+flinks -> Merchant : display prompt for creds
+Merchant -> flinks : Creds (login to bank and collect info)
+flinks -> WLMP : redirect back with loginId
+WLMP -> Merchant : ok
+WLMP -> API : store loginId
+API -> WileeAPI : store bank account credentials
+WileeAPI -> PorkyAPI : encrypt bank account credentials for Wile E
+PorkyAPI -> PorkyAPI: generate data encryption key for Wile E (if one doesn't exist)
+PorkyAPI -> PorkyAPI: encrypt bank account credentials
+PorkyAPI -> WileeAPI: ciphertext bank account credentials
+WileeAPI -> WileeDB: store encrypted bank account credentials
+WileeAPI -> API: ok
+WLMP -> API : getAccountSummary(loginId)
+API -> ZTT : getAccountSummary(loginId)
+ZTT -> flinks : Authorize(loginId)
+flinks -> ZTT : requestId
+ZTT -> flinks : getAccountSummary(requestId)
+flinks -> ZTT : accounts[]
+ZTT -> WileeAPI: store bank account info
+WileeAPI -> PorkyAPI : encrypt bank account info for Wile E
+PorkyAPI -> PorkyAPI: encrypt bank account info
+PorkyAPI -> WileeAPI: ciphertext bank account info
+WileeAPI -> WileeDB: store encrypted bank account info
+WileeAPI -> ZTT: ok
+ZTT -> WLMP : accounts[]
+WLMP -> WLMP : display account info for each account
+Merchant -> WLMP : choose account
+WLMP -> API : save account info/choice
+end
+
+alt option 2: use our own UI to collect info - NOT documented since not preferred
+
+end
+
+alt option 3: use our own UI and do our own verification
+WLMP -> Merchant: Prompt user for transit number, branch number, account number
+Merchant -> WLMP : Enter info
+WLMP -> API : add bank account info
+API -> ZTT : add bank account info
+ZTT -> WileeAPI : store bank account info
+WileeAPI -> PorkyAPI : encrypt bank account info for Wile E
+PorkyAPI -> PorkyAPI : generate data encryption key for Wile E (if one doesn't exist)
+PorkyAPI -> PorkyAPI : encrypt bank account info
+PorkyAPI -> WileeAPI : ciphertext bank account info
+WileeAPI -> WileeDB : store encrypted bank account info
+WileeAPI -> ZTT : ok
+ZTT -> PaymentService : verify account (account info)
+PaymentService -> Merchant: email & microdeposit
+Merchant -> PaymentService: confirm microdeposit
+PaymentService -> ZTT : verified (token)
+ZTT -> WLMP : ok
+WLMP -> Merchant: ok
+end
+
+@enduml

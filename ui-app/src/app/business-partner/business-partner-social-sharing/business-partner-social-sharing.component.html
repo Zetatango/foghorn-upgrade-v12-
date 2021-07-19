@@ -1,0 +1,23 @@
+<share-buttons
+  [theme]="'modern-dark'"
+  [include]="['facebook','twitter','linkedin']"
+  [show]="3"
+  [showText]="true"
+  [url]="vanityUrl()"
+  [description]= "'PARTNER_DASHBOARD.SOCIAL_MESSAGE' | translate"
+  (opened)="shareTabOpened($event)"
+  (closed)="shareTabClosed($event)"></share-buttons>
+
+<!-- Social sharing modal -->
+<ng-template #socialSharingModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{ 'PARTNER_DASHBOARD.SOCIAL_MODAL' | translate }}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>{{ 'PARTNER_DASHBOARD.SOCIAL_HINT' | translate }}</p>
+    <p><i>{{ 'PARTNER_DASHBOARD.SOCIAL_MESSAGE' | translate }}</i></p>
+  </div>
+</ng-template>

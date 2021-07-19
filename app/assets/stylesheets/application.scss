@@ -1,0 +1,28 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require ngx-bootstrap/datepicker/bs-datepicker.css
+ *= require datatables.net-dt/css/jquery.dataTables.min.css
+ *= require datatables.net-buttons-dt/css/buttons.dataTables.min.css
+ *= require @ng-select/ng-select/themes/default.theme.css
+ *= require_self
+ */
+
+@charset "UTF-8";
+
+// Sprockets image loading:
+@import 'application/images';
+
+@import 'components/datatables-custom';
+
+@import "font-awesome-sprockets";
+@import "font-awesome";

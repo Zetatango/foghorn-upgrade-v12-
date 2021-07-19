@@ -1,0 +1,13 @@
+<div id="ztt-insights-error" class="container d-flex py-5 my-5">
+  <div class="pr-2">
+    <fa-icon class="fa-2x text-accent" [icon]="faExclamation"></fa-icon>
+  </div>
+  <div class="pt-1">
+    <p>
+      {{'INSIGHTS.ERROR.MESSAGE'| translate}} {{'INSIGHTS.ERROR.PLEASE' | translate}}
+      <a [routerLink]="insightsDashboardLink">{{'INSIGHTS.ERROR.REFRESH_PAGE' | translate}}</a>
+    </p>
+    <p [innerHTML]="'INSIGHTS.ERROR.NOT_RESOLVE_ISSUE_TEXT' | translate">
+    </p>
+  </div>
+</div>

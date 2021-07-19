@@ -1,0 +1,36 @@
+<ztt-application-progress
+  [subtext]="'APPLICATION_PROGRESS.UNABLE_TO_CERTIFY_TITLE' | translate"
+  [step]="step"
+  [stepLabels]="{
+    first: 'APPLICATION_PROGRESS.NEW_BUSINESS_LABEL' | translate,
+    second: 'APPLICATION_PROGRESS.ABOUT_YOU' | translate,
+    third: 'APPLICATION_PROGRESS.VERIFY_YOURSELF' | translate,
+    fourth: 'APPLICATION_PROGRESS.GET_CERTIFIED' | translate }">
+</ztt-application-progress>
+
+<div class="ztt-container" id="ztt-unable-to-be-certified">
+  <div class="row">
+    <div class="col-12 col-lg-10 offset-lg-1">
+      <div class="card">
+        <div class="dialogue-icon"><i class="fas fa-exclamation-circle text-warning"></i></div>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ 'UNABLE_TOBE_CERTIFIED.TITLE' | translate }}</h5>
+
+          <p class="card-text">{{ 'UNABLE_TOBE_CERTIFIED.LIVE_CHAT' | translate }}</p>
+          <p class="card-text"> {{ 'UNABLE_TOBE_CERTIFIED.ALTERNATELY' | translate }}</p>
+
+          <div class="ztt-card-button-holder justify-content-center">
+            <button class="btn btn-accent" (click)="back()">
+              {{ 'COMMON.BTN.BACK' | translate }}
+            </button>
+          </div><!--.ztt-card-button-holder-->
+        </div><!--.card-body-->
+      </div><!--.card-->
+    </div><!--.col-12-->
+  </div><!--.row-->
+</div><!--#ztt-unable-to-be-certified-->
+
+<!-- To prevent `npm run extract` to remove dynamically displayed translations keys. -->
+<ng-template>
+  {{ 'APPLICATION_PROGRESS.UNABLE_TO_CERTIFY_TITLE' | translate }}
+</ng-template>

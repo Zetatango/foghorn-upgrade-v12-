@@ -1,0 +1,62 @@
+<p class="card-text" [innerHtml]="description | translate" data-ng-id="description-text"></p>
+
+<div class="row align-items-center">
+  <div class="col-12 col-md-6">
+    <ng-container *ngIf="allowMultipleSelection; then multipleBankAccountSelector else singleBankAccountSelector"></ng-container>
+  </div><!--.col-6-->
+</div><!--.row-->
+
+<!-- STEP NAVIGATION -->
+<div class="ztt-card-button-holder">
+  <!-- Add New Bank -->
+  <button class="btn btn-light"
+          data-ng-id="add-bank-btn"
+          (click)="addNewBank()"
+          [disabled]="processingAccount"
+          name="{{ 'COMMON.BTN.ADD_NEW_BANK' | translate }}"
+          [zttGtmEvent]>
+    {{ 'COMMON.BTN.ADD_NEW_BANK' | translate }}
+  </button>
+
+  <!-- Choose Bank Acct -->
+  <button class="btn btn-accent ml-auto"
+          id="bank-accounts-picker-btn"
+          (click)="choose()"
+          [disabled]="isChooseDisabled"
+          [innerHtml]="(processingAccount ? 'WORKING' : 'CHOOSE_BANKACCT_BTN') | translate"
+          name="{{ 'CHOOSE_BANKACCT_BTN' | translate }}"
+          [zttGtmEvent]>
+  </button>
+</div><!--.ztt-card-button-holder-->
+
+<div class="card-text ztt-card-button-holder" *ngIf="requiresInsightPreference">
+  <input class="mr-2" id="insights-opt-in" type="checkbox" [(ngModel)]="insightsOptIn">
+  <label class="mb-0" for="insights-opt-in" [innerHtml]="'CHOOSE_BANKACCT.INSIGHTS_OPT_IN' | translate"></label>
+</div>
+
+<ng-template>
+  {{ 'CHOOSE_BANKACCT_INSTRUCTIONS' | translate }}
+  {{ 'CHOOSE_BANKACCT_INSTRUCTIONS_CASH_FLOW' | translate }}
+</ng-template>
+
+<ng-template #multipleBankAccountSelector>
+  <select class="form-control" id="multiple-bank-accounts-selector" name="accountId" [(ngModel)]="selectedBankAccounts" #accountSelector="ngModel" multiple required>
+    <option [ngValue]="null" disabled selected>
+      {{ 'CHOOSE_BANKACCT_SELECT_DEFAULT' | translate }}
+    </option>
+    <option *ngFor="let account of bankAccounts" [ngValue]="account">
+      {{ account.account_number | mask }}{{ account.name ? ' - ' + account.name : '' }}
+    </option>
+  </select>
+</ng-template>
+
+<ng-template #singleBankAccountSelector>
+  <select class="form-control" id="single-bank-account-selector" name="accountId" [(ngModel)]="selectedBankAccount" #accountSelector="ngModel" required>
+    <option [ngValue]="null" disabled selected>
+      {{ 'CHOOSE_BANKACCT_SELECT_DEFAULT' | translate }}
+    </option>
+    <option *ngFor="let account of bankAccounts" [ngValue]="account">
+      {{ account.account_number | mask }}{{ account.name ? ' - ' + account.name : '' }}
+    </option>
+  </select>
+</ng-template>

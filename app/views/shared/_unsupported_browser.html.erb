@@ -1,0 +1,42 @@
+<div class="unsupported-browser-container py-5 px-2">
+    <div id="unsupported-browser-warning" class="border m-auto py-5 px-2 text-center bg-white">
+        <div id="links" class="text-right">
+            <% if I18n.locale != :en %>
+                <%= link_to 'EN', url_for( :locale => 'en' ), class:'btn btn-link btn-md text-dark font-weight-bold border-0 pr-md-5' %>
+            <% elsif I18n.locale != :fr %>
+                <%= link_to 'FR', url_for( :locale => 'fr' ), class:'btn btn-link btn-md text-dark font-weight-bold border-0 pr-md-5' %>
+            <% end %>
+        </div>
+        <div id="unsupported-browser-platform-image" class="mb-3">
+            <%= link_to image_tag('https://ario-logo-assets.s3.ca-central-1.amazonaws.com/tc-logo.png', height: '96'), '//www.thinkingcapital.ca' %>
+        </div>
+        <div id="user-browser-info" class="py-3 px-0">
+            <%= t('unsupported.current_browser') %><%= unsupported_browser_params[:browser] %> <%= unsupported_browser_params[:version] %>
+        </div>
+        <div class="py-3 px-0 font-weight-bold"><%= t('unsupported.message') %></div>
+        <div>
+            <%= t('unsupported.desktop_recommendation') %>
+        </div>
+        <div id="browser-options-container">
+            <ul id="desktop-browser-options" class="pl-0 list-unstyled">
+                <% unsupported_browser_params[:supported_browsers].each do | browser | %>
+                    <% if browser['desktop'] %>
+                        <li><%= link_to browser['label'], browser['href'] %></li>
+                    <% end %>
+                <% end %>
+            </ul>
+        </div>
+        <div>
+            <%= t('unsupported.mobile_recommendation') %>
+        </div>
+        <div id="browser-options-container">
+            <ul id="mobile-browser-options" class="pl-0 list-unstyled">
+                <% unsupported_browser_params[:supported_browsers].each do | browser | %>
+                    <% if browser['mobile'] %>
+                        <li><%= link_to browser['label'], browser['href'] %></li>
+                    <% end %>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+</div>

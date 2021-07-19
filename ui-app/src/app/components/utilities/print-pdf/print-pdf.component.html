@@ -1,0 +1,4 @@
+<div class="my-3">
+  <button class="btn btn-outline-accent" (click)="generatePdf()" [disabled]="downloading">PDF <i id="loadingSpinner" class="fas fa-circle-notch fa-spin" *ngIf="downloading"></i></button>
+  <button class="btn btn-outline-accent ml-3" (click)="print()"><i class="fas fa-print"></i></button>
+</div>

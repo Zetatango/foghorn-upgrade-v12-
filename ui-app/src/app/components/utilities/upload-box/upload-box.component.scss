@@ -1,0 +1,54 @@
+.upload-box {
+  @include var(border-color, accent);
+
+  border-width: 1px;
+  border-style: dashed;
+  position: relative;
+  margin-top: map-get($spacers, 5);
+
+  &--disabled {
+    @extend .upload-box;
+
+    background-color: gray('100');
+    color: gray('400') !important;
+    text-decoration: none;
+
+    .link,
+    .btn-link {
+      color: gray('400') !important;
+      cursor: default;
+      pointer-events: none;
+      text-decoration: none;
+    }
+  } // --disabled
+
+  &__drop-zone {
+    padding: map-get($spacers, 5) map-get($spacers, 3);
+    text-align: center;
+
+    p:last-child {
+      @extend .small;
+      @extend .text-muted;
+
+      margin-bottom: 0;
+    }
+  } // __drop-zone
+
+  &__item-layout {
+    $__item-layout: &;
+
+    padding: map-get($spacers, 3) map-get($spacers, 4);
+
+    &--header {
+      @extend #{$__item-layout};
+      @include var(background-color, primary);
+
+      color: #fff;
+
+      div > p:first-of-type {
+        font-weight: $font-weight-bold;
+        margin-bottom: 0;
+      }
+    } // --header
+  } // __item-layout
+} // upload_box

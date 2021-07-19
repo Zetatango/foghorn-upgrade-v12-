@@ -1,0 +1,119 @@
+.ztt-expandable-list {
+  max-height: 75vh;
+  min-height: 200px;
+  overflow-y: scroll;
+
+  .list-row {
+    @extend .d-flex;
+    @extend .w-100;
+
+    p {
+      margin: 0;
+    }
+
+    &.expanded {
+      @extend .p-2;
+
+      border-top: 1px solid #f0f2f5;
+      justify-content: space-between;
+
+      &:first-child {
+        border-top: unset;
+      }
+
+      &:last-child {
+        padding-bottom: map-get($spacers, 3);
+      }
+
+      :first-child {
+        margin-right: map-get($spacers, 2);
+      }
+    }
+  }
+
+  .secondary-wrapper {
+    @extend .px-2;
+
+    background-color: color('white');
+  }
+
+  .list-column {
+    @extend .d-flex;
+    @extend .flex-column;
+    @extend .justify-content-around;
+    @extend .flex-fill;
+    @extend .mx-1;
+    @extend .my-0;
+
+    flex-basis: 200px !important;
+
+    > * {
+      @extend .my-1;
+    }
+
+    .list-row {
+      div:first-child,
+      p:first-child {
+        margin-right: map-get($spacers, 2);
+      }
+    }
+
+    &.edit-column {
+      flex-basis: auto !important;
+    }
+
+    &.expand-column {
+      flex: auto !important;
+    }
+
+    &.small-column {
+      max-width: 150px;
+    }
+  }
+
+  .main-list-row {
+    border-top: 1px solid #f0f0f0;
+
+    &:first-child {
+      border-top: unset;
+    }
+  }
+
+  .list-data-column {
+    @extend .d-flex;
+    @extend .flex-row;
+    @extend .flex-wrap;
+    @extend .justify-content-between;
+    @extend .w-100;
+
+    @include media-breakpoint-down(xs) {
+      flex-direction: column !important;
+
+      .list-column {
+        flex: auto !important;
+        flex-basis: unset !important;
+      }
+    }
+  }
+
+  .status {
+    @extend .text-center;
+    @extend .text-white;
+    @extend .rounded-pill;
+
+    background-color: $no-status;
+    width: 12rem;
+
+    &.positive-status {
+      background-color: $positive-status;
+    }
+
+    &.caution-status {
+      background-color: $caution-status;
+    }
+
+    &.default-status {
+      background-color: $default-status;
+    }
+  }
+}

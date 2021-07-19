@@ -1,0 +1,29 @@
+<div class="card bg-transparent border-top-0 rounded-0 border-bottom-0 shadow-none d-flex">
+  <div class="wrapper text-left text-sm-center text-lg-left mx-auto ml-lg-auto mr-lg-0">
+    <ng-container *ngIf="offer">
+      <div class="d-flex">
+        <h1 class="financial-card-value font-weight-bold">
+          {{offerAvailableAmount | zttCurrency: translateService.currentLang: '1.0-0'}}
+        </h1>
+      </div>
+      <h6 class="financial-card-value-name mt-1 mb-3 text-uppercase">
+        {{'INSIGHTS.CREDIT_AVAILABLE.CREDIT_AVAILABLE_TEXT'| translate}}</h6>
+
+      <!-- if offerAvailableAmount is zero button is disabled -->
+      <ztt-offer-apply-button
+        class="mt-2"
+        [isButtonDisabled]="!offerAvailableAmount"
+        [requestedAmount]="requestedAmount">
+      </ztt-offer-apply-button>
+    </ng-container>
+    <ng-container *ngIf="!offer">
+      <div class="apply-wrapper d-flex flex-column">
+        <p>
+          Content that markets the LOC and pre-approved amounts
+        </p>
+        <a [routerLink]="[onboardingRouterLink]" class="btn btn-primary">{{'INSIGHTS.CREDIT_AVAILABLE.APPLY_NOW_BUTTON_TEXT'|
+          translate}}</a>
+      </div>
+    </ng-container>
+  </div>
+</div>

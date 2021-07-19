@@ -1,0 +1,178 @@
+
+<div class="ztt-container" id="ztt-edit-merchant">
+
+  <!-- INFO CARD -->
+  <div class="row">
+    <div class="col-12 mb-3">
+      <div class="card">
+
+        <div class="dialogue-icon">
+          <ng-container [ngSwitch]="isUpdatingMerchant">
+            <i *ngSwitchCase="UpdatingMerchantState.in_progress" class="fas fa-circle-notch fa-spin"></i>
+            <i *ngSwitchCase="UpdatingMerchantState.succeed" class="fas fa-circle-check text-success"></i>
+            <i *ngSwitchCase="UpdatingMerchantState.pending" class="fas fa-info-circle text-info"></i>
+            <i *ngSwitchDefault class="fas fa-info-circle text-info"></i>
+          </ng-container><!--*ngSwitch-->
+        </div><!--.dialogue-icon-->
+
+        <div class="card-body">
+          <p class="lead text-center">{{ 'EDIT_MERCHANT.INFO_CARD.TITLE' | translate }}</p>
+
+          <p>{{ 'EDIT_MERCHANT.INFO_CARD.BODY.ISSUE' | translate }}</p>
+          <p>{{ 'EDIT_MERCHANT.INFO_CARD.BODY.SOLUTION' | translate }}</p>
+
+        </div><!--.card-body-->
+      </div><!--.card-->
+    </div><!--.col-->
+  </div><!--.row-->
+
+  <!-- FORM -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- BUSINESS FORM -->
+          <form class="form-horizontal ztt-borderless-inputs" id="edit-merchant-form" [formGroup]="editMerchantFormGroup">
+            <p class="lead">{{ 'EDIT_MERCHANT.FORMS.BUSINESS.TITLE' | translate }}</p>
+
+            <div class="row">
+              <!-- NAME -->
+              <div class="form-group col-12 col-lg-6">
+                <label for="business-name">
+                  {{ 'EDIT_MERCHANT.FORMS.BUSINESS.NAME.LABEL' | translate }}
+                </label>
+                <input
+                  type="text"
+                  class="form-control mt-lg-3"
+                  id="business-name"
+                  formControlName="name"
+                  [class.is-invalid]="isBusinessNameInvalid"
+                  zttExcludeEmoji
+                  zttTrimWhitespace>
+                <div class="invalid-feedback">
+                  {{ 'EDIT_MERCHANT.FORMS.BUSINESS.NAME.VALIDATION_ERRORS.REQUIRED' | translate }}
+                </div>
+              </div><!--.col-->
+
+              <!-- DBA -->
+              <div class="form-group col-12 col-lg-6">
+                  <label class="d-block mb-lg-0" for="dba">{{ 'EDIT_MERCHANT.FORMS.BUSINESS.DOING_BUSINESS_AS.LABEL' | translate }}</label>
+                  <input class="mr-2" type="checkbox" [checked]="isDbaSameAsName" (click)="onDoingBusinessCheckboxClicked($event)">
+                  {{ 'EDIT_MERCHANT.FORMS.BUSINESS.DOING_BUSINESS_AS.SAME_CHECKBOX' | translate }}
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="dba"
+                    formControlName="doing_business_as"
+                    [class.is-invalid]="isDoingBusinessAsInvalid"
+                    zttExcludeEmoji
+                    zttTrimWhitespace>
+                <div class="invalid-feedback">
+                  {{ 'EDIT_MERCHANT.FORMS.BUSINESS.DOING_BUSINESS_AS.VALIDATION_ERRORS.REQUIRED' | translate}}
+                </div>
+              </div><!--.col-->
+            </div><!--.row-->
+
+            <div class="row">
+              <!-- BUSINESS NUM -->
+              <div class="form-group col-12 col-md-6">
+                <label for="business-number" class="small bn-label">
+                  {{ 'EDIT_MERCHANT.FORMS.BUSINESS.BUSINESS_NUMBER.LABEL' | translate }}
+                </label>
+                <button class="bn-hint"
+                        [tooltip]="'EDIT_MERCHANT.FORMS.BUSINESS.BUSINESS_NUMBER.TOOLTIP' | translate"
+                        placement="top"
+                        container="body">
+                  <i class="fas fa-info-circle px-1"></i>
+                </button>
+                <input
+                  id="business-number"
+                  type="text"
+                  class="form-control"
+                  [class.is-invalid]="isBusinessNumberInvalid"
+                  formControlName="business_num"
+                  zttExcludeEmoji>
+                <div *ngIf="businessNumberHasInvalidAlphanumericCharacter()"
+                      class="invalid-feedback">
+                  {{ 'EDIT_MERCHANT.FORMS.BUSINESS.BUSINESS_NUMBER.VALIDATION_ERRORS.INVALID_ALPHANUMERIC_CHARACTER' | translate }}
+                </div>
+                <div *ngIf="businessNumberHasInvalidNumericCharacter()"
+                      class="invalid-feedback">
+                  {{ 'EDIT_MERCHANT.FORMS.BUSINESS.BUSINESS_NUMBER.VALIDATION_ERRORS.INVALID_NUMERIC_CHARACTER' | translate }}
+                </div>
+                <div *ngIf="businessNumberHasInvalidFederalCharacter()"
+                      class="invalid-feedback">
+                  {{ 'EDIT_MERCHANT.FORMS.BUSINESS.BUSINESS_NUMBER.VALIDATION_ERRORS.INVALID_FEDERAL_CHARACTER' | translate }}
+                </div>
+                <div *ngIf="businessNumberHasInvalidAlphaStartCharacter()"
+                      class="invalid-feedback">
+                  {{ 'EDIT_MERCHANT.FORMS.BUSINESS.BUSINESS_NUMBER.VALIDATION_ERRORS.INVALID_ALPHA_START_CHARACTER' | translate }}
+                </div>
+                <div *ngIf="businessNumberHasInvalidLength()"
+                      class="invalid-feedback">
+                  {{ 'EDIT_MERCHANT.FORMS.BUSINESS.BUSINESS_NUMBER.VALIDATION_ERRORS.INVALID_LENGTH' | translate }}
+                </div>
+              </div><!--.col-->
+
+              <!-- JURISDICTION -->
+              <div class="form-group col-12 col-md-6">
+                <label for="jurisdiction">
+                  {{ 'EDIT_MERCHANT.FORMS.BUSINESS.JURISDICTION.LABEL' | translate }}
+                </label>
+                <select class="form-control"
+                        id="jurisdiction"
+                        [class.is-invalid]="isJurisdictionInvalid"
+                        formControlName="incorporated_in">
+
+                  <option value="" [selected]="!merchantIncorporatedIn">
+                    {{ 'JURISDICTION_SELECT.VALUES.DEFAULT' | translate }}
+                  </option>
+
+                  <ng-container *ngFor="let jurisdiction of jurisdictions">
+                    <option [value]="jurisdiction" [selected]="jurisdiction === merchantIncorporatedIn">
+                      {{ ('JURISDICTION_SELECT.VALUES.' + jurisdiction) | translate }}
+                    </option>
+                  </ng-container>
+
+                </select>
+                <div class="invalid-feedback">{{ 'EDIT_MERCHANT.FORMS.BUSINESS.JURISDICTION.VALIDATION_ERRORS.BUSINESS_NUMBER' | translate }}</div>
+              </div><!--.col-->
+            </div><!--.row-->
+
+            <p class="lead mt-3">{{ 'EDIT_MERCHANT.FORMS.ADDRESS.TITLE' | translate }}</p>
+
+            <!-- ADDRESS FORM -->
+            <ztt-address-form [defaultAddress]="address"></ztt-address-form>
+
+            <p class="text-center mt-5 small italic">
+              {{ 'EDIT_MERCHANT.INFO_CARD.FOOTER.LEAD' | translate }}
+              <a role="button" class="border-0 btn-intercom intercom-trigger">{{ 'EDIT_MERCHANT.INFO_CARD.FOOTER.ACTION_LABEL' | translate }}</a>
+            </p>
+
+            <!-- SUBMIT -->
+            <div class="ztt-card-button-holder">
+              <button type="submit"
+                      class="btn btn-accent"
+                      id="edit-merchant-back-btn"
+                      (click)="goBack()"
+                      [disabled]="isTransitioning"
+                      [innerHTML]="(isGoingBack ? 'WORKING' : 'COMMON.BTN.BACK') | translate">
+              </button>
+
+              <button type="submit"
+                      class="btn btn-accent ml-auto"
+                      id="edit-merchant-submit-btn"
+                      (click)="updateMerchant()"
+                      [disabled]="editMerchantFormGroup.invalid || addressFormGroup.invalid || isTransitioning"
+                      [innerHTML]="(isUpdatingMerchant === UpdatingMerchantState.in_progress ? 'WORKING' : 'COMMON.BTN.SUBMIT') | translate">
+              </button>
+            </div><!--.ztt-card-button-holder-->
+          </form><!--editMerchantFormGroup-->
+
+        </div><!--.card-body-->
+      </div><!--.card-->
+    </div><!--.col-->
+  </div><!--.row-->
+
+</div><!--.ztt-container #ztt-edit-merchant-->

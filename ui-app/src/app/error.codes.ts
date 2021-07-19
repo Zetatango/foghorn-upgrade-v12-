@@ -1,0 +1,7 @@
+export const ERRORS = {
+  API: {
+    ADDRESS_ERROR: 22000,
+    PHONE_NUMBER_ERROR: 23000,
+    SERVICE_ERROR: 20110
+  }
+};

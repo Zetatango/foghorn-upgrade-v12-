@@ -1,0 +1,28 @@
+<div class="ztt-container">
+  <div class="row py-3 py-md-5">
+    <div class="col-12 col-md-6 col-lg-5 py-3 py-lg-5">
+      <h1 class="title font-weight-bold text-capitalize px-2 px-md-0">
+        {{'INSIGHTS.ABOUT_CASH_FLOW_ADVISOR.CASH_FLOW_ADVISOR' | translate}}
+      </h1>
+    </div>
+    <div class="col-12 col-md-6 col-lg-7 py-lg-5 m-auto text-center text-md-left">
+      <p class="mt-2 mt-md-0 connection-required-text">
+        {{ 'INSIGHTS.ABOUT_CASH_FLOW_ADVISOR.CFA_CONNECTION_REQUIRED_TEXT' | translate}}</p>
+      <a class="btn btn-primary mt-4 mt-md-2" [routerLink]="cybLink" [skipLocationChange]="true">
+        {{'INSIGHTS.ABOUT_CASH_FLOW_ADVISOR.CONNECT_YOUR_BANK_BUTTON_TEXT' | translate}}
+      </a>
+    </div>
+    <div class="card mt-5 w-100">
+      <div class="card-body pt-5 pb-0 py-lg-5 row">
+        <div class="col-12 offset-lg-2 col-lg-8 text-center">
+          <h2 class="font-weight-bold">{{'INSIGHTS.ABOUT_CASH_FLOW_ADVISOR.ABOUT_TEXT' | translate}}</h2>
+          <p class="px-3 px-lg-0">{{'INSIGHTS.ABOUT_CASH_FLOW_ADVISOR.CFA_DESCRIPTION' | translate}}</p>
+          <a href="{{'INSIGHTS.CFA_FEATURES.CFA_LINK' | translate}}" class="btn btn-primary mt-3 px-5">
+            {{'INSIGHTS.ABOUT_CASH_FLOW_ADVISOR.LEARN_MORE_BUTTON_TEXT' | translate}}
+          </a>
+        </div>
+        <ztt-cfa-features></ztt-cfa-features>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+table.dataTable thead {
+  [class*='sorting'] {
+    background-position: left;
+    background-size: 10px;
+  }
+
+  .sorting {
+    background-image: url('datatables/sort_both.svg');
+  }
+
+  .sorting_asc {
+    background-image: url('datatables/sort_asc.svg');
+  }
+
+  .sorting_desc {
+    background-image: url('datatables/sort_desc.svg');
+  }
+
+  .sorting_asc_disabled {
+    background-image: url('datatables/sort_asc_disabled.svg');
+  }
+
+  .sorting_desc_disabled {
+    background-image: url('datatables/sort_desc_disabled.svg');
+  }
+}

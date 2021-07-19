@@ -1,0 +1,105 @@
+// ==========================================================================
+// Global Styles
+// ==========================================================================
+//
+// Table of Contents:
+//
+//  1. App / Main
+//  2. Typography
+//  00. Misc
+
+
+// 1. APP / MAIN
+// --------------------------------------------------------
+
+* {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  &:not(.fa):not(.fas):not(.far) {
+    font-family: $font-family-base;
+  }
+}
+
+// 2. Typography
+// --------------------------------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.ztt-btn,
+.lead {
+  font-family: $headings-font-family;
+}
+
+a:not([href]):not([class]),
+a:not(.dropdown-item):not(.nav-link):not(.btn),
+.btn-link {
+  color: $link-color;
+  text-decoration: $link-decoration;
+
+  &:hover,
+  &:visited {
+    color: $link-hover-color;
+  }
+}
+
+[role='button'] {
+  color: $link-color;
+  cursor: pointer;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+}
+
+strong {
+  font-weight: $font-weight-bold;
+}
+
+.text-truncate {
+  &.crop {
+    width: 90%;
+  }
+}
+
+// 00. Misc
+// --------------------------------------------------------
+@mixin accented-hover {
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: theme-color('accent');
+  }
+}
+
+@mixin animated-hover {
+  $border-size: 4px;
+
+  &::after {
+    display: block;
+    content: '';
+    border-bottom: $border-size solid theme-color('accent');
+    margin-bottom: calc(-#{$partner-logo-height / 2} + #{$border-size});
+    padding-top: calc(#{$partner-logo-height / 2} - #{$border-size} - #{$navbar-padding-y / 2});
+    transform: scaleX(0);
+    transition: transform 0.25s ease-in-out;
+  }
+
+  &:hover::after,
+  &:focus::after,
+  &:active::after,
+  &.active::after {
+    transform: scaleX(1);
+  }
+}

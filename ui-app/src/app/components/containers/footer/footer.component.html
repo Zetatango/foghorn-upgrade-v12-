@@ -1,0 +1,10 @@
+<footer class="bg-light py-3 mt-3 mt-md-5">
+  <div class="ztt-container">
+    <div *ngIf="'FOOTER.COPY' | translate" class="row">
+      <!-- FOOTER TEXT -->
+      <div class="col-12 col-lg-10 offset-lg-1 text-center">
+        <p class="mb-0 small text-muted" [innerHtml]="'FOOTER.COPY' | translate: { currentYear: currentYear }"></p>
+      </div>
+    </div><!--.row-->
+  </div><!--.ztt-container-->
+</footer><!--.py-3-->

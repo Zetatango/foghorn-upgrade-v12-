@@ -1,0 +1,23 @@
+.landing-hero-container {
+  .landing-hero {
+    background: image-url('welcome-lg-1.jpg') center no-repeat;
+    background-size: cover;
+  }
+}
+
+#landing-hero-container-2 {
+  background: image-url('circles.svg') center right no-repeat fixed;
+  background-size: contain;
+}
+
+#landing-hero-container-3 {
+  #invfin-card {
+    background: image-url('money-image-toned.png') center no-repeat;
+    background-size: cover;
+  }
+
+  #wca-card {
+    background: image-url('bank-image-toned.png') center no-repeat;
+    background-size: cover;
+  }
+}

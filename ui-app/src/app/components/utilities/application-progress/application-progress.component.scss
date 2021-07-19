@@ -1,0 +1,80 @@
+/*! ng component: APPLICATION PROGRESS */
+
+.application-progress {
+  align-items: center;
+  display: flex;
+  margin-bottom: -1.4rem;
+  margin-top: - map-get($spacers, 3);
+  position: relative;
+
+  #ngx-progressbar {
+    position: absolute;
+    height: 2px;
+
+    &.waiting {
+      height: 1rem;
+    }
+
+    .progress-bar {
+      @include var(background-color, accent);
+    }
+  }
+
+  .steps-holder {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .progress-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .progress-item-circle {
+      align-items: center;
+      background-color: white;
+      border-radius: 50%;
+      border: solid 2px $light-gray;
+      color: $light-gray;
+      display: flex;
+      font-family: 'Nunito', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 20px;
+      height: 50px;
+      justify-content: center;
+      position: relative;
+      width: 50px;
+      z-index: 10;
+
+      i[class*="fa"] {
+        display: none;
+      }
+
+      &.active-step, &.completed-step {
+        color: color-yiq(theme-color('accent'));
+      }
+
+      &.active-step {
+        @include var(background-color, accent);
+        border-color: white;
+      }
+
+      &.completed-step {
+        @include var(border-color, accent);
+        @include var(color, accent);
+
+        span {
+          display: none;
+        }
+
+        i[class*="fa"] {
+          display: block;
+        }
+      }
+    }
+
+    .progress-item-description {
+      display: none;
+      height: 0; // this is so it doesn't interfere with centering of progress.
+    }
+  }
+}

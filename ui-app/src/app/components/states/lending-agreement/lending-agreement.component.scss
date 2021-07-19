@@ -1,0 +1,18 @@
+/*! ng component: LENDING AGREEMENT */
+
+#LendingTermsFrame {
+  max-height: 40vh;
+  overflow: scroll;
+  border: 1px solid $light-gray;
+
+  // Helps rendering the markdown numbered list properly:
+  markdown::ng-deep ol {
+    // Note: ng-deep is required because the mardown tag created a sub-component.
+    padding-left: 20px;
+
+    li {
+      list-style: decimal;
+      padding-left: 20px;
+    }
+  }
+}

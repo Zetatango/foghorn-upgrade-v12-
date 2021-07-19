@@ -1,0 +1,65 @@
+<ng-container *ngIf="loaded">
+<div class="ztt-container" id="ztt-generic-agreement">
+  <div class="row">
+    <div class="col-12 col-lg-8 offset-lg-2">
+      <!-- CARD: AGREEMENT -->
+      <div class="card">
+        <div class="dialogue-icon"><i class="fas fa-check-circle"></i></div>
+        <div class="card-body">
+          <h5 class="card-title">{{ 'AGREEMENT.CONTAINER_TITLE' | translate }}</h5>
+          <hr>
+
+          <p *ngIf="!agreementContent; else termsDisplay" class="card-text text-center">
+            <i class="fas fa-circle-notch fa-spin fa-4x text-muted"></i>
+          </p>
+
+          <ng-template #termsDisplay>
+            <p class="card-text mb-5">{{ containerText | translate}}</p>
+
+            <div id="terms-frame">
+              <p class="card-text text-muted">
+                {{ 'AGREEMENT.CONTRACT_SUBHEAD' | translate }}
+              </p>
+              <p class="card-text text-muted">
+                <markdown [data]="agreementContent"></markdown>
+              </p>
+            </div><!--#terms-frame-->
+
+            <ztt-print-pdf [text]="agreementContent"
+                           [heading]="'AGREEMENT.FILE_HEADER' | translate: { merchantName: merchantName, agreementName: agreementName }"
+                           [fileName]="agreementFileName | translate">
+            </ztt-print-pdf>
+
+            <p class="card-text mt-5">{{'AGREEMENT.CONTAINER_TEXT_BOTTOM' | translate}}</p>
+          </ng-template><!--#termsDisplay-->
+
+          <div class="ztt-card-button-holder">
+            <!-- Back -->
+            <button class="btn btn-light"
+                    (click)="back()">
+              {{ 'COMMON.BTN.BACK' | translate }}
+            </button>
+
+            <!-- Sign -->
+            <!-- TODO: [Graham] move click events to btn-group -->
+
+            <div class="btn-group mt-md-0 mt-3 ml-auto" role="group">
+              <button class="btn ztt-btn-group-icon"
+                      (click)="sign()"
+                      [disabled]="signingAgreement || !agreementContent">
+                <i class="fas fa-signature"></i>
+              </button>
+              <button class="btn btn-block btn-accent"
+                      id="agreement-sign-btn"
+                      (click)="sign()"
+                      [disabled]="signingAgreement || !agreementContent"
+                      [innerHTML]="(signingAgreement ? 'WORKING' : 'AGREEMENT.SIGN_BUTTON_LABEL') | translate">
+              </button>
+            </div>
+          </div><!--.ztt-card-button-holder-->
+        </div><!--.card-body-->
+      </div><!--.card-->
+    </div><!--.col-->
+  </div><!--.row-->
+</div><!--.ztt-container-->
+</ng-container>

@@ -1,0 +1,101 @@
+<div id="ztt-business-partner-dashboard">
+  <ztt-loading [name]="mainLoader"></ztt-loading>
+
+  <div *ngIf="loaded" class="ztt-container">
+
+    <!-- TITLE + DATE -->
+    <div class="row">
+      <div class="col-6">
+        <h5>{{ merchantDisplayName() }}</h5>
+      </div>
+      <div class="col-6">
+        <h6 class="text-right">
+          {{ 'DASHBOARD.DATE_CONNECTOR' | translate }}
+          <span class="font-weight-bold">{{ currentDate | localizeDate: translateService.currentLang }}</span>
+        </h6>
+      </div>
+    </div>
+
+    <div *ngFor="let alert of alerts">
+      <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" (onClosed)="onClosed(alert)">{{ alert.msg | translate:alert.params }}</alert>
+    </div>
+
+    <ztt-business-partner-profile-progress [businessPartnerProfile]="businessPartnerProfile"
+                                           [businessPartnerApplication]="businessPartnerApplication"
+                                           (sendSchedulePartnerTrainingEvent)="schedulePartnerTrainingWithCalendly()"
+                                           (sendUpdateProfileEvent)="receiveUpdateProfileEvent($event)">
+    </ztt-business-partner-profile-progress>
+
+    <div class="mt-3">
+      <tabset class="tabset" >
+        <tab #tab1 heading="{{ 'PARTNER_DASHBOARD.CUSTOMER_SUMMARY_TITLE' | translate }}" (selectTab)="onSelectTab($event)">
+          <ng-content *ngTemplateOutlet="customerSummaryTab"></ng-content>
+        </tab>
+        <tab #tab2 heading="{{ 'PARTNER_DASHBOARD.SENT_INVOICES_TITLE' | translate }}" (selectTab)="onSelectTab($event)">
+          <ng-content *ngTemplateOutlet="sentInvoicesTab"></ng-content>
+        </tab>
+      </tabset>
+    </div>
+
+    <button class="btn btn-accent position-absolute bottom-right" (click)="openFabMenu()">
+      <i class="fas fa-link"></i>
+    </button>
+
+    <!-- TODO: [Graham] remove this link when partner theme edit is implemented. -->
+    <div class="d-flex flex-column flex-xl-row mt-3">
+      <p class="mb-1 mb-md-0 mr-md-3" [innerHTML]="'PARTNER_DASHBOARD.EDIT_THEME.NOT_READY' | translate"></p>
+      <p [innerHTML]="'PARTNER_DASHBOARD.EDIT_THEME.START_CHAT' | translate"></p>
+    </div><!--.row-->
+  </div><!--.ztt-container-->
+</div><!--.ztt-business-partner-dashboard-->
+
+<!-- Customer tracking event history modal -->
+<ng-template #merchantTrackedObjectModal>
+  <ztt-business-partner-customer-history [trackedBusinessPartnerMerchant]="trackedBusinessPartnerMerchant"
+                                         (sendHideModalEvent)="receiveHideModal()">
+  </ztt-business-partner-customer-history>
+</ng-template>
+
+<!-- Create invoice modal -->
+<ng-template #createInvoiceModal>
+  <ztt-business-partner-invoice-upload [businessPartnerMerchant]="payor"
+                                       (sendInvoiceCompleteEvent)="receiveSendInvoiceCompleteEvent()"
+                                       (sendHideModalEvent)="receiveHideModal()">
+  </ztt-business-partner-invoice-upload>
+</ng-template>
+
+<!-- Invoice history modal -->
+<ng-template #invoiceTrackedObjectModal>
+  <ztt-business-partner-invoice-history [trackedInvoice]="trackedInvoice"
+                                        (sendHideModalEvent)="receiveHideModal()">
+  </ztt-business-partner-invoice-history>
+</ng-template>
+
+<ng-template #customerSummaryTab>
+  <ztt-business-partner-customer-summary-v2
+    (createInvoiceEvent)="receiveCreateInvoiceEvent($event)"
+    [merchantId]="merchant.id">
+  </ztt-business-partner-customer-summary-v2>
+</ng-template>
+
+<ng-template #sentInvoicesTab>
+  <ztt-business-partner-sent-invoices-v2
+    [merchantId]="merchant.id">
+  </ztt-business-partner-sent-invoices-v2>
+</ng-template>
+
+<ng-template #invitePartnerModal>
+  <ztt-business-partner-invite
+    [inviting]="inviting"
+    (inviteEvent)="receiveSendInviteEvent($event)">
+  </ztt-business-partner-invite>
+</ng-template>
+
+<ng-template #fabMenuModal>
+  <ztt-fab-menu
+      (closeEvent)="receiveHideModal()"
+      (openInviteEvent)="receiveOpenInviteEvent()"
+      (openQuickBooksOpenEvent)="receiveQuickBooksOpenEvent()"
+      [displayConnectToQuickBooks]="displayConnectToQuickBooks">
+  </ztt-fab-menu>
+</ng-template>

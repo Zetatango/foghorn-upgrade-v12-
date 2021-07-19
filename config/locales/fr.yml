@@ -1,0 +1,66 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+fr:
+  merchants:
+    apply_now: Faire un demande
+    cash_now_title: Obtenir des fonds maintenant
+    cash_now_description: Souhaitez-vous pouvoir bâtir votre entreprise en fonction des besoins et non du budget? Laissez-nous vous aider à obtenir l’argent dont vous avez besoin pour notre prochain projet ensemble.
+    financing_title: Voyez pour quel financement votre entreprise qualifie
+    financing_bullet_1: Financement allant jusqu’à 300 000 $
+    financing_bullet_2: Choisissez vos options de remboursement
+    financing_bullet_3: Inscrivez-vous en ligne en quelques minutes
+    financing_bullet_4: L’inscription est gratuite et n’affecte pas votre cote de crédit
+    footer_text_1: Nous nous sommes associé à Ario pour vous fournir des options de financement.
+    footer_text_2: Ario fournit la plate-forme bancaire numérique et gère le bilan des prêts.
+    footer_text_3_html: Voulez-vous offrir du financement à vos clients? Pour en savoir plus, visitez <a href="https://www.arioplatform.com/">www.arioplatform.com</a>
+    get_started: Commencer
+    get_started_today: Commencer aujourd’hui
+    help: Aide
+    main_description_html: Notre programme de financement en ligne vous donne accès <br/>instantané aux fonds et aux conditions de paiement étendues.
+    main_title_html: Une gestion des liquidités simplifiée
+    mobile_svg: mobile-french.svg
+    pay_later_title: Achetez maintenant, payez plus tard
+    pay_later_description: Prenez le temps qu’il vous faut! Inscrivez-vous pour nos conditions de remboursement prolongées et étalez vos factures au cours des prochains mois.
+    privacy_policy: Politique de confidentialité
+    sign_in: Se connecter
+    title_account_info: Informations de compte
+    title_choose_profile: Choisissez un profil
+    partner_admin_label: Portail Admin
+    continue_onboarding_label: Continuer l'enrôlement
+    new_business_label: Ajouter une entreprise
+    business_number_label: Numéro de l'enterprise %{business_number}
+    title_welcome: Bienvenue!
+  unsupported:
+    current_browser: "Votre navigateur actuel est: "
+    message: Vous utilisez un navigateur Web que nous ne prenons pas en charge. Essayez l’une de ces options pour améliorer votre expérience.
+    mobile_recommendation: "Pour mobile:" 
+    desktop_recommendation: "Pour bureau:"

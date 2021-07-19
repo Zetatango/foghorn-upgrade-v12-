@@ -1,0 +1,114 @@
+<ng-container *ngIf="loaded">
+  <div class="ztt-container" id="ztt-review-direct-debit">
+    <div class="row">
+      <!-- CARD: DIRECT DEBIT SUMMARY -->
+      <div class="col-12 col-lg-8 offset-lg-2 order-first">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-7 text-center text-md-left">
+                <h5 class="card-title mb-0">{{ 'DIRECT_DEBIT.REVIEW_TITLE' | translate }}</h5>
+              </div><!--.col-->
+            </div><!--.row-->
+            <hr>
+            <div class="row">
+              <div class="col-12">
+                <div class="row">
+                  <!-- RECIPIENT -->
+                  <div class="col-5 col-sm-6">
+                    <p data-ng-id="direct-debit-label">{{ 'DIRECT_DEBIT.PAYEE_LABEL' | translate }}</p>
+                  </div><!--.col-->
+                  <div class="col-7 col-sm-6">
+                    <p data-ng-id="direct-debit-value">{{ supplierInfo()?.name}}</p>
+                  </div><!--.col-->
+
+                  <!-- AMOUNT -->
+                  <div class="col-5 col-sm-6">
+                    <p data-ng-id="direct-debit-amount-label">{{ 'DIRECT_DEBIT.AMOUNT_LABEL' | translate }}</p>
+                  </div><!--.col-->
+                  <div class="col-7 col-sm-6">
+                    <p data-ng-id="direct-debit-amount-value">{{ directDebitPost?.amount | zttCurrency : translateService.currentLang }}</p>
+                  </div><!--.col-->
+
+                  <!-- FEE -->
+                  <div class="col-5 col-sm-6">
+                      <p data-ng-id="fee-label">{{ 'INVOICE.COST' | translate }}</p>
+                    </div><!--.col-->
+                    <div class="col-7 col-sm-6">
+                      <p data-ng-id="fee-value">{{ lendingFee | zttCurrency : translateService.currentLang }}</p>
+                    </div><!--.col-->
+
+                    <!-- PROMO -->
+                  <div class="col-5 col-sm-6">
+                      <p data-ng-id="promo-label">{{ 'INVOICE.PROMO' | translate  }}</p>
+                    </div><!--.col-->
+                    <div class="col-7 col-sm-6">
+                      <p data-ng-id="promo-value">{{ promoFee | zttCurrency : translateService.currentLang }}</p>
+                    </div><!--.col-->
+
+                  <!-- BANK ACCOUNT -->
+                  <ng-container>
+                    <div class="col-5 col-sm-6">
+                      <p data-ng-id="bank_account-label">{{ 'DIRECT_DEBIT.BANK_ACCOUNT_LABEL' | translate }}</p>
+                    </div><!--.col-->
+                    <div class="col-7 col-sm-6">
+                      <p data-ng-id="bank_account-value">{{ bankAccountInfo() | mask }}</p>
+                    </div><!--.col-->
+                  </ng-container>
+
+                  <!-- INVOICE NUMBER -->
+                  <ng-container>
+                    <div class="col-5 col-sm-6">
+                      <p data-ng-id="invoice-num-label">{{ 'DIRECT_DEBIT.INVOICE_NUM_LABEL' | translate }}</p>
+                    </div><!--.col-->
+                    <div class="col-7 col-sm-6">
+                      <p data-ng-id="account-num-value">{{ invoiceNumber() }}</p>
+                    </div><!--.col-->
+                  </ng-container>
+
+                  <!-- FREQUENCY -->
+                  <ng-container>
+                    <div class="col-5 col-sm-6">
+                      <p data-ng-id="invoice-num-label">{{ 'DIRECT_DEBIT.FREQUENCY_LABEL' | translate }}</p>
+                    </div><!--.col-->
+                    <div class="col-7 col-sm-6">
+                      <p data-ng-id="account-num-value">Once</p>
+                    </div><!--.col-->
+                  </ng-container>
+
+                  <!-- DISCLAIMER - expected by -->
+                  <ng-container>
+                    <div class="col-12 ">
+                      <p data-ng-id="account-num-value">{{ 'DIRECT_DEBIT.EXPECTED_BY_TEXT' | translate }}</p>
+                    </div><!--.col-->
+                  </ng-container>
+                </div><!--.row-->
+              </div><!--.col-->
+            </div><!--.row-->
+
+            <div class="text-center">
+              <div class="ztt-card-button-holder">
+                <!-- Cancel -->
+                <button class="btn btn-light"
+                        data-ng-id="review-lending-app-cancel-btn"
+                        (click)="cancel()"
+                        [disabled]="cancellingDirectDebit || confirmingDirectDebit"
+                        [innerHTML]="(cancellingDirectDebit ? 'WORKING' : 'COMMON.BTN.CANCEL') | translate">
+                </button>
+
+                <!-- Confirm -->
+                <button class="btn btn-accent ml-auto"
+                        data-ng-id="review-lending-app-next-btn"
+                        (click)="confirmDirectDebit()"
+                        [disabled]="confirmingDirectDebit || cancellingDirectDebit || delegatedAccess || working"
+                        [innerHTML]="(confirmingDirectDebit? 'WORKING' : 'DIRECT_DEBIT.CONFIRM_LABEL') | translate">
+                </button>
+              </div><!--.ztt-buttons-default-wrapper -->
+            </div><!--.row-->
+          </div><!--.card-body-->
+        </div><!--.card-->
+      </div><!--.col-->
+    </div><!--.row-->
+
+  </div><!--#ztt-review-direct-debit-->
+</ng-container>

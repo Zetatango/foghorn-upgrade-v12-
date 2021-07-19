@@ -1,0 +1,9 @@
+{
+  "chromeWebSecurity": false,
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "configFile": "reporter.json"
+  },
+  "retries": 1,
+  "baseUrl": "http://dreampayments.zetatango.local:3001/"
+}

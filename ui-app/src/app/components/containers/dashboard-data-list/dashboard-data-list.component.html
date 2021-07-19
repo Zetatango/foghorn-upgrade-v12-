@@ -1,0 +1,37 @@
+<div id="ztt-dashboard-data-list" [ngClass]="{'pt-2': isSearchEnabled }">
+  <ztt-search-box
+    *ngIf="isSearchEnabled"
+    (searchChangeEvent)="onReceiveSearchChangeEvent($event)">
+  </ztt-search-box>
+
+  <!-- MAIN DATA LIST -->
+  <ztt-expandable-list
+    [data]="data"
+    [editTemplate]="editTemplate"
+    [hidden]="currentSearchValue"
+    [isEditing]="isEditing"
+    [listStatus]="listStatus"
+    [missingDataMessage]="missingDataMessage"
+    [primaryTemplate]="primaryTemplate"
+    [secondaryTemplate]="secondaryTemplate"
+    (finishEditEvent)="onFinishEditEvent($event)"
+    (nextEvent)="onReceiveNextEvent()"
+    (toggleEditEvent)="onToggleEditEvent()">
+  </ztt-expandable-list>
+
+  <!-- SEARCH DATA LIST -->
+  <ztt-expandable-list
+    [data]="searchData"
+    [disableScroll]="disableScroll"
+    [editTemplate]="editTemplate"
+    [hidden]="!currentSearchValue"
+    [isEditing]="isEditing"
+    [listStatus]="listStatus"
+    [missingDataMessage]="missingDataMessage"
+    [primaryTemplate]="primaryTemplate"
+    [secondaryTemplate]="secondaryTemplate"
+    (nextEvent)="onReceiveNextEvent(true)"
+    (finishEditEvent)="onFinishEditEvent($event)"
+    (toggleEditEvent)="onToggleEditEvent()">
+  </ztt-expandable-list>
+</div>

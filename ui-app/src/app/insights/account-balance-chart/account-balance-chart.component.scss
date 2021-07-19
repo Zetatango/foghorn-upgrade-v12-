@@ -1,0 +1,73 @@
+#ztt-account-balance-chart {
+
+  .account-balance-chart {
+    height: 600px;
+    width: 100%;
+
+    /* Workaround to modify the appearance of grid lines
+    * Blocked by https://github.com/swimlane/ngx-charts/issues/148
+    * Remove this workaround when this issue is resolved. */
+    .gridline-path-vertical {
+      display: none;
+    }
+
+    /* Workaround to modify lines in charts
+     * Blocked by https://github.com/swimlane/ngx-charts/issues/876
+     * Remove this workaround when the aforementioned issue is resolved. */
+
+    // Apply style to all lines
+    g.line-chart > g:last-of-type > g g.line-series > path {
+      stroke-width: 1;
+      stroke-linecap: round;
+    }
+
+    // Projections line (index 2)
+    g.line-chart > g:last-of-type > g:nth-child(2) g.line-series > path {
+      stroke-dasharray: 6 6;
+    }
+
+    .tooltip-anchor {
+      fill: #999;
+    }
+
+    .refline-path {
+      stroke: #fab80c;
+      stroke-dasharray: 0;
+    }
+
+    .refline-label {
+      display: none;
+    }
+  }
+
+  .legend {
+    .legend-line {
+      border-bottom: 1px solid;
+      width: 40px;
+    }
+
+    .legend-text {
+      font-size: 8px;
+    }
+
+    .threshold-line {
+      border-bottom: 1px solid $yellow;
+    }
+
+    .actual-line {
+      border-bottom: 1px solid $charcoal;
+    }
+
+    .forecast-line {
+      border-bottom: 1px dashed $charcoal;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .chart-container {
+      .account-balance-chart {
+        height: 320px;
+      }
+    }
+  }
+}

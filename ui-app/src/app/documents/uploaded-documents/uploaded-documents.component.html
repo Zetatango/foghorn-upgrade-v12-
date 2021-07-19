@@ -1,0 +1,20 @@
+<table
+  [dtOptions]="dtOptions"
+  class="mt-3"
+  datatable
+>
+  <thead>
+    <tr>
+      <th>{{ 'DOCUMENTS.TABLE.HEADER.UPLOAD_DATE' | translate }}</th>
+      <th>{{ 'DOCUMENTS.TABLE.HEADER.DOCUMENT_NAME' | translate }}</th>
+      <th>{{ 'DOCUMENTS.TABLE.HEADER.DOCUMENT_TYPE' | translate }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let document of merchantDocuments">
+      <td>{{ document.uploaded_at | localizeDate: translateService.currentLang }}</td>
+      <td>{{ document.org_doc_name }}</td>
+      <td>{{ getDocumentType(document.doc_type) | translate }}</td>
+    </tr>
+  </tbody>
+</table><!--datatable-->

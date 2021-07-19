@@ -1,0 +1,41 @@
+.cash-flow-chart {
+  height: 600px;
+  width: 100%;
+
+  @include media-breakpoint-down(sm) {
+    height: 400px;
+  }
+}
+
+#cash-flow-chart-legend {
+  .legend {
+    .legend-line {
+      height: 1rem;
+    }
+
+    .legend-text {
+      padding-top: 2px;
+    }
+
+    .cash-in-line {
+      width: 2.4rem;
+      background-color: $darker-green;
+    }
+
+    .cash-out-line {
+      width: 2.4rem;
+      background-color: $gray;
+    }
+
+    .forecasted-cash-in-line {
+      width: 1.1rem;
+      background-color: $blurred-green;
+    }
+
+    .forecasted-cash-out-line {
+      width: 1.1rem;
+      background-color: $blurred-gray;
+    }
+
+  }
+}

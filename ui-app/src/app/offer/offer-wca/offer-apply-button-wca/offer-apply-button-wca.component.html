@@ -1,0 +1,10 @@
+<button
+  class="btn btn-accent"
+  data-ng-id="apply-for-offer-btn"
+  name="{{ buttonLabel | translate }}"
+  [zttGtmEvent]
+  (click)="applyForOffer()"
+  [disabled]="!isOfferAvailable"
+>
+  {{ buttonLabel | translate }}
+</button>

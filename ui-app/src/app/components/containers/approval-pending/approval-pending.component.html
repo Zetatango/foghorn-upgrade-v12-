@@ -1,0 +1,24 @@
+<div class="ztt-container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="dialogue-icon"><i class="fas fa-check-circle text-muted"></i></div>
+        <div class="card-body">
+          <h5 class="card-title text-center" data-ng-id="approval-pending-title">
+            {{ 'APPROVAL_PENDING.TITLE' | translate }}
+          </h5>
+
+          <p class="card-text text-muted text-center">
+            {{ 'APPROVAL_PENDING.BODY' | translate }}
+          </p>
+
+          <div class="ztt-card-button-holder">
+            <button class="btn btn-accent mx-auto" [routerLink]="dashboardLink" data-ng-id="approval-pending-back-button">
+              {{ 'COMMON.BTN.BACK' | translate }}
+            </button>
+          </div><!--.ztt-card-button-holder-->
+        </div><!--.card-body-->
+      </div><!--.card-->
+    </div><!--.col-12-->
+  </div><!--.row-->
+</div><!-- #approval-pending-->

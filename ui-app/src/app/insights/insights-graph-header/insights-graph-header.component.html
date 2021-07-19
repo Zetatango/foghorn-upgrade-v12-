@@ -1,0 +1,31 @@
+<div id="insight-graph-header" class="mt-md-0">
+  <h1 class="font-weight-bold text-left pl-sm-3 chart-title">
+    <ng-template [ngIf]="showCashFlowChart" [ngIfElse]="cashBalance">
+      {{'INSIGHTS.CHART_CASH_FLOW_TITLE' | translate}}
+    </ng-template>
+    <ng-template #cashBalance>
+      {{'INSIGHTS.CHART_CASH_BALANCE_TITLE' | translate}}
+    </ng-template>
+  </h1>
+  <div class="row">
+    <div class="col-12 col-lg-4">
+      <span class="ml-sm-3 as-of-date-label" *ngIf="lastTransactionDate">
+        {{'INSIGHTS.CHART_DATA_AS_OF' | translate}} {{ lastTransactionDate | date: 'shortDate'}}
+      </span>
+    </div>
+    <div class="col-12 col-lg-8 d-flex justify-content-end">
+      <div class="btn-group ml-lg-auto btn-cash-group rounded-pill ml-0 ml-sm-3 ml-lg-0 mt-3 mt-lg-0">
+        <button class="btn py-1 rounded-pill mr-1" [ngClass]="showCashFlowChart ? 'btn-primary':  'btn-outline-primary'" id="btn-cash-flow"
+                (click)="setCashFlowChartShow(true)" name="{{ 'INSIGHTS.CASH_FLOW_BUTTON_TEXT' | translate }}"
+                [zttGtmEvent]>
+          {{'INSIGHTS.CASH_FLOW_BUTTON_TEXT' | translate}}
+        </button>
+        <button class="btn py-1 rounded-pill" [ngClass]="showCashFlowChart ? 'btn-outline-primary':  'btn-primary rounded-pill'" id="btn-cash-balance"
+                (click)="setCashFlowChartShow(false)"  name="{{ 'INSIGHTS.CASH_BALANCE_BUTTON_TEXT' | translate }}"
+                [zttGtmEvent]>
+          {{'INSIGHTS.CASH_BALANCE_BUTTON_TEXT' | translate}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

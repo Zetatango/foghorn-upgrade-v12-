@@ -1,0 +1,20 @@
+<div class="card mt-3">
+  <div class="card-body">
+    <div class="table-titles" [ngClass]="{'pb-3':!isInvoiceUiDisabled}">
+      <ng-container *ngIf="isInvoiceUiDisabled">
+        <h5 class="table-title font-weight-bold">{{ 'DASHBOARD_TABLE.RECENT_ACTIVITY.TITLE' | translate }}</h5>
+      </ng-container>
+      <ng-container *ngIf="!isInvoiceUiDisabled">
+        <a class="table-title nav-link font-weight-bold" [ngClass]="getClass(DashboardTable.ACTIVITY)"
+          (click)="switchToActivity()" role="button">
+          {{ 'DASHBOARD_TABLE.RECENT_ACTIVITY.TITLE' | translate }}
+        </a>
+        <a class="table-title nav-link font-weight-bold" [ngClass]="getClass(DashboardTable.INVOICES)" (click)="switchToInvoices()" role="button">
+          {{ 'DASHBOARD_TABLE.INVOICES.TITLE' | translate }}
+        </a>
+      </ng-container>
+    </div>
+    <ztt-borrower-transaction-history *ngIf="isActivityActive"></ztt-borrower-transaction-history>
+    <ztt-borrower-invoices id="ztt-borrower-invoices" *ngIf="isInvoicesActive"></ztt-borrower-invoices>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+<form [formGroup]="addressFormGroup">
+  <div class="row">
+    <div class="form-group col-12">
+      <label for="address-line-1">{{ 'ADDRESS_FORM.ADDRESS_LINE_1' | translate }}</label>
+      <input
+        type="text"
+        class="form-control"
+        id="address-line-1"
+        [class.is-invalid]="addressFormGroup.get('address_line_1').touched && addressFormGroup.get('address_line_1').invalid"
+        [placeholder]="'ADDRESS_FORM.ADDRESS_LINE_1_PLACEHOLDER' | translate"
+        formControlName="address_line_1"
+        zttExcludeEmoji
+        zttTrimWhitespace>
+      <div class="invalid-feedback">{{ 'ADDRESS_FORM.ADDRESS_LINE_1_ERROR' | translate }}</div>
+    </div><!--.col-->
+  </div><!--.row-->
+
+  <div class="row">
+    <div class="form-group col-12 col-sm-7">
+      <label for="city">{{ 'ADDRESS_FORM.CITY' | translate }}</label>
+      <input
+        type="text"
+        id="city"
+        [class.is-invalid]="addressFormGroup.get('city').touched && addressFormGroup.get('city').invalid"
+        class="form-control"
+        formControlName="city"
+        zttExcludeNumber
+        zttExcludeEmoji
+        zttTrimWhitespace>
+      <div class="invalid-feedback">{{ 'ADDRESS_FORM.CITY_ERROR' | translate }}</div>
+    </div>
+
+    <div class="form-group col-12 col-sm-5">
+      <label for="state-province">{{ 'ADDRESS_FORM.PROVINCE' | translate }}</label>
+      <select
+        class="form-control"
+        id="state-province"
+        [class.is-invalid]="addressFormGroup.get('state_province').touched && addressFormGroup.get('state_province').invalid"
+        formControlName="state_province">
+        <option value="" disabled>{{ 'ADDRESS_FORM.PROVINCE_SELECT_DEFAULT' | translate }}</option>
+        <option value="AB" [selected]="'AB' === defaultAddress?.state_province">{{ 'ADDRESS_FORM.ALBERTA' | translate }}</option>
+        <option value="BC" [selected]="'BC' === defaultAddress?.state_province">{{ 'ADDRESS_FORM.BRITISH_COLUMBIA' | translate }}</option>
+        <option value="MB" [selected]="'MB' === defaultAddress?.state_province">{{ 'ADDRESS_FORM.MANITOBA' | translate }}</option>
+        <option value="NB" [selected]="'NB' === defaultAddress?.state_province">{{ 'ADDRESS_FORM.NEW_BRUNSWICK' | translate }}</option>
+        <option value="NL" [selected]="'NL' === defaultAddress?.state_province">{{ 'ADDRESS_FORM.NEWFOUNDLAND_AND_LABRADOR' | translate }}</option>
+        <option value="NS" [selected]="'NS' === defaultAddress?.state_province">{{ 'ADDRESS_FORM.NOVA_SCOTIA' | translate }}</option>
+        <option value="ON" [selected]="'ON' === defaultAddress?.state_province">{{ 'ADDRESS_FORM.ONTARIO' | translate }}</option>
+        <option value="PE" [selected]="'PE' === defaultAddress?.state_province">{{ 'ADDRESS_FORM.PRINCE_EDWARD_ISLAND' | translate }}</option>
+        <option value="QC" [selected]="'QC' === defaultAddress?.state_province">{{ 'ADDRESS_FORM.QUEBEC' | translate }}</option>
+        <option value="SK" [selected]="'SK' === defaultAddress?.state_province">{{ 'ADDRESS_FORM.SASKATCHEWAN' | translate }}</option>
+        <option value="NT" [selected]="'NT' === defaultAddress?.state_province">{{ 'ADDRESS_FORM.NORTHWEST_TERRITORIES' | translate }}</option>
+        <option value="NU" [selected]="'NU' === defaultAddress?.state_province">{{ 'ADDRESS_FORM.NUNAVUT' | translate }}</option>
+        <option value="YT" [selected]="'YT' === defaultAddress?.state_province">{{ 'ADDRESS_FORM.YUKON' | translate }}</option>
+      </select>
+      <div class="invalid-feedback">{{ 'ADDRESS_FORM.PROVINCE_ERROR' | translate}}</div>
+    </div><!--.col-->
+
+    <div class="form-group col-12 col-sm-6">
+      <label for="postal-code">{{ 'ADDRESS_FORM.POSTAL_CODE' | translate }}</label>
+      <input
+        type="text"
+        id="postal-code"
+        [class.is-invalid]="addressFormGroup.get('postal_code').touched && addressFormGroup.get('postal_code').invalid"
+        class="form-control text-uppercase"
+        formControlName="postal_code"
+        [imask]="postalCodeMaskConfig">
+      <div class="invalid-feedback">{{ 'ADDRESS_FORM.POSTAL_CODE_ERROR' | translate}}</div>
+    </div><!--.col-->
+    <ng-content></ng-content>
+  </div><!--.row-->
+</form>

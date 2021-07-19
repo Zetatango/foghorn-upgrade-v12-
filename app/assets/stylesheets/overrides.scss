@@ -1,0 +1,106 @@
+/*! OVERRIDES.SCSS */
+
+// OVERRIDE STYLES
+// ========================================================
+// NOTE: these styles require justification for why styles were overriden.
+//
+// Table of Contents:
+//
+//  1. Alerts
+//  2. Buttons
+//  3. Dropdowns
+
+// 1. ALERTS
+// --------------------------------------------------------
+
+// WHY: the alert had a lot of right side padding, causing text to break to new lines.
+.alert-dismissible {
+  padding-right: $close-font-size + $alert-padding-x;
+}
+
+// 2. BUTTONS
+// --------------------------------------------------------
+
+// WHY: override the color-yiq stylings that could change button text color to gray-900.
+// This may need btn-group-accent, btn-group-primary in the future.
+.btn-group {
+  @include var(background-color, accent);
+  border-radius: $border-radius;
+}
+
+.btn-accent {
+  @include var(background-color, accent, '!important');
+  @include var(border-color, accent, '!important');
+  color: color-yiq(theme-color('accent'));
+
+  &.hover,
+  &:hover {
+    border-color: transparent;
+    color: color-yiq(theme-color('accent'));
+  }
+
+  &.focus,
+  &:focus {
+    color: color-yiq(theme-color('accent'));
+  }
+
+  &.disabled,
+  &:disabled {
+    color: color-yiq(theme-color('accent'));
+  }
+
+  &:not(:disabled):not(.disabled).active,
+  &:not(:disabled):not(.disabled):active,
+  .show > &.dropdown-toggle {
+    color: color-yiq(theme-color('accent'));
+  }
+}
+
+.btn-accent-static {
+  background-color: theme-color('accent') !important;
+  border-color: theme-color('accent') !important;
+}
+
+.btn-outline-accent {
+  @include var(border-color, accent);
+  @include var(color, accent);
+}
+
+// WHY: Bootstrap doesn't properly set cursor for disabled buttons
+[disabled] {
+  cursor: default !important;
+}
+
+// WHY: iOS does not style background of disabled select very well
+select:disabled {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+// 3. COLOR HELPERS
+// --------------------------------------------------------
+.bg-primary {
+  @include var(background-color, primary, '!important');
+}
+
+.bg-accent {
+  @include var(background-color, accent, '!important');
+}
+
+.btn-primary {
+  @include var(background-color, primary, '!important');
+}
+
+.text-primary {
+  @include var(color, primary, '!important');
+}
+
+.text-accent {
+  @include var(color, accent, '!important');
+}
+
+// 3. Dropdowns
+// --------------------------------------------------------
+.dropdown-toggle::after {
+  display: none;
+}

@@ -1,0 +1,318 @@
+<ztt-paf-terms-modal></ztt-paf-terms-modal>
+<ng-container *ngIf="loaded && loaded_invoice && isFormGroupInitialized">
+  <div class="supplier-info" *ngIf="displayHeader()">
+    <div class="container d-flex justify-content-between align-items-center py-2">
+      <span class="supplier-info-heading">{{ getSupplierName() }}</span>
+      <span *ngIf="getAccountNumber()" class="supplier-info-heading"
+            [innerHtml]="'INVOICE.ACCOUNT_BANNER_HEADING' | translate: { account_number: getAccountNumber() }"></span>
+    </div><!--.container-->
+  </div><!--.supplier-info-->
+
+  <div class="ztt-container" id="ztt-select-lending-offer">
+    <div class="row">
+      <div class="col-12 col-md-6 mb-3 mb-md-0" *ngIf="invoice">
+        <div class="card h-100">
+          <div class="card-body">
+            <p class="text-accent font-weight-bold text-center mb-0 amount-due"
+               *ngIf="invoice && invoice.due_date && !isPaidByPaf">
+              {{ 'INVOICE.AMOUNT_DUE_WITH_DATE' | translate: { invoice_due_date: invoice.due_date | localizeDate: translateService.currentLang: null: 'UTC' } }}
+            </p>
+            <p class="text-accent font-weight-bold text-center mb-0 amount-due"
+               *ngIf="!invoice || (!invoice.due_date && !isPaidByPaf)">
+              {{ 'INVOICE.AMOUNT_DUE_NO_DATE' | translate }}
+            </p>
+            <p class="invoice-amount text-center mb-0">{{ getInvoiceAmountDue() | zttCurrency : translateService.currentLang }}</p>
+            <p class="text-accent font-weight-bold text-center mb-0 amount-due"
+               *ngIf="isPaidByPaf">
+              {{ 'INVOICE.AMOUNT_DUE_WITH_PAF' | translate: { activation_date: invoice.paf_activation_date | localizeDate: translateService.currentLang: null: 'UTC' } }}
+              <i class="fas fa-info-circle" (click)="showPaymentPlanReview()"></i>
+            </p>
+            <p class="text-small invoice-original-amount text-center"
+               *ngIf="!invoice || (invoice && !isPaidByPaf)"
+               [innerHtml]="'INVOICE.OF_ORIGINAL_AMOUNT' | translate: { invoice_amount: getInvoiceAmount() | zttCurrency : translateService.currentLang, invoice_number: getInvoiceNumber() }"></p>
+
+            <div class="text-center"
+                 *ngIf="showPafSignup">
+              <button class="btn btn-link mb-0"
+                      data-ng-id="pafSignup"
+                      (click)="showPafModal()">
+                {{ 'INVOICE.PAF_SIGNUP' | translate }}
+              </button>
+            </div><!--.col-->
+
+            <div class="text-center"
+                 *ngIf="showPafOptOut">
+              <button class="btn btn-link mb-0"
+                      data-ng-id="pafOptOut"
+                      (click)="showPafOptOutModal()">
+                {{ 'INVOICE.PAF_OPT_OUT' | translate }}
+              </button>
+            </div><!--.col-->
+
+            <div class="text-center text-muted small mb-0"
+                 *ngIf="isPaidByPaf">
+              <span>{{ 'INVOICE.PAF_ACCEPTED_AT' | translate: { accepted_at: pafAgreement.accepted_at | friendlyDate:'longDate':'UTC':translateService.currentLang } }}</span>
+            </div><!--.col-->
+          </div><!--.card-body-->
+        </div><!--.card-->
+      </div><!--.col-->
+      <div class="col-12"
+           [ngClass]="invoice ? 'col-md-6' : ''">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-6 text-accent mb-2 repayment-details"
+                   *ngIf="!invoice && getInvoiceNumber()">
+                {{ 'INVOICE.NUMBER_LABEL' | translate }}
+              </div><!--.col-->
+              <div class="col-6 text-right repayment-details"
+                   *ngIf="!invoice && getInvoiceNumber()">
+                {{ getInvoiceNumber() }}
+              </div><!--.col-->
+
+              <div class="col-6 text-accent mb-2 repayment-details">
+                {{ 'PAY_TERMS.SMALL_HEADER_PAYMENT' | translate }}
+              </div><!--.col-->
+              <div class="col-6 text-right repayment-details"
+                   [innerHtml]="'INVOICE.PAYMENT_WITH_FREQUENCY' | translate: { payment_amount: (lendingFee?.repayment_amount || '0') | zttCurrency : translateService.currentLang, payment_frequency: frequency | translate }">
+              </div><!--.col-->
+
+              <div class="col-6 text-accent mb-2 repayment-details" data-ng-id="lending-fee-label">
+                {{ 'INVOICE.COST' | translate }}
+              </div><!--.col-->
+              <div class="col-6 text-right repayment-details" data-ng-id="lending-fee-value">
+                {{ (lendingFee?.fee || '0') | zttCurrency : translateService.currentLang }}
+              </div><!--.col-->
+
+              <div class="col-6 text-accent mb-2 repayment-details"
+                  *ngIf="paymentMethod === 'direct_debit'" data-ng-id="lending-fee-promo-label">
+                {{ 'INVOICE.PROMO' | translate }}
+              </div><!--.col-->
+              <div class="col-6 text-right repayment-details"
+                   *ngIf="paymentMethod === 'direct_debit'" data-ng-id="lending-fee-promo-value">
+                {{ (directDebitPromoFee || '0') | zttCurrency : translateService.currentLang }}
+              </div><!--.col-->
+
+              <div class="col-6 text-accent mb-2 repayment-details">
+                {{ 'INVOICE.TOTAL_REPAYMENT' | translate }}
+              </div><!--.col-->
+              <div class="col-6 text-right repayment-details">
+                {{ total_repayment | zttCurrency : translateService.currentLang }}
+              </div><!--.col-->
+
+              <ng-container *ngIf="invoice">
+              <div class="col-6 text-accent mb-2 repayment-details">
+                  {{ 'INVOICE.PROCESSING_AMOUNT' | translate }}
+                <i class="far fa-question-circle text-muted px-1"
+                   [tooltip]="'INVOICE.PROCESSING_AMOUNT_DESCRIPTION' | translate "
+                   placement="top"
+                   >
+                </i>
+              </div><!--.col-->
+              <div class="col-6 text-right repayment-details">
+                {{ getInvoiceProcessingAmount() | zttCurrency : translateService.currentLang }}
+              </div><!--.col-->
+              </ng-container>
+            </div><!--.row-->
+          </div><!--.card-body-->
+        </div><!--.card-->
+      </div><!--.col-->
+    </div><!-- .row-->
+
+    <div class="row">
+      <div class="col-12 mt-3">
+        <div class="card">
+          <div class="card-body">
+            <ng-container *ngIf="offer">
+              <form [formGroup]="selectLendingOfferFormGroup">
+                <p class="mb-0 text-muted text-center small"
+                  *ngIf="!isDirectDebit">
+                    <ng-container *ngIf="principalWarning()">
+                        {{ 'PAY_DETAILS_AMT_INVALID' | translate: { max_available: maxAvailableForChosenTerm() | zttCurrency : translateService.currentLang } }}
+                      </ng-container>
+                      <ng-container *ngIf="!principalWarning()">
+                        {{ 'INVOICE.AMOUNT_USED' | translate: { amount_used: principal | zttCurrency : translateService.currentLang, amount_limit: max_available | zttCurrency : translateService.currentLang } }}
+                      </ng-container>
+                </p><!--.invalid-feedback-->
+
+                <div class="progress mb-3"
+                  *ngIf="!isDirectDebit">
+                  <div class="bg-accent"
+                       role="progressbar"
+                       [attr.aria-valuenow]="principal"
+                       [attr.aria-valuemin]="0"
+                       [attr.aria-valuemax]="max_available"
+                       [attr.aria-valuetext]="'INVOICE.AMOUNT_USED' | translate: { amount_used: principal | zttCurrency : translateService.currentLang, amount_limit: max_available | zttCurrency : translateService.currentLang }"
+                       [style.width]="((principal / max_available) * 100) + '%'">
+                  </div>
+                </div><!--.progress-->
+
+                <div class="row">
+                  <div class="col-6 col-md-3"
+                       *ngIf="isSupplierPayment && directDebitEnabled && (invoice || isSupplierBusinessPartner)">
+                    <label for="paymentMethod"
+                           class="text-muted">{{ 'INVOICE.PAYMENT_METHOD' | translate }}</label>
+                    <select class="form-control invoice-inputs"
+                            id="paymentMethod"
+                            formControlName="paymentMethod"
+                            [attr.disabled]="processingOperation ? 'true' : null"
+                            (change)="onPaymentMethodChange($event)">
+                      <option [selected]="paymentMethod === 'direct_debit'"
+                              value="direct_debit">{{ 'INVOICE.PAYMENT_METHOD_PAY_NOW' | translate }}</option>
+                      <option *ngIf="isFinancingAvailable"
+                              [selected]="paymentMethod === 'financing'"
+                              value="financing">{{ 'INVOICE.PAYMENT_METHOD_FINANCE' | translate }}</option>
+                    </select>
+                  </div><!--.col-->
+
+                  <div *ngIf="paymentMethod === 'financing'" class="col-6 col-md-3">
+                    <label for="paymentFrequency"
+                           class="text-muted">{{ 'INVOICE.PAYMENT_FREQUENCY' | translate }}</label>
+                    <select class="form-control invoice-inputs"
+                            id="paymentFrequency"
+                            formControlName="paymentFrequency"
+                            [attr.disabled]="processingOperation || frequencyList?.length === 1  ? 'true' : null"
+                            (change)="onPaymentFrequencyChange($event)">
+                            <option *ngFor="let freq of frequencyList" [value]="freq">{{ getPaymentFrequencyLabel(freq) | translate }}</option>
+                    </select>
+                  </div><!--.col-->
+
+                  <div *ngIf="paymentMethod === 'financing'" class="col-12 col-md-3">
+                    <label for="paymentTerm"
+                           class="text-muted">{{ 'INVOICE.PAYMENT_TERM' | translate }}</label>
+                    <select class="form-control invoice-inputs"
+                            id="paymentTerm"
+                            formControlName="paymentTerm"
+                            [attr.disabled]="processingOperation || terms?.length === 1  ? 'true' : null"
+                            (change)="onTermClick($event)">
+                      <ng-container *ngFor="let loan_term of terms">
+                        <option *ngIf="loan_term.term_type !== 'direct_debit'"
+                                [value]="loan_term.id">{{ loan_term.term_duration }} {{ loan_term.localised_unit_label | translate }}</option>
+                      </ng-container>
+                    </select>
+                  </div><!--.col-->
+
+                  <div class="col flex-grow-1"
+                       [ngClass]="{ 'mt-md-0 mt-3': (paymentMethod === 'financing' && directDebitEnabled) || isWca }">
+                    <label for="amount"
+                           class="text-muted">{{ 'PAY_DETAILS_AMT' | translate }}</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                      </div>
+                      <input type="text"
+                             inputmode="decimal"
+                             id="amount"
+                             formControlName="amount"
+                             class="form-control invoice-inputs"
+                             required
+                             [attr.disabled]="processingOperation ? 'true' : null"
+                             [cleave]="currencyCleaveConfig"
+                             [value]="invoiceAmountExists() ? getInvoiceAmountDue() : principal"
+                             [class.is-invalid]="selectLendingOfferFormGroup.controls['amount'].touched && selectLendingOfferFormGroup.controls['amount'].invalid">
+                      <div *ngIf="principal && amountAboveMaximum()"
+                           class="d-flex invalid-feedback">
+                        {{ 'PAY_DETAILS_AMT_INVALID' | translate: { max_available: maxAvailableForChosenTerm() | zttCurrency : translateService.currentLang } }}
+                      </div><!--.invalid-feedback-->
+                      <div *ngIf="principal && amountBelowMinimum()"
+                           class="d-flex invalid-feedback">
+                        {{ 'PAY_DETAILS_AMT_LOW' | translate: { min_available: minAvailableForChosenTerm() | zttCurrency : translateService.currentLang } }}
+                      </div><!-- .invalid-feedback-->
+                    </div><!--.input-group-->
+                  </div><!--.col-->
+                </div><!--.row-->
+
+                <div class="ztt-card-button-holder">
+                  <!-- Cancel -->
+                  <button class="btn btn-light"
+                          type="button"
+                          (click)="back()"
+                          [disabled]="processingOperation"
+                          data-ng-id="select-offer-back-btn">
+                    {{ 'COMMON.BTN.BACK' | translate }}
+                  </button>
+
+                  <!-- Next -->
+                  <button *ngIf="offer"
+                          type="submit"
+                          class="btn btn-accent ml-auto"
+                          id="select-offer-btn"
+                          (click)="processLendingApplication()"
+                          [disabled]="selectLendingOfferFormGroup.invalid || processingOperation || isButtonDisabled || calculatingFee || debouncing"
+                          [innerHtml]="(processingOperation || calculatingFee ? 'WORKING' : 'COMMON.BTN.NEXT') | translate">
+                  </button>
+                </div><!--.ztt-card-button-holder-->
+              </form>
+            </ng-container>
+          </div><!--.card-body-->
+        </div><!--.card-->
+      </div><!--.col-->
+    </div><!--.row-->
+  </div><!--.invoice-container-->
+</ng-container>
+
+<ng-template #pafInfoModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{ 'INVOICE.PAF_INFO_HEADER' | translate }}</h4>
+
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div><!--.modal-header-->
+
+  <div class="modal-body">
+    <p>{{'INVOICE.PAF_INFO1' | translate }}</p>
+    <p>{{'INVOICE.PAF_INFO2' | translate }}</p>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="btn-group mt-3 float-right" role="group">
+          <button type="button"
+                  class="btn ztt-btn-group-icon">
+            <i class="fas fa-signature"></i>
+          </button>
+          <button class="btn btn-block btn-accent" (click)="setupPaf()">
+            {{ 'INVOICE.PAF_SIGNUP_BUTTON' | translate }}
+          </button>
+        </div><!--.btn-group-->
+      </div><!--.col-->
+    </div><!-- row -->
+
+  </div><!--.modal-body-->
+</ng-template>
+
+<ng-template #pafOptOutModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{ 'INVOICE.PAF_OPT_OUT_HEADER' | translate }}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div><!--.modal-header-->
+  <div class="modal-body">
+    <p>{{'INVOICE.PAF_OPT_OUT_INFO' | translate: { supplier: getSupplierName() } }}</p>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="btn-group mt-3 float-right" role="group">
+          <button type="button"
+                  class="btn ztt-btn-group-icon">
+            <i class="fas fa-signature"></i>
+          </button>
+          <button class="btn btn-block btn-accent" (click)="disablePaf()">
+            {{ 'INVOICE.PAF_OPT_OUT_BUTTON' | translate }}
+          </button>
+        </div><!--.btn-group-->
+      </div><!--.col-->
+    </div><!-- row -->
+
+  </div><!--.modal-body-->
+</ng-template>
+
+<ng-template>
+  {{ 'PAY_TERMS.LABEL_DAYS' | translate }}
+  {{ 'PAY_TERMS.LABEL_DAY' | translate }}
+  {{ 'PAY_TERMS.LABEL_WEEKS' | translate }}
+  {{ 'PAY_TERMS.LABEL_WEEK' | translate }}
+  {{ 'PAY_TERMS.LABEL_MONTHS' | translate }}
+  {{ 'PAY_TERMS.LABEL_MONTH' | translate }}
+</ng-template>

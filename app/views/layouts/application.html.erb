@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme" content="<%= partner_theme_name %>">
+    <meta name="partner_id" content="<%= current_partner&.id %>">
+    <meta name="logout_url" content="<%= session_logout_url %>">
+    <meta name="subdomain" content="<%= escaped_partner_subdomain %>">
+    <meta name="account_info_url" content="<%= account_info_url %>">
+    <meta name="merchant_id" content="<%= current_user&.merchant_on_selected_profile %>" />
+
+    <%= csrf_meta_tags %>
+
+    <!-- Google Tag Manager -->
+    <%= render 'layouts/gtm' unless gtm_container_id.blank? %>
+    <!-- End Google Tag Manager -->
+
+    <title><%= @title.present? ? @title : 'Ario Platform' %></title>
+
+    <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'shortcut icon' %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+    <!-- RENDERED THEME STYLES -->
+    <%= content_tag('style', render_theme_styles) %>
+
+    <!-- INTERCOM CHAT -->
+    <%= render 'layouts/intercom' if embed_intercom? %>
+
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+
+    <base href="<%= base_url %>">
+
+    <% if google_places_api_key.present? %>
+      <script src="https://maps.googleapis.com/maps/api/js?key=<%= google_places_api_key %>&libraries=places" defer></script>
+    <% end %>
+
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
+
+    <!-- Angular Embedding (Start) -->
+    <% if (Rails.env.development? && !Rails.configuration.use_minikube) || Rails.env.test? %>
+      <script type="text/javascript" src="<%= base_url %>main.js?v=<%= Time.now.to_f %>" defer></script>
+      <script type="text/javascript" src="<%= base_url %>polyfills.js?v=<%= Time.now.to_f %>" defer></script>
+      <script type="text/javascript" src="<%= base_url %>runtime.js?v=<%= Time.now.to_f %>" defer></script>
+      <script type="text/javascript" src="<%= base_url %>scripts.js?v=<%= Time.now.to_f %>" defer></script>
+      <script type="text/javascript" src="<%= base_url %>vendor.js?v=<%= Time.now.to_f %>" defer></script>
+    <% elsif Rails.env.production? || Rails.env.e2e? || (Rails.env.development? && Rails.configuration.use_minikube) %>
+      <script type="text/javascript" src="<%= base_url %><%= Rails.application.config.angular_runtime_asset_path %>" defer></script>
+      <script type="text/javascript" src="<%= base_url %><%= Rails.application.config.angular_polyfills_asset_path %>" defer></script>
+      <script type="text/javascript" src="<%= base_url %><%= Rails.application.config.angular_scripts_asset_path %>" defer></script>
+      <script type="text/javascript" src="<%= base_url %><%= Rails.application.config.angular_main_asset_path %>" defer></script>
+    <% end %>
+    <!-- Angular WLMP Embedding (End) -->
+  </head>
+
+  <body>
+    <%= yield %>
+
+    <% if use_ga? %>
+      <%= render 'shared/google_analytics' %>
+    <% end %>
+
+    <% unless Rails.env.development? || Rails.env.production? || Rails.env.e2e? || Rails.env.test? %>
+      <p><b>ERROR:</b> Unexpected Rails environment. Couldn't infer proper ui-app embedding.<br />(Only development, test, E2E and production currently handled.)</p>
+    <% end %>
+  </body>
+</html>

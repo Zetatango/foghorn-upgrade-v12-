@@ -1,0 +1,42 @@
+#ztt-operating-ratio {
+  .card {
+    border-left: 2px solid $heather;
+
+    .op-cash-value {
+      font-size: 18px;
+    }
+  }
+
+  .no-data-dash {
+    height: 1px;
+    background: $charcoal;
+    width: 20px;
+  }
+
+  .chevron {
+    height: 18px;
+    font-size: 0.75rem;
+    margin-top: 1.8rem;
+    padding: 1px;
+  }
+
+  .chevron-double-down {
+    background: $dark-green;
+  }
+
+  .chevron-double-up {
+    background-color: $dark-red;
+  }
+
+  @include media-breakpoint-down(md) {
+    .card {
+      border: 0;
+    }
+  }
+}
+
+.operating-ration-desc-tooltip {
+  p {
+    text-align: left;
+  }
+}

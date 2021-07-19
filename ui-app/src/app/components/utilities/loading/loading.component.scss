@@ -1,0 +1,28 @@
+/*! ng component: LOADING */
+
+.spinner-overlay {
+  cursor: wait;
+  opacity: 0.1;
+}
+
+.spinner-message-container {
+  cursor: wait;
+  height: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 40%;
+}
+
+.spinner-message {
+  background-color: white;
+  border-radius: 4px;
+  color: gray('800');
+  display: inline-block;
+  font-size: 20px;
+  font-weight: $font-weight-bold;
+  padding: 20px;
+  position: relative;
+  z-index: $above-dialog-overlay;
+}

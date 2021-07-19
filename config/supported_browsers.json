@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Chrome",
+        "major": "80",
+        "label": "Google Chrome (v.80+)",
+        "href": "https://www.google.com/chrome/",
+        "desktop": true,
+        "mobile": true
+    },
+    {
+        "name": "Firefox",
+        "major": "72",
+        "label": "Mozilla Firefox (v.72+)",
+        "href": "https://www.mozilla.org/firefox/download",
+        "desktop": true,
+        "mobile": true
+    },
+    {
+        "name": "Safari",
+        "major": "12",
+        "label": "Apple Safari (v.12+)",
+        "href": "https://www.apple.com/ca/safari/",
+        "desktop": true,
+        "mobile": true
+    },
+    {
+        "name": "Edge",
+        "major": "80",
+        "label": "Microsoft Edge (v.80+)",
+        "href": "https://www.microsoft.com/en-ca/edge",
+        "desktop": true,
+        "mobile": false
+    },
+    {
+        "name": "Samsung Browser",
+        "major": "13",
+        "label": "Samsung Internet (v.13+)",
+        "href": "https://www.samsung.com/global/galaxy/apps/samsung-internet/",
+        "desktop": false,
+        "mobile": true
+    }
+]

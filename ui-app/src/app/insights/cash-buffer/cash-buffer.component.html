@@ -1,0 +1,54 @@
+<div class="cash-buffer-card card border">
+  <div class="card-body">
+    <h5 class="card-title text-accent font-weight-bold mb-4">{{ 'INSIGHTS.CASH_BUFFER.TITLE' | translate }}</h5>
+    <h5 class="card-subtitle font-weight-bold mb-4">{{ 'INSIGHTS.CASH_BUFFER.SUBTITLE' | translate }}</h5>
+    <p class="mb-3">{{ 'INSIGHTS.CASH_BUFFER.DESCRIPTION' | translate }}</p>
+
+    <form class="form-row mb-5" [formGroup]="cashBufferForm" (ngSubmit)="saveThreshold()">
+      <div class="col-7">
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">$</div>
+          </div><!--.input-group-prepend-->
+          <input
+            type="text"
+            class="form-control"
+            formControlName="amount"
+            inputmode="numeric"
+            required
+            [cleave]="currencyCleaveConfig"
+            [class.is-invalid]="amount.invalid && amount.touched"
+          />
+        </div><!--.input-group-->
+        <!-- FEEDBACK -->
+        <div class="text-success small" *ngIf="success">{{ 'INSIGHTS.CASH_BUFFER.SUCCESS' | translate }}</div>
+        <div class="text-danger small" *ngIf="error">{{ 'INSIGHTS.CASH_BUFFER.ERROR' | translate }}</div>
+      </div><!--.col-->
+
+      <div class="col-5 text-right">
+        <button
+          data-ng-id="cash-buffer-save"
+          type="submit"
+          class="btn btn-accent btn-block"
+          [disabled]="saving || amount.invalid"
+          name="{{ 'INSIGHTS.CASH_BUFFER.SAVE' | translate }}"
+          [zttGtmEvent]
+        >
+        {{ 'INSIGHTS.CASH_BUFFER.SAVE' | translate }}
+        </button>
+      </div><!--.col-->
+    </form>
+
+    <p class="card-text text-muted text-center small">
+      {{ 'INSIGHTS.CASH_BUFFER.OPT_OUT_TEXT' | translate }}
+      <a
+        class="text-muted"
+        href="{{ accountInfoUrlString }}"
+        rel="noopener"
+        target="_blank"
+      >
+        <u>{{ 'INSIGHTS.CASH_BUFFER.MY_PROFILE' | translate }}</u>
+      </a>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="search-box input-group align-items-center w-auto rounded-pill">
+  <div class="before-search-box">
+    <i class="fas fa-search"></i>
+  </div>
+  <input type="text" class="bg-transparent border-0 h-100" [(ngModel)]="searchValue" placeholder="{{ 'SEARCH_BOX.PLACEHOLDER' | translate }}" (keyup)="onSearchChangeEvent()"/>
+  <div class="after-search-box">
+    <i *ngIf="searchValue" class="fas fa-times clear text-muted" (click)="clearSearch()"></i>
+  </div>
+</div>

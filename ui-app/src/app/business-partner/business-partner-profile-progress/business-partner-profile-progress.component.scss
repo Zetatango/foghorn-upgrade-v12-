@@ -1,0 +1,73 @@
+.profile-bar {
+  height: 15px;
+}
+
+$step1: rgba(theme-color('accent'), .2);
+$step2: rgba(theme-color('accent'), .4);
+$step3: rgba(theme-color('accent'), .6);
+$step4: rgba(theme-color('accent'), .8);
+$step5: theme-color('accent');
+
+.step1-filled {
+  background-color: $step1;
+}
+
+.step1-empty {
+  border: 1px solid $step1;
+}
+
+.step2-filled {
+  background-color: $step2;
+}
+
+.step2-empty {
+  border: 1px solid $step2;
+}
+
+.step3-filled {
+  background-color: $step3;
+}
+
+.step3-empty {
+  border: 1px solid $step3;
+}
+
+.step4-filled {
+  background-color: $step4;
+}
+
+.step4-empty {
+  border: 1px solid $step4;
+}
+
+.step5-filled {
+  background-color: $step5;
+}
+
+.step5-empty {
+  border: 1px solid $step5;
+}
+
+.step1-caret {
+  color: $step1;
+}
+
+.step2-caret {
+  color: $step2;
+}
+
+.step3-caret {
+  color: $step3;
+}
+
+.step4-caret {
+  color: $step4;
+}
+
+.step5-caret {
+  color: $step5;
+}
+
+.profile-step-label {
+  cursor: pointer;
+}

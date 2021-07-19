@@ -1,0 +1,80 @@
+<div class="card">
+  <div class="card-body">
+    <div *ngIf="!isOfferAvailable" class="d-flex flex-column justify-content-between ztt-offer">
+      <h5>{{ 'SHOW_OFFERS.INFO_CARD.OFFERS.NO_OFFER.TITLE' | translate }}</h5>
+
+      <p [innerHTML]="'SHOW_OFFERS.INFO_CARD.OFFERS.NO_OFFER.TEXT' | translate"></p>
+    </div><!--.row-->
+
+    <div *ngIf="isOfferAvailable" class="d-flex flex-column flex-lg-row justify-content-between align-items-center ztt-offer">
+      <!-- Tooltip -->
+      <i class="far fa-question-circle text-muted px-1 offer-info"
+       [tooltip]="OfferTooltipTemplate"
+       placement="right"
+       containerClass="offer-tooltip"></i>
+
+      <ng-container [ngSwitch]="offerApplicationState">
+        <ng-container *ngSwitchCase="'IN_PROGRESS'">
+          <ng-template *ngTemplateOutlet="offerInProgress"></ng-template>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'NEW'">
+          <ng-template *ngTemplateOutlet="offerNew"></ng-template>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'APPROVED'">
+          <ng-template *ngTemplateOutlet="offerApproved"></ng-template>
+        </ng-container>
+      </ng-container>
+    </div><!--.d-flex-->
+  </div><!--.card-body-->
+</div><!--.card-->
+
+<ng-template #OfferTooltipTemplate>
+  <p>{{ 'SHOW_OFFERS.INFO_CARD.OFFERS.WCA.TOOLTIP.BODY' | translate }}</p>
+</ng-template>
+
+<ng-template #offerNew>
+  <!-- Title -->
+  <h5 class="text-muted">{{ 'SHOW_OFFERS.INFO_CARD.OFFERS.WCA.TITLE.NEW' | translate }}</h5>
+
+  <h5 class="font-weight-bold">{{ 'SHOW_OFFERS.INFO_CARD.OFFERS.WCA.TITLE_LABEL.NEW' | translate }}
+    <!-- Amount -->
+    <span class="font-weight-bold my-2 mb-lg-0">
+      {{ offerAvailableAmount | zttCurrency : translateService.currentLang }}
+    </span>
+  </h5>
+  <!-- Note: [Graham] remove WCA apply -->
+  <ztt-offer-apply-button-wca></ztt-offer-apply-button-wca>
+</ng-template>
+
+<ng-template #offerInProgress>
+  <div>
+    <!-- Title -->
+    <h5 class="text-muted">{{ 'SHOW_OFFERS.INFO_CARD.OFFERS.WCA.TITLE.IN_PROGRESS' | translate }}</h5>
+
+    <h5 class="font-weight-bold my-2 mb-lg-0">
+      {{ offerAvailableAmount | zttCurrency : translateService.currentLang }}
+    </h5>
+  </div><!--.flex-grouping-->
+
+
+  <!-- Spinner -->
+  <div class="text-center" data-ng-id="apply-for-offer-spinner">
+    <i class="fas fa-spinner fa-spin text-accent"></i>
+    <p class="d-inline ml-3 font-size-lg">{{ 'SHOW_OFFERS.INFO_CARD.OFFERS.WCA.BTN_LABEL.IN_PROGRESS' |
+      translate }}</p>
+  </div><!--.text-center -->
+</ng-template>
+
+<ng-template #offerApproved>
+  <!-- Title -->
+  <h5 class="text-muted">{{ 'SHOW_OFFERS.INFO_CARD.OFFERS.WCA.TITLE.APPROVED' | translate }}</h5>
+
+  <h5 class="font-weight-bold my-2 mb-lg-0">
+    {{ offerAvailableAmount | zttCurrency : translateService.currentLang }}
+  </h5>
+
+  <ztt-offer-apply-button-wca></ztt-offer-apply-button-wca>
+</ng-template>
+

@@ -1,0 +1,14 @@
+<div class="ztt-container" id="completing-lending-application">
+  <div class="card">
+    <div class="dialogue-icon">
+      <i class="fas text-accent" [ngClass]="iconClass"></i>
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title">{{ 'COMPLETING_APPLICATION.TITLE' | translate }}</h5>
+        <p class="card-text text-muted mb-3">
+          {{ 'COMPLETING_APPLICATION.BODY' | translate }}
+        </p>
+        <button class="btn btn-accent" *ngIf="isCompletingApplication" [routerLink]="dashboardRouterLink">{{ 'COMMON.BTN.DASHBOARD' | translate }}</button>
+    </div><!--.card-body -->
+  </div><!--.card -->
+</div><!--.completing-lending-application -->

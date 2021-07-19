@@ -1,0 +1,110 @@
+/*! ng component: BUSINESS-PARTNER-DASHBOARD */
+
+.dataTables_empty {
+  display: none;
+}
+
+table.dataTable tbody tr td a:hover {
+  cursor: pointer;
+}
+
+/** share button variables and colors */
+
+$sb-background-color: transparent;
+$sb-border-radius: 1px;
+$sb-facebook: #4267b2;
+$sb-twitter: #00acee;
+$sb-linkedin: #006fa6;
+$sb-accent: #fff;
+$sb-gray: #a5a5a5;
+
+$sb-buttons: (
+  facebook: $sb-facebook,
+  twitter: $sb-twitter,
+  linkedin: $sb-linkedin,
+);
+
+/** share buttons theme **/
+
+.sb-modern-dark .sb-wrapper {
+  $sb-border-radius: 3px;
+  $separate-shadow: 1px 0 1px -1px rgba(0, 0, 0, .3);
+
+  @each $button,
+  $color in $sb-buttons {
+    &.sb-#{$button} {
+      background-color: $color;
+    }
+  }
+
+  border-radius: $sb-border-radius;
+  box-shadow: 0 .1em .5em rgba($sb-gray, .6);
+  color: $sb-accent;
+  transition: box-shadow ease-in 150ms, transform ease-in 150ms;
+
+  &:active {
+    box-shadow: 0 .4em 1em rgba($sb-gray, .9);
+  }
+
+  .sb-text,
+  .sb-count {
+    background: rgba(0, 0, 0, .1);
+  }
+
+  &.sb-show-text.sb-show-count {
+    .sb-text {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    .sb-count {
+      background: none;
+    }
+  }
+
+  &.sb-show-text,
+  &.sb-show-count {
+    padding: 0;
+
+    .sb-icon {
+      box-shadow: $separate-shadow;
+    }
+
+    .sb-text {
+      border-bottom-right-radius: $sb-border-radius;
+      border-top-right-radius: $sb-border-radius;
+    }
+  }
+}
+
+ztt-business-partner-dashboard {
+  .bottom-right {
+    bottom: map-get($spacers, 3);
+    right: map-get($spacers, 3);
+    z-index: 1;
+  }
+
+  tabset {
+    tab {
+      background-color: color('white');
+    }
+
+    > ul {
+      @extend .justify-content-start;
+    }
+  }
+}
+
+ztt-business-partner-sent-invoices-v2,
+ztt-business-partner-customer-summary-v2 {
+  .long-tooltip,
+  .tooltip-inner {
+    max-width: none !important;
+    width: 300px;
+
+    .tooltip-inner {
+      overflow-wrap: break-word;
+      white-space: normal;
+    }
+  }
+}

@@ -1,0 +1,100 @@
+<ng-template #pafAgreementModal>
+        <div class="modal-header">
+          <h4 class="modal-title">{{ 'PAF_TERMS_MODAL.TITLE.MAIN' | translate }}</h4>
+          <button type="button" class="close" aria-label="Close" (click)="hide()">
+              <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="row">
+          <!-- CARD: APPLICATION SUMMARY -->
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-12">
+                    <p class="text-muted">{{ 'PAF_TERMS_MODAL.SUBTITLE' | translate }}</p>
+                    <p class="lead">{{ 'PAF_TERMS_MODAL.TITLE.SUB_1' | translate }}</p>
+                    <hr>
+                    <div class="row">
+                      <!-- RECIPIENT -->
+                      <div class="col-5 col-sm-6">
+                        <p data-ng-id="recipient-label">{{ 'PAF_TERMS_MODAL.RECIPIENT' | translate }}</p>
+                      </div><!--.col-->
+                      <div class="col-7 col-sm-6">
+                        <p data-ng-id="recipient-value">{{ invoice.supplier_entity.name }}</p>
+                      </div><!--.col-->
+
+                      <!-- PAYEE ACCOUNT NUMBER -->
+                      <ng-container *ngIf="invoice.account_number">
+                        <div class="col-5 col-sm-6">
+                          <p data-ng-id="account-num-label">{{ 'PAF_TERMS_MODAL.ACCOUNT' | translate }}</p>
+                        </div><!--.col-->
+                        <div class="col-7 col-sm-6">
+                          <p data-ng-id="account-num-value">{{ invoice.account_number }}</p>
+                        </div><!--.col-->
+                      </ng-container>
+
+                      <!-- INVOICE NUMBER -->
+                      <ng-container>
+                        <div class="col-5 col-sm-6">
+                          <p data-ng-id="invoice-num-label">{{ 'PAF_TERMS_MODAL.INVOICE' | translate }}</p>
+                        </div><!--.col-->
+                        <div class="col-7 col-sm-6">
+                          <p data-ng-id="invoice-num-value">{{ invoice.invoice_number }}</p>
+                        </div><!--.col-->
+                      </ng-container>
+                    </div><!--.row-->
+
+                    <div class="row">
+
+                      <!-- PRINCIPAL AMOUNT -->
+                      <div class="col-5 col-sm-6">
+                        <p data-ng-id="principal-amount-label">{{ 'PAF_TERMS_MODAL.AMOUNT.TOTAL' | translate }}</p>
+                      </div><!--.col-->
+                      <div class="col-7 col-sm-6">
+                        <p class="mb-0 font-weight-bold text-accent">{{ invoice.payment_plan_entity.original_invoice_amount | zttCurrency : translateService.currentLang }}</p>
+                      </div><!--.col-->
+                    </div><!--.row-->
+                    <p class="lead mt-3">{{ 'PAF_TERMS_MODAL.ESTIMATES.TITLE_SUB_3' | translate }}</p>
+                    <hr>
+                    <div class="row"><!-- Repayment Details -->
+                      <!-- COST OF BORROWING -->
+                      <div class="col-6 col-md-3 text-left text-md-center d-flex flex-column justify-content-between">
+                        <p class="text-muted" data-ng-id="cost-borrowing-label">{{ 'PAF_TERMS_MODAL.ESTIMATES.COST' | translate }}</p>
+                        <p data-ng-id="cost-borrowing-value">{{ invoice.payment_plan_entity.estimated_interest_amount | zttCurrency : translateService.currentLang }}</p>
+                      </div><!--.col-->
+                      <!-- TOTAL REPAYMENT -->
+                      <div class="col-6 col-md-3 text-left text-md-center d-flex flex-column justify-content-between">
+                        <p class="text-muted" data-ng-id="total-repayment-label">{{ 'PAF_TERMS_MODAL.ESTIMATES.TOTAL_REPAY' | translate }}</p>
+                        <p data-ng-id="total-repayment-value">{{ (invoice.payment_plan_entity.original_invoice_amount + invoice.payment_plan_entity.estimated_interest_amount) | zttCurrency : translateService.currentLang }}</p>
+                      </div><!--.col-->
+                      <!-- REPAYMENT TERM -->
+                      <div class="col-6 col-md-3 text-left text-md-center d-flex flex-column justify-content-between">
+                        <p class="text-muted" data-ng-id="repayment-term-label">{{ 'PAF_TERMS_MODAL.TERM' | translate }}</p>
+                        <p class="font-weight-bold text-accent" data-ng-id="repayment-term-value">{{ invoice.payment_plan_entity.term }} {{ localizedLoanTermUnit | translate }}</p>
+                      </div><!--.col-->
+
+                      <!-- REPAYMENT AMOUNT -->
+                      <div class="col-6 col-md-3 text-left text-md-center d-flex flex-column justify-content-between">
+                        <p class="text-muted" data-ng-id="contract-repayment-amount-label">{{ repaymentScheduleLocalizationKey | translate }}</p>
+                          <p data-ng-id="contract-repayment-amount-value">{{ invoice.payment_plan_entity.estimated_repayment_amount | zttCurrency : translateService.currentLang }}</p>
+                      </div><!--.col-->
+                    </div><!--.row-->
+
+                    <!-- APR NOTE -->
+                    <div align="center">
+                      <p class="card-text small text-muted py-3" data-ng-id="annual_percentage_rate_summary">
+                        {{ 'PAF_TERMS_MODAL.SUMMARY' | translate:{cost_of_borrowing: invoice.payment_plan_entity.estimated_interest_amount | zttCurrency : translateService.currentLang, apr: invoice.payment_plan_entity.apr/365 | percent:'1.2-5':translateService.currentLang } }}
+                        <br>
+                        {{ pafReviewFormulaLocalizationKey | translate }}</p>
+                    </div>
+                  </div><!--.col-->
+                </div><!--.row-->
+              </div><!--.card-body-->
+            </div><!--.card-->
+          </div><!--.col-->
+        </div><!--.row-->
+        <div class="modal-footer">
+          <button class="btn btn-accent" (click)="hide()">{{'OK' | translate}}</button>
+        </div><!--.modal-footer-->
+    </ng-template><!--#template-->
